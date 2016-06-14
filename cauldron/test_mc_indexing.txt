@@ -1,0 +1,7 @@
+a=load("2.txt");
+b=sort(a(:,8));
+for i=1:133
+    if (b(i)==b(i+1))
+        disp("duplicate")
+    endif
+endfor

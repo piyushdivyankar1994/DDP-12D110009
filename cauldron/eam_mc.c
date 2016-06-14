@@ -217,7 +217,7 @@ int main(void)
         }
 
         int A=atoms[init_pos];          //0 if aluminium, 1 if Nickel
-        //printf("%d %d %d %d %d\n",init_pos,a,x,y,z);/* 
+        printf("%d %d %d %d %d %f %f %f\n",init_pos,a,x,y,z,xc,yc,zc);
         double dx,dy,dz,xi,yi,zi,r,dxi,dyi,dzi;
         int as,xs,ys,zs;
         for(i=0;i<402;i+=3)
@@ -231,11 +231,11 @@ int main(void)
 
             double r=dist_3d(xc,yc,zc,xi,yi,zi);
             if(xi<0)xi=xi+Nx;
-            if(xi>=Nx)xi=xi-Nx;
-            if(yi<0)yi=yi+Ny;
-            if(yi>=Ny)yi=yi-Ny;
+            if(xi>Nx-0.5)xi=xi-Nx;
+            if(yi<0)yi=yi+Ny+0.5;
+            if(yi>Ny-0.5)yi=yi-Ny;
             if(zi<0)xi=zi+Nz;
-            if(zi>=Nz)zi=zi-Nz;
+            if(zi>Nz-0.5)zi=zi-Nz;
 
             dxi=xi-floor(xi);
             dyi=yi-floor(yi);
@@ -244,16 +244,13 @@ int main(void)
             else{
                 for(int j=0;j<3;j++)
                 {
-                    if((dxi-sites[j]) ==0 &&(dyi-sites[j+1]) ==0 &&(dzi-sites[j+2]) ==0)as=j+1;
+                    if((dxi-sites[3*j]) ==0 &&(dyi-sites[3*j+1]) ==0 &&(dzi-sites[3*j+2]) ==0)as=j+1;
                 }
             }
-
             xs=(int)(xi-dxi);
             ys=(int)(yi-dyi); 
             zs=(int)(zi-dzi);
-            int pos=as+4*xs+4*(int)Nx*ys+4*(int)Nx*(int)Ny*z;
-            printf("%d\n",pos);
-
+            int pos=as+4*xs+4*(int)Nx*ys+4*(int)Nx*(int)Ny*zs;
         }
 
     }
