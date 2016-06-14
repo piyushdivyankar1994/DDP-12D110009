@@ -14,4 +14,14 @@ Codes for the Dual Degree Project 2016-17
 
 ### Incomplete Tasks
 1. **Unable to go from crystal coordinate system to lattice index. This makes us unable to compute energy.**
-2. EAM energy computation block 
+2. EAM energy computation block
+
+## 15 June 2016
+
+### Incomplete tasks completed
+1. One to one mapping from array to lattice achieved with periodic boundary condition
+
+### Incomplete Tasks
+1. EAM energy computation block
+
+These tasks represent minimum requirement for a Monte-Carlo simulation. After this is achieved, test runs can start. 
