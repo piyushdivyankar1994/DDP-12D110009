@@ -4,6 +4,8 @@
 #include<gsl/gsl_rng.h>
 #define size 402
 
+#define TEMP 2000
+
 /*
  *follwing are the index fields and value feilds
 *index_feild=0--->RADIUS
@@ -24,12 +26,12 @@ double eam_data_interpolation_func(double* , int , int , double );
 double dist_3d(double,double,double,double,double,double);
 
 int read_parameter(char*,double*);
-
+void file_write(char *,int *,int );
 double eam_data_interpolation_func(double *ptr, int index_field, int value_field, double index_field_value)
 {
     if(field_check_eam(index_field, value_field)==0)return 0;
     int pos=binary_search(ptr,5000*index_field,5000*index_field+4999,index_field_value);
-    printf("\n%le\t%le\t%le\t%le\t%le\n",ptr[5000*index_field+pos],ptr[5000*value_field+pos],ptr[5000*index_field+pos+1],ptr[5000*value_field+pos+1],index_field_value);
+    pos=pos-index_field*5000;
     return linear_interpolator(ptr[5000*index_field+pos],ptr[5000*value_field+pos],ptr[5000*index_field+pos+1],ptr[5000*value_field+pos+1],index_field_value);
 }
 
@@ -107,7 +109,7 @@ int main(void)
         for(int j=0;j<a[i]*3 && count<size;j++,count++)
         {
             fscanf(fp,"%f",&sites[count]);
-        }
+        } 
     }
 
     fp_init=fopen("file_list.txt","r");
@@ -185,13 +187,15 @@ int main(void)
     //testing 21:09 06/13/2016 
     const gsl_rng_type * T;
     gsl_rng * r;
+    gsl_rng * k;
     gsl_rng_env_setup();
     T = gsl_rng_default;
     r = gsl_rng_alloc (T);
-    
+    k = gsl_rng_alloc (T);
     int N_MCS=1000;
+    double lattice_parameter=4.00;
 
-    for(int i=0;i<1;i++)
+    for(int monte_carlo_steps=0;monte_carlo_steps<N_MCS;monte_carlo_steps++)
     {
         double u=gsl_rng_uniform(r);
         int init_pos=u*no_of_atoms;
@@ -217,10 +221,19 @@ int main(void)
         }
 
         int A=atoms[init_pos];          //0 if aluminium, 1 if Nickel
-        printf("%d %d %d %d %d %f %f %f\n",init_pos,a,x,y,z,xc,yc,zc);
+        int site_atom;
+        //printf("%d %d %d %d %d %f %f %f\n",init_pos,a,x,y,z,xc,yc,zc);
         double dx,dy,dz,xi,yi,zi,r,dxi,dyi,dzi;
         int as,xs,ys,zs;
-        for(i=0;i<402;i+=3)
+
+        double electron_density_d=0;
+        double electron_density_s=0;
+        double EAM_energy_default=0;
+        double EAM_energy_switched=0;
+        double pairwise_energy_d=0;
+        double pairwise_energy_s=0;
+        double energy_change=0;
+        for(int i=0;i<402;i+=3)
         {
             dx=sites[i];
             dy=sites[i+1];
@@ -229,7 +242,8 @@ int main(void)
             yi=yc+dy;
             zi=zc+dz;
 
-            double r=dist_3d(xc,yc,zc,xi,yi,zi);
+            r=dist_3d(xc,yc,zc,xi,yi,zi)*lattice_parameter;
+           
             if(xi<0)xi=xi+Nx;
             if(xi>Nx-0.5)xi=xi-Nx;
             if(yi<0)yi=yi+Ny+0.5;
@@ -251,8 +265,80 @@ int main(void)
             ys=(int)(yi-dyi); 
             zs=(int)(zi-dzi);
             int pos=as+4*xs+4*(int)Nx*ys+4*(int)Nx*(int)Ny*zs;
+            site_atom=atoms[pos];
+//double eam_data_interpolation_func(double *ptr, int index_field, int value_field, double index_field_value)
+/*
+ *follwing are the index fields and value feilds
+*index_feild=0--->RADIUS
+*value_feild=1---> PAIRING POTENTIAL Al-Al
+*value_feild=2---> PAIRING POTENTIAL Ni-Al
+*value_feild=3---> PAIRING POTENTIAL Ni-Ni
+*value_feild=4---> ELECTRON DENSITY Al
+*value_feild=5---> ELCETRON DENSITY Ni
+*index_feild=6---> ELECTRON DENSITY INDEX FOR EMBEDDING FUNCTION
+*value_feild=7---> EMBEDDING FUNCTION Ni
+*value_feild=8---> EMBEDDING FUNCTION Al
+*anything other than this is considered illegal and function 
+ */
+            if(site_atom==A && A==1)
+            {
+                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,0,3,r);
+                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,0,2,r);
+                electron_density_d=electron_density_d+eam_data_interpolation_func(eam_data,0,5,r);
+            }
+            else if(site_atom==A && A==0)
+            {
+                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,0,1,r);
+                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,0,2,r);
+                electron_density_d=electron_density_d+eam_data_interpolation_func(eam_data,0,4,r);
+            }
+            else if(site_atom==0 && A==1)
+            {
+                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,0,2,r);
+                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,0,3,r);
+                electron_density_d=electron_density_d+eam_data_interpolation_func(eam_data,0,5,r);
+            }
+             else if(site_atom==1 && A==0)
+            {
+                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,0,2,r);
+                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,0,1,r);
+                electron_density_d=electron_density_d+eam_data_interpolation_func(eam_data,0,4,r);
+            }  
         }
+        //segementation fault occured 
+        //possible error in eam_interpolation function 
+        //relating to inablity to handle
+        //---resolved--fixed the error in eam_interpolation_func function 
+        if(site_atom==1){
+            EAM_energy_default=pairwise_energy_d+eam_data_interpolation_func(eam_data,6,7,electron_density_d);
+            EAM_energy_switched=pairwise_energy_s+eam_data_interpolation_func(eam_data,6,8,electron_density_d);
+        }
+        else{
+            EAM_energy_default=pairwise_energy_d+eam_data_interpolation_func(eam_data,6,8,electron_density_d);
+            EAM_energy_switched=pairwise_energy_s+eam_data_interpolation_func(eam_data,6,7,electron_density_d);
+        }
+        energy_change=EAM_energy_switched-EAM_energy_default;
+
+        double chance=gsl_rng_uniform(k);
+        double energy_norm_const=(1.38e-23*TEMP)/1.602e-19;
+        double probablity=exp(-energy_change/energy_norm_const);
+        if(probablity>1){atoms[init_pos]=!atoms[init_pos];}
+        else if(chance<probablity){atoms[init_pos]=!atoms[init_pos];}
+        
 
     }
+    //printf("%d\n",!0);
+    file_write("Result_lattice.txt",atoms,no_of_atoms);
     return 0;
+}
+
+void file_write(char *filename,int *data,int data_points)
+{
+    FILE *fp;
+    fp=fopen(filename,"w");
+    for(int i=0;i<data_points;i+=4)
+    {
+        fprintf(fp,"%d %d %d %d \n",data[i],data[i+1],data[i+2],data[i+3]);
+    }
+    printf("%s is the resulting lattice arrangement\n",filename);
 }
