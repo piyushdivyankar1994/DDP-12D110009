@@ -24,30 +24,42 @@ int binary_search(double*, int, int, double);
 double linear_interpolator(double, double, double,double,double);
 double eam_data_interpolation_func(double* , int , int , double );
 double dist_3d(double,double,double,double,double,double);
-
+void eam_monte_carlo_simulation(double *,double *,int, char *, char *,char *);
+void neighbour_lattice_sites_read(double* );
 int read_parameter(char*,double*);
 void file_write(char *,int *,int );
+
+//Following function takes in the EAM table array and radius or electron density value and give coressponding potential or e- density or embedding energy values linearly interpolated between the tow values the index_field value is located
 double eam_data_interpolation_func(double *ptr, int index_field, int value_field, double index_field_value)
 {
     if(field_check_eam(index_field, value_field)==0)return 0;
-    int pos=binary_search(ptr,5000*index_field,5000*index_field+4999,index_field_value);
-    pos=pos-index_field*5000;
+    int pos=binary_search(ptr,5000*index_field,5000*index_field+4999,index_field_value);    //binary search for position of value in array
+    pos=pos-index_field*5000;                                                               //pos value needs to be from 0-4999 to make things easy
     return linear_interpolator(ptr[5000*index_field+pos],ptr[5000*value_field+pos],ptr[5000*index_field+pos+1],ptr[5000*value_field+pos+1],index_field_value);
 }
 
+//Interpolates value of a variable given two points of a straight line
 double linear_interpolator(double x1,double y1,double x2,double y2,double xc)
 {
-    double m=(y1-y2)/(x1-x2);
-    return y1+m*(xc-x1);
+    double m=(y1-y2)/(x1-x2);   //slope
+    return y1+m*(xc-x1);        
 }
 
-
+//Function to calculate euclidean distance between 2 points in 3D
 double dist_3d(double x1,double y1,double z1,double x2,double y2,double z2)
 {
     return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)+(z1-z2)*(z1-z2));
 }
 
+//exponentian function so we avoid using the default one ans save time
+double exponential(double x)
+{
+    double sum=1;
+    for(int i=20;i>0;--i)
+        sum=1+x*sum/i;
+}
 
+//binary search function, searches the position of value that is lower limit of the smallest interval
 int binary_search(double *ptr,int i,int j,double val)
 {
     if((j-i)>1)
@@ -62,6 +74,8 @@ int binary_search(double *ptr,int i,int j,double val)
         return i;
     }
 }
+
+//error check function to see if eam_interpolation_func() has been used correctly
 int field_check_eam(int index_field,int value_field)
 {
     int ret_val=1;
@@ -72,6 +86,9 @@ int field_check_eam(int index_field,int value_field)
     return ret_val;
 }
 
+//function to read a particular type of parameter file
+//in this first line contains no of parameters that it will contain 
+//then next lines shall be filled with these parameters and they can only be real numbers
 int read_parameter(char *filename,double ret_val[])
 {
     FILE *fp;
@@ -87,20 +104,13 @@ int read_parameter(char *filename,double ret_val[])
     return no_of_params;
 }
                         
-
-int main(void)
+void neighbour_lattice_sites_read(double* sites)
 {
-    FILE *fp_init,*fp1,*fp;
-    FILE *f_param;
-
-    double eam_data[45000];
-   // int *site[4];
-    
-    float sites[size];
-    int count=0;
+    FILE *fp;
     int a[]={12,6,24,12,24,8,48};
     for(int i=0;i<7;i++)
     {
+        int count;
         char fn[10];
         sprintf(fn,"S%dn.mat",i+1);
         printf("Reading from file %s\n",fn);
@@ -108,12 +118,14 @@ int main(void)
         if(fp==NULL)printf("unable to open file S%dn.mat\n",i+1);
         for(int j=0;j<a[i]*3 && count<size;j++,count++)
         {
-            fscanf(fp,"%f",&sites[count]);
+            fscanf(fp,"%le",&sites[count]);
         } 
     }
-
-    fp_init=fopen("file_list.txt","r");
-
+}
+void eam_data_read(double *eam_data,char *file)
+{
+    FILE *fp_init,*fp1;
+    fp_init=fopen(file,"r");
     for(int i=0;i<7;i++)
     {
        char str[25];
@@ -157,10 +169,29 @@ int main(void)
            }
        }
     }
-    //example usage=..[ double a=eam_data_interpolation_func(eam_data,0,2,1.6); ]
-    
+}
+int main(void)
+{
 
-    f_param=fopen("parameters.txt","r");
+    double eam_data[45000];
+   // int *site[4];
+    
+    double sites[size];
+    int count=0;
+    neighbour_lattice_sites_read(sites);
+
+    eam_data_read(eam_data,"file_list.txt");
+
+    eam_monte_carlo_simulation(eam_data,sites,1000, "parameters.txt","input_data.txt","Result_lattice.txt");
+
+    return 0;
+}
+
+
+void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *parameter_file_name, char *input_file_name,char *output_file_name)
+{
+    FILE *f_param;
+    f_param=fopen(parameter_file_name,"r");
     int no_of_params;
     double *parameter;
 
@@ -168,7 +199,6 @@ int main(void)
     parameter=(double*)malloc(no_of_params*sizeof(double));
     int n=read_parameter("parameters.txt",parameter);
     
-    double conc_g_p=parameter[5]/100;
     double Nx=parameter[0];
     double Ny=parameter[1];
     double Nz=parameter[2];
@@ -178,7 +208,7 @@ int main(void)
     atoms=(int *)malloc(4*Nx*Ny*Nz*sizeof(int));
     
     FILE *fp_input;
-    fp_input=fopen("input_data.txt","r");
+    fp_input=fopen(input_file_name,"r");
     printf("Reading file input_data.txt\n");
     for(int i=0;i<no_of_atoms;i++)
         fscanf(fp_input,"%d",&atoms[i]);
@@ -192,7 +222,6 @@ int main(void)
     T = gsl_rng_default;
     r = gsl_rng_alloc (T);
     k = gsl_rng_alloc (T);
-    int N_MCS=1000;
     double lattice_parameter=4.00;
 
     for(int monte_carlo_steps=0;monte_carlo_steps<N_MCS;monte_carlo_steps++)
@@ -321,15 +350,14 @@ int main(void)
 
         double chance=gsl_rng_uniform(k);
         double energy_norm_const=(1.38e-23*TEMP)/1.602e-19;
-        double probablity=exp(-energy_change/energy_norm_const);
+        double probablity=exponential(-energy_change/energy_norm_const);
         if(probablity>1){atoms[init_pos]=!atoms[init_pos];}
         else if(chance<probablity){atoms[init_pos]=!atoms[init_pos];}
         
 
     }
     //printf("%d\n",!0);
-    file_write("Result_lattice.txt",atoms,no_of_atoms);
-    return 0;
+    file_write(output_file_name,atoms,no_of_atoms);
 }
 
 void file_write(char *filename,int *data,int data_points)

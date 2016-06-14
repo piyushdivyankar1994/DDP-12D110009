@@ -18,10 +18,15 @@ Codes for the Dual Degree Project 2016-17
 
 ## 15 June 2016
 
-### Incomplete tasks completed
+### Tasks completed
 1. One to one mapping from array to lattice achieved with periodic boundary condition
 
 ### Incomplete Tasks
 1. EAM energy computation block
 
 These tasks represent minimum requirement for a Monte-Carlo simulation. After this is achieved, test runs can start. 
+
+### New Tasks
+1. demistify variable names
+2. Code should be well commented 
+3. Write unit tests for all blocks
