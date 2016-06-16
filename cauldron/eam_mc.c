@@ -116,7 +116,6 @@ void neighbour_lattice_sites_read(double* sites)
         int count;
         char fn[10];
         sprintf(fn,"S%dn.mat",i+1);
-        printf("Reading from file %s\n",fn);
         fp=fopen(fn,"r");
         if(fp==NULL)printf("unable to open file S%dn.mat\n",i+1);
         for(int j=0;j<a[i]*3 && count<size;j++,count++)
@@ -137,7 +136,6 @@ void eam_data_read(double *eam_data,char *file)
        fscanf(fp_init,"%s\n",str);
        fp1=fopen(str,"r");
        double val1,val2;
-       printf("Reading from file %s\n",str);
        if(fp1==NULL)printf("flag Unable to open %s\n",str);
 
        if(i==0){
@@ -177,8 +175,16 @@ void eam_data_read(double *eam_data,char *file)
 }
 
 //main function to wrap all the functions 
-int main(void)
+//invoking main will follow by two things input file name and parameters file name
+int main(int argc, int **argv)
 {
+    //making so that main takes input file name from bash this makes running test runs through bash script easier 
+    char *input_file,*parameter_file;
+    argv++;
+    input_file=*argv;
+    argv++;
+    parameter_file=*argv;
+
 
     double eam_data[45000];
    // int *site[4];
@@ -189,7 +195,7 @@ int main(void)
 
     eam_data_read(eam_data,"file_list.txt");
 
-    eam_monte_carlo_simulation(eam_data,sites,1000, "parameters.txt","input_data.txt","Result_lattice.txt");
+    eam_monte_carlo_simulation(eam_data,sites,1000, parameter_file,input_file,"Result_lattice");
 
     return 0;
 }
@@ -217,7 +223,6 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *
     FILE *fp_input;         //file for crystal data input
     //reading input data
     fp_input=fopen(input_file_name,"r");
-    printf("Reading file input_data.txt\n");
     for(int i=0;i<no_of_atoms;i++)
         fscanf(fp_input,"%d",&atoms[i]);
 
@@ -393,5 +398,5 @@ void file_write(char *filename,int *data,int data_points)
     {
         fprintf(fp,"%d %d %d %d \n",data[i],data[i+1],data[i+2],data[i+3]);
     }
-    printf("%s is the resulting lattice arrangement\n",filename);
+    printf("%s",filename);
 }

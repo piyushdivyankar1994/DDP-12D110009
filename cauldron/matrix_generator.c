@@ -9,12 +9,16 @@ double *parameter;
 
 int read_parameter(char*,double*);
 
-int main (void)
+int main (int argc, char **argv)
 {
+    argv++;
+    char *data;
+    data=*argv;
+
     const gsl_rng_type * T;
     gsl_rng * r;
     FILE *fp,*fw;
-    fw=fopen("input_data.txt","w");
+    fw=fopen(data,"w");
     char *ch;
     ch="parameters.txt";
     fp=fopen(ch,"r");
@@ -22,7 +26,7 @@ int main (void)
 
     fscanf(fp,"%d ",&no_of_params);
     parameter=(double*)malloc(no_of_params*sizeof(double));
-
+    printf("%s\n",data);
     gsl_rng_env_setup();
     T = gsl_rng_default;
     r = gsl_rng_alloc (T);
@@ -55,7 +59,7 @@ int main (void)
         }
         
     }
-    
+     
     gsl_rng_free(r);
     fclose(fp);
 
@@ -73,7 +77,6 @@ int read_parameter(char *filename,double ret_val[])
     for(int i=0;i<no_of_params;i++)
     {
        fscanf(fp,"%le ",&ret_val[i]);
-       printf("%le\n",ret_val[i]);
     }
     return no_of_params;
 }

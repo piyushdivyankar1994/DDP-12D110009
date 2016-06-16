@@ -6,7 +6,7 @@ These files are named S1n.mat, S2n.mat etc. The number in the middle of filename
 
 ## EAM data files 
 
-Names of all EAM data files is maintained in file *input_data.txt*. Names of these files are like fAl.. F_Ni.. pAl.. . Absolutely essential information
+Names of all EAM data files is maintained in file *file_list.txt*. Names of these files are like fAl.. F_Ni.. pAl.. . Absolutely essential information
 
 ## Parameters file
 
@@ -42,3 +42,10 @@ output data format is same in the file
 ## Random Initial Step 
 
 By this we mean, *matrix_generator.c* can generate a random lattice that will serve as an random initial step for the Montecarlo process. This function can run using the bash script *matrix_compile_and_run_once*
+
+## Running the code
+
+To run the code the code use 
+```
+$ ./monte_carlo_script
+```

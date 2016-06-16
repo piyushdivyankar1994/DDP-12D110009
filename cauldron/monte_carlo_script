@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if gcc matrix_generator.c -o matrix_generator.out -lgsl -lgslcblas -lm; then 
+    echo "Generating input data";
+else
+    echo "Unbable to compile matrix_generator.c. Please check!"
+    return 
+fi
+
+if  gcc eam_mc.c -o eam_mc.out -lgsl -lgslcblas -lm; then 
+    echo "EAM function running";
+else 
+    echo "unable to compile eam_mc.c. Please Check!"
+fi
+
+read initial_seed
+COUNTER=$initial_seed
+parameter_file="parameters.txt";
+let final_seed=initial_seed+1000;
+echo "Input files are saved in input_data and output file in output_data input files are named as inputfileSEEDVALUE.txt represent lattice generated SEEDVALUE as the seed value for gsl random number generator. You enter the initial seed value and final seed value" 
+
+while [  $COUNTER -lt $final_seed  ]; do
+    input_file="inputfile$COUNTER.txt"
+    INPUT="$(GSL_RNG_SEED=$COUNTER ./matrix_generator.out $input_file)"
+    #echo $input_file
+    output="$(GSL_RNG_SEED=$COUNTER ./eam_mc.out $input_file $parameter_file)"
+    outputNumbered="$COUNTER$output.txt"
+  
+    let COUNTER=COUNTER+100
+    mv $output $outputNumbered
+    mv $input_file input_data  
+    mv $outputNumbered output_data
+    echo "Input=$input_file Output=$outputNumbered"
+done
+
+rm matrix_generator.out
+rm eam_mc.out
