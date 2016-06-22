@@ -1,5 +1,4 @@
-install: wget http://gnu.askapache.com/gsl/gsl-latest.tar.gz
-      tar -xvf gsl-latest.tar.gz; cd gsl-2.1/;./configure;make;make install
+install: wget http://gnu.askapache.com/gsl/gsl-latest.tar.gz; tar -xvf gsl-latest.tar.gz; cd gsl-2.1/;./configure;make;make install
 language: c
 
 compiler: gcc
