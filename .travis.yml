@@ -7,4 +7,4 @@ language: c
 
 compiler: gcc
 
-script: gcc -Wall cauldron/eam_mc.c cauldron/eam_functions.c cauldron/math_functions.c cauldron/utils.c -o cauldron/a.out -lgsl -lgslcblas -lm
+script: gcc -std=c99 -Wall cauldron/eam_mc.c cauldron/eam_functions.c cauldron/math_functions.c cauldron/utils.c -o cauldron/a.out -lgsl -lgslcblas -lm
