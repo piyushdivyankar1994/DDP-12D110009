@@ -1,5 +1,4 @@
-before_install:
-  - ./install_gsl_tavis.sh
+before_install: ./install_gsl_tavis.sh
 
 install: true
 language: c
