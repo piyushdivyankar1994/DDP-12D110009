@@ -1,4 +1,7 @@
-install: wget http://gnu.askapache.com/gsl/gsl-latest.tar.gz; tar -xvf gsl-latest.tar.gz; cd gsl-2.1/;./configure;make;make install
+before_install:
+  - ./install_gsl_travis.sh
+
+install: true
 language: c
 
 compiler: gcc
