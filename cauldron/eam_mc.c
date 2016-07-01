@@ -13,6 +13,8 @@
 
 //main function to wrap all the functions
 //invoking main will follow by two things input file name and parameters file name
+int neighbour_lattice_sites_number[]={12,6,24,12,24,8,48};
+
 int main(int argc, char **argv)
 {
     //making so that main takes input file name from bash this makes running test runs through bash script easier
@@ -31,8 +33,8 @@ int main(int argc, char **argv)
     neighbour_lattice_sites_read(sites);
 
     eam_data_read(eam_data,"file_list.txt");
-
-    eam_monte_carlo_simulation(eam_data,sites,1000, parameter_file,input_file,"Result_lattice");
+    printf("%d\n",neighbour_lattice_sites_number[3] );
+    eam_monte_carlo_simulation(eam_data,sites,neighbour_lattice_sites_number,7,100000, parameter_file,input_file,"Result_lattice");
 
     return 0;
 }

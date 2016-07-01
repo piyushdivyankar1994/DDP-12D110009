@@ -112,7 +112,7 @@ void eam_data_read(double *eam_data,char *file)
     }
 }
 //Montecarlo simulation function this takes as input eam data table , neighbour atom locations(sites), no of montecarlo steps, parameter file name, crystal data input file name, crystal data output file name
-void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *parameter_file_name, char *input_file_name,char *output_file_name)
+void eam_monte_carlo_simulation(double *eam_data,double *sites,int *neighbour_lattice_sites_number,int upto_n_neighbours,int N_MCS, char *parameter_file_name, char *input_file_name,char *output_file_name)
 {
     FILE *f_parameter;                         //parmeter file pointer
     f_parameter=fopen(parameter_file_name,"r");//opening parameter file
@@ -187,7 +187,8 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *
         int neighbour_atom;                                  //variable to contain information about neighbour site
         //NOTE: A,site_atom are confusing variable names to fixed, reponded 22/06/16, change to neighbour atom
 
-        double xi,yi,zi,r,dxi,dyi,dzi;         //xi,yi,zi are the coordinates of the i'th lattice site in gloabl frame, and dxi,dyi,dzi are variables used to compare fractional parts of their global coordinates
+        double xi,yi,zi,dxi,dyi,dzi;         //xi,yi,zi are the coordinates of the i'th lattice site in gloabl frame, and dxi,dyi,dzi are variables used to compare fractional parts of their global coordinates
+        double r_new,r_old=0;
         int as,xs,ys,zs;                       //array index coordinates for neighbour sites
 
         double electron_density_at_atom=0;           //stores electron density without changing atom
@@ -197,13 +198,14 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *
         double pairwise_energy_d=0;             //stores pairwise elctrostatic term of EAM table without changing atom
         double pairwise_energy_s=0;             //stores pairwise elctrostatic term of EAM table atom switched
         double energy_change=0;                 //stores change in energy for the switch
+        double pair_e_Ni_Ni, pair_e_Ni_Al, pair_e_Al_Al, eDen_Ni, eDen_Al;
+        int neighbour_counter=0;
         for(int i=0;i<402;i+=3)
         {
             xi=x_atom+sites[i];       //finding nighbour coordinates using sites table
             yi=y_atom+sites[i+1];
             zi=z_atom+sites[i+2];
 
-            r=dist_3d(x_atom,y_atom,z_atom,xi,yi,zi)*lattice_parameter; //distance calculation from neighbour site to atomic site
 
             //Implementing periodic boundary condition
             //if it were simple cubic lattice we would have gobal coordinates go from 0 to Nx-1 in x-direction 0-Ny-1 in y-direction so on.
@@ -253,29 +255,38 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *
 *value_feild=8---> EMBEDDING FUNCTION Al
 *anything other than this is considered illegal and function
  */
-            if(neighbour_atom==A && A==Ni)//If both neighbour and site are Nickel atoms
-            {
-                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Ni,r);
-                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Al,r);
-                electron_density_at_atom=electron_density_at_atom+eam_data_interpolation_func(eam_data,RADIUS,ELECTRON_DENSITY_Ni,r);
+
+            r_new=dist_3d(x_atom,y_atom,z_atom,xi,yi,zi)*lattice_parameter; //distance calculation from neighbour site to atomic site
+            if(r_new!=r_old) {
+              pair_e_Ni_Ni=eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Ni,r_new);
+              pair_e_Ni_Al=eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Al,r_new);
+              pair_e_Al_Al=eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Al_Al,r_new);
+              eDen_Ni=eam_data_interpolation_func(eam_data,RADIUS,ELECTRON_DENSITY_Ni,r_new);
+              eDen_Al=eam_data_interpolation_func(eam_data,RADIUS,ELECTRON_DENSITY_Al,r_new);
             }
-            else if(neighbour_atom==A && A==Al)//If both neighbour and site are Aluminum atoms
+            if(neighbour_atom*A == 4)//If both neighbour and site are Nickel atoms
             {
-                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Al_Al,r);
-                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Al,r);
-                electron_density_at_atom=electron_density_at_atom+eam_data_interpolation_func(eam_data,RADIUS,ELECTRON_DENSITY_Al,r);
+                pairwise_energy_d=pairwise_energy_d+pair_e_Ni_Ni;
+                pairwise_energy_s=pairwise_energy_s+pair_e_Ni_Al;
+                electron_density_at_atom=electron_density_at_atom+eDen_Ni;
+            }
+            else if(neighbour_atom*A == 1)//If both neighbour and site are Aluminum atoms
+            {
+                pairwise_energy_d=pairwise_energy_d+pair_e_Al_Al;
+                pairwise_energy_s=pairwise_energy_s+pair_e_Ni_Al;
+                electron_density_at_atom=electron_density_at_atom+eDen_Al;
             }
             else if(neighbour_atom==Al && A==Ni)//If neighbours nickel and site is Aluminum atoms
             {
-                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Al,r);
-                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Ni,r);
-                electron_density_at_atom=electron_density_at_atom+eam_data_interpolation_func(eam_data,RADIUS,ELECTRON_DENSITY_Ni,r);
+                pairwise_energy_d=pairwise_energy_d+pair_e_Ni_Al;
+                pairwise_energy_s=pairwise_energy_s+pair_e_Ni_Ni;
+                electron_density_at_atom=electron_density_at_atom+eDen_Ni;
             }
              else if(neighbour_atom==Ni && A==Al)//If neighbours Aluminium and site is Nickel atoms
             {
-                pairwise_energy_d=pairwise_energy_d+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Ni_Al,r);
-                pairwise_energy_s=pairwise_energy_s+eam_data_interpolation_func(eam_data,RADIUS,PAIRING_POTENTIAL_Al_Al,r);
-                electron_density_at_atom=electron_density_at_atom+eam_data_interpolation_func(eam_data,RADIUS,ELECTRON_DENSITY_Al,r);
+                pairwise_energy_d=pairwise_energy_d+pair_e_Ni_Al;
+                pairwise_energy_s=pairwise_energy_s+pair_e_Al_Al;
+                electron_density_at_atom=electron_density_at_atom+eDen_Al;
             }
         }
         //Now depending on whether the current atom is Ni or aluminium will change the EAM energy calculation result
@@ -291,11 +302,11 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int N_MCS, char *
 
         double chance=gsl_rng_uniform(k);//a random number
         double energy_norm_const=(BOLTZMANN_CONST*NORMAL_TEMPERATURE)/ELECTRONIC_CHARGE;//normalization of energy using erature and electronic charge TEMP is the highest temperature stored as a #define constant
-        double probablity=exponential(-energy_change/energy_norm_const);//probability calculation using custom exponentiation function
+        double probablity=exp(-energy_change/energy_norm_const);//probability calculation using custom exponentiation function
         if(probablity>1){atomic_matrix[init_pos]=!atomic_matrix[init_pos];}             //checking if energy was negetive in that case there is sure probability,switching atoms, '!'(logical NOT) used as the numbers are 1 and 0 so it works like a charm
         else if(chance<probablity){atomic_matrix[init_pos]=!atomic_matrix[init_pos];}   //Metrpolis Implementaion-If probability is a number form 0 to 1 say p, and the probablity that gsl_rng_uniform() is a uniform random genrator so the probality that it generates a number from (0,p) is p. This is our stochastic in this step there might be a situation when energy change was positive but transition still took place.
 
-
+        r_old=r_new;
     }
     file_write(output_file_name,atomic_matrix,total_no_of_atoms);
 }
@@ -312,7 +323,7 @@ void random_crystal_generator(char *parameter_file_name, char *output_file_name)
     int no_of_parameters;
 
     fscanf(fp,"%d ",&no_of_parameters);
-    parameter=malloc(no_of_parameters*sizeof(double*));  //changing Here flag--###########@@@@@@@@@@@@@@>>>>>>>>>>>>>>>
+    parameter=malloc(no_of_parameters*sizeof(double*));
     printf("%s\n",output_file_name);
     gsl_rng_env_setup();
     T = gsl_rng_default;

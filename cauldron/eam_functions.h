@@ -10,7 +10,7 @@
 
   int field_check_eam(int ,int);
   double eam_data_interpolation_func(double* , int , int , double );
-  void eam_monte_carlo_simulation(double *,double *,int, char *, char *,char *);
+  void eam_monte_carlo_simulation(double *,double *,int *,int,int, char *, char *,char *);
   void neighbour_lattice_sites_read(double* );
   int read_parameter_file(char*,double []);
   void random_crystal_generator(char*, char* );
@@ -20,6 +20,7 @@
   #define TOTAL_NEIGHBOUR_ATOMS_FCC 134
   #define TOTAL_NEIGHBOUR_ATOMS_FCC_ARRAY_SIZE 402
   #define NORMAL_TEMPERATURE 2000
+
 #endif
 
 #define RADIUS 0
@@ -35,5 +36,5 @@
 #define BOLTZMANN_CONST 1.38E-23
 #define ELECTRONIC_CHARGE 1.602e-19
 
-#define Al 0
-#define Ni 1
+#define Al 1
+#define Ni 2
