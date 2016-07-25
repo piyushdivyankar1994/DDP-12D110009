@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
     neighbour_lattice_sites_read(sites);
 
-    eam_data_read(eam_data,"file_list.txt");
+    eam_data_read(eam_data,"file_list.txt");       //to be replaced by new function and structure
     printf("%d\n",neighbour_lattice_sites_number[3] );
     eam_monte_carlo_simulation(eam_data,sites,neighbour_lattice_sites_number,7,100000, parameter_file,input_file,"Result_lattice");
 

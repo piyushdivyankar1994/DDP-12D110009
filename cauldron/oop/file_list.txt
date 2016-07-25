@@ -1,0 +1,7 @@
+./EAM_Ni_Al/pAl_r(A)_E(eV).txt
+./EAM_Ni_Al/pNiAl_r(A)_E(eV).txt
+./EAM_Ni_Al/pNi_r(A)_E(eV).txt
+./EAM_Ni_Al/fAl_r(A)_eDen.txt
+./EAM_Ni_Al/fNi_r(A)_eDen.txt
+./EAM_Ni_Al/F_Al_eDen_E(eV).txt
+./EAM_Ni_Al/F_Ni_eDen_E(eV).txt

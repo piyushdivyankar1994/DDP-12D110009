@@ -8,12 +8,19 @@
   #include "eam_functions.h"
   #include "utils.h"
 
+  //obselete
   int field_check_eam(int ,int);
+  //obselete use structure retrive functions instead which has better time complexity
   double eam_data_interpolation_func(double* , int , int , double );
+  // broken up into other functions 
   void eam_monte_carlo_simulation(double *,double *,int *,int,int, char *, char *,char *);
+  //
   void neighbour_lattice_sites_read(double* );
+  // obselete replaced by a structure follow the structure is datatypes.h
   int read_parameter_file(char*,double []);
+
   void random_crystal_generator(char*, char* );
+  // replaced with structure
   void eam_data_read(double*,char*);
 
 
