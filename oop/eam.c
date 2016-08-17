@@ -1,3 +1,124 @@
+#include "eam.h"
+
+int* atomicMatrixRead(char* fileName, parameter* p) {
+	int* mat = (int*)malloc(sizeof(int) * p->no_of_atoms);
+	FILE *fp = fopen(fileName, "r");
+	if(fp == NULL) return NULL;
+	for(int i = 0; i < p->no_of_atoms; i++){
+		fscanf(fp, "%d", &mat[i]);
+	}
+	return mat;
+}
+
+void print_AtomicMatrix(int* mat, int begin, int end){
+	for(int i = begin; i < end; i += 4) {
+		printf("%d %d %d %d\n", mat[i], mat[i+1], mat[i+2], mat[i+3]);
+	}
+}
+
+Sn_fcc* Sn_fcc_readNeighbours_fromFile(char* fileList){
+	FILE* fp;
+	Sn_fcc* new = (Sn_fcc*)malloc(sizeof(Sn_fcc));
+	new->indices[0] = 12;
+	new->indices[1] = 6;
+	new->indices[2] = 24;
+	new->indices[3] = 12;
+	new->indices[4] = 24;
+	new->indices[5] = 8;
+	new->indices[6] = 48;
+	fp = fopen(fileList, "r");
+	if(fp == NULL) printf("flag\n");
+	char str[35];
+	for(int i = 0; i < 7; i++){
+		fscanf(fp, "%s", str);
+		FILE* fr = fopen(str , "r");
+		int k = new->indices[i];
+
+		if(fr == NULL)printf("flag\n");
+
+		for(int j = 0; j < k; j++){
+			float x, y, z;
+			fscanf(fr, "%f", &x);
+			fscanf(fr, "%f", &y);
+			fscanf(fr, "%f", &z);
+
+			if(i == 0) {
+				new->s1n[j].x = x;
+				new->s1n[j].y = y;
+				new->s1n[j].z = z;
+				}
+			if(i == 1) {
+				new->s2n[j].x = x;
+				new->s2n[j].y = y;
+				new->s2n[j].z = z;
+				}
+			if(i == 2) {
+				new->s3n[j].x = x;
+				new->s3n[j].y = y;
+				new->s3n[j].z = z;
+				}
+			if(i == 3) {
+				new->s4n[j].x = x;
+				new->s4n[j].y = y;
+				new->s4n[j].z = z;
+				}
+			if(i == 4) {
+				new->s5n[j].x = x;
+				new->s5n[j].y = y;
+				new->s5n[j].z = z;
+				}
+			if(i == 5) {
+				new->s6n[j].x = x;
+				new->s6n[j].y = y;
+				new->s6n[j].z = z;
+				}
+			if(i == 6) {
+				new->s7n[j].x = x;
+				new->s7n[j].y = y;
+				new->s7n[j].z = z;
+				}
+		}
+	}
+	return new;
+}
+
+void print_Neighbours(Sn_fcc* a){
+	for(int i = 0; i < 7; i++){
+		int k = a->indices[i];
+		for(int j = 0; j < k; j++){
+			switch(i){
+				case 0:
+					point3D_dispPoint(&(a->s1n[j]));
+					break;
+				case 1:
+					point3D_dispPoint(&(a->s2n[j]));
+					break;
+				case 2:
+					point3D_dispPoint(&(a->s3n[j]));
+					break;
+				case 3:
+					point3D_dispPoint(&(a->s4n[j]));
+					break;
+				case 4:
+					point3D_dispPoint(&(a->s5n[j]));
+					break;
+				case 5:
+					point3D_dispPoint(&(a->s6n[j]));
+					break;
+				case 6:
+					point3D_dispPoint(&(a->s7n[j]));
+					break;
+
+			}
+		}
+	}
+}
+
+Sn_fcc* _defaultFCCNeighbours() {
+	Sn_fcc* new = Sn_fcc_readNeighbours_fromFile("file_list_neighbours.txt");
+	return new;
+}
+
 void eam_data_read(binEAMpot** eam_data, char *fileName, char atom1[2], char atom2[2])
 {
     FILE *fp_init,*fp1;
@@ -93,10 +214,25 @@ void eam_data_read(binEAMpot** eam_data, char *fileName, char atom1[2], char ato
 
 
 rdf* rdf_radius_retrive(binEAMpot* data, double radius) {
-  if(radius < data->minRadius || radius > data->maxRadius){
-    printf("Radius not in scope\n");
-    return NULL;
+  if(radius > data->maxRadius){
+    rdf* new = (rdf*)malloc(sizeof(rdf));
+		new->p11   = 0;
+	  new->p12   = 0;
+	  new->p22   = 0;
+	  new->eDen1 = 0;
+	  new->eDen2 = 0;
+    return new;
   }
+
+	else if (radius < data->minRadius) {
+		rdf* new = (rdf*)malloc(sizeof(rdf));
+		new->p11   = linear_interpolator(data->radius[0], data->pair_atom1_atom1[0], data->radius[1], data->pair_atom1_atom1[1], radius);
+	  new->p12   = linear_interpolator(data->radius[0], data->pair_atom1_atom2[0], data->radius[1], data->pair_atom1_atom2[1], radius);
+	  new->p22   = linear_interpolator(data->radius[0], data->pair_atom2_atom2[0], data->radius[1], data->pair_atom2_atom2[1], radius);
+	  new->eDen1 = linear_interpolator(data->radius[0], data->atom1_charge_Density[0], data->radius[1], data->atom1_charge_Density[1], radius);
+	  new->eDen2 = linear_interpolator(data->radius[0], data->atom2_charge_Density[0], data->radius[1], data->atom2_charge_Density[1], radius);
+	}
+
 
   int j = (int)((radius - data->minRadius)*5000)/(data->maxRadius - data->minRadius);
   rdf* new = (rdf*)malloc(sizeof(rdf));
@@ -131,124 +267,7 @@ eDen_df* eDen_df_charge_density_retrive(binEAMpot* data, double eDen){
   return new;
 }
 
-Sn_fcc* Sn_fcc_readNeighbours_fromFile(char* fileList){
-	FILE* fp;
-	Sn_fcc* new = (Sn_fcc*)malloc(sizeof(Sn_fcc));
-	new->indices[0] = 12;
-	new->indices[1] = 6;
-	new->indices[2] = 24;
-	new->indices[3] = 12;
-	new->indices[4] = 24;
-	new->indices[5] = 8;
-	new->indices[6] = 48;
-	fp = fopen(fileList, "r");
-	if(fp == NULL) printf("flag\n");
-	char str[35];
-	for(int i = 0; i < 7; i++){
-		fscanf(fp, "%s", str);
-		FILE* fr = fopen(str , "r");
-		int k = new->indices[i];
-		
-		if(fr == NULL)printf("flag\n");
-		
-		for(int j = 0; j < k; j++){
-			float x, y, z;
-			fscanf(fr, "%f", &x);
-			fscanf(fr, "%f", &y);
-			fscanf(fr, "%f", &z);
-			
-			if(i == 0) {
-				new->s1n[j].x = x;
-				new->s1n[j].y = y;
-				new->s1n[j].z = z;
-				}
-			if(i == 1) {
-				new->s2n[j].x = x;
-				new->s2n[j].y = y;
-				new->s2n[j].z = z;
-				}
-			if(i == 2) {
-				new->s3n[j].x = x;
-				new->s3n[j].y = y;
-				new->s3n[j].z = z;
-				}
-			if(i == 3) {
-				new->s4n[j].x = x;
-				new->s4n[j].y = y;
-				new->s4n[j].z = z;
-				}
-			if(i == 4) {
-				new->s5n[j].x = x;
-				new->s5n[j].y = y;
-				new->s5n[j].z = z;
-				}
-			if(i == 5) {
-				new->s6n[j].x = x;
-				new->s6n[j].y = y;
-				new->s6n[j].z = z;
-				}
-			if(i == 6) {
-				new->s7n[j].x = x;
-				new->s7n[j].y = y;
-				new->s7n[j].z = z;
-				}
-		}
-	}
-	return new;
-}
 
-void print_Neighbours(Sn_fcc* a){
-	for(int i = 0; i < 7; i++){
-		int k = a->indices[i];
-		for(int j = 0; j < k; j++){
-			switch(i){
-				case 0:
-					point3D_dispPoint(&(a->s1n[j]));
-					break;
-				case 1:
-					point3D_dispPoint(&(a->s2n[j]));
-					break;
-				case 2:
-					point3D_dispPoint(&(a->s3n[j]));
-					break;
-				case 3:
-					point3D_dispPoint(&(a->s4n[j]));
-					break;
-				case 4:
-					point3D_dispPoint(&(a->s5n[j]));
-					break;
-				case 5:
-					point3D_dispPoint(&(a->s6n[j]));
-					break;
-				case 6:
-					point3D_dispPoint(&(a->s7n[j]));
-					break;
-				
-			}
-		}
-	}
-}
-
-Sn_fcc* _defaultFCCNeighbours() {
-	Sn_fcc* new = Sn_fcc_readNeighbours_fromFile("file_list_neighbours.txt");
-	return new;
-}
-
-int* atomicMatrixRead(char* fileName, parameter* p) {
-	int* mat = (int*)malloc(sizeof(int) * p->no_of_atoms);
-	FILE *fp = fopen(fileName, "r");
-	if(fp == NULL) return NULL;
-	for(int i = 0; i < p->no_of_atoms; i++){
-		fscanf(fp, "%d", &mat[i]);
-	}
-	return mat;
-}
-
-void print_AtomicMatrix(int* mat, int begin, int end){
-	for(int i = begin; i < end; i += 4) {
-		printf("%d %d %d %d\n", mat[i], mat[i+1], mat[i+2], mat[i+3]);
-	}
-}
 
 double energyAtIndexFCC(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc* ngbrs) {
 	point3D* current = point3D_indexToPoint3D_fcc(index, p);
@@ -256,19 +275,20 @@ double energyAtIndexFCC(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc
 	double energy = 0;
 	double chargeDen = 0;
 	int noNgbrs = 134;
-	
+
 	for(int i = 0; i < noNgbrs; i++){
 		point3D* k = point3D_addVectors(current, &(ngbrs->s1n[i]));
 		double r = point3D_distAtoB(k, current);
-		//k = point3D_periodicBoundaryTransform(k, p);
+		r = r * p->lattice_parameter;
+		point3D_periodicBoundaryTransform(k, p);
 		rdf* r_data = rdf_radius_retrive(data, r);
 		int ngbrIndex = point3D_point3DtoIndex(k, p);
 		if(a[index] == 0){
 			if(a[ngbrIndex] == 0){
-				
+
 			}
 		}
 	}
-	
+
 	return energy;
 }

@@ -1,3 +1,5 @@
+#include "point3D.h"
+
 point3D* point3D_newPoint(float x, float y, float z){
 	point3D* new = (point3D*)malloc(sizeof(point3D));
 	new->x = x;
@@ -17,7 +19,7 @@ point3D* point3D_origin(){
 point3D* point3D_addVectors(point3D* v1, point3D* v2){
 	point3D* result = (point3D*)malloc(sizeof(point3D));
 	result->x = v1->x + v2->x;
-	result->y = v1->y + v2->y; 
+	result->y = v1->y + v2->y;
 	result->z = v1->z + v2->z;
 	return result;
 }
@@ -32,7 +34,7 @@ int point3D_isEqual(point3D* v1, point3D* v2) {
 point3D* point3D_subtractVectors(point3D* v1, point3D* v2){
 	point3D* result = (point3D*)malloc(sizeof(point3D));
 	result->x = v1->x - v2->x;
-	result->y = v1->y - v2->y; 
+	result->y = v1->y - v2->y;
 	result->z = v1->z - v2->z;
 	return result;
 }
@@ -46,7 +48,7 @@ void point3D_dispPoint(point3D* a){
 point3D* point3D_indexToPoint3D_fcc(int index, parameter* p){
 	point3D* returnPoint = point3D_origin();
 	int motiff_position = index % p->atoms_per_site;          //type of atom
-	
+
 	returnPoint->x = (float)((index / p->atoms_per_site) % p->Nx);
 	returnPoint->y = (float)((index / (p->atoms_per_site * p->Nx)) % p->Ny);
 	returnPoint->z = (float)((index / (p->atoms_per_site * p->Nx * p->Ny)) % p->Nz);
@@ -58,15 +60,15 @@ point3D* point3D_indexToPoint3D_fcc(int index, parameter* p){
 	else if (motiff_position == 1) {
 		return point3D_addVectors(returnPoint, point3D_newPoint(0, 0.5, 0.5));
 	}
-	
+
 	else if (motiff_position == 2) {
 		return point3D_addVectors(returnPoint, point3D_newPoint(0.5, 0, 0.5));
 	}
-	
+
 	else if (motiff_position == 3) {
 		return point3D_addVectors(returnPoint, point3D_newPoint(0.5, 0.5, 0));
 	}
-	
+
 	return returnPoint;
 }
 
@@ -74,9 +76,9 @@ int point3D_point3DtoIndex(point3D* a, parameter* p){
 	float fx = a->x - floor(a->x);
 	float fy = a->y - floor(a->y);
 	float fz = a->z - floor(a->z);
-	
+
 	int pos = ((int)floor(a->x) + p->Nx * (int)floor(a->y) + p->Nx * p->Ny * floor(a->z)) * 4;
-	
+
 	if(fx == 0 && fy == 0 && fz == 0){
 		return pos;
 	}

@@ -1,3 +1,4 @@
+#include "test.h"
 void test_new_parameters(){
   parameter* new = NULL;
   new = new_parameters("parameter1.txt");
@@ -66,7 +67,7 @@ void test_point3D(){
 	printf("%f\n", point3D_magnitude(a1));
 	a1 = point3D_newPoint(0, 0, 5);
 	printf("%f\n", point3D_magnitude(a1));
-	
+
 	printf("Distance between two points\n");
 	for(int i = 0; i < 3; i++){
 		a1 = point3D_newPoint(rand() / (float) RAND_MAX, rand() / (float) RAND_MAX, rand() / (float) RAND_MAX);
@@ -74,15 +75,15 @@ void test_point3D(){
 		point3D_dispPoint(a1);
 		point3D_dispPoint(a2);
 		printf("Distance = %f\n\n", point3D_distAtoB(a1, a2));
-		
+
 	}
-	
+
 	return;
 }
 
 void test_defaultFCCparameter(){
 	parameter* new = _defaultFCCparameter();
-	print_parameters(new);	
+	print_parameters(new);
 }
 
 
@@ -105,7 +106,7 @@ void test_AtomicMatrixRead(){
 }
 
 
-void test_energyAtIndexFCC() { 
+void test_energyAtIndexFCC() {
 	int index = 100;
 	binEAMpot* data = NULL;
 	eam_data_read(&data, "file_list.txt", "Al", "Ni");
@@ -115,7 +116,7 @@ void test_energyAtIndexFCC() {
 	Sn_fcc* new = _defaultFCCNeighbours();
 	double e = energyAtIndexFCC(index, a, data, p, new);
 	printf("at index = %d energy = %f", index, e);
-	
+
 }
 
 void test_point3D_point3DtoIndex(){
@@ -124,7 +125,7 @@ void test_point3D_point3DtoIndex(){
 	point3D* p2 = point3D_newPoint(0.5, 0.5, 1);
 	point3D* p3 = point3D_newPoint(2.0, 0.5, 0.5);
 	point3D* p4 = point3D_newPoint(0.5, 1, 0.5);
-	
+
 	printf("%d\t", point3D_point3DtoIndex(p1, p));
 	point3D_dispPoint(p1);
 	printf("%d\t", point3D_point3DtoIndex(p2, p));
@@ -136,11 +137,11 @@ void test_point3D_point3DtoIndex(){
 }
 
 void test_point3D_periodicBoundaryTransform(){
-	point3D* new = point3D_newPoint(-10.5, 11.5, 16.5);					
+	point3D* new = point3D_newPoint(-10.5, 11.5, 16.5);
 	parameter* p = _defaultFCCparameter();
 	printf("test function for periodic boundary transform\n");
 	point3D_dispPoint(new);
-	//point3D* test = 
+	//point3D* test =
 	point3D_periodicBoundaryTransform(new, p);
 	point3D_dispPoint(new);
 }

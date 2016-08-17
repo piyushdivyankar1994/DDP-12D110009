@@ -1,3 +1,5 @@
+#include "parameters.h"
+
 void print_parameters(parameter* a){
   printf("Size in x-direction           = %d\n", a->Nx);
   printf("Size in y-direction           = %d\n", a->Ny);
@@ -15,7 +17,7 @@ parameter* new_parameters(char* filename) {
   FILE *fp;
   fp = fopen(filename, "r");
   int N;
-  
+
   fscanf(fp, "%d", &N);
   new->Nx = N;
   printf("%d\n", N);
@@ -57,5 +59,3 @@ parameter* _defaultFCCparameter(){
 	new->no_of_atoms 		  = new->Nx * new->Ny * new->Nz * new->atoms_per_site;
 	return new;
 }
-
-
