@@ -16,4 +16,6 @@
   void test_energyAtIndexFCC();
   void test_point3D_point3DtoIndex();
   void test_point3D_periodicBoundaryTransform();
+  void test_energyInMatrix();
+  void test_deltaEnergyMatrix();
 #endif

@@ -1,4 +1,5 @@
 #include "test.h"
+
 void test_new_parameters(){
   parameter* new = NULL;
   new = new_parameters("parameter1.txt");
@@ -115,7 +116,7 @@ void test_energyAtIndexFCC() {
 	//test_AtomicMatrixRead();
 	Sn_fcc* new = _defaultFCCNeighbours();
 	double e = energyAtIndexFCC(index, a, data, p, new);
-	printf("at index = %d energy = %f", index, e);
+	printf("at index = %d energy = %f\n", index, e);
 
 }
 
@@ -144,4 +145,35 @@ void test_point3D_periodicBoundaryTransform(){
 	//point3D* test =
 	point3D_periodicBoundaryTransform(new, p);
 	point3D_dispPoint(new);
+}
+
+void test_energyInMatrix() {
+  binEAMpot* data = NULL;
+  eam_data_read(&data, "file_list.txt", "Al", "Ni");
+  parameter* p = _defaultFCCparameter();
+  int *a = atomicMatrixRead("out.txt", p);
+  //test_AtomicMatrixRead();
+  Sn_fcc* new = _defaultFCCNeighbours();
+
+  /// Example:
+  double *energyMap = NULL;
+  energyInMatrix(&energyMap, a, data, p, new);
+  printEnergyMap(energyMap, 100, 200);
+  free(energyMap);
+
+}
+
+void test_deltaEnergyMatrix() {
+  binEAMpot* data = NULL;
+  eam_data_read(&data, "file_list.txt", "Al", "Ni");
+  parameter* p = _defaultFCCparameter();
+  int *a = atomicMatrixRead("out.txt", p);
+  //test_AtomicMatrixRead();
+  Sn_fcc* new = _defaultFCCNeighbours();
+
+  /// Example:
+  double *energyMap = NULL;
+  deltaEnergyMatrix(&energyMap, a, data, p, new);
+  printEnergyMap(energyMap, 100, 200);
+  free(energyMap);
 }

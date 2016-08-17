@@ -237,6 +237,9 @@ rdf* rdf_radius_retrive(binEAMpot* data, double radius) {
   int j = (int)((radius - data->minRadius)*5000)/(data->maxRadius - data->minRadius);
   rdf* new = (rdf*)malloc(sizeof(rdf));
 
+	if (j < 0) j = 0;
+	else if (j > 5000) j = 5000;
+
   if(data->radius[j] < radius){
     while(data->radius[j] < radius)
       j++;
@@ -252,14 +255,25 @@ rdf* rdf_radius_retrive(binEAMpot* data, double radius) {
 }
 
 eDen_df* eDen_df_charge_density_retrive(binEAMpot* data, double eDen){
-  if(eDen < data->min_eDen || eDen > data->max_eDen){
-    printf("Radius not in scope\n");
-    return NULL;
-  }
+	eDen_df *new = (eDen_df*)malloc(sizeof(eDen_df));
+	if(eDen < data->min_eDen) {
+		new->eDen   = eDen;
+	  new->embed1 = linear_interpolator(data->chargeDensity[0], data->atom1_embedding_energy[0], data->chargeDensity[1], data->atom1_embedding_energy[1], eDen);
+	  new->embed2 = linear_interpolator(data->chargeDensity[0], data->atom2_embedding_energy[0], data->chargeDensity[1], data->atom2_embedding_energy[1], eDen);
+	}
 
-  eDen_df* new;
-  new = (eDen_df*)malloc(sizeof(eDen_df));
-  int j = (int)((eDen - data->min_eDen)*5000)/(data->max_eDen - data->min_eDen);
+	if(eDen > data->max_eDen) {
+		new->eDen   = eDen;
+	  new->embed1 = 0;
+	  new->embed2 = 0;
+		return new;
+	}
+
+	int j = (int)((eDen - data->min_eDen)*5000)/(data->max_eDen - data->min_eDen);
+
+	if (j < 0) j = 0;
+	else if (j > 5000) j = 5000;
+
   new->eDen   = eDen;
   new->embed1 = linear_interpolator(data->chargeDensity[j-1], data->atom1_embedding_energy[j-1], data->chargeDensity[j], data->atom1_embedding_energy[j], eDen);
   new->embed2 = linear_interpolator(data->chargeDensity[j-1], data->atom2_embedding_energy[j-1], data->chargeDensity[j], data->atom2_embedding_energy[j], eDen);
@@ -271,7 +285,6 @@ eDen_df* eDen_df_charge_density_retrive(binEAMpot* data, double eDen){
 
 double energyAtIndexFCC(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc* ngbrs) {
 	point3D* current = point3D_indexToPoint3D_fcc(index, p);
-	point3D_dispPoint(current);
 	double energy = 0;
 	double chargeDen = 0;
 	int noNgbrs = 134;
@@ -283,12 +296,116 @@ double energyAtIndexFCC(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc
 		point3D_periodicBoundaryTransform(k, p);
 		rdf* r_data = rdf_radius_retrive(data, r);
 		int ngbrIndex = point3D_point3DtoIndex(k, p);
-		if(a[index] == 0){
-			if(a[ngbrIndex] == 0){
 
+		if (a[ngbrIndex] == a[index]) {
+			if (a[ngbrIndex] == 0) {
+				energy 		= energy + r_data->p11;
+				chargeDen	= chargeDen + r_data->eDen1;
+			}
+			else {
+				energy 		= energy + r_data->p22;
+				chargeDen	= chargeDen + r_data->eDen2;
 			}
 		}
+		else {
+			if (a[ngbrIndex] == 0) {
+				energy 		= energy + r_data->p12;
+				chargeDen	= chargeDen + r_data->eDen1;
+			}
+			else {
+				energy 		= energy + r_data->p12;
+				chargeDen	= chargeDen + r_data->eDen2;
+			}
+		}
+		free(r_data);
 	}
 
+	eDen_df* embeddingEnergy = eDen_df_charge_density_retrive(data, chargeDen);
+
+	if (a[index] == 0) {
+		energy = energy + embeddingEnergy->embed1;
+	} else {
+		energy = energy + embeddingEnergy->embed2;
+	}
+	free(embeddingEnergy);
+	free(current);
 	return energy;
+}
+
+void energyInMatrix(double **energyMatrix, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs) {
+	 *energyMatrix = (double*)malloc(sizeof(double) * p->no_of_atoms);
+
+	 for(int i = 0; i < p->no_of_atoms; i++) {
+		 (*energyMatrix)[i] = energyAtIndexFCC(i, a, data, p, ngbrs);
+	 }
+}
+
+void printEnergyMap(double *matrix, int init_index, int final_index) {
+	for (int i = init_index; i < final_index; i++) {
+		printf("#%d\t%le\n", i, matrix[i]);
+	}
+}
+
+double energyToSwap(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc* ngbrs) {
+	point3D* current = point3D_indexToPoint3D_fcc(index, p);
+	double energy1 = 0;
+	double energy2 = 0;
+	double chargeDen = 0;
+	int noNgbrs = 134;
+
+	for(int i = 0; i < noNgbrs; i++){
+		point3D* k = point3D_addVectors(current, &(ngbrs->s1n[i]));
+		double r = point3D_distAtoB(k, current);
+		r = r * p->lattice_parameter;
+		point3D_periodicBoundaryTransform(k, p);
+		rdf* r_data = rdf_radius_retrive(data, r);
+		int ngbrIndex = point3D_point3DtoIndex(k, p);
+
+		if (a[ngbrIndex] == a[index]) {
+			if (a[ngbrIndex] == 0) {
+				energy1 		= energy1 + r_data->p11;
+				energy2			= energy2 + r_data->p12;
+				chargeDen	= chargeDen + r_data->eDen1;
+			}
+			else {
+				energy1 		= energy1 + r_data->p22;
+				energy2			= energy2 + r_data->p12;
+				chargeDen	= chargeDen + r_data->eDen2;
+			}
+		}
+		else {
+			if (a[ngbrIndex] == 0) {
+				energy1 		= energy1 + r_data->p12;
+				energy2			= energy2 + r_data->p22;
+				chargeDen	= chargeDen + r_data->eDen1;
+			}
+			else {
+				energy1 		= energy1 + r_data->p12;
+				energy2			= energy2 + r_data->p11;
+				chargeDen	= chargeDen + r_data->eDen2;
+			}
+		}
+		free(r_data);
+	}
+
+	eDen_df* embeddingEnergy = eDen_df_charge_density_retrive(data, chargeDen);
+
+	if (a[index] == 0) {
+		energy1 = energy1 + embeddingEnergy->embed1;
+		energy2 = energy2 + embeddingEnergy->embed2;
+	} else {
+		energy1 = energy1 + embeddingEnergy->embed2;
+		energy2 = energy2 + embeddingEnergy->embed1;
+	}
+	free(embeddingEnergy);
+	free(current);
+	return energy2 - energy1;
+}
+
+void deltaEnergyMatrix(double **energyMatrix, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs) {
+	 *energyMatrix = (double*)malloc(sizeof(double) * p->no_of_atoms);
+
+	 for(int i = 0; i < p->no_of_atoms; i++) {
+		 (*energyMatrix)[i] = energyToSwap(i, a, data, p, ngbrs);
+	 }
 }

@@ -4,21 +4,29 @@
 #ifndef _EAM_H
   #define _EAM_H
 
-    int* atomicMatrixRead(char* fileName, parameter* p);
+    int* atomicMatrixRead(char*, parameter*);
 
-    void print_AtomicMatrix(int* mat, int begin, int end);
+    void print_AtomicMatrix(int*, int, int);
 
-    Sn_fcc* Sn_fcc_readNeighbours_fromFile(char* fileList);
+    Sn_fcc* Sn_fcc_readNeighbours_fromFile(char*);
 
-    void print_Neighbours(Sn_fcc* a);
+    void print_Neighbours(Sn_fcc*);
 
     Sn_fcc* _defaultFCCNeighbours();
 
-    void eam_data_read(binEAMpot** eam_data, char *fileName, char atom1[2], char atom2[2]);
+    void eam_data_read(binEAMpot**, char*, char [], char []);
 
-    rdf* rdf_radius_retrive(binEAMpot* data, double radius);
+    rdf* rdf_radius_retrive(binEAMpot*, double);
 
-    eDen_df* eDen_df_charge_density_retrive(binEAMpot* data, double eDen);
+    eDen_df* eDen_df_charge_density_retrive(binEAMpot*, double);
 
-    double energyAtIndexFCC(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc* ngbrs);
+    double energyAtIndexFCC(int, int*, binEAMpot*, parameter*, Sn_fcc*);
+
+    void energyInMatrix(double**, int*, binEAMpot*, parameter*, Sn_fcc*);
+
+    void printEnergyMap(double*, int, int);
+
+    double energyToSwap(int, int*, binEAMpot*, parameter*, Sn_fcc*);
+
+    void deltaEnergyMatrix(double**, int*, binEAMpot*, parameter*, Sn_fcc*);
 #endif
