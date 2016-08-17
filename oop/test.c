@@ -177,3 +177,21 @@ void test_deltaEnergyMatrix() {
   printEnergyMap(energyMap, 100, 200);
   free(energyMap);
 }
+
+/*!
+   \brief Tests chemicalPotentialAtIndex function. Takes in a matrix and calculates
+   chemical potential at 100-199 indicies.
+*/
+
+void test_chemicalPotentialAtIndex() {
+  binEAMpot *data = NULL;
+  eam_data_read(&data, "file_list.txt", "Al", "Ni");
+  parameter *p = _defaultFCCparameter();
+  int *a = atomicMatrixRead("out.txt", p);
+  //test_AtomicMatrixRead();
+  Sn_fcc *new = _defaultFCCNeighbours();
+
+  for(int i = 100; i < 199; i++) {
+    printf("%le\n", chemicalPotentialAtIndex(i, a, data, p, new));
+  }
+}

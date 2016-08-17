@@ -2,6 +2,7 @@
 #include "parameters.h"
 #include "point3D.h"
 #include "eam.h"
+#include "chemicalPotential.h"
 
 #ifndef _TEST_H
 #define _TEST_H 1
@@ -18,4 +19,5 @@
   void test_point3D_periodicBoundaryTransform();
   void test_energyInMatrix();
   void test_deltaEnergyMatrix();
+  void test_chemicalPotentialAtIndex();
 #endif
