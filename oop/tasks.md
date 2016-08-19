@@ -1,0 +1,2 @@
+- following function is alternate for atomicMatrixRead(...) __NOTE__ [analysis.c](analysis.c)
+- Think of a simulationData type of struct. __TODO__ [main.c](main.c)

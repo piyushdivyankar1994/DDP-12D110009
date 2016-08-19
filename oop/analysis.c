@@ -87,6 +87,9 @@ int totalAtomsInFile(FILE *fp) {
   return no_of_atoms;
 }
 
+/** NOTE: Following function takes in a *.crystal.input file that has been generated using randomMatrixGeneratorFCC(...) and reads it into an integer array. Alternate version of atomicMatrixRead(...), which reads only *.txt type of data.
+*/
+
 int* readCrystalFileFCC(char *fileName) {
   FILE *fp = fopen(fileName, "r");
   int n = totalAtomsInFile(fp);

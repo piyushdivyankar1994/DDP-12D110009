@@ -1,4 +1,8 @@
 #include "test.h"
+/// TODO: Think of a simulationData type of struct.
+/// TODO: Two phase equlibria simulation.
+/// TODO: Analysis code for two phase equilibria.
+/// TODO: chemicalPotentialAtIndex(...) is incorrectly evaluated correct it
 
 int main(int argc, char const *argv[]) {
     //test_energyAtIndexFCC();
