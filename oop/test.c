@@ -188,10 +188,47 @@ void test_chemicalPotentialAtIndex() {
   eam_data_read(&data, "file_list.txt", "Al", "Ni");
   parameter *p = _defaultFCCparameter();
   int *a = atomicMatrixRead("out.txt", p);
-  //test_AtomicMatrixRead();
   Sn_fcc *new = _defaultFCCNeighbours();
 
   for(int i = 100; i < 199; i++) {
     printf("%le\n", chemicalPotentialAtIndex(i, a, data, p, new));
   }
+}
+
+void test_analysis_totalEnergy() {
+  binEAMpot *data = NULL;
+  eam_data_read(&data, "file_list.txt", "Al", "Ni");
+  parameter *p = _defaultFCCparameter();
+  int *a = atomicMatrixRead("out.txt", p);
+  Sn_fcc *new = _defaultFCCNeighbours();
+
+  printf("%le\n", analysis_totalEnergy(a, data, p, new));
+}
+
+void test_orderedPhaseCount() {
+  parameter *p =_defaultFCCparameter();
+  Sn_fcc *fcc = _defaultFCCNeighbours();
+  int *a = atomicMatrixRead("out.txt", p);
+  int count = orderedPhaseCount(a, p, fcc);
+  printf("Order Phase sites in given lattice = %d\n", count);
+}
+
+void test_antiOrderedPhaseCount() {
+  parameter *p =_defaultFCCparameter();
+  Sn_fcc *fcc = _defaultFCCNeighbours();
+  int *a = atomicMatrixRead("out.txt", p);
+  int count = antiOrderedPhaseCount(a, p, fcc);
+  printf("Anti-Order Phase sites in given lattice = %d\n", count);
+}
+
+void test_randomMatrixGeneratorFCC() {
+  parameter *p = _defaultFCCparameter();
+  char fileName[] = "input";
+  randomMatrixGeneratorFCC(p, fileName, 12434533);
+}
+
+void test_readCrystalFileFCC() {
+  char fileName[] = "input.crystal";
+  int *a_file = readCrystalFileFCC(fileName);
+  print_AtomicMatrix(a_file, 0, 15);
 }

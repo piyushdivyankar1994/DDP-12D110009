@@ -3,6 +3,7 @@
 #include "point3D.h"
 #include "eam.h"
 #include "chemicalPotential.h"
+#include "analysis.h"
 
 #ifndef _TEST_H
 #define _TEST_H 1
@@ -20,4 +21,10 @@
   void test_energyInMatrix();
   void test_deltaEnergyMatrix();
   void test_chemicalPotentialAtIndex();
+  void test_analysis_totalEnergy();
+  void test_orderedPhaseCount();
+  void test_antiOrderedPhaseCount();
+  void test_getRandom();
+  void test_randomMatrixGeneratorFCC();
+  void test_readCrystalFileFCC();
 #endif

@@ -1,6 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "math_functions.h"
+#include "string.h"
+
+/** TO implement random numbers*/
+#include "math.h"
+#include "gsl/gsl_rng.h"
+
+gsl_rng * r;
+
 
 #ifndef _DATATYPES_H
 #define _DATATYPES_H 1
@@ -69,5 +77,10 @@
     	point3D s7n[48];
     	int indices[7];
     }typedef Sn_fcc;
+
+    enum Boolean {
+      true,
+      false
+    }typedef Boolean;
 
 #endif
