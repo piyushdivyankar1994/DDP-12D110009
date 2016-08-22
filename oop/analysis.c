@@ -77,7 +77,8 @@ void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long
   strcat(str, ".random.gen.param");
   FILE *fr = fopen(str, "w");
   gsl_rng_fwrite(fr, r);
-  gsl_rng_free(r);
+  //gsl_rng_free(r);
+  //fclose(fr);
 }
 
 int totalAtomsInFile(FILE *fp) {
@@ -87,8 +88,7 @@ int totalAtomsInFile(FILE *fp) {
   return no_of_atoms;
 }
 
-/** NOTE: Following function takes in a *.crystal.input file that has been generated using randomMatrixGeneratorFCC(...) and reads it into an integer array. Alternate version of atomicMatrixRead(...), which reads only *.txt type of data.
-*/
+// NOTE: following function is alternate for atomicMatrixRead(...)
 
 int* readCrystalFileFCC(char *fileName) {
   FILE *fp = fopen(fileName, "r");
@@ -97,3 +97,5 @@ int* readCrystalFileFCC(char *fileName) {
   fread(a, sizeof(int), n, fp);
   return a;
 }
+
+/// TODO: Binary type data storage that always talked about

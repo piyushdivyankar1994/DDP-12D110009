@@ -59,3 +59,38 @@ parameter* _defaultFCCparameter(){
 	new->no_of_atoms 		  = new->Nx * new->Ny * new->Nz * new->atoms_per_site;
 	return new;
 }
+/// TODO: Make this more elegant
+void createParameterFileFromInput() {
+  parameter* new = (parameter*)malloc(sizeof(parameter));
+  new = _defaultFCCparameter();
+  printf("\nEnter # of MonteCarlo simulations per atom = ");
+  scanf("%d", &(new->N_MCS));
+  printf("\nEnter Lattice size in x-direction = ");
+  scanf("%d", &(new->Nx));
+  printf("\nEnter Lattice size in y-direction = ");
+  scanf("%d", &(new->Ny));
+  printf("\nEnter Lattice size in z-direction = ");
+  scanf("%d", &(new->Nz));
+  printf("\nEnter atoms per site = ");
+  scanf("%d", &(new->atoms_per_site));
+  printf("\nEnter lattice parameter = ");
+  scanf("%le", &(new->lattice_parameter));
+  printf("\nEnter simulation Temperature");
+  scanf("%le", &(new->temperature));
+  new->no_of_atoms = new->Nx * new->Ny * new->Nz * new->no_of_atoms;
+
+  new->nearestNeighbours[0] = 12;
+	new->nearestNeighbours[1] = 6;
+	new->nearestNeighbours[2] = 24;
+	new->nearestNeighbours[3] = 12;
+	new->nearestNeighbours[4] = 24;
+	new->nearestNeighbours[5] = 8;
+	new->nearestNeighbours[6] = 48;
+  char str[1000];
+  printf("\nEnter a filename for list of parameters");
+  scanf("%s\n", str);
+  strcat(str, ".parameters");
+  FILE *fp = fopen(str, "w");
+  fwrite(new, sizeof(parameter), 1, fp);
+  fclose(fp);
+}

@@ -127,12 +127,15 @@ void eam_data_read(binEAMpot** eam_data, char *fileName, char atom1[2], char ato
     //double* eam_data;
     //(*eam_dat)->atom1 = (char*)malloc(sizeof(atom1)+1);
     //(*eam_dat)->atom2 = (char*)malloc(sizeof(atom2)+1);
+
+		///FIXME: assignment of the names of the atoms in EAM potential structure
     (*eam_data)->atom1[0] = atom1[0];
     (*eam_data)->atom1[1] = atom1[1];
 
     (*eam_data)->atom2[0] = atom2[0];
     (*eam_data)->atom2[1] = atom2[1];
     (*eam_data)->no_of_files = 7;
+		
     char str[100];
     fscanf(fp_init,"%s\n",str);
     fp1=fopen(str,"r");
