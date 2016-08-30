@@ -1,36 +1,58 @@
 #!/bin/bash
 
-if gcc matrix_generator.c -o matrix_generator.out -lgsl -lgslcblas -lm; then 
+if gcc -std=c99 matrix_generator.c eam_functions.c utils.c math_functions.c -o matrix_generator.out -lgsl -lgslcblas -lm; then
     echo "Generating input data";
 else
     echo "Unbable to compile matrix_generator.c. Please check!"
-    return 
+    return
 fi
 
-if  gcc eam_mc.c -o eam_mc.out -lgsl -lgslcblas -lm; then 
+if  gcc -std=c99 eam_functions.c utils.c math_functions.c eam_mc.c -o eam_mc.out -lgsl -lgslcblas -lm; then
     echo "EAM function running";
-else 
+else
     echo "unable to compile eam_mc.c. Please Check!"
 fi
 
+echo "Enter Initial SEEDVALUE"
 read initial_seed
 COUNTER=$initial_seed
 parameter_file="parameters.txt";
-let final_seed=initial_seed+1000;
-echo "Input files are saved in input_data and output file in output_data input files are named as inputfileSEEDVALUE.txt represent lattice generated SEEDVALUE as the seed value for gsl random number generator. You enter the initial seed value and final seed value" 
+let final_seed=initial_seed+100;
+echo "Input files saved to ./inputData"
+echo "output files saved to ./outputData"
+
+INPUT_DIRECTORY=/home/piyushdivyankar/Desktop/DDP-12D110009/cauldron/inputData
+OUTPUT_DIRECTORY=/home/piyushdivyankar/Desktop/DDP-12D110009/cauldron/outputData
+
+if [ ! -d "$INPUT_DIRECTORY" ]; then
+    echo "input Directory doesn't already exists"
+    echo "Creating input Directory"
+    mkdir -p "$INPUT_DIRECTORY"
+else
+    echo "input Directory already exists"
+fi
+
+if [ ! -d "$OUTPUT_DIRECTORY" ]; then
+    echo "output Directory doesn't already exists"
+    echo "Creating output Directory"
+    mkdir -p "$OUTPUT_DIRECTORY"
+else
+    echo "output Directory already exists"
+fi
 
 while [  $COUNTER -lt $final_seed  ]; do
     input_file="inputfile$COUNTER.txt"
-    INPUT="$(GSL_RNG_SEED=$COUNTER ./matrix_generator.out $input_file)"
-    #echo $input_file
-    output="$(GSL_RNG_SEED=$COUNTER ./eam_mc.out $input_file $parameter_file)"
-    outputNumbered="$COUNTER$output.txt"
-  
+    GSL_RNG_SEED=$COUNTER ./matrix_generator.out $input_file
+
+    output_file="outputFile$COUNTER.txt"
+    GSL_RNG_SEED=$COUNTER ./eam_mc.out $input_file $parameter_file $output_file
+
     let COUNTER=COUNTER+100
-    mv $output $outputNumbered
-    mv $input_file input_data  
-    mv $outputNumbered output_data
-    echo "Input=$input_file Output=$outputNumbered"
+    echo This is output file
+    echo $output_file
+    mv $input_file "${INPUT_DIRECTORY}" -v
+    mv $output_file "${OUTPUT_DIRECTORY}" -v
+    echo "Input=$input_file    Output=$output_file"
 done
 
 rm matrix_generator.out

@@ -1,7 +1,7 @@
-pAl_r(A)_E(eV).plt  
-pNiAl_r(A)_E(eV).plt  
-pNi_r(A)_E(eV).plt
-fAl_r(A)_eDen.plt 
+pAl_r(A)_E(eV).txt  
+pNiAl_r(A)_E(eV).txt
+pNi_r(A)_E(eV).txt
+fAl_r(A)_eDen.txt
 fNi_r(A)_eDen.txt
-F_Ni_eDen_E(eV).plt 
-F_Al_eDen_E(eV).plt
+F_Ni_eDen_E(eV).txt
+F_Al_eDen_E(eV).txt

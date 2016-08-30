@@ -68,7 +68,7 @@ void neighbour_lattice_sites_read(double* sites)
     int a[]={12,6,24,12,24,8,48};
     for(int i=0;i<7;i++)
     {
-        int count;
+        int count = 0;
         char fn[10];
         sprintf(fn,"S%dn.mat",i+1);
         fp=fopen(fn,"r");
@@ -130,7 +130,14 @@ void eam_data_read(double *eam_data,char *file)
     }
 }
 //Montecarlo simulation function this takes as input eam data table , neighbour atom locations(sites), no of montecarlo steps, parameter file name, crystal data input file name, crystal data output file name
-void eam_monte_carlo_simulation(double *eam_data,double *sites,int *neighbour_lattice_sites_number,int upto_n_neighbours,int N_MCS, char *parameter_file_name, char *input_file_name,char *output_file_name)
+void eam_monte_carlo_simulation(double *eam_data,
+                                double *sites,                       \
+                                int *neighbour_lattice_sites_number, \
+                                int upto_n_neighbours,               \
+                                int N_MCS,                           \
+                                char *parameter_file_name,           \
+                                char *input_file_name,               \
+                                char *output_file_name               )
 {
     FILE *f_parameter;                         //parmeter file pointer
     f_parameter=fopen(parameter_file_name,"r");//opening parameter file
@@ -217,7 +224,6 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int *neighbour_la
         double pairwise_energy_s=0;             //stores pairwise elctrostatic term of EAM table atom switched
         double energy_change=0;                 //stores change in energy for the switch
         double pair_e_Ni_Ni, pair_e_Ni_Al, pair_e_Al_Al, eDen_Ni, eDen_Al;
-        int neighbour_counter=0;
         for(int i=0;i<402;i+=3)
         {
             xi=x_atom+sites[i];       //finding nighbour coordinates using sites table
@@ -329,7 +335,7 @@ void eam_monte_carlo_simulation(double *eam_data,double *sites,int *neighbour_la
     file_write(output_file_name,atomic_matrix,total_no_of_atoms);
 }
 
-void random_crystal_generator(char *parameter_file_name, char *output_file_name) {
+void random_crystal_generator_gamma_strip(char *parameter_file_name, char *output_file_name) {
     const gsl_rng_type * T;
     gsl_rng * r;
     FILE *fp,*fw;
@@ -373,6 +379,50 @@ void random_crystal_generator(char *parameter_file_name, char *output_file_name)
             }
             fprintf(fw,"\n");
         }
+
+    }
+
+    gsl_rng_free(r);
+    fclose(fp);
+}
+
+void random_crystal_generator(char *parameter_file_name, char *output_file_name) {
+    const gsl_rng_type * T;
+    gsl_rng * r;
+    FILE *fp,*fw;
+    double *parameter;
+    fw=fopen(output_file_name,"w");
+    char *ch;
+    ch=parameter_file_name;
+    fp=fopen(ch,"r");
+    int no_of_parameters;
+
+    fscanf(fp,"%d ",&no_of_parameters);
+    parameter=malloc(no_of_parameters*sizeof(double*));
+    printf("%s\n",output_file_name);
+    gsl_rng_env_setup();
+    T = gsl_rng_default;
+    r = gsl_rng_alloc (T);
+
+    read_prameter_file(ch,parameter);
+    double u=parameter[0]* parameter[1]* parameter[2];
+
+    double conc_g_p=parameter[5]/100;
+    for(int i=0;i<u;i++)
+    {
+        //double Nx=i%(int)parameter[0];                      unused variables may  be used in the future to develop a more general function
+        //double Ny=(i/(int)parameter[0])%(int)parameter[1];
+       //NOTE Nickel Atoms reprented by 1
+       //NOTE Aluminium atons represented by 0
+
+        for(int s=0;s<4;s++)
+        {
+            double k=gsl_rng_uniform(r);
+            if(k <= conc_g_p)fprintf(fw, "1 ");
+            else fprintf(fw, "2 ");
+
+        }
+        fprintf(fw,"\n");
 
     }
 
