@@ -1,3 +1,0 @@
-#!/bin/bash
-gcc matrix_generator.c -o out1.out -lgsl -lgslcblas -lm -g
-./out1.out
