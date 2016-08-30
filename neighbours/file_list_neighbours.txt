@@ -1,0 +1,7 @@
+./neighbours/S1n.mat
+./neighbours/S2n.mat
+./neighbours/S3n.mat
+./neighbours/S4n.mat
+./neighbours/S5n.mat
+./neighbours/S6n.mat
+./neighbours/S7n.mat
