@@ -7,5 +7,5 @@ var searchData=
   ['s5n',['s5n',['../structneighbours__fcc.html#a5cb13cfa68c977251f8455282f20ac41',1,'neighbours_fcc']]],
   ['s6n',['s6n',['../structneighbours__fcc.html#a5cdfa41dacd7a8460948e08bcd279332',1,'neighbours_fcc']]],
   ['s7n',['s7n',['../structneighbours__fcc.html#a3dec1d05f3905e6ab3a9d6d73709ef2c',1,'neighbours_fcc']]],
-  ['sn_5ffcc',['Sn_fcc',['../datatypes_8h.html#aa65c5af4a5aa76e460bf742409936f68',1,'datatypes.h']]]
+  ['sn_5ffcc',['Sn_fcc',['../datatypes_8h.html#a569084953a190e5c0740aa9204917b07',1,'datatypes.h']]]
 ];

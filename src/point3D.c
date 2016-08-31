@@ -40,7 +40,13 @@ point3D* point3D_addVectors(point3D* v1, point3D* v2){
 	result->z = v1->z + v2->z;
 	return result;
 }
-
+/**
+ * Compares two ::point3D objects and returns 1 if two are approximately equal
+ * @param  v1 first point3D pointer
+ * @param  v2 second point3D pointer
+ * @return    1 if true -1 of false
+ * NOTE: Make it more intuitive like true false
+ */
 int point3D_isEqual(point3D* v1, point3D* v2) {
 	if((v1->x - v2->x) < 1e-6 && (v1->y - v2->y) < 1e-6 && (v1->z - v2->z) < 1e-6) {
 		return 1;
@@ -50,6 +56,12 @@ int point3D_isEqual(point3D* v1, point3D* v2) {
 	}
 }
 
+/**
+ * Creates a new ::point3D object by subtacting first and second arguments.
+ * @param  v1 first point3D pointer
+ * @param  v2 second point3D pointer
+ * @return    pointer to newly created point3D object.
+ */
 point3D* point3D_subtractVectors(point3D* v1, point3D* v2){
 	point3D* result = (point3D*)malloc(sizeof(point3D));
 	result->x = v1->x - v2->x;
@@ -57,56 +69,66 @@ point3D* point3D_subtractVectors(point3D* v1, point3D* v2){
 	result->z = v1->z - v2->z;
 	return result;
 }
-
+/**
+ * Prints ::point3D data to STDOUT as "(x, y, z)".
+ * @param a pointer to point3D object
+ */
 void point3D_dispPoint(point3D* a){
 	if(a == NULL) return;
 	printf("(%.2f\t%.2f\t%.2f)\t\n", a->x, a->y, a->z);
 	return;
 }
+/**
+ * Moves ::point3D by amount (\a +dx,\a +dy,\a +dz)
+ * @param a  Pointer to point3D object
+ * @param dx change in x-coordinate
+ * @param dy change in y-coordinate
+ * @param dz change in z-coordinate
+ */
+void point3DmoveTransform(point3D* a, float dx, float dy, float dz) {
+	a->x = a->x + dx;
+	a->y = a->y + dx;
+	a->z = a->z + dx;
+}
 
+
+
+/**
+ * Converts a given array index in the range of Atomic crystal matrix and
+ * parameters consistent with it it will return position location of atom at
+ * that index in universal coordinate system of FCC lattice.
+ * @param  index index from ::ATOM array
+ * @param  p     parameter object pointer that is consistent with ATOM array
+ * @return       pointer to newly created point3D object
+ */
 point3D* point3D_indexToPoint3D_fcc(int index, parameter* p){
 	point3D* returnPoint = point3D_origin();
-	int motiff_position = index % p->atoms_per_site;          //type of atom
-
+	int motiff_position = index % p->atoms_per_site;
 	returnPoint->x = (float)((index / p->atoms_per_site) % p->Nx);
 	returnPoint->y = (float)((index / (p->atoms_per_site * p->Nx)) % p->Ny);
 	returnPoint->z = (float)((index / (p->atoms_per_site * p->Nx * p->Ny)) % p->Nz);
-	point3D* p1 = point3D_newPoint(0, 0.5, 0.5);
-	point3D* p2 = point3D_newPoint(0.5, 0, 0.5);
-	point3D* p3 = point3D_newPoint(0.5, 0.5, 0);
-/// NOTE: This might be causing memory leaks
-	if(motiff_position == 0)                                        //if atom at first position(0,0,0) indicies are the global frame coordinates
+
+	if(motiff_position == 0)
 	{
-		free(p1);
-		free(p2);
-		free(p3);
 		return returnPoint;
 	}
 	else if (motiff_position == 1) {
-		free(p1);
-		free(p2);
-		free(p3);
-		return point3D_addVectors(returnPoint, p1);
+		point3DmoveTransform(returnPoint, 0.0, 0.5, 0.5);
+		return returnPoint;
 	}
+
 
 	else if (motiff_position == 2) {
-		free(p1);
-		free(p2);
-		free(p3);
-		return point3D_addVectors(returnPoint, p2);
+		point3DmoveTransform(returnPoint, 0.5, 0.0, 0.5);
+		return returnPoint;
 	}
 
-	else if (motiff_position == 3) {
-		free(p1);
-		free(p2);
-		free(p3);
-		return point3D_addVectors(returnPoint, p3);
+	else {
+		point3DmoveTransform(returnPoint, 0.5, 0.5, 0.0);
+		return returnPoint;
 	}
-	free(p1);
-	free(p2);
-	free(p3);
-	return returnPoint;
 }
+
 
 int point3D_point3DtoIndex(point3D* a, parameter* p){
 	float fx = a->x - floor(a->x);

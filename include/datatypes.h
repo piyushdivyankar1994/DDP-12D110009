@@ -39,6 +39,7 @@ gsl_rng * r;
 /**
  * This structure contains list of parameters that define the system.
  * \struct parameter
+ * \typedef parameter
  * \author Piyush Divyankar
  */
     struct parameter {
@@ -66,6 +67,7 @@ gsl_rng * r;
 /**
  * This structure is meant to store EAM data for energy computation.
  * \struct binaryEAMpotential
+ * \typedef binEAMpot
  * \author Piyush Divyankar
  * \note This structure currently conforms to data that is placed in /EAM_Ni_Al/
  *       In future changes must be made so that this size isn't fixed.
@@ -118,6 +120,7 @@ gsl_rng * r;
  * This structure is meant to store EAM data of a single row of values that
  * depend on radius for energy computation.
  * \struct radius_dependent_fields
+ * \typedef rdf
  * \author Piyush Divyankar
  */
     struct radius_dependent_fields {
@@ -141,6 +144,7 @@ gsl_rng * r;
  * This structure is meant to store EAM data of a single row of values that
  * depend on charge density for energy computation.
  * \struct radius_dependent_fields
+ * \typedef eDen_df
  * \author Piyush Divyankar
  */
     struct chargeDensity_dependent_fields {
@@ -158,6 +162,7 @@ gsl_rng * r;
  * This structure is used to represent 3D millier indices of points in real space
  * of the crystal lattice.
  * \struct point3D
+ * \typedef point3D
  * \author Piyush Divyankar
  */
     struct point3D {
@@ -173,6 +178,7 @@ gsl_rng * r;
  * This structure holds an array of points that represent the relative miller
  * indices of the neighbours atoms from a particular site.
  * \struct neighbours_fcc
+ * \typedef Sn_fcc
  * \author Piyush Divyankar
  */
     struct neighbours_fcc{
@@ -199,5 +205,10 @@ gsl_rng * r;
       true,
       false
     }typedef Boolean;
+/**
+ * \typedef ATOM
+ * \brief Atoms are stored as integers in memory. So, just to avoid confusion.
+ */
+    typedef int ATOM;
 
 #endif

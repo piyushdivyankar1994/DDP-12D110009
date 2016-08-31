@@ -8,7 +8,7 @@
           functions.
 
 int main(int argc, char const *argv[]) {
-    // test_point3D();
+     test_point3D();
     // test_point3D_origin();
     // test_point3D_addVectors();
 

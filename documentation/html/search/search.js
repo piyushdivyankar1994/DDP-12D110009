@@ -12,9 +12,10 @@ var indexSectionsWithContent =
   2: "acdemprst",
   3: "_abcdelnoprst",
   4: "abceilmnprstxyz",
-  5: "b",
-  6: "ft",
-  7: "_"
+  5: "a",
+  6: "b",
+  7: "ft",
+  8: "_"
 };
 
 var indexSectionNames =
@@ -24,9 +25,10 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "enums",
-  6: "enumvalues",
-  7: "defines"
+  5: "typedefs",
+  6: "enums",
+  7: "enumvalues",
+  8: "defines"
 };
 
 function convertToId(search)

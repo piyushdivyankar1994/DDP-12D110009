@@ -4,6 +4,7 @@ var searchData=
   ['analysis_2eh',['analysis.h',['../analysis_8h.html',1,'']]],
   ['analysis_5ftotalenergy',['analysis_totalEnergy',['../analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7',1,'analysis_totalEnergy(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs):&#160;analysis.c'],['../analysis_8h.html#a59b95e48f8d28a5138369208ed1e29ba',1,'analysis_totalEnergy(int *, binEAMpot *, parameter *, Sn_fcc *):&#160;analysis.c']]],
   ['antiorderedphasecount',['antiOrderedPhaseCount',['../analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a',1,'antiOrderedPhaseCount(int *a, parameter *p, Sn_fcc *fcc):&#160;analysis.c'],['../analysis_8h.html#a8baf9f8b8f049ab49e7bec082872412c',1,'antiOrderedPhaseCount(int *, parameter *, Sn_fcc *):&#160;analysis.c']]],
+  ['atom',['ATOM',['../datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1',1,'datatypes.h']]],
   ['atom1',['atom1',['../structbinaryEAMpotential.html#a772f95ff4f9c055f1f177053c51996dc',1,'binaryEAMpotential']]],
   ['atom1_5fcharge_5fdensity',['atom1_charge_Density',['../structbinaryEAMpotential.html#a272b63a0d8acb371d66b5639f0df74f4',1,'binaryEAMpotential']]],
   ['atom1_5fembedding_5fenergy',['atom1_embedding_energy',['../structbinaryEAMpotential.html#aa9717b4b6eaec20198c3098bacab6b07',1,'binaryEAMpotential']]],

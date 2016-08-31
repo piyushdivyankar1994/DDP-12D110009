@@ -9,6 +9,6 @@ var searchData=
   ['s7n',['s7n',['../structneighbours__fcc.html#a3dec1d05f3905e6ab3a9d6d73709ef2c',1,'neighbours_fcc']]],
   ['simulation_2ec',['simulation.c',['../simulation_8c.html',1,'']]],
   ['simulation_2eh',['simulation.h',['../simulation_8h.html',1,'']]],
-  ['sn_5ffcc',['Sn_fcc',['../datatypes_8h.html#aa65c5af4a5aa76e460bf742409936f68',1,'datatypes.h']]],
+  ['sn_5ffcc',['Sn_fcc',['../datatypes_8h.html#a569084953a190e5c0740aa9204917b07',1,'datatypes.h']]],
   ['sn_5ffcc_5freadneighbours_5ffromfile',['Sn_fcc_readNeighbours_fromFile',['../eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3',1,'Sn_fcc_readNeighbours_fromFile(char *fileList):&#160;eam.c'],['../eam_8h.html#afafb1f0900950b0f540295a7a4dc1542',1,'Sn_fcc_readNeighbours_fromFile(char *):&#160;eam.c']]]
 ];
