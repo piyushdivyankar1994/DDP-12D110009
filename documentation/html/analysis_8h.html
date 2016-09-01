@@ -109,6 +109,9 @@ $(document).ready(function(){initNavTree('analysis_8h.html','');});
 <div class="title">analysis.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Function prototypes of analysis.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="eam_8h_source.html">eam.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for analysis.h:</div>
@@ -145,7 +148,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a0605e502e3c548e3971ebdf58ed495f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analysis_8h.html#a0605e502e3c548e3971ebdf58ed495f9">totalAtomsInFile</a> (FILE *)</td></tr>
 <tr class="separator:a0605e502e3c548e3971ebdf58ed495f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Function prototypes of analysis. </p>
+<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>1/08/2016 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a85f79046f4eb53d0684f0f0f2a2f6eb3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +201,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                                                  {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keywordtype">double</span> ret_val = 0;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; p-&gt;no_of_atoms; i++) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    ret_val = ret_val + <a class="code" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a>(i, a, data, p, ngbrs);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  }</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">return</span> ret_val;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> eam.c:301</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8baf9f8b8f049ab49e7bec082872412c"></a>
@@ -226,7 +243,32 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                             {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">int</span> j;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">int</span> checkSite = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; p-&gt;no_of_atoms; i++) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> *<span class="keyword">new</span> = <a class="code" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a>(i, p);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    checkSite = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">for</span> (j = 0; j &lt; 12; j++) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="structpoint3D.html">point3D</a> *test = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(<span class="keyword">new</span>, &amp;(fcc-&gt;s1n[j]));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordtype">int</span> t = <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(test, p);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">if</span>(a[t] != a[i]) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        checkSite++;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span>(checkSite == 11) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      printf(<span class="stringliteral">&quot;flag %d \n&quot;</span>,j);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      count++;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> count;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:36</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_a89582ec9b4e0596e24894d0039807a5e"><div class="ttname"><a href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a></div><div class="ttdeci">point3D * point3D_indexToPoint3D_fcc(int index, parameter *p)</div><div class="ttdoc">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ...</div><div class="ttdef"><b>Definition:</b> point3D.c:104</div></div>
+<div class="ttc" id="point3D_8c_html_aafba4d8a16708b18b2757300e988e4d8"><div class="ttname"><a href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a></div><div class="ttdeci">int point3D_point3DtoIndexFCC(point3D *a, parameter *p)</div><div class="ttdoc">Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed...</div><div class="ttdef"><b>Definition:</b> point3D.c:142</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3534092a51dd22a3acc573109467853c"></a>
@@ -258,7 +300,33 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                           {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  printf(<span class="stringliteral">&quot;oregnioegn\n&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">int</span> j;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; p-&gt;no_of_atoms; i++) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> *<span class="keyword">new</span> = <a class="code" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a>(i, p);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (j = 0; j &lt; 12; j++) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <a class="code" href="structpoint3D.html">point3D</a> *test = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(<span class="keyword">new</span>, &amp;(ngbrs-&gt;s1n[j]));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keywordtype">int</span> t = <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(test, p);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordflow">if</span>(a[t] == a[i]) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      free(test);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(j == 12) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      count++;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  printf(<span class="stringliteral">&quot;oregnioegn\n&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> count;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:36</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_a89582ec9b4e0596e24894d0039807a5e"><div class="ttname"><a href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a></div><div class="ttdeci">point3D * point3D_indexToPoint3D_fcc(int index, parameter *p)</div><div class="ttdoc">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ...</div><div class="ttdef"><b>Definition:</b> point3D.c:104</div></div>
+<div class="ttc" id="point3D_8c_html_aafba4d8a16708b18b2757300e988e4d8"><div class="ttname"><a href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a></div><div class="ttdeci">int point3D_point3DtoIndexFCC(point3D *a, parameter *p)</div><div class="ttdoc">Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed...</div><div class="ttdef"><b>Definition:</b> point3D.c:142</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1f7e73fc0f0dbcc5d3d597256bdf52a2"></a>
@@ -290,7 +358,35 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                                           {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> gsl_rng_type *T;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  gsl_rng *<a class="code" href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  strcat(ouput_file_name, <span class="stringliteral">&quot;.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  FILE *fp = fopen(ouput_file_name, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  gsl_rng_env_setup();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  T = gsl_rng_default;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  r = gsl_rng_alloc (T);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; p-&gt;no_of_atoms; i++) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">double</span> u = gsl_rng_uniform(r);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> a;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>(u &gt; 0.5)  a = 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">else</span> a = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(fwrite(&amp;a, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), 1, fp) == 1) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">else</span> i--;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  fclose(fp);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">char</span> str[1000];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  strcpy(str, ouput_file_name);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  strcat(str, <span class="stringliteral">&quot;.random.gen.param&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  FILE *fr = fopen(str, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  gsl_rng_fwrite(fr, r);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">//gsl_rng_free(r);</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">//fclose(fr);</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="ttc" id="datatypes_8h_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdoc">TO implement random numbers. </div><div class="ttdef"><b>Definition:</b> datatypes.h:33</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0605e502e3c548e3971ebdf58ed495f9"></a>
@@ -306,7 +402,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                               {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  fseek(fp, 0L , SEEK_END);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">int</span> no_of_atoms = ftell(fp) / <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  fseek(fp, 0L, SEEK_SET);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">return</span> no_of_atoms;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -315,7 +417,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="analysis_8h.html">analysis.h</a></li>
-    <li class="footer">Generated on Thu Sep 1 2016 02:32:21 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 1 2016 05:59:54 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

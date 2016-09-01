@@ -27,7 +27,7 @@
     },
     {
       "name": "TODO",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "FIXME",

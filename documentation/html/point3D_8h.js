@@ -10,6 +10,7 @@ var point3D_8h =
     [ "point3D_newPoint", "point3D_8h.html#a8d1e5618a2852cd656470fb8a08302b8", null ],
     [ "point3D_origin", "point3D_8h.html#a950c9e52a5df4f947fe9c98ecf846e00", null ],
     [ "point3D_periodicBoundaryTransform", "point3D_8h.html#af8471a31fab6c5fc61334b6b6c336957", null ],
-    [ "point3D_point3DtoIndex", "point3D_8h.html#af785db6ac835c3e1a77f2dd49d4194c9", null ],
-    [ "point3D_subtractVectors", "point3D_8h.html#a9594abd399e2a320c0ab8c002e258f74", null ]
+    [ "point3D_point3DtoIndexFCC", "point3D_8h.html#a0cdf580f85f94e87d9c269dbc529f54a", null ],
+    [ "point3D_subtractVectors", "point3D_8h.html#a9594abd399e2a320c0ab8c002e258f74", null ],
+    [ "point3DmoveTransform", "point3D_8h.html#a9366e0b0ebac5e077eeae9101dac8d62", null ]
 ];

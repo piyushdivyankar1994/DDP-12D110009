@@ -1,5 +1,5 @@
 /*
-This file is part of DDP-12D110009.
+   This file is part of DDP-12D110009.
 
     DDP-12D110009 is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,17 +20,17 @@ This file is part of DDP-12D110009.
    \brief Contains functions that operate on ::parameter .
    \author Piyush Divyankar
    \date 31/08/2016
-*/
+ */
 
 #include "datatypes.h"
 
 #ifndef _PARAMETERS_H
 #define _PARAMETERS_H 1
-  void print_parameters(parameter* a);
-  parameter* new_parameters(char* fileName);
-  parameter* createParameterFileFromInput();
-  void parameterWriteToFile(parameter*);
-  parameter* _defaultFCCparameter();
-  parameter* parameterReadFromFile(char *fileName);
-  void parameterDefaultFile();
+void print_parameters(parameter * a);
+parameter * new_parameters(char * fileName);
+parameter * createParameterFileFromInput();
+void parameterWriteToFile(parameter *);
+parameter * _defaultFCCparameter();
+parameter * parameterReadFromFile(char * fileName);
+void parameterDefaultFile();
 #endif

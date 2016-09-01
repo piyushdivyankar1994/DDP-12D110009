@@ -11,11 +11,11 @@ var indexSectionsWithContent =
   1: "bcnpr",
   2: "acdemprst",
   3: "_abcdelnoprst",
-  4: "abceilmnprstxyz",
+  4: "abcefilmnprstxyz",
   5: "a",
   6: "b",
   7: "ft",
-  8: "_"
+  8: "_p"
 };
 
 var indexSectionNames =

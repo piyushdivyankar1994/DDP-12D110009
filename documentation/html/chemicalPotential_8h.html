@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('chemicalPotential_8h.html','');});
 <div class="title">chemicalPotential.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Function prototypes for chemicalPotential calculation.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="eam_8h_source.html">eam.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for chemicalPotential.h:</div>
@@ -135,7 +138,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a586196056e0dc38a775be0f89620e78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return atom fraction of atom 1 in the atomic matrix.  <a href="#a586196056e0dc38a775be0f89620e78b">More...</a><br/></td></tr>
 <tr class="separator:a586196056e0dc38a775be0f89620e78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Function prototypes for chemicalPotential calculation. </p>
+<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>1/08/2016 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a88efdb13d227bb412d1a07f0a05e8259"></a>
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +194,20 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section pre"><dt>Precondition</dt><dd>all relevant information i.e binary EAM potential, atomic matrix, parameter, neighbour information, should be read beforehand and supplied to this function </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Chemical potential at index. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                                                                  {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">double</span> swap = <a class="code" href="eam_8c.html#a0e1a8f680274c658fc70be9f69211560">energyToSwap</a>(index, a, data, p, ngbrs);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span>(a[index] == 0) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span> chemPot = swap * (-1) * (<span class="keywordtype">double</span>)p-&gt;no_of_atoms;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    return chemPot;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  else {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> chemPot = swap * (double)p-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> chemPot;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a0e1a8f680274c658fc70be9f69211560"><div class="ttname"><a href="eam_8c.html#a0e1a8f680274c658fc70be9f69211560">energyToSwap</a></div><div class="ttdeci">double energyToSwap(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> eam.c:364</div></div>
+<div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:50</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a586196056e0dc38a775be0f89620e78b"></a>
@@ -223,7 +243,16 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section pre"><dt>Precondition</dt><dd>Atomic matric must be supplied to the function and shouldn't be different in size than the supplied no_of_atoms. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Atom fraction of atom 1 </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; no_of_atoms; i++) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (a[i] == 0) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      count++;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(count/no_of_atoms);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -232,7 +261,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="chemicalPotential_8h.html">chemicalPotential.h</a></li>
-    <li class="footer">Generated on Thu Sep 1 2016 02:32:21 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 1 2016 05:59:54 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

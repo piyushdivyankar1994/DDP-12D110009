@@ -152,8 +152,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3fa7647277ce9ded74848cdd16e7e705"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#a3fa7647277ce9ded74848cdd16e7e705">point3D_indexToPoint3D_fcc</a> (int, <a class="el" href="structparameter.html">parameter</a> *)</td></tr>
 <tr class="memdesc:a3fa7647277ce9ded74848cdd16e7e705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it it will return position location of atom at that index in universal coordinate system of FCC lattice.  <a href="#a3fa7647277ce9ded74848cdd16e7e705">More...</a><br/></td></tr>
 <tr class="separator:a3fa7647277ce9ded74848cdd16e7e705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af785db6ac835c3e1a77f2dd49d4194c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#af785db6ac835c3e1a77f2dd49d4194c9">point3D_point3DtoIndex</a> (<a class="el" href="structpoint3D.html">point3D</a> *, <a class="el" href="structparameter.html">parameter</a> *)</td></tr>
-<tr class="separator:af785db6ac835c3e1a77f2dd49d4194c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cdf580f85f94e87d9c269dbc529f54a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#a0cdf580f85f94e87d9c269dbc529f54a">point3D_point3DtoIndexFCC</a> (<a class="el" href="structpoint3D.html">point3D</a> *, <a class="el" href="structparameter.html">parameter</a> *)</td></tr>
+<tr class="memdesc:a0cdf580f85f94e87d9c269dbc529f54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertes a <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> data to a index in range of <a class="el" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1" title="Atoms are stored as integers in memory. ">ATOM</a> with respect to <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> that is passed.  <a href="#a0cdf580f85f94e87d9c269dbc529f54a">More...</a><br/></td></tr>
+<tr class="separator:a0cdf580f85f94e87d9c269dbc529f54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8471a31fab6c5fc61334b6b6c336957"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#af8471a31fab6c5fc61334b6b6c336957">point3D_periodicBoundaryTransform</a> (<a class="el" href="structpoint3D.html">point3D</a> *, <a class="el" href="structparameter.html">parameter</a> *)</td></tr>
 <tr class="memdesc:af8471a31fab6c5fc61334b6b6c336957"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> and <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> applies the periodic boundary transform such that it lies in the confined space of (<em>Nx</em>, <em>Ny</em>, <em>Nz</em>) as defined in parameter.  <a href="#af8471a31fab6c5fc61334b6b6c336957">More...</a><br/></td></tr>
 <tr class="separator:af8471a31fab6c5fc61334b6b6c336957"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +164,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a863d5b028f6d7590ef36f7842b26430e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#a863d5b028f6d7590ef36f7842b26430e">point3D_distAtoB</a> (<a class="el" href="structpoint3D.html">point3D</a> *, <a class="el" href="structpoint3D.html">point3D</a> *)</td></tr>
 <tr class="memdesc:a863d5b028f6d7590ef36f7842b26430e"><td class="mdescLeft">&#160;</td><td class="mdescRight">[point3D_distAtoB description]  <a href="#a863d5b028f6d7590ef36f7842b26430e">More...</a><br/></td></tr>
 <tr class="separator:a863d5b028f6d7590ef36f7842b26430e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9366e0b0ebac5e077eeae9101dac8d62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#a9366e0b0ebac5e077eeae9101dac8d62">point3DmoveTransform</a> (<a class="el" href="structpoint3D.html">point3D</a> *, float, float, float)</td></tr>
+<tr class="memdesc:a9366e0b0ebac5e077eeae9101dac8d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> by amount (<em>+dx</em>,<em>+dy</em>,<em>+dz</em>)  <a href="#a9366e0b0ebac5e077eeae9101dac8d62">More...</a><br/></td></tr>
+<tr class="separator:a9366e0b0ebac5e077eeae9101dac8d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a737814f0bbb4a82c81c7ef50d1ce34b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point3D_8h.html#a737814f0bbb4a82c81c7ef50d1ce34b9">__free3</a> (<a class="el" href="structpoint3D.html">point3D</a> *, <a class="el" href="structpoint3D.html">point3D</a> *, <a class="el" href="structpoint3D.html">point3D</a> *)</td></tr>
 <tr class="separator:a737814f0bbb4a82c81c7ef50d1ce34b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -236,7 +240,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Newly created <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> that holds the sum. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                     {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a>* result = (<a class="code" href="structpoint3D.html">point3D</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structpoint3D.html">point3D</a>));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    result-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = v1-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> + v2-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    result-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> = v1-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> + v2-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    result-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> = v1-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> + v2-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab48d061b16ccf614f597d873acc069f6"></a>
@@ -260,7 +275,15 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span>(a == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    printf(<span class="stringliteral">&quot;(%.2f\t%.2f\t%.2f)\t\n&quot;</span>, a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>, a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>, a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a863d5b028f6d7590ef36f7842b26430e"></a>
@@ -296,7 +319,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[description] </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                              {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a>* <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2">point3D_subtractVectors</a>(A, B);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">float</span> __retVal = <a class="code" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span> __retVal;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_a1c1603d2a6013b7d181acdfc7043ee61"><div class="ttname"><a href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a></div><div class="ttdeci">float point3D_magnitude(point3D *a)</div><div class="ttdoc">Returns distance of point3D from origin in UC. </div><div class="ttdef"><b>Definition:</b> point3D.c:195</div></div>
+<div class="ttc" id="point3D_8c_html_ac33e9a71f0809b3bf8ed70c1570da1e2"><div class="ttname"><a href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2">point3D_subtractVectors</a></div><div class="ttdeci">point3D * point3D_subtractVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Creates a new point3D object by subtacting first and second arguments. </div><div class="ttdef"><b>Definition:</b> point3D.c:65</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3fa7647277ce9ded74848cdd16e7e705"></a>
@@ -332,7 +364,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to newly created <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> object </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                            {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a>* returnPoint = <a class="code" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> motiff_position = index % p-&gt;<a class="code" href="structparameter.html#a84f428fbd245db95a70067688026251d">atoms_per_site</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    returnPoint-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = (float)((index / p-&gt;<a class="code" href="structparameter.html#a84f428fbd245db95a70067688026251d">atoms_per_site</a>) % p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    returnPoint-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> = (float)((index / (p-&gt;<a class="code" href="structparameter.html#a84f428fbd245db95a70067688026251d">atoms_per_site</a> * p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a>)) % p-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    returnPoint-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> = (float)((index / (p-&gt;<a class="code" href="structparameter.html#a84f428fbd245db95a70067688026251d">atoms_per_site</a> * p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a> * p-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a>)) % p-&gt;<a class="code" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">Nz</a>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span>(motiff_position == 0)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> returnPoint;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (motiff_position == 1) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c">point3DmoveTransform</a>(returnPoint, 0.0, 0.5, 0.5);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> returnPoint;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (motiff_position == 2) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c">point3DmoveTransform</a>(returnPoint, 0.5, 0.0, 0.5);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> returnPoint;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c">point3DmoveTransform</a>(returnPoint, 0.5, 0.5, 0.0);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> returnPoint;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structparameter_html_a181d717c99b207fd606ee29ed40a1d7e"><div class="ttname"><a href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">parameter::Nx</a></div><div class="ttdeci">int Nx</div><div class="ttdoc">Size of lattice in x direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:52</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_ab53daa0db01aef59c9b12f819213025c"><div class="ttname"><a href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c">point3DmoveTransform</a></div><div class="ttdeci">void point3DmoveTransform(point3D *a, float dx, float dy, float dz)</div><div class="ttdoc">Moves point3D by amount (+dx,+dy,+dz) </div><div class="ttdef"><b>Definition:</b> point3D.c:88</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+<div class="ttc" id="structparameter_html_a84f428fbd245db95a70067688026251d"><div class="ttname"><a href="structparameter.html#a84f428fbd245db95a70067688026251d">parameter::atoms_per_site</a></div><div class="ttdeci">int atoms_per_site</div><div class="ttdoc">Number of atoms per site in motiff. </div><div class="ttdef"><b>Definition:</b> datatypes.h:64</div></div>
+<div class="ttc" id="point3D_8c_html_a950c9e52a5df4f947fe9c98ecf846e00"><div class="ttname"><a href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a></div><div class="ttdeci">point3D * point3D_origin()</div><div class="ttdoc">Creates new point3D type with (0, 0, 0) as input. </div><div class="ttdef"><b>Definition:</b> point3D.c:22</div></div>
+<div class="ttc" id="structparameter_html_af86cee62b97d8c952f5feeb88b0eb435"><div class="ttname"><a href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">parameter::Nz</a></div><div class="ttdeci">int Nz</div><div class="ttdoc">Size of lattice in z direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:56</div></div>
+<div class="ttc" id="structparameter_html_ad8f2321f94970f75731a6aca6181e3a7"><div class="ttname"><a href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">parameter::Ny</a></div><div class="ttdeci">int Ny</div><div class="ttdoc">Size of lattice in y direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:54</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af58cad7d8f516e8cd149f2e370a1c338"></a>
@@ -367,8 +436,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1 if true -1 of false NOTE: Make it more intuitive like true false </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>1 if true -1 of false FUTURE_CHANGES:10 Make it more intuitive like true false </dd></dl>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                              {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>((v1-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> - v2-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>) &lt; 1e-6 &amp;&amp; (v1-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> - v2-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>) &lt; 1e-6 &amp;&amp; (v1-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> - v2-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>) &lt; 1e-6) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abbc4441b5676633bba613b03d7042b45"></a>
@@ -393,7 +473,13 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>distance from center or magnitude of the vector. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                   {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span>  sqrt((a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> * a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>) + (a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> * a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>) + (a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> * a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8d1e5618a2852cd656470fb8a08302b8"></a>
@@ -436,7 +522,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to newly created <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> type. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a>* <span class="keyword">new</span> = (<a class="code" href="structpoint3D.html">point3D</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structpoint3D.html">point3D</a>));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">new</span>-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = x;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">new</span>-&gt;y = y;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">new</span>-&gt;z = z;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a950c9e52a5df4f947fe9c98ecf846e00"></a>
@@ -454,7 +549,16 @@ Functions</h2></td></tr>
 
 <p>Creates new <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> type with (0, 0, 0) as input. </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to newly created <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> type. </dd></dl>
-
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                         {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a>* <span class="keyword">new</span> = (<a class="code" href="structpoint3D.html">point3D</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structpoint3D.html">point3D</a>));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">new</span>-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">new</span>-&gt;y = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">new</span>-&gt;z = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af8471a31fab6c5fc61334b6b6c336957"></a>
@@ -489,24 +593,51 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span>(k-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> &lt; 0) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        k-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = k-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> + p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(k-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> &gt; ((<span class="keywordtype">float</span>)p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a> - 0.5)){</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        k-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = k-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> - p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span>(k-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> &lt; 0) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        k-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> = k-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> + p-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(k-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> &gt; ((<span class="keywordtype">float</span>)p-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a> - 0.5)){</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        k-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> = k-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> - p-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span>(k-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> &lt; 0) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        k-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> = k-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> + p-&gt;<a class="code" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">Nz</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(k-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> &gt; ((<span class="keywordtype">float</span>)p-&gt;<a class="code" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">Nz</a> - 0.5)){</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        k-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> = k-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> - p-&gt;<a class="code" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">Nz</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">//return k;</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structparameter_html_a181d717c99b207fd606ee29ed40a1d7e"><div class="ttname"><a href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">parameter::Nx</a></div><div class="ttdeci">int Nx</div><div class="ttdoc">Size of lattice in x direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:52</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+<div class="ttc" id="structparameter_html_af86cee62b97d8c952f5feeb88b0eb435"><div class="ttname"><a href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">parameter::Nz</a></div><div class="ttdeci">int Nz</div><div class="ttdoc">Size of lattice in z direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:56</div></div>
+<div class="ttc" id="structparameter_html_ad8f2321f94970f75731a6aca6181e3a7"><div class="ttname"><a href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">parameter::Ny</a></div><div class="ttdeci">int Ny</div><div class="ttdoc">Size of lattice in y direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:54</div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="af785db6ac835c3e1a77f2dd49d4194c9"></a>
+<a class="anchor" id="a0cdf580f85f94e87d9c269dbc529f54a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int point3D_point3DtoIndex </td>
+          <td class="memname">int point3D_point3DtoIndexFCC </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structpoint3D.html">point3D</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structparameter.html">parameter</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -516,6 +647,39 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Convertes a <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> data to a index in range of <a class="el" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1" title="Atoms are stored as integers in memory. ">ATOM</a> with respect to <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> that is passed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer to <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> object </td></tr>
+    <tr><td class="paramname">p</td><td>pointer to parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>integer value that is the index of given point in array. NOTE: Here it is assumed that crystal is FCC and there are certain assumptions made about this crystal. NOTE: Document how atom arrays work. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                                       {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">float</span> fx = a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> - floor(a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">float</span> fy = a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> - floor(a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">float</span> fz = a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> - floor(a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">int</span> pos = ((int)floor(a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>) + p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a> * (int)floor(a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>) + p-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a> * p-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a> * floor(a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>)) * 4;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span>(fx == 0 &amp;&amp; fy == 0 &amp;&amp; fz == 0){</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> pos;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(fx == 0)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span> pos + 1;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(fy == 0)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">return</span> pos + 2;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(fz == 0)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> pos + 3;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> pos;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structparameter_html_a181d717c99b207fd606ee29ed40a1d7e"><div class="ttname"><a href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">parameter::Nx</a></div><div class="ttdeci">int Nx</div><div class="ttdoc">Size of lattice in x direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:52</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+<div class="ttc" id="structparameter_html_ad8f2321f94970f75731a6aca6181e3a7"><div class="ttname"><a href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">parameter::Ny</a></div><div class="ttdeci">int Ny</div><div class="ttdoc">Size of lattice in y direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:54</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9594abd399e2a320c0ab8c002e258f74"></a>
@@ -551,7 +715,75 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to newly created <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> object. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                          {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a>* result = (<a class="code" href="structpoint3D.html">point3D</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structpoint3D.html">point3D</a>));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    result-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = v1-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> - v2-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    result-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> = v1-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> - v2-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    result-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> = v1-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> - v2-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9366e0b0ebac5e077eeae9101dac8d62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void point3DmoveTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpoint3D.html">point3D</a> *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
+<p>Moves <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> by amount (<em>+dx</em>,<em>+dy</em>,<em>+dz</em>) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Pointer to <a class="el" href="structpoint3D.html" title="This structure is used to represent 3D millier indices of points in real space of the crystal lattice...">point3D</a> object </td></tr>
+    <tr><td class="paramname">dx</td><td>change in x-coordinate </td></tr>
+    <tr><td class="paramname">dy</td><td>change in y-coordinate </td></tr>
+    <tr><td class="paramname">dz</td><td>change in z-coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                                    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> = a-&gt;<a class="code" href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">x</a> + dx;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> = a-&gt;<a class="code" href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">y</a> + dx;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> = a-&gt;<a class="code" href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">z</a> + dx;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html_aecf349aa51cc7fb10b3fd44e7e2a015b"><div class="ttname"><a href="structpoint3D.html#aecf349aa51cc7fb10b3fd44e7e2a015b">point3D::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">x-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:177</div></div>
+<div class="ttc" id="structpoint3D_html_a0510f472dc0fd36791cb1e74f44c1951"><div class="ttname"><a href="structpoint3D.html#a0510f472dc0fd36791cb1e74f44c1951">point3D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">y-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structpoint3D_html_a38e654eebcd9dce9132bab1be62e17d2"><div class="ttname"><a href="structpoint3D.html#a38e654eebcd9dce9132bab1be62e17d2">point3D::z</a></div><div class="ttdeci">float z</div><div class="ttdoc">z-coordinate </div><div class="ttdef"><b>Definition:</b> datatypes.h:181</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -560,7 +792,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="point3D_8h.html">point3D.h</a></li>
-    <li class="footer">Generated on Thu Sep 1 2016 02:32:21 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 1 2016 05:59:54 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

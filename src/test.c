@@ -327,14 +327,15 @@ void test_parametersInputOutput()
     printf("\nThis is TEST function test_parametersInputOutput() refer documentation for details\n");
     printf("Begining TEST\n");
     printf("This is a STDIN TEST please follow on screen Instructions\n");
-    parameter *new = _defaultFCCparameter();
+    parameter * new = _defaultFCCparameter();
     printf("All ok\n");
     printf("Writing to file\n");
     parameterWriteToFile(new);
-    parameter *check = NULL;
-    ///DOING:10 Segmentation fault
+    parameter * check = NULL;
+    // /DONE:0 Segmentation fault
     check = parameterReadFromFile(new->fileName);
-    if (check == NULL) {
+    if (check == NULL)
+    {
         printf("flag\n");
         printf("%s\n", new->fileName);
         return;

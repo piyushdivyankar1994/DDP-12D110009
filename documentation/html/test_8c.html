@@ -137,8 +137,8 @@ Functions</h2></td></tr>
 <tr class="separator:a976d65fab7bfcbbc8a39c31b9dae097c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f525e5d77d201e69c902edf74757459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#a2f525e5d77d201e69c902edf74757459">test_energyAtIndexFCC</a> ()</td></tr>
 <tr class="separator:a2f525e5d77d201e69c902edf74757459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabd1cd2f12a661db2ff7a6f81d8c6ae6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#aabd1cd2f12a661db2ff7a6f81d8c6ae6">test_point3D_point3DtoIndex</a> ()</td></tr>
-<tr class="separator:aabd1cd2f12a661db2ff7a6f81d8c6ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165798f31c9df931b4ba5a8c980145a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#a165798f31c9df931b4ba5a8c980145a2">test_point3D_point3DtoIndexFCCFCC</a> ()</td></tr>
+<tr class="separator:a165798f31c9df931b4ba5a8c980145a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af86bade21ef5cb13f31d85dcf336a60a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#af86bade21ef5cb13f31d85dcf336a60a">test_point3D_periodicBoundaryTransform</a> ()</td></tr>
 <tr class="separator:af86bade21ef5cb13f31d85dcf336a60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a140639cdacca051923cf0501f75680d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#a140639cdacca051923cf0501f75680d6">test_energyInMatrix</a> ()</td></tr>
@@ -163,8 +163,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a0cfc06a030386d84acb8949415a62455"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#a0cfc06a030386d84acb8949415a62455">test_point3D_newPoint</a> ()</td></tr>
 <tr class="separator:a0cfc06a030386d84acb8949415a62455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ec2c9b6b3af4477a2cd2ad59d22bf6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#a3ec2c9b6b3af4477a2cd2ad59d22bf6c">test_point3D_addVectors</a> ()</td></tr>
-<tr class="memdesc:a3ec2c9b6b3af4477a2cd2ad59d22bf6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">point3D_addVectors(...) should be made equal to one of the argument.  <a href="#a3ec2c9b6b3af4477a2cd2ad59d22bf6c">More...</a><br/></td></tr>
 <tr class="separator:a3ec2c9b6b3af4477a2cd2ad59d22bf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc04226db74e2e8b1dc56eb9791b2bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8c.html#a4cc04226db74e2e8b1dc56eb9791b2bc">test_parametersInputOutput</a> ()</td></tr>
+<tr class="memdesc:a4cc04226db74e2e8b1dc56eb9791b2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the functions <a class="el" href="parameters_8h.html#abcf8d4591625224623e8f1d617de139c" title="Creates a parameter structure from STDIN and saves it to a .parameter FILE. ">createParameterFileFromInput</a>, <a class="el" href="parameters_8h.html#a611b664bd3f19b2f0bbb84c40f716769">parameterReadFromFile</a>, <a class="el" href="parameters_8h.html#a1f272b3d37153cd916635f70f72a85a7" title="Takes a parameter object and writes it to a file. ">parameterWriteToFile</a>, and <a class="el" href="parameters_8h.html#a4370cd24131bde11d4eb2a821eb6978a" title="Creates default parameter file named defaultFCC.param in working directory. ">parameterDefaultFile</a>.  <a href="#a4cc04226db74e2e8b1dc56eb9791b2bc">More...</a><br/></td></tr>
+<tr class="separator:a4cc04226db74e2e8b1dc56eb9791b2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="abc76150415c58380a31a3a046c428886"></a>
@@ -179,7 +181,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a>(a, data, p, <span class="keyword">new</span>));</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="analysis_8c_html_a9d90301abd1bd278deb98e9460ca92d7"><div class="ttname"><a href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a></div><div class="ttdeci">double analysis_totalEnergy(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> analysis.c:3</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a63a13008741a089ce521e5693b34a3f5"></a>
@@ -194,7 +214,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * fcc = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">int</span> count = <a class="code" href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a">antiOrderedPhaseCount</a>(a, p, fcc);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    printf(<span class="stringliteral">&quot;Anti-Order Phase sites in given lattice = %d\n&quot;</span>, count);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="analysis_8c_html_a7bc2a0b59e25d2900fea1a9514c53f8a"><div class="ttname"><a href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a">antiOrderedPhaseCount</a></div><div class="ttdeci">int antiOrderedPhaseCount(int *a, parameter *p, Sn_fcc *fcc)</div><div class="ttdef"><b>Definition:</b> analysis.c:36</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a976d65fab7bfcbbc8a39c31b9dae097c"></a>
@@ -209,7 +243,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#ab29b05cb515f1f9ef33a1ca83ba1098f">atomicMatrixRead</a>(<span class="stringliteral">&quot;out.txt&quot;</span>, p);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="eam_8c.html#aca422b240ea9810be8ae6046d8d18578">print_AtomicMatrix</a>(a, 20, 50);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="eam_8c_html_ab29b05cb515f1f9ef33a1ca83ba1098f"><div class="ttname"><a href="eam_8c.html#ab29b05cb515f1f9ef33a1ca83ba1098f">atomicMatrixRead</a></div><div class="ttdeci">int * atomicMatrixRead(char *fileName, parameter *p)</div><div class="ttdef"><b>Definition:</b> eam.c:4</div></div>
+<div class="ttc" id="eam_8c_html_aca422b240ea9810be8ae6046d8d18578"><div class="ttname"><a href="eam_8c.html#aca422b240ea9810be8ae6046d8d18578">print_AtomicMatrix</a></div><div class="ttdeci">void print_AtomicMatrix(int *mat, int begin, int end)</div><div class="ttdef"><b>Definition:</b> eam.c:25</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a03563a213fbaf0e6c836d4bc1b946473"></a>
@@ -226,7 +270,28 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tests chemicalPotentialAtIndex function. Takes in a matrix and calculates chemical potential at 100-199 indicies. </p>
-
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 100; i &lt; 199; i++)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="chemicalPotential_8c.html#acc747dde1a0766b19ca31a5fb8f41b9a">chemicalPotentialAtIndex</a>(i, a, data, p, <span class="keyword">new</span>));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="chemicalPotential_8c_html_acc747dde1a0766b19ca31a5fb8f41b9a"><div class="ttname"><a href="chemicalPotential_8c.html#acc747dde1a0766b19ca31a5fb8f41b9a">chemicalPotentialAtIndex</a></div><div class="ttdeci">double chemicalPotentialAtIndex(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">calculates chemical potential at a given index </div><div class="ttdef"><b>Definition:</b> chemicalPotential.c:50</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae1ba67f5bdceda100ecf46fd49cba8a8"></a>
@@ -241,7 +306,35 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a> = 4.123;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="datatypes_8h.html#a48fdbeb1f25a001a03296180d92fa495">rdf</a> * nn = (<a class="code" href="datatypes_8h.html#a48fdbeb1f25a001a03296180d92fa495">rdf</a> *) malloc(<span class="keyword">sizeof</span>(<a class="code" href="datatypes_8h.html#a48fdbeb1f25a001a03296180d92fa495">rdf</a>));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="datatypes_8h.html#af583e59a2fe45552c3c57dc1b5bde13f">eDen_df</a> * a = (<a class="code" href="datatypes_8h.html#af583e59a2fe45552c3c57dc1b5bde13f">eDen_df</a> *) malloc(<span class="keyword">sizeof</span>(<a class="code" href="datatypes_8h.html#af583e59a2fe45552c3c57dc1b5bde13f">eDen_df</a>));</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    nn = <a class="code" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0">rdf_radius_retrive</a>(data, r);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, nn-&gt;index);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, nn-&gt;p11);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, nn-&gt;p12);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, nn-&gt;p22);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, nn-&gt;eDen1);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, nn-&gt;eDen2);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    a = <a class="code" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35">eDen_df_charge_density_retrive</a>(data, 0.01);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, a-&gt;eDen);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, a-&gt;embed1);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, a-&gt;embed2);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_af7c8b700c9a1373c741aa5dc56f47dc0"><div class="ttname"><a href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0">rdf_radius_retrive</a></div><div class="ttdeci">rdf * rdf_radius_retrive(binEAMpot *data, double radius)</div><div class="ttdef"><b>Definition:</b> eam.c:231</div></div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="eam_8c_html_a404f821b50b0b3db287ac612f7e2de35"><div class="ttname"><a href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35">eDen_df_charge_density_retrive</a></div><div class="ttdeci">eDen_df * eDen_df_charge_density_retrive(binEAMpot *data, double eDen)</div><div class="ttdef"><b>Definition:</b> eam.c:272</div></div>
+<div class="ttc" id="datatypes_8h_html_a48fdbeb1f25a001a03296180d92fa495"><div class="ttname"><a href="datatypes_8h.html#a48fdbeb1f25a001a03296180d92fa495">rdf</a></div><div class="ttdeci">struct radius_dependent_fields rdf</div></div>
+<div class="ttc" id="datatypes_8h_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdoc">TO implement random numbers. </div><div class="ttdef"><b>Definition:</b> datatypes.h:33</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+<div class="ttc" id="datatypes_8h_html_af583e59a2fe45552c3c57dc1b5bde13f"><div class="ttname"><a href="datatypes_8h.html#af583e59a2fe45552c3c57dc1b5bde13f">eDen_df</a></div><div class="ttdeci">struct chargeDensity_dependent_fields eDen_df</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a08d504ea575ad3cb3c5f7210d5a7e3c2"></a>
@@ -256,7 +349,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="ttc" id="parameters_8c_html_aa5023a18b4a90fafacc032b8e575b7d6"><div class="ttname"><a href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a></div><div class="ttdeci">void print_parameters(parameter *a)</div><div class="ttdoc">Prints the parameter data to STDOUT. </div><div class="ttdef"><b>Definition:</b> parameters.c:7</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afb4fd32a14dcfc5ac9de72a7bfa98cb7"></a>
@@ -271,8 +372,31 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Example: </p>
-
+<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// / Example:</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">double</span> * energyMap = NULL;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="eam_8c.html#a88ce1b8eeda8037a31dcafab10e33a48">deltaEnergyMatrix</a>(&amp;energyMap, a, data, p, <span class="keyword">new</span>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a>(energyMap, 100, 200);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    free(energyMap);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="eam_8c_html_a88ce1b8eeda8037a31dcafab10e33a48"><div class="ttname"><a href="eam_8c.html#a88ce1b8eeda8037a31dcafab10e33a48">deltaEnergyMatrix</a></div><div class="ttdeci">void deltaEnergyMatrix(double **energyMatrix, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> eam.c:420</div></div>
+<div class="ttc" id="eam_8c_html_aa33352d6c51a766dfec0d2d5e36c62a5"><div class="ttname"><a href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a></div><div class="ttdeci">void printEnergyMap(double *matrix, int init_index, int final_index)</div><div class="ttdef"><b>Definition:</b> eam.c:358</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a92326011653a9dbb2d6bf48b1b26fdd3"></a>
@@ -287,7 +411,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, data-&gt;no_of_files);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, data-&gt;atom1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, data-&gt;atom2);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2f525e5d77d201e69c902edf74757459"></a>
@@ -302,7 +437,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> index = 100;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">double</span> e = <a class="code" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a>(index, a, data, p, <span class="keyword">new</span>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    printf(<span class="stringliteral">&quot;at index = %d energy = %f\n&quot;</span>, index, e);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> eam.c:301</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a140639cdacca051923cf0501f75680d6"></a>
@@ -317,8 +473,32 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Example: </p>
-
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;data, <span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// / Example:</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">double</span> * energyMap = NULL;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="eam_8c.html#a755a89ea914231e14c9da2ec10e03c0f">energyInMatrix</a>(&amp;energyMap, a, data, p, <span class="keyword">new</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a>(energyMap, 100, 200);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    free(energyMap);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a755a89ea914231e14c9da2ec10e03c0f"><div class="ttname"><a href="eam_8c.html#a755a89ea914231e14c9da2ec10e03c0f">energyInMatrix</a></div><div class="ttdeci">void energyInMatrix(double **energyMatrix, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> eam.c:350</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="eam_8c_html_aa33352d6c51a766dfec0d2d5e36c62a5"><div class="ttname"><a href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a></div><div class="ttdeci">void printEnergyMap(double *matrix, int init_index, int final_index)</div><div class="ttdef"><b>Definition:</b> eam.c:358</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af16d1974cbed8008842f52a018d149a2"></a>
@@ -333,7 +513,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * <span class="keyword">new</span> = NULL;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a89cb6fd3db74441fd68f88dd5023e4be">new_parameters</a>(<span class="stringliteral">&quot;parameter1.txt&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="ttc" id="parameters_8c_html_aa5023a18b4a90fafacc032b8e575b7d6"><div class="ttname"><a href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a></div><div class="ttdeci">void print_parameters(parameter *a)</div><div class="ttdoc">Prints the parameter data to STDOUT. </div><div class="ttdef"><b>Definition:</b> parameters.c:7</div></div>
+<div class="ttc" id="parameters_8c_html_a89cb6fd3db74441fd68f88dd5023e4be"><div class="ttname"><a href="parameters_8c.html#a89cb6fd3db74441fd68f88dd5023e4be">new_parameters</a></div><div class="ttdeci">parameter * new_parameters(char *fileName)</div><div class="ttdoc">Reads a parameter from given file name. </div><div class="ttdef"><b>Definition:</b> parameters.c:24</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab77e6e8e894646db8fd98746af544ba1"></a>
@@ -348,7 +538,76 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * fcc = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">int</span> count = <a class="code" href="analysis_8c.html#a9facf710612a86411c629b08e6a41591">orderedPhaseCount</a>(a, p, fcc);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    printf(<span class="stringliteral">&quot;ekneiogne\n&quot;</span>);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    printf(<span class="stringliteral">&quot;Order Phase sites in given lattice = %d\n&quot;</span>, count);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    free(a);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    free(fcc);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    free(p);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="ttc" id="analysis_8c_html_a9facf710612a86411c629b08e6a41591"><div class="ttname"><a href="analysis_8c.html#a9facf710612a86411c629b08e6a41591">orderedPhaseCount</a></div><div class="ttdeci">int orderedPhaseCount(int *a, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdef"><b>Definition:</b> analysis.c:13</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdef"><b>Definition:</b> eam.c:129</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4cc04226db74e2e8b1dc56eb9791b2bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_parametersInputOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
+<p>Tests the functions <a class="el" href="parameters_8h.html#abcf8d4591625224623e8f1d617de139c" title="Creates a parameter structure from STDIN and saves it to a .parameter FILE. ">createParameterFileFromInput</a>, <a class="el" href="parameters_8h.html#a611b664bd3f19b2f0bbb84c40f716769">parameterReadFromFile</a>, <a class="el" href="parameters_8h.html#a1f272b3d37153cd916635f70f72a85a7" title="Takes a parameter object and writes it to a file. ">parameterWriteToFile</a>, and <a class="el" href="parameters_8h.html#a4370cd24131bde11d4eb2a821eb6978a" title="Creates default parameter file named defaultFCC.param in working directory. ">parameterDefaultFile</a>. </p>
+<p>DONE:0 Segmentation fault </p>
+<div class="fragment"><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    printf(<span class="stringliteral">&quot;\nThis is TEST function test_parametersInputOutput() refer documentation for details\n&quot;</span>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    printf(<span class="stringliteral">&quot;Begining TEST\n&quot;</span>);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    printf(<span class="stringliteral">&quot;This is a STDIN TEST please follow on screen Instructions\n&quot;</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="structparameter.html">parameter</a> *<span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    printf(<span class="stringliteral">&quot;All ok\n&quot;</span>);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    printf(<span class="stringliteral">&quot;Writing to file\n&quot;</span>);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e">parameterWriteToFile</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="structparameter.html">parameter</a> *check = NULL;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    check = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(new-&gt;fileName);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span> (check == NULL) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        printf(<span class="stringliteral">&quot;flag\n&quot;</span>);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        printf(<span class="stringliteral">&quot;%s\n&quot;</span>, new-&gt;fileName);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(check);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    printf(<span class="stringliteral">&quot;If two exactly same streams of data appear then its fine\n&quot;</span>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keyword">remove</span>(<span class="keyword">new</span>-&gt;fileName);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    free(check);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="parameters_8c.html#a4370cd24131bde11d4eb2a821eb6978a">parameterDefaultFile</a>();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<a class="code" href="datatypes_8h.html#a7a126d20ea42b5b7faac25b147289931">PARAM_FILE_DEF_NAME</a>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
+<div class="ttc" id="parameters_8c_html_aa5023a18b4a90fafacc032b8e575b7d6"><div class="ttname"><a href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a></div><div class="ttdeci">void print_parameters(parameter *a)</div><div class="ttdoc">Prints the parameter data to STDOUT. </div><div class="ttdef"><b>Definition:</b> parameters.c:7</div></div>
+<div class="ttc" id="parameters_8c_html_ac5ec1f32b34d943f214d32c03b200b8e"><div class="ttname"><a href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e">parameterWriteToFile</a></div><div class="ttdeci">void parameterWriteToFile(parameter *out)</div><div class="ttdoc">Takes a parameter object and writes it to a file. </div><div class="ttdef"><b>Definition:</b> parameters.c:199</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:154</div></div>
+<div class="ttc" id="parameters_8c_html_a4370cd24131bde11d4eb2a821eb6978a"><div class="ttname"><a href="parameters_8c.html#a4370cd24131bde11d4eb2a821eb6978a">parameterDefaultFile</a></div><div class="ttdeci">void parameterDefaultFile()</div><div class="ttdoc">Creates default parameter file named defaultFCC.param in working directory. </div><div class="ttdef"><b>Definition:</b> parameters.c:182</div></div>
+<div class="ttc" id="datatypes_8h_html_a7a126d20ea42b5b7faac25b147289931"><div class="ttname"><a href="datatypes_8h.html#a7a126d20ea42b5b7faac25b147289931">PARAM_FILE_DEF_NAME</a></div><div class="ttdeci">#define PARAM_FILE_DEF_NAME</div><div class="ttdoc">Default name for parameter file. </div><div class="ttdef"><b>Definition:</b> datatypes.h:37</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a18d9a74feb479a15d5f42aae8bc5802b"></a>
@@ -363,7 +622,50 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * a1 = <a class="code" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(a1);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    a1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1.5, 4.3);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(a1);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * a2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1.1, 3.4, 5.3);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(a2);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * sum = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(a1, a2);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(sum);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * diff = <a class="code" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2">point3D_subtractVectors</a>(a1, a2);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(diff);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    printf(<span class="stringliteral">&quot;Distance Test from point3D_origin\n&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    a1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    printf(<span class="stringliteral">&quot;%f\n&quot;</span>, <a class="code" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a>(a1));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    a1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1.5, 1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    printf(<span class="stringliteral">&quot;%f\n&quot;</span>, <a class="code" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a>(a1));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    a1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1.4, 1, 1);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    printf(<span class="stringliteral">&quot;%f\n&quot;</span>, <a class="code" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a>(a1));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    a1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(0, 0, 5);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    printf(<span class="stringliteral">&quot;%f\n&quot;</span>, <a class="code" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a>(a1));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    printf(<span class="stringliteral">&quot;Distance between two points\n&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        a1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(rand() / (<span class="keywordtype">float</span>) RAND_MAX, rand() / (<span class="keywordtype">float</span>) RAND_MAX, rand() / (<span class="keywordtype">float</span>) RAND_MAX);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        a2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(rand() / (<span class="keywordtype">float</span>) RAND_MAX, rand() / (<span class="keywordtype">float</span>) RAND_MAX, rand() / (<span class="keywordtype">float</span>) RAND_MAX);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(a1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(a2);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        printf(<span class="stringliteral">&quot;Distance = %f\n\n&quot;</span>, <a class="code" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb">point3D_distAtoB</a>(a1, a2));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:36</div></div>
+<div class="ttc" id="point3D_8c_html_a852787a9191c43ec1bf7f02a4953cfdb"><div class="ttname"><a href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb">point3D_distAtoB</a></div><div class="ttdeci">float point3D_distAtoB(point3D *A, point3D *B)</div><div class="ttdoc">[point3D_distAtoB description] </div><div class="ttdef"><b>Definition:</b> point3D.c:205</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_a1c1603d2a6013b7d181acdfc7043ee61"><div class="ttname"><a href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61">point3D_magnitude</a></div><div class="ttdeci">float point3D_magnitude(point3D *a)</div><div class="ttdoc">Returns distance of point3D from origin in UC. </div><div class="ttdef"><b>Definition:</b> point3D.c:195</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+<div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:10</div></div>
+<div class="ttc" id="point3D_8c_html_ac33e9a71f0809b3bf8ed70c1570da1e2"><div class="ttname"><a href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2">point3D_subtractVectors</a></div><div class="ttdeci">point3D * point3D_subtractVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Creates a new point3D object by subtacting first and second arguments. </div><div class="ttdef"><b>Definition:</b> point3D.c:65</div></div>
+<div class="ttc" id="point3D_8c_html_a950c9e52a5df4f947fe9c98ecf846e00"><div class="ttname"><a href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a></div><div class="ttdeci">point3D * point3D_origin()</div><div class="ttdoc">Creates new point3D type with (0, 0, 0) as input. </div><div class="ttdef"><b>Definition:</b> point3D.c:22</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3ec2c9b6b3af4477a2cd2ad59d22bf6c"></a>
@@ -378,12 +680,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>point3D_addVectors(...) should be made equal to one of the argument. </p>
-<p>It has been shown here in line 4. Instruction on line 4 will cause the memory that new1 was pointing to be unrefrenced as cause a leak. Correct way to do this is to declare a third point3D* and use it to point to the output of the point3D_addVectors function. </p>
-<p>Incorrect usage</p>
-<p>Correct usage. </p>
-
+<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// / Incorrect usage</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 3, 2);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    new1 = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(new1, new2);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    free(new1);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    free(new2);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// / Correct usage.</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    new1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    new2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 3, 2);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new3 = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(new1, new2);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    free(new1);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    free(new2);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    free(new3);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
+<div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:36</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:10</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acfcb10a9c79754b73d20f274a512ba5c"></a>
@@ -398,7 +715,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    printf(<span class="stringliteral">&quot;Generating 10 random numbers from 0 to 3999 and displaying corresponding points\n&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 15; i++)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> index = rand() % p-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        printf(<span class="stringliteral">&quot;%d\t=\t&quot;</span>, index);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<a class="code" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a>(index, p));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="point3D_8c_html_a89582ec9b4e0596e24894d0039807a5e"><div class="ttname"><a href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a></div><div class="ttdeci">point3D * point3D_indexToPoint3D_fcc(int index, parameter *p)</div><div class="ttdoc">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ...</div><div class="ttdef"><b>Definition:</b> point3D.c:104</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+<div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:50</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0cfc06a030386d84acb8949415a62455"></a>
@@ -413,7 +746,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1.5, 1.2, 1.4);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+<div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:10</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4acf445adf66e66c18d2493405548fc1"></a>
@@ -428,7 +770,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a>();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+<div class="ttc" id="point3D_8c_html_a950c9e52a5df4f947fe9c98ecf846e00"><div class="ttname"><a href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a></div><div class="ttdeci">point3D * point3D_origin()</div><div class="ttdoc">Creates new point3D type with (0, 0, 0) as input. </div><div class="ttdef"><b>Definition:</b> point3D.c:22</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af86bade21ef5cb13f31d85dcf336a60a"></a>
@@ -443,22 +794,60 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(-10.5, 11.5, 16.5);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    printf(<span class="stringliteral">&quot;test function for periodic boundary transform\n&quot;</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// point3D* test =</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6">point3D_periodicBoundaryTransform</a>(<span class="keyword">new</span>, p);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+<div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:10</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="point3D_8c_html_a05e682c55af08bfcbd25b4887ff6e1f6"><div class="ttname"><a href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6">point3D_periodicBoundaryTransform</a></div><div class="ttdeci">void point3D_periodicBoundaryTransform(point3D *k, parameter *p)</div><div class="ttdoc">For a given parameter and point3D applies the periodic boundary transform such that it lies in the co...</div><div class="ttdef"><b>Definition:</b> point3D.c:168</div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="aabd1cd2f12a661db2ff7a6f81d8c6ae6"></a>
+<a class="anchor" id="a165798f31c9df931b4ba5a8c980145a2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void test_point3D_point3DtoIndex </td>
+          <td class="memname">void test_point3D_point3DtoIndexFCCFCC </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * p1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(2, 0, 0);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * p2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(0.5, 0.5, 1);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * p3 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(2.0, 0.5, 0.5);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * p4 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(0.5, 1, 0.5);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    printf(<span class="stringliteral">&quot;%d\t&quot;</span>, <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(p1, p));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(p1);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    printf(<span class="stringliteral">&quot;%d\t&quot;</span>, <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(p2, p));</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(p2);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    printf(<span class="stringliteral">&quot;%d\t&quot;</span>, <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(p3, p));</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(p3);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    printf(<span class="stringliteral">&quot;%d\t&quot;</span>, <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(p4, p));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(p4);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:175</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="point3D_8c_html_aafba4d8a16708b18b2757300e988e4d8"><div class="ttname"><a href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a></div><div class="ttdeci">int point3D_point3DtoIndexFCC(point3D *a, parameter *p)</div><div class="ttdoc">Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed...</div><div class="ttdef"><b>Definition:</b> point3D.c:142</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+<div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:10</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1fc46bb9c57af50a40b7d5bce9f0f3b6"></a>
@@ -473,7 +862,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;input&quot;</span>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a>(p, fileName, 12434533);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
+<div class="ttc" id="analysis_8c_html_a1f6065e798779a8e6ecb1a778b9c0f68"><div class="ttname"><a href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed)</div><div class="ttdef"><b>Definition:</b> analysis.c:58</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4ffafc20326e83aefc5de9101c0d4940"></a>
@@ -488,7 +886,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;input.crystal.fcc&quot;</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">int</span> * a_file = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(fileName);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <a class="code" href="eam_8c.html#aca422b240ea9810be8ae6046d8d18578">print_AtomicMatrix</a>(a_file, 0, 15);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdef"><b>Definition:</b> eam.c:16</div></div>
+<div class="ttc" id="eam_8c_html_aca422b240ea9810be8ae6046d8d18578"><div class="ttname"><a href="eam_8c.html#aca422b240ea9810be8ae6046d8d18578">print_AtomicMatrix</a></div><div class="ttdeci">void print_AtomicMatrix(int *mat, int begin, int end)</div><div class="ttdef"><b>Definition:</b> eam.c:25</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7ff51f80eed96b5ecd363b7e19f6135d"></a>
@@ -503,7 +909,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3">Sn_fcc_readNeighbours_fromFile</a>(<span class="stringliteral">&quot;file_list_neighbours.txt&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// print_Neighbours(new);</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    printf(<span class="stringliteral">&quot;Everything is continuoulsy stored so if i goes from 0 \</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">    to sum(indicies) then s1n to s7n can be accessed as s1n[i] \</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">    this is demonstrated by printing 13 points\n &quot;</span>    );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 13; i++)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(&amp;(new-&gt;s1n[i]));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_ab793dd733f267dcb29bd5bee202c2aa3"><div class="ttname"><a href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3">Sn_fcc_readNeighbours_fromFile</a></div><div class="ttdeci">Sn_fcc * Sn_fcc_readNeighbours_fromFile(char *fileList)</div><div class="ttdef"><b>Definition:</b> eam.c:31</div></div>
+<div class="ttc" id="datatypes_8h_html_a569084953a190e5c0740aa9204917b07"><div class="ttname"><a href="datatypes_8h.html#a569084953a190e5c0740aa9204917b07">Sn_fcc</a></div><div class="ttdeci">struct neighbours_fcc Sn_fcc</div></div>
+<div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:76</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -512,7 +933,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="test_8c.html">test.c</a></li>
-    <li class="footer">Generated on Thu Sep 1 2016 02:32:21 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 1 2016 05:59:54 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

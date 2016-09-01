@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['p11',['p11',['../structradius__dependent__fields.html#ae5f4b65979cb6efcc0ef2cfe264e5a6f',1,'radius_dependent_fields']]],
-  ['p12',['p12',['../structradius__dependent__fields.html#a5d8194a82f75e69aa64a0c5dd3e3fa1c',1,'radius_dependent_fields']]],
-  ['p22',['p22',['../structradius__dependent__fields.html#a7f52d9eedc417f2d58f61f552d4dbd88',1,'radius_dependent_fields']]],
-  ['pair_5fatom1_5fatom1',['pair_atom1_atom1',['../structbinaryEAMpotential.html#a6e526106f0d3301a99f93b650284195b',1,'binaryEAMpotential']]],
-  ['pair_5fatom1_5fatom2',['pair_atom1_atom2',['../structbinaryEAMpotential.html#ac60cd12a58bcb64d9b97dd5317349b8d',1,'binaryEAMpotential']]],
-  ['pair_5fatom2_5fatom2',['pair_atom2_atom2',['../structbinaryEAMpotential.html#a6a360cc437326faa05a5620405e23f9c',1,'binaryEAMpotential']]],
-  ['parameter',['parameter',['../datatypes_8h.html#a0d71b5c1dcca8d3fee88d6a11d3e2071',1,'datatypes.h']]],
-  ['point3d',['point3D',['../datatypes_8h.html#a1f6d6ae1b725928e5dca0a7c5cef5ff5',1,'datatypes.h']]]
+  ['n_5fmcs',['N_MCS',['../structparameter.html#a4b09c598c9556211a013cced50700d52',1,'parameter']]],
+  ['nearestneighbours',['nearestNeighbours',['../structparameter.html#a6cd3c4eeb7a0ccdd288a67d6641c378d',1,'parameter']]],
+  ['no_5fof_5fatoms',['no_of_atoms',['../structparameter.html#a86aba2ea814d8f766c282d9399bee877',1,'parameter']]],
+  ['no_5fof_5ffiles',['no_of_files',['../structbinaryEAMpotential.html#a958dea9e85e7cff81e8da96fdba59707',1,'binaryEAMpotential']]],
+  ['nx',['Nx',['../structparameter.html#a181d717c99b207fd606ee29ed40a1d7e',1,'parameter']]],
+  ['ny',['Ny',['../structparameter.html#ad8f2321f94970f75731a6aca6181e3a7',1,'parameter']]],
+  ['nz',['Nz',['../structparameter.html#af86cee62b97d8c952f5feeb88b0eb435',1,'parameter']]]
 ];

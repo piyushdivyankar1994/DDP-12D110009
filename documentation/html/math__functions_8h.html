@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('math__functions_8h.html','');});
 <div class="title">math_functions.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Function prototypes for general math functions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br/>
@@ -141,7 +144,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a18f22ba4ae1699934f899c2e4864784b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math__functions_8h.html#a18f22ba4ae1699934f899c2e4864784b">exponential</a> (double)</td></tr>
 <tr class="separator:a18f22ba4ae1699934f899c2e4864784b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Function prototypes for general math functions. </p>
+<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>1/08/2016 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a8e62991a68e4e3dbadf978dc97d25896"></a>
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +184,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span>((j-i)&gt;1)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">int</span> mid=(j+i)/2;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">if</span>(ptr[mid]==val)<span class="keywordflow">return</span> mid;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ptr[mid]&gt;val) <span class="keywordflow">return</span> <a class="code" href="math__functions_8c.html#aeb6df0aebf39d360dc0ad3b29b9f89f1">binary_search</a>(ptr,i,mid,val);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="math__functions_8c.html#aeb6df0aebf39d360dc0ad3b29b9f89f1">binary_search</a>(ptr,mid,j,val);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="ttc" id="math__functions_8c_html_aeb6df0aebf39d360dc0ad3b29b9f89f1"><div class="ttname"><a href="math__functions_8c.html#aeb6df0aebf39d360dc0ad3b29b9f89f1">binary_search</a></div><div class="ttdeci">int binary_search(double *ptr, int i, int j, double val)</div><div class="ttdef"><b>Definition:</b> math_functions.c:10</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a039209da15b48696d8f4530fbde44248"></a>
@@ -227,7 +248,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)+(z1-z2)*(z1-z2));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a18f22ba4ae1699934f899c2e4864784b"></a>
@@ -243,7 +267,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">double</span> sum=1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=25;i&gt;0;--i)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        sum=1+x*sum/i;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a37d71a910982f2daf22e39942ea1df98"></a>
@@ -287,7 +317,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> m=(y1-y2)/(x1-x2);   <span class="comment">//slope</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> y1+m*(xc-x1);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -296,7 +330,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="math__functions_8h.html">math_functions.h</a></li>
-    <li class="footer">Generated on Thu Sep 1 2016 02:32:21 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 1 2016 05:59:54 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

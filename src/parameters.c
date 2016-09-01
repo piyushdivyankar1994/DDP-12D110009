@@ -94,7 +94,7 @@ parameter * _defaultFCCparameter()
  */
 parameter * createParameterFileFromInput()
 {
-    parameter *new = (parameter *) malloc(sizeof(parameter));
+    parameter * new = (parameter *) malloc(sizeof(parameter));
 
     new = _defaultFCCparameter();
 
@@ -196,8 +196,10 @@ void parameterDefaultFile()
  * Takes a ::parameter object and writes it to a file.
  * @param out      pointer to parameter
  */
-void parameterWriteToFile(parameter* out) {
-    FILE *fp = fopen(out->fileName, "w");
-    fwrite(out, sizeof(out), 1, fp);
+void parameterWriteToFile(parameter * out)
+{
+    FILE * fp = fopen(out->fileName, "w");
+
+    fwrite(out, sizeof(parameter), 1, fp);
     fclose(fp);
 }

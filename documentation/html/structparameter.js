@@ -1,6 +1,7 @@
 var structparameter =
 [
     [ "atoms_per_site", "structparameter.html#a84f428fbd245db95a70067688026251d", null ],
+    [ "fileName", "structparameter.html#aa5a5d4c946d3a8901036f0b2a8ebbc6e", null ],
     [ "lattice_parameter", "structparameter.html#acc593a841daec15783baf96e5fea949e", null ],
     [ "N_MCS", "structparameter.html#a4b09c598c9556211a013cced50700d52", null ],
     [ "nearestNeighbours", "structparameter.html#a6cd3c4eeb7a0ccdd288a67d6641c378d", null ],

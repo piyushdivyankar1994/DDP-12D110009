@@ -7,5 +7,5 @@
 
 #ifndef _SIMULATION_H
 #define _SIMULATION_H 1
-  void twoPhaseEquilibriaSimulation(unsigned long int);
+void twoPhaseEquilibriaSimulation(unsigned long int);
 #endif
