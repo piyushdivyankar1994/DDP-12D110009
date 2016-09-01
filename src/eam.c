@@ -11,7 +11,7 @@ int* atomicMatrixRead(char* fileName, parameter* p) {
 	return mat;
 }
 
-// NOTE: following function is alternate for atomicMatrixRead(...)
+// FUTURE_CHANGES:20 following function is alternate for atomicMatrixRead(...)
 
 int* readCrystalFileFCC(char *fileName) {
   FILE *fp = fopen(fileName, "r");
@@ -140,7 +140,7 @@ void eam_data_read(binEAMpot** eam_data, char *fileName, char atom1[2], char ato
     //(*eam_dat)->atom1 = (char*)malloc(sizeof(atom1)+1);
     //(*eam_dat)->atom2 = (char*)malloc(sizeof(atom2)+1);
 
-		///FIXME: assignment of the names of the atoms in EAM potential structure
+		///FIXME:0 assignment of the names of the atoms in EAM potential structure
     (*eam_data)->atom1[0] = atom1[0];
     (*eam_data)->atom1[1] = atom1[1];
 
@@ -310,7 +310,7 @@ double energyAtIndexFCC(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc
 		r = r * p->lattice_parameter;
 		point3D_periodicBoundaryTransform(k, p);
 		rdf* r_data = rdf_radius_retrive(data, r);
-		int ngbrIndex = point3D_point3DtoIndex(k, p);
+		int ngbrIndex = point3D_point3DtoIndexFCC(k, p);
 
 		if (a[ngbrIndex] == a[index]) {
 			if (a[ngbrIndex] == 0) {
@@ -374,7 +374,7 @@ double energyToSwap(int index, int* a, binEAMpot* data, parameter* p, Sn_fcc* ng
 		r = r * p->lattice_parameter;
 		point3D_periodicBoundaryTransform(k, p);
 		rdf* r_data = rdf_radius_retrive(data, r);
-		int ngbrIndex = point3D_point3DtoIndex(k, p);
+		int ngbrIndex = point3D_point3DtoIndexFCC(k, p);
 
 		if (a[ngbrIndex] == a[index]) {
 			if (a[ngbrIndex] == 0) {

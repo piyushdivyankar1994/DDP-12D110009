@@ -1,5 +1,6 @@
 var point3D_8h =
 [
+    [ "__free3", "point3D_8h.html#a737814f0bbb4a82c81c7ef50d1ce34b9", null ],
     [ "point3D_addVectors", "point3D_8h.html#aecd992b3a50ca8996b5b793fb27c8c4c", null ],
     [ "point3D_dispPoint", "point3D_8h.html#ab48d061b16ccf614f597d873acc069f6", null ],
     [ "point3D_distAtoB", "point3D_8h.html#a863d5b028f6d7590ef36f7842b26430e", null ],

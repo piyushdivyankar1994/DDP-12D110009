@@ -31,4 +31,6 @@
   void test_point3D_origin();
   void test_point3D_newPoint();
   void test_point3D_addVectors();
+
+  void test_parametersInputOutput();
 #endif

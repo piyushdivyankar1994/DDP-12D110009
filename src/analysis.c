@@ -18,7 +18,7 @@ int orderedPhaseCount(int *a, parameter *p, Sn_fcc *ngbrs) {
     point3D *new = point3D_indexToPoint3D_fcc(i, p);
     for (j = 0; j < 12; j++) {
       point3D *test = point3D_addVectors(new, &(ngbrs->s1n[j]));
-      int t = point3D_point3DtoIndex(test, p);
+      int t = point3D_point3DtoIndexFCC(test, p);
       if(a[t] == a[i]) {
         break;
       }
@@ -42,7 +42,7 @@ int antiOrderedPhaseCount(int *a, parameter *p, Sn_fcc *fcc) {
     checkSite = 0;
     for (j = 0; j < 12; j++) {
       point3D *test = point3D_addVectors(new, &(fcc->s1n[j]));
-      int t = point3D_point3DtoIndex(test, p);
+      int t = point3D_point3DtoIndexFCC(test, p);
       if(a[t] != a[i]) {
         checkSite++;
       }
@@ -90,4 +90,4 @@ int totalAtomsInFile(FILE *fp) {
   return no_of_atoms;
 }
 
-/// TODO: Binary type data storage that always talked about
+/// TODO:20 Binary type data storage that always talked about

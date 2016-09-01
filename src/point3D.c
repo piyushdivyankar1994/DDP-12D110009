@@ -45,7 +45,7 @@ point3D* point3D_addVectors(point3D* v1, point3D* v2){
  * @param  v1 first point3D pointer
  * @param  v2 second point3D pointer
  * @return    1 if true -1 of false
- * NOTE: Make it more intuitive like true false
+ * FUTURE_CHANGES:10 Make it more intuitive like true false
  */
 int point3D_isEqual(point3D* v1, point3D* v2) {
 	if((v1->x - v2->x) < 1e-6 && (v1->y - v2->y) < 1e-6 && (v1->z - v2->z) < 1e-6) {
@@ -129,8 +129,17 @@ point3D* point3D_indexToPoint3D_fcc(int index, parameter* p){
 	}
 }
 
-
-int point3D_point3DtoIndex(point3D* a, parameter* p){
+/**
+ * Convertes a ::point3D data to a index in range of ::ATOM with respect to
+ * ::parameter that is passed.
+ * @param  a pointer to point3D object
+ * @param  p pointer to parameter
+ * @return   integer value that is the index of given point in array.
+ * NOTE: Here it is assumed that crystal is FCC and there are certain assumptions
+ * made about this crystal.
+ * NOTE: Document how atom arrays work.
+ */
+int point3D_point3DtoIndexFCC(point3D* a, parameter* p){
 	float fx = a->x - floor(a->x);
 	float fy = a->y - floor(a->y);
 	float fz = a->z - floor(a->z);
@@ -149,6 +158,13 @@ int point3D_point3DtoIndex(point3D* a, parameter* p){
 	return pos;
 }
 
+/**
+ * For a given ::parameter and ::point3D applies the periodic boundary transform
+ * such that it lies in the confined space of (\a Nx, \a Ny, \a Nz) as defined
+ * in parameter.
+ * @param k pointer to transform
+ * @param p pointer to parameter
+ */
 void point3D_periodicBoundaryTransform(point3D* k, parameter* p) {
 	if(k->x < 0) {
 		k->x = k->x + p->Nx;
@@ -171,10 +187,24 @@ void point3D_periodicBoundaryTransform(point3D* k, parameter* p) {
 	//return k;
 }
 
+/**
+ * Returns distance of ::point3D from origin in UC.
+ * @param  a pointer to point3D
+ * @return   distance from center or magnitude of the vector.
+ */
 float point3D_magnitude(point3D* a){
 	return  sqrt((a->x * a->x) + (a->y * a->y) + (a->z * a->z));
 }
 
+/**
+ * [point3D_distAtoB description]
+ * @param  A [description]
+ * @param  B [description]
+ * @return   [description]
+ */
 float point3D_distAtoB(point3D* A, point3D* B){
-	return point3D_magnitude(point3D_subtractVectors(A, B));
+	point3D* new = point3D_subtractVectors(A, B);
+	float __retVal = point3D_magnitude(new);
+	free(new);
+	return __retVal;
 }

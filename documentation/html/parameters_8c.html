@@ -120,13 +120,16 @@ Include dependency graph for parameters.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa5023a18b4a90fafacc032b8e575b7d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a> (<a class="el" href="structparameter.html">parameter</a> *a)</td></tr>
+<tr class="memdesc:aa5023a18b4a90fafacc032b8e575b7d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> data to STDOUT.  <a href="#aa5023a18b4a90fafacc032b8e575b7d6">More...</a><br/></td></tr>
 <tr class="separator:aa5023a18b4a90fafacc032b8e575b7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abca825200b69747b9f371d40772d1c22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structparameter.html">parameter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameters_8c.html#abca825200b69747b9f371d40772d1c22">new_parameters</a> (char *filename)</td></tr>
+<tr class="memdesc:abca825200b69747b9f371d40772d1c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a parameter from given file name.  <a href="#abca825200b69747b9f371d40772d1c22">More...</a><br/></td></tr>
 <tr class="separator:abca825200b69747b9f371d40772d1c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa8c7c4be07ab82707a1b09ac808554"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structparameter.html">parameter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a> ()</td></tr>
+<tr class="memdesc:a6aa8c7c4be07ab82707a1b09ac808554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> with default values as follows truct as follows.  <a href="#a6aa8c7c4be07ab82707a1b09ac808554">More...</a><br/></td></tr>
 <tr class="separator:a6aa8c7c4be07ab82707a1b09ac808554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f9e0ba2a887cafa2fda686c787cd49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parameters_8c.html#a25f9e0ba2a887cafa2fda686c787cd49">createParameterFileFromInput</a> ()</td></tr>
-<tr class="memdesc:a25f9e0ba2a887cafa2fda686c787cd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: Make this more elegant.  <a href="#a25f9e0ba2a887cafa2fda686c787cd49">More...</a><br/></td></tr>
+<tr class="memdesc:a25f9e0ba2a887cafa2fda686c787cd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> structure from STDIN and saves it to a .parameter FILE.  <a href="#a25f9e0ba2a887cafa2fda686c787cd49">More...</a><br/></td></tr>
 <tr class="separator:a25f9e0ba2a887cafa2fda686c787cd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -143,6 +146,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> with default values as follows truct as follows. </p>
+<p>Size in x-direction = <a class="el" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e" title="Size of lattice in x direction. ">parameter.Nx</a> = 10 <br/>
+ Size in y-direction = <a class="el" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7" title="Size of lattice in y direction. ">parameter.Ny</a> = 10 <br/>
+ Size in z-direction = <a class="el" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435" title="Size of lattice in z direction. ">parameter.Nz</a> = 10 <br/>
+ Lattice Parameter = <a class="el" href="structparameter.html#acc593a841daec15783baf96e5fea949e" title="Size of a unit cell in the lattice. ">parameter.lattice_parameter</a> = 4.0 A <br/>
+ No. of MonteCarlo Simulations = <a class="el" href="structparameter.html#a4b09c598c9556211a013cced50700d52" title="Total number of Monte-Carlo simulations per atom. ">parameter.N_MCS</a> = 1000 <br/>
+ Temperature = <a class="el" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4" title="temperature of material at time of simulation ">parameter.temperature</a> = 1000 <br/>
+ Atoms per site = <a class="el" href="structparameter.html#a84f428fbd245db95a70067688026251d" title="Number of atoms per site in motiff. ">parameter.atoms_per_site</a> = 4 <br/>
+ Totol No of atoms = <a class="el" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877" title="Total number of atoms in the simulation matrix. ">parameter.no_of_atoms</a> = 4000 <br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>[pointer to newly created parameter struct]1 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a25f9e0ba2a887cafa2fda686c787cd49"></a>
@@ -158,7 +173,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>TODO: Make this more elegant. </p>
+<p>Creates a <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> structure from STDIN and saves it to a .parameter FILE. </p>
 
 </div>
 </div>
@@ -176,6 +191,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads a parameter from given file name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>string that contains the file name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to newly created parameter struct </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="aa5023a18b4a90fafacc032b8e575b7d6"></a>
@@ -192,6 +216,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Prints the <a class="el" href="structparameter.html" title="This structure contains list of parameters that define the system. ">parameter</a> data to STDOUT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer to parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -200,7 +232,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="parameters_8c.html">parameters.c</a></li>
-    <li class="footer">Generated on Wed Aug 31 2016 17:52:50 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 1 2016 02:32:21 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

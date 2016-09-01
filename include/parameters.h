@@ -27,7 +27,10 @@ This file is part of DDP-12D110009.
 #ifndef _PARAMETERS_H
 #define _PARAMETERS_H 1
   void print_parameters(parameter* a);
-  parameter* new_parameters(char* filename);
-  void createParameterFileFromInput();
+  parameter* new_parameters(char* fileName);
+  parameter* createParameterFileFromInput();
+  void parameterWriteToFile(parameter*);
   parameter* _defaultFCCparameter();
+  parameter* parameterReadFromFile(char *fileName);
+  void parameterDefaultFile();
 #endif
