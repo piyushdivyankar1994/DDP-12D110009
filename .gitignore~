@@ -1,0 +1,10 @@
+*.param
+.clang_complete
+*.cfg
+documentation/*
+Doxyfile
+*.out
+*EAM_Ni_Al*
+*inputCrystalFiles*
+*neighbours*
+*parameterFile*
