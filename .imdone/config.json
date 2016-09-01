@@ -23,11 +23,11 @@
   "lists": [
     {
       "name": "FUTURE_CHANGES",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "TODO",
-      "hidden": true
+      "hidden": false
     },
     {
       "name": "FIXME",
@@ -40,6 +40,10 @@
     {
       "name": "DONE",
       "hidden": false
+    },
+    {
+      "name": "DOCUMENTAION",
+      "hidden": true
     }
   ],
   "marked": {
