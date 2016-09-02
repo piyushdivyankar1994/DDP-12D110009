@@ -30,7 +30,7 @@ int * atomicMatrixRead(char * fileName, parameter * p)
     return mat;
 }
 
-// DONE:0 following function is alternate for atomicMatrixRead(...)
+// DONE:20 following function is alternate for atomicMatrixRead(...)
 /**
  * Reads a atomic matrix that was saved using .crystal.fcc format
  * @param  fileName Name of th file

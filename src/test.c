@@ -202,7 +202,7 @@ void test_energyInMatrix()
 
 }
 
-/// DONE Memory leaks in this function.
+/// DONE:10 Memory leaks in this function.
 /// Occured due to ::energyToSwap function now fixed
 void test_deltaEnergyMatrix()
 {
@@ -351,7 +351,7 @@ void test_parametersInputOutput()
     printf("Writing to file\n");
     parameterWriteToFile(new);
     parameter * check = NULL;
-    // /DONE:10 Segmentation fault
+    // /DONE:30 Segmentation fault
     check = parameterReadFromFile(new->fileName);
     if (check == NULL)
     {
