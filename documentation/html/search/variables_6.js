@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['lattice_5fparameter',['lattice_parameter',['../structparameter.html#acc593a841daec15783baf96e5fea949e',1,'parameter']]]
+  ['max_5feden',['max_eDen',['../structbinEAMpot.html#ab76bb93e121f7bbb8fadd2b9605fe1a0',1,'binEAMpot']]],
+  ['maxradius',['maxRadius',['../structbinEAMpot.html#a8aadf12c2736e216fb6178792eb3a78b',1,'binEAMpot']]],
+  ['min_5feden',['min_eDen',['../structbinEAMpot.html#a18df2a2b368946c51db3a4c2e93879c9',1,'binEAMpot']]],
+  ['minradius',['minRadius',['../structbinEAMpot.html#abb60999bf24bf4f681b90bae6ac0c9ef',1,'binEAMpot']]]
 ];

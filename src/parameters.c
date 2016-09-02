@@ -1,3 +1,10 @@
+/*!
+   \file parameters.c
+   \brief Source file for functions in parameters.h
+   \author Piyush Divyankar
+   \date 01/09/2016
+*/
+
 #include "parameters.h"
 
 /**
@@ -155,7 +162,7 @@ parameter * parameterReadFromFile(char fileName[50])
 {
     FILE * fp = fopen(fileName, "r");
 
-    // / DOING:0 Using standard C library throw an error here.
+    // / FIXME:0 Using standard C library throw an error here.
     if (fp == NULL)
     {
         return NULL;

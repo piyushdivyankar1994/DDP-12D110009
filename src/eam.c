@@ -1,9 +1,22 @@
+/*!
+   \file eam.c
+   \brief Source file for ean.h
+   \author Piyush Divyankar
+   \date 01/09/2016
+*/
+
 #include "eam.h"
 #include "analysis.h"
 
+/**
+ * Reads a atomic matrix in plain text format
+ * @param  fileName FILE of atomic matrix in plain text
+ * @param  p        ::parameter for simulation
+ * @return          pointer to created atomic matrix
+ */
 int * atomicMatrixRead(char * fileName, parameter * p)
 {
-    int * mat = (int *) malloc(sizeof(int) * p->no_of_atoms);
+    ATOM * mat = (int *) malloc(sizeof(int) * p->no_of_atoms);
     FILE * fp = fopen(fileName, "r");
 
     if (fp == NULL)
@@ -17,20 +30,29 @@ int * atomicMatrixRead(char * fileName, parameter * p)
     return mat;
 }
 
-// FUTURE_CHANGES:20 following function is alternate for atomicMatrixRead(...)
-
+// DONE:0 following function is alternate for atomicMatrixRead(...)
+/**
+ * Reads a atomic matrix that was saved using .crystal.fcc format
+ * @param  fileName Name of th file
+ * @return          Pointer to ::ATOM array
+ */
 int * readCrystalFileFCC(char * fileName)
 {
     FILE * fp = fopen(fileName, "r");
     int n = totalAtomsInFile(fp);
-    int * a = (int *) malloc(sizeof(int) * n);
+    ATOM * a = (int *) malloc(sizeof(int) * n);
 
     fread(a, sizeof(int), n, fp);
     return a;
 }
 
-
-void print_AtomicMatrix(int * mat, int begin, int end)
+/**
+ * Prints atomic matrix atoms to STDOUT in a range
+ * @param mat   ::ATOM matrix
+ * @param begin start printing at this index
+ * @param end   stop at this index
+ */
+void print_AtomicMatrix(ATOM * mat, int begin, int end)
 {
     for (int i = begin; i < end; i += 4)
     {
@@ -38,6 +60,14 @@ void print_AtomicMatrix(int * mat, int begin, int end)
     }
 }
 
+// TODO Write more documentation for this
+// TODO Very bad code needs to be more concise.
+/**
+ * Reads ::neighbours_fcc from a file that contains list of files that conatin
+ * list of neighbours.
+ * @param  fileList name of file containing relevant lsit
+ * @return          pointer to neighbours_fcc structure that is created
+ */
 Sn_fcc * Sn_fcc_readNeighbours_fromFile(char * fileList)
 {
     FILE * fp;
@@ -121,6 +151,10 @@ Sn_fcc * Sn_fcc_readNeighbours_fromFile(char * fileList)
     return new;
 }
 
+/**
+ * Prints neighbours to STDOUT as a list of ...(x, y, z) ... points
+ * @param a pointer to neighbour structure
+ */
 void print_Neighbours(Sn_fcc * a)
 {
     for (int i = 0; i < 7; i++)
@@ -157,6 +191,10 @@ void print_Neighbours(Sn_fcc * a)
     }
 }
 
+/**
+ * Sets neighbours to default as FCC crystal
+ * @return pointer to type
+ */
 Sn_fcc * _defaultFCCNeighbours()
 {
     Sn_fcc * new = Sn_fcc_readNeighbours_fromFile("./neighbours/file_list_neighbours.txt");
@@ -164,23 +202,29 @@ Sn_fcc * _defaultFCCNeighbours()
     return new;
 }
 
-void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char atom2[2])
+/**
+ * Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt
+ * @param fileName name of the file
+ * @param atom1    IUPAC symbol for atom 1.
+ * @param atom2    IUPAC symbol for atom 2.
+ */
+binEAMpot* eam_data_read(char * fileName, char atom1[2], char atom2[2])
 {
     FILE * fp_init, * fp1;
 
     fp_init = fopen(fileName, "r");
-    *eam_data = (binEAMpot *) malloc(sizeof(binEAMpot));
+    binEAMpot *eam_data = (binEAMpot *) malloc(sizeof(binEAMpot));
     // double* eam_data;
     // (*eam_dat)->atom1 = (char*)malloc(sizeof(atom1)+1);
     // (*eam_dat)->atom2 = (char*)malloc(sizeof(atom2)+1);
 
-    // /FIXME:0 assignment of the names of the atoms in EAM potential structure
-    (*eam_data)->atom1[0] = atom1[0];
-    (*eam_data)->atom1[1] = atom1[1];
+    // /FIXME:10 assignment of the names of the atoms in EAM potential structure
+    (eam_data)->atom1[0] = atom1[0];
+    (eam_data)->atom1[1] = atom1[1];
 
-    (*eam_data)->atom2[0] = atom2[0];
-    (*eam_data)->atom2[1] = atom2[1];
-    (*eam_data)->no_of_files = 7;
+    (eam_data)->atom2[0] = atom2[0];
+    (eam_data)->atom2[1] = atom2[1];
+    (eam_data)->no_of_files = 7;
 
     char str[100];
     fscanf(fp_init, "%s\n", str);
@@ -195,11 +239,11 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     for (j = 0; j < 5000; j++)
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
-        (*eam_data)->radius[j]        = val1;
-        (*eam_data)->pair_atom1_atom1[j] = val2;
+        (eam_data)->radius[j]        = val1;
+        (eam_data)->pair_atom1_atom1[j] = val2;
     }
-    (*eam_data)->minRadius = (*eam_data)->radius[0];
-    (*eam_data)->maxRadius = (*eam_data)->radius[4999];
+    (eam_data)->minRadius = (eam_data)->radius[0];
+    (eam_data)->maxRadius = (eam_data)->radius[4999];
 
     // printf("%d %le\n", j, (*eam_data)->radius[234]);
     fscanf(fp_init, "%s\n", str);
@@ -213,7 +257,7 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
         // (*eam_data)->radius[j]        = val1;
-        (*eam_data)->pair_atom1_atom2[j] = val2;
+        (eam_data)->pair_atom1_atom2[j] = val2;
     }
 
     fscanf(fp_init, "%s\n", str);
@@ -227,7 +271,7 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
         // (*eam_data)->radius[j]        = val1;
-        (*eam_data)->pair_atom2_atom2[j] = val2;
+        (eam_data)->pair_atom2_atom2[j] = val2;
     }
 
     fscanf(fp_init, "%s\n", str);
@@ -241,7 +285,7 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
         // (*eam_data)->radius[j]        = val1;
-        (*eam_data)->atom1_charge_Density[j] = val2;
+        (eam_data)->atom1_charge_Density[j] = val2;
     }
 
     fscanf(fp_init, "%s\n", str);
@@ -255,7 +299,7 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
         // (*eam_data)->radius[j]        = val1;
-        (*eam_data)->atom2_charge_Density[j]    = val2;
+        (eam_data)->atom2_charge_Density[j]    = val2;
     }
 
     fscanf(fp_init, "%s\n", str);
@@ -268,8 +312,8 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     for (j = 0; j < 5000; j++)
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
-        (*eam_data)->chargeDensity[j]           = val1;
-        (*eam_data)->atom1_embedding_energy[j]  = val2;
+        (eam_data)->chargeDensity[j]           = val1;
+        (eam_data)->atom1_embedding_energy[j]  = val2;
     }
 
     fscanf(fp_init, "%s\n", str);
@@ -283,13 +327,22 @@ void eam_data_read(binEAMpot ** eam_data, char * fileName, char atom1[2], char a
     {
         fscanf(fp1, "%le %le ", &val1, &val2);
         // (*eam_data)->radius[j]        = val1;
-        (*eam_data)->atom2_embedding_energy[j] = val2;
+        (eam_data)->atom2_embedding_energy[j] = val2;
     }
-    (*eam_data)->min_eDen = (*eam_data)->chargeDensity[0];
-    (*eam_data)->max_eDen = (*eam_data)->chargeDensity[4999];
+    (eam_data)->min_eDen = (eam_data)->chargeDensity[0];
+    (eam_data)->max_eDen = (eam_data)->chargeDensity[4999];
+    return eam_data;
 }
 
-
+/**
+ * In the EAM tables we have radius values common in 5 quantities as mentioned
+ * in ::radius_dependent_fields. This function takes a key value and using a hash
+ * function determines the index of that value in table, and linearly interpolates
+ * other radius dependent quantities
+ * @param  data   pointer to EAM table
+ * @param  radius key value
+ * @return        pointer to newly created ::rdf
+ */
 rdf * rdf_radius_retrive(binEAMpot * data, double radius)
 {
     if (radius > data->maxRadius)
@@ -342,7 +395,15 @@ rdf * rdf_radius_retrive(binEAMpot * data, double radius)
     new->eDen2 = linear_interpolator(data->radius[j - 1], data->atom2_charge_Density[j - 1], data->radius[j], data->atom2_charge_Density[j], radius);
     return new;
 }
-
+/**
+ * In the EAM tables we have embedding energy that depends on charge density.
+ * This function takes a key value and using a hash function determines the
+ * index of that value in table, and linearly interpolates
+ * other charge density dependent quantities.
+ * @param  data   pointer to EAM table
+ * @param  radius key value
+ * @return        pointer to newly created ::eDen_df
+ */
 eDen_df * eDen_df_charge_density_retrive(binEAMpot * data, double eDen)
 {
     eDen_df * new = (eDen_df *) malloc(sizeof(eDen_df));
@@ -380,8 +441,17 @@ eDen_df * eDen_df_charge_density_retrive(binEAMpot * data, double eDen)
     return new;
 }
 
-
-
+/**
+ * Calculates energy at a given array index in ATOM array.
+ * @param  index evaluated at this index.
+ * @param  a     Atomic matrix
+ * @param  data  EAM potential data.
+ * @param  p     parameters
+ * @param  ngbrs List of neighbours.
+ * @return       value of energy
+ * @note         This function has been tested in ::test_energyAtIndexFCC. Refer it
+ *               for usage information.
+ */
 double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
     point3D * current = point3D_indexToPoint3D_fcc(index, p);
@@ -425,6 +495,7 @@ double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_
             }
         }
         free(r_data);
+        free(k);
     }
 
     eDen_df * embeddingEnergy = eDen_df_charge_density_retrive(data, chargeDen);
@@ -442,16 +513,35 @@ double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_
     return energy;
 }
 
-void energyInMatrix(double ** energyMatrix, int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
+/**
+ * Calculates bond energy of all atoms in a given ATOM array, and stores it in a
+ * double array, at corresponding index with that of ATOM array.
+ * @param  a     Atomic matrix
+ * @param  data  EAM potential data.
+ * @param  p     parameters
+ * @param  ngbrs List of neighbours.
+ * @return       value of energy
+ * @note         This function has been tested in ::test_energyAtIndexFCC. Refer it
+ *               for usage information.
+ */
+double* energyInMatrix(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
-    *energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
+    double *energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
 
     for (int i = 0; i < p->no_of_atoms; i++)
     {
-        (*energyMatrix)[i] = energyAtIndexFCC(i, a, data, p, ngbrs);
+        (energyMatrix)[i] = energyAtIndexFCC(i, a, data, p, ngbrs);
     }
+    return energyMatrix;
 }
 
+/**
+ * Prints a double array to STDOUT.
+ * @param matrix      double array
+ * @param init_index  begin print at this index
+ * @param final_index end at this index
+ * @note              Created for use in context of energy matrix.
+ */
 void printEnergyMap(double * matrix, int init_index, int final_index)
 {
     for (int i = init_index; i < final_index; i++)
@@ -460,6 +550,17 @@ void printEnergyMap(double * matrix, int init_index, int final_index)
     }
 }
 
+/**
+ * Function to calculate the energy required to swap an atom at a given index.
+ * If say that the atom was initally atom1 then on swapping it would be atom2.
+ *
+ * @param  index index of ATOM array
+ * @param  a     ATOM array
+ * @param  data  EAM potential
+ * @param  p     parameters of the system
+ * @param  ngbrs list of neighbour atoms.
+ * @return       change in energy when atom at the given index is swapped
+ */
 double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
     point3D * current = point3D_indexToPoint3D_fcc(index, p);
@@ -508,6 +609,7 @@ double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc 
             }
         }
         free(r_data);
+        free(k);
     }
 
     eDen_df * embeddingEnergy = eDen_df_charge_density_retrive(data, chargeDen);
@@ -526,13 +628,21 @@ double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc 
     free(current);
     return energy2 - energy1;
 }
-
-void deltaEnergyMatrix(double ** energyMatrix, int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
+/**
+ * Computes and reports change in energy at every index of the ATOM array
+ * @param a            ATOM array
+ * @param data         EAM potential data
+ * @param p            simulation parameters
+ * @param ngbrs        neighbours list
+ * @return             pointer to created change in energy matrix
+ */
+double* deltaEnergyMatrix(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
-    *energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
+    double *energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
 
     for (int i = 0; i < p->no_of_atoms; i++)
     {
-        (*energyMatrix)[i] = energyToSwap(i, a, data, p, ngbrs);
+        (energyMatrix)[i] = energyToSwap(i, a, data, p, ngbrs);
     }
+    return energyMatrix;
 }

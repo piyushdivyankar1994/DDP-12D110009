@@ -1,3 +1,10 @@
+/*!
+   \file point3D.c
+   \brief Source file for point3D.h
+   \author Piyush Divyankar
+   \date 01/09/2016
+*/
+
 #include "point3D.h"
 
 /**

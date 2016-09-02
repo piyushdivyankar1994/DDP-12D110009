@@ -32,15 +32,16 @@ float concentrationOfAtom1(int * a, int no_of_atoms)
    \brief Returns no of atoms of type 1 in a atomic matrix
    \param a atomic matrix
    \param no_of_atoms total no of atoms in the matrix
+   \param atom_key integer value that represents that atom in the matrix
    \return No of atoms of type 1 in atomic matrix
  */
-int countOfAtom1(int * a, int no_of_atoms)
+int countOfAtom(int * a, int no_of_atoms, int atom_key)
 {
     int count = 0;
 
     for (size_t i = 0; i < no_of_atoms; i++)
     {
-        if (a[i] == 0)
+        if (a[i] == atom_key)
         {
             count++;
         }

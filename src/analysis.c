@@ -1,5 +1,16 @@
 #include "analysis.h"
 
+/**
+ * Calculates total bond energy in a atomic matrix.
+ * @param  a     ::ATOM array(poistion of various atoms in lattice)
+ * @param  data  ::binaryEAMpotential for computing bond energies.
+ * @param  p     ::parameter for the given lattice.
+ * @param  ngbrs ::neighbours_fcc containing neighbours relative to (0, 0, 0) in fcc crystal
+ * @return       net bond energy
+ * @pre          It is assumed that atomic matrix, binaryEAMpotential, parameter,
+ *               and neighbours_fcc are consistent. No checks are made about their
+ *               consistency.
+ */
 double analysis_totalEnergy(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
     double ret_val = 0;
@@ -12,6 +23,13 @@ double analysis_totalEnergy(int * a, binEAMpot * data, parameter * p, Sn_fcc * n
     return ret_val;
 }
 
+/**
+ * Counts total number of ordered phase sites in atomic matrix
+ * @param  a     ::ATOM array(poistion of various atoms in lattice)
+ * @param  p     ::parameter for the given lattice.
+ * @param  ngbrs ::neighbours_fcc containing neighbours relative to (0, 0, 0) in fcc crystal
+ * @return       integer number of ordered phase counts.
+ */
 int orderedPhaseCount(int * a, parameter * p, Sn_fcc * ngbrs)
 {
     printf("oregnioegn\n");
@@ -40,6 +58,13 @@ int orderedPhaseCount(int * a, parameter * p, Sn_fcc * ngbrs)
     return count;
 }
 
+/**
+ * Counts total number of anti-ordered phase sites in atomic matrix
+ * @param  a     ::ATOM array(poistion of various atoms in lattice)
+ * @param  p     ::parameter for the given lattice.
+ * @param  ngbrs ::neighbours_fcc containing neighbours relative to (0, 0, 0) in fcc crystal
+ * @return       integer number of anti-ordered phase counts.
+ */
 int antiOrderedPhaseCount(int * a, parameter * p, Sn_fcc * fcc)
 {
     int count = 0;
@@ -68,6 +93,12 @@ int antiOrderedPhaseCount(int * a, parameter * p, Sn_fcc * fcc)
     return count;
 }
 
+/**
+ * Generates a random atomic matrix.
+ * @param p               ::parameter of matrix.
+ * @param ouput_file_name output file name(written to /"output_file_name".crystal.fcc)
+ * @param seed            [description]
+ */
 void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned long int seed)
 {
     const gsl_rng_type * T;
@@ -111,6 +142,11 @@ void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned lo
     // fclose(fr);
 }
 
+/**
+ * Counts total number of atoms in a file
+ * @param  fp file of the form *.crystal.fcc
+ * @return    number of atoms
+ */
 int totalAtomsInFile(FILE * fp)
 {
     fseek(fp, 0L, SEEK_END);
@@ -118,5 +154,3 @@ int totalAtomsInFile(FILE * fp)
     fseek(fp, 0L, SEEK_SET);
     return no_of_atoms;
 }
-
-// / TODO:20 Binary type data storage that always talked about

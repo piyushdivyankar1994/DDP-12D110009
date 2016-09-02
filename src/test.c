@@ -1,3 +1,9 @@
+/*!
+   \file test.c
+   \brief Source file for test functions
+   \author Piyush Divyankar
+   \date 01/09/2016
+*/
 #include "test.h"
 
 void test_new_parameters()
@@ -16,7 +22,7 @@ void test_dataRetrival()
     rdf * nn = (rdf *) malloc(sizeof(rdf));
     eDen_df * a = (eDen_df *) malloc(sizeof(eDen_df));
 
-    eam_data_read(&data, "file_list.txt", "Al", "Ni");
+    data = eam_data_read("file_list.txt", "Al", "Ni");
     nn = rdf_radius_retrive(data, r);
     printf("%d\n", nn->index);
     printf("%le\n", nn->p11);
@@ -30,17 +36,19 @@ void test_dataRetrival()
     printf("%le\n", a->eDen);
     printf("%le\n", a->embed1);
     printf("%le\n", a->embed2);
+    free(data);
 }
 
 void test_eam_data_read()
 {
     binEAMpot * data = NULL;
 
-    eam_data_read(&data, "file_list.txt", "Al", "Ni");
+    data = eam_data_read("/home/piyushdivyankar/Desktop/DDP-12D110009/EAM_Ni_Al/file_list.txt", "Al", "Ni");
 
     printf("%d\n", data->no_of_files);
     printf("%s\n", data->atom1);
     printf("%s\n", data->atom2);
+    free(data);
 }
 
 void test_point3D_indexToPoint3D_fcc()
@@ -130,14 +138,17 @@ void test_energyAtIndexFCC()
     int index = 100;
     binEAMpot * data = NULL;
 
-    eam_data_read(&data, "./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    data = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
     parameter * p = _defaultFCCparameter();
     int * a = readCrystalFileFCC("inputCrystalFiles/input.crystal.fcc");
     // test_AtomicMatrixRead();
     Sn_fcc * new = _defaultFCCNeighbours();
     double e = energyAtIndexFCC(index, a, data, p, new);
     printf("at index = %d energy = %f\n", index, e);
-
+    free(data);
+    free(p);
+    free(a);
+    free(new);
 }
 
 void test_point3D_point3DtoIndexFCCFCC()
@@ -170,38 +181,46 @@ void test_point3D_periodicBoundaryTransform()
     point3D_dispPoint(new);
 }
 
+/// TODO find memory leak in this
 void test_energyInMatrix()
 {
     binEAMpot * data = NULL;
 
-    eam_data_read(&data, "./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    data = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
     parameter * p = _defaultFCCparameter();
     int * a = readCrystalFileFCC("inputCrystalFiles/input.crystal.fcc");
     // test_AtomicMatrixRead();
     Sn_fcc * new = _defaultFCCNeighbours();
 
     // / Example:
-    double * energyMap = NULL;
-    energyInMatrix(&energyMap, a, data, p, new);
+    double * energyMap = energyInMatrix(a, data, p, new);
     printEnergyMap(energyMap, 100, 200);
+    free(p);
+    free(a);
+    free(new);
     free(energyMap);
 
 }
 
+/// DONE Memory leaks in this function.
+/// Occured due to ::energyToSwap function now fixed
 void test_deltaEnergyMatrix()
 {
     binEAMpot * data = NULL;
 
-    eam_data_read(&data, "./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    data = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
     parameter * p = _defaultFCCparameter();
     int * a = readCrystalFileFCC("inputCrystalFiles/input.crystal.fcc");
     // test_AtomicMatrixRead();
     Sn_fcc * new = _defaultFCCNeighbours();
 
     // / Example:
-    double * energyMap = NULL;
-    deltaEnergyMatrix(&energyMap, a, data, p, new);
+    double * energyMap = deltaEnergyMatrix(a, data, p, new);
     printEnergyMap(energyMap, 100, 200);
+    free(data);
+    free(p);
+    free(a);
+    free(new);
     free(energyMap);
 }
 
@@ -214,7 +233,7 @@ void test_chemicalPotentialAtIndex()
 {
     binEAMpot * data = NULL;
 
-    eam_data_read(&data, "./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    data = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
     parameter * p = _defaultFCCparameter();
     int * a = readCrystalFileFCC("inputCrystalFiles/input.crystal.fcc");
     Sn_fcc * new = _defaultFCCNeighbours();
@@ -229,7 +248,7 @@ void test_analysis_totalEnergy()
 {
     binEAMpot * data = NULL;
 
-    eam_data_read(&data, "./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    data = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
     parameter * p = _defaultFCCparameter();
     int * a = readCrystalFileFCC("inputCrystalFiles/input.crystal.fcc");
     Sn_fcc * new = _defaultFCCNeighbours();
@@ -332,7 +351,7 @@ void test_parametersInputOutput()
     printf("Writing to file\n");
     parameterWriteToFile(new);
     parameter * check = NULL;
-    // /DONE:0 Segmentation fault
+    // /DONE:10 Segmentation fault
     check = parameterReadFromFile(new->fileName);
     if (check == NULL)
     {

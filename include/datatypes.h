@@ -64,12 +64,12 @@ struct parameter
     /** Number of atoms per site in motiff */
     int atoms_per_site;
     /** Number of nth nearest neighbours stores upto 7 */
-    // / FUTURE_CHANGES:30 must make this general so that upto nth nearest neighbours can be
+    // / FUTURE_CHANGES:20 must make this general so that upto nth nearest neighbours can be
     // / shown
     int nearestNeighbours[7];
     /** Stores the FILE name that the object is parsed from unset from default*/
     /** TODO:0 make so that it is '\0' by default */
-    /** DONE:10 change functions of parsing this type to reflect this addition */
+    /** DONE:20 change functions of parsing this type to reflect this addition */
     char fileName[50];
 } typedef parameter;
 /**

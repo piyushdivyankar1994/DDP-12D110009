@@ -23,7 +23,7 @@
   "lists": [
     {
       "name": "FUTURE_CHANGES",
-      "hidden": true
+      "hidden": false
     },
     {
       "name": "TODO",

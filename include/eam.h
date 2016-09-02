@@ -22,7 +22,7 @@ void print_Neighbours(Sn_fcc *);
 
 Sn_fcc * _defaultFCCNeighbours();
 
-void eam_data_read(binEAMpot **, char *, char [], char []);
+binEAMpot* eam_data_read(char *, char [], char []);
 
 rdf * rdf_radius_retrive(binEAMpot *, double);
 
@@ -30,11 +30,11 @@ eDen_df * eDen_df_charge_density_retrive(binEAMpot *, double);
 
 double energyAtIndexFCC(int, int *, binEAMpot *, parameter *, Sn_fcc *);
 
-void energyInMatrix(double **, int *, binEAMpot *, parameter *, Sn_fcc *);
+double* energyInMatrix(int *, binEAMpot *, parameter *, Sn_fcc *);
 
 void printEnergyMap(double *, int, int);
 
 double energyToSwap(int, int *, binEAMpot *, parameter *, Sn_fcc *);
 
-void deltaEnergyMatrix(double **, int *, binEAMpot *, parameter *, Sn_fcc *);
+double* deltaEnergyMatrix(int *, binEAMpot *, parameter *, Sn_fcc *);
 #endif /* ifndef _EAM_H */

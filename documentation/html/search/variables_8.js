@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['n_5fmcs',['N_MCS',['../structparameter.html#a4b09c598c9556211a013cced50700d52',1,'parameter']]],
-  ['nearestneighbours',['nearestNeighbours',['../structparameter.html#a6cd3c4eeb7a0ccdd288a67d6641c378d',1,'parameter']]],
-  ['no_5fof_5fatoms',['no_of_atoms',['../structparameter.html#a86aba2ea814d8f766c282d9399bee877',1,'parameter']]],
-  ['no_5fof_5ffiles',['no_of_files',['../structbinaryEAMpotential.html#a958dea9e85e7cff81e8da96fdba59707',1,'binaryEAMpotential']]],
-  ['nx',['Nx',['../structparameter.html#a181d717c99b207fd606ee29ed40a1d7e',1,'parameter']]],
-  ['ny',['Ny',['../structparameter.html#ad8f2321f94970f75731a6aca6181e3a7',1,'parameter']]],
-  ['nz',['Nz',['../structparameter.html#af86cee62b97d8c952f5feeb88b0eb435',1,'parameter']]]
+  ['p11',['p11',['../structrdf.html#a26bcfa49c52ed3d573f4547f41614d29',1,'rdf']]],
+  ['p12',['p12',['../structrdf.html#afb730f2f68d42fe7293feca5f40a0d57',1,'rdf']]],
+  ['p22',['p22',['../structrdf.html#a373a0f2dbbfea74223018d9abb38adaa',1,'rdf']]],
+  ['pair_5fatom1_5fatom1',['pair_atom1_atom1',['../structbinEAMpot.html#ad095873b1da2be0a54efffab3aa5b1d5',1,'binEAMpot']]],
+  ['pair_5fatom1_5fatom2',['pair_atom1_atom2',['../structbinEAMpot.html#ae87ef3f67ed5611c38c9b5fbbccb8f82',1,'binEAMpot']]],
+  ['pair_5fatom2_5fatom2',['pair_atom2_atom2',['../structbinEAMpot.html#a8bc61e8287f339fe9c4c1c17ecbe082f',1,'binEAMpot']]]
 ];

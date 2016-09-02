@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('simulation_8c.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,6 +109,9 @@ $(document).ready(function(){initNavTree('simulation_8c.html','');});
 <div class="title">simulation.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Source code for <a class="el" href="simulation_8h.html">simulation.h</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="simulation_8h_source.html">simulation.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for simulation.c:</div>
@@ -122,7 +126,11 @@ Functions</h2></td></tr>
 <tr class="memitem:aa450392abc833fc424014eda7fb3d178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8c.html#aa450392abc833fc424014eda7fb3d178">twoPhaseEquilibriaSimulation</a> (unsigned long int seed_value)</td></tr>
 <tr class="separator:aa450392abc833fc424014eda7fb3d178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Source code for <a class="el" href="simulation_8h.html">simulation.h</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>01/09/2016 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa450392abc833fc424014eda7fb3d178"></a>
 <div class="memitem">
 <div class="memproto">
@@ -136,18 +144,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                                {</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <a class="code" href="structparameter.html">parameter</a> *AlNi_fcc = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <a class="code" href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a> *potential = NULL;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <a class="code" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a>(&amp;(potential), <span class="stringliteral">&quot;file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a>(AlNi_fcc, <span class="stringliteral">&quot;test&quot;</span>, seed_value + 213);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="ttc" id="analysis_8c_html_a1f6065e798779a8e6ecb1a778b9c0f68"><div class="ttname"><a href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed)</div><div class="ttdef"><b>Definition:</b> analysis.c:58</div></div>
-<div class="ttc" id="datatypes_8h_html_a9b8e8fd4d67ba35d10eb880211c16c2f"><div class="ttname"><a href="datatypes_8h.html#a9b8e8fd4d67ba35d10eb880211c16c2f">binEAMpot</a></div><div class="ttdeci">struct binaryEAMpotential binEAMpot</div></div>
-<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:68</div></div>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * AlNi_fcc = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * potential = NULL;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    potential = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a>(AlNi_fcc, <span class="stringliteral">&quot;test&quot;</span>, seed_value + 213);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="ttc" id="analysis_8c_html_a1f6065e798779a8e6ecb1a778b9c0f68"><div class="ttname"><a href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
+<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
+<div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
-<div class="ttc" id="eam_8c_html_ac3dc9e70c3589c631ee826d4e098a99a"><div class="ttname"><a href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam_data_read</a></div><div class="ttdeci">void eam_data_read(binEAMpot **eam_data, char *fileName, char atom1[2], char atom2[2])</div><div class="ttdef"><b>Definition:</b> eam.c:134</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -157,7 +166,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="simulation_8c.html">simulation.c</a></li>
-    <li class="footer">Generated on Thu Sep 1 2016 05:59:54 for DDP-12D110009 by
+    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

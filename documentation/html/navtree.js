@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "DDP-12D110009", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -26,8 +27,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"analysis_8c.html",
-"test_8h_source.html"
+"analysis_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
