@@ -7,6 +7,9 @@
 
 #include "simulation.h"
 
+/** Boltzmann contant in eV/K */
+#define KB  8.61e-5
+
 void twoPhaseEquilibriaSimulation(unsigned long int seed_value)
 {
     parameter * AlNi_fcc = _defaultFCCparameter();
@@ -36,6 +39,15 @@ void twoPhaseEquilibriaSimulation(unsigned long int seed_value)
         int index   = u * AlNi_fcc->no_of_atoms;
         double e = energyToSwap(index, inputMatrix, potential,
                                 AlNi_fcc, fccNeighbours);
-
+        u = gsl_rng_uniform(r);
+        e = exp(e/(KB * AlNi_fcc->temperature));
+        if (e > 1 || e < u) {
+            if (inputMatrix[index] == 0) {
+                inputMatrix[index] = 1;
+            }
+            else inputMatrix[index] = 0;
+        }
     }
+
+    fwrite(inputMatrix, sizeof(inputMatrix), 1, fp);
 }
