@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('structparameter.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('structparameter.html','');});
 <p>This structure contains list of parameters that define the system.  
  <a href="structparameter.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="datatypes_8h_source.html">datatypes.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="datatypes_8h_source.html">/home/piyushdivyankar/Desktop/DDP-12D110009/include/datatypes.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -145,10 +146,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a6cd3c4eeb7a0ccdd288a67d6641c378d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparameter.html#a6cd3c4eeb7a0ccdd288a67d6641c378d">nearestNeighbours</a> [7]</td></tr>
 <tr class="memdesc:a6cd3c4eeb7a0ccdd288a67d6641c378d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of nth nearest neighbours stores upto 7.  <a href="#a6cd3c4eeb7a0ccdd288a67d6641c378d">More...</a><br/></td></tr>
 <tr class="separator:a6cd3c4eeb7a0ccdd288a67d6641c378d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a5d4c946d3a8901036f0b2a8ebbc6e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparameter.html#aa5a5d4c946d3a8901036f0b2a8ebbc6e">fileName</a> [50]</td></tr>
+<tr class="memdesc:aa5a5d4c946d3a8901036f0b2a8ebbc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the FILE name that the object is parsed from unset from default.  <a href="#aa5a5d4c946d3a8901036f0b2a8ebbc6e">More...</a><br/></td></tr>
+<tr class="separator:aa5a5d4c946d3a8901036f0b2a8ebbc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This structure contains list of parameters that define the system. </p>
-<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a84f428fbd245db95a70067688026251d"></a>
 <div class="memitem">
@@ -161,6 +164,21 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of atoms per site in motiff. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa5a5d4c946d3a8901036f0b2a8ebbc6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char parameter::fileName[50]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores the FILE name that the object is parsed from unset from default. </p>
+<p>TODO:0 make so that it is '\0' by default DONE:20 change functions of parsing this type to reflect this addition </p>
 
 </div>
 </div>
@@ -203,7 +221,6 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of nth nearest neighbours stores upto 7. </p>
-<p>NOTE: must make this general so that upto nth nearest neighbours can be shown </p>
 
 </div>
 </div>
@@ -286,7 +303,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structparameter.html">parameter</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 15:34:25 for DDP-12D110009 by
+    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

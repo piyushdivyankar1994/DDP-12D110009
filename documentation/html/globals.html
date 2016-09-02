@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -77,6 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="globals.html"><span>All</span></a></li>
       <li><a href="globals_func.html"><span>Functions</span></a></li>
       <li><a href="globals_vars.html"><span>Variables</span></a></li>
+      <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
       <li><a href="globals_defs.html"><span>Macros</span></a></li>
@@ -120,7 +122,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -133,6 +135,9 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>__free3()
+: <a class="el" href="point3D_8h.html#a737814f0bbb4a82c81c7ef50d1ce34b9">point3D.h</a>
+</li>
 <li>_ANALYSIS_H
 : <a class="el" href="analysis_8h.html#a85f79046f4eb53d0684f0f0f2a2f6eb3">analysis.h</a>
 </li>
@@ -162,6 +167,9 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a">analysis.c</a>
 , <a class="el" href="analysis_8h.html#a8baf9f8b8f049ab49e7bec082872412c">analysis.h</a>
 </li>
+<li>ATOM
+: <a class="el" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">datatypes.h</a>
+</li>
 <li>atomicMatrixRead()
 : <a class="el" href="eam_8c.html#ab29b05cb515f1f9ef33a1ca83ba1098f">eam.c</a>
 , <a class="el" href="eam_8h.html#a81604ae9201fc06b88a6e191b45eca4a">eam.h</a>
@@ -173,9 +181,6 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>binary_search()
 : <a class="el" href="math__functions_8c.html#aeb6df0aebf39d360dc0ad3b29b9f89f1">math_functions.c</a>
 , <a class="el" href="math__functions_8h.html#a8e62991a68e4e3dbadf978dc97d25896">math_functions.h</a>
-</li>
-<li>binEAMpot
-: <a class="el" href="datatypes_8h.html#a253ef65ed0fe2f33dfb84b30c48497b6">datatypes.h</a>
 </li>
 <li>Boolean
 : <a class="el" href="datatypes_8h.html#ae7d38601dfbd73adbe5c1b3ec34e0e13">datatypes.h</a>
@@ -192,20 +197,20 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="chemicalPotential_8c.html#ab93d4dc60cabed19924d0ff01ebfc425">chemicalPotential.c</a>
 , <a class="el" href="chemicalPotential_8h.html#a586196056e0dc38a775be0f89620e78b">chemicalPotential.h</a>
 </li>
-<li>countOfAtom1()
-: <a class="el" href="chemicalPotential_8c.html#ae30b735428b71420e08ce3fcb6a22e97">chemicalPotential.c</a>
+<li>countOfAtom()
+: <a class="el" href="chemicalPotential_8c.html#a1937fc884bf8422aed397c87e265c860">chemicalPotential.c</a>
 </li>
 <li>createParameterFileFromInput()
-: <a class="el" href="parameters_8c.html#a25f9e0ba2a887cafa2fda686c787cd49">parameters.c</a>
-, <a class="el" href="parameters_8h.html#a25f9e0ba2a887cafa2fda686c787cd49">parameters.h</a>
+: <a class="el" href="parameters_8c.html#abcf8d4591625224623e8f1d617de139c">parameters.c</a>
+, <a class="el" href="parameters_8h.html#abcf8d4591625224623e8f1d617de139c">parameters.h</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>deltaEnergyMatrix()
-: <a class="el" href="eam_8c.html#a88ce1b8eeda8037a31dcafab10e33a48">eam.c</a>
-, <a class="el" href="eam_8h.html#abfb5049f0e8f70b80ff707fb4b5028a7">eam.h</a>
+: <a class="el" href="eam_8c.html#ab099d8527b6e5d309fd7f1da3d50a15d">eam.c</a>
+, <a class="el" href="eam_8h.html#aa854bfe4512002f61c0b2fc0cbd14abf">eam.h</a>
 </li>
 <li>dist_3d()
 : <a class="el" href="math__functions_8c.html#aaaf688509934f02433a9d8ce92502617">math_functions.c</a>
@@ -216,11 +221,8 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>eam_data_read()
-: <a class="el" href="eam_8c.html#ac3dc9e70c3589c631ee826d4e098a99a">eam.c</a>
-, <a class="el" href="eam_8h.html#aaa73595b3f468b1dba69daf218a70d9c">eam.h</a>
-</li>
-<li>eDen_df
-: <a class="el" href="datatypes_8h.html#a190e8a8e63fef59f0bf2d3b61f502426">datatypes.h</a>
+: <a class="el" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam.c</a>
+, <a class="el" href="eam_8h.html#a4b23b39d371fecb8cfe4f2958e5c78b9">eam.h</a>
 </li>
 <li>eDen_df_charge_density_retrive()
 : <a class="el" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35">eam.c</a>
@@ -231,8 +233,8 @@ $(document).ready(function(){initNavTree('globals.html','');});
 , <a class="el" href="eam_8h.html#ae1502e45900f2519199a591d8c66819b">eam.h</a>
 </li>
 <li>energyInMatrix()
-: <a class="el" href="eam_8c.html#a755a89ea914231e14c9da2ec10e03c0f">eam.c</a>
-, <a class="el" href="eam_8h.html#af6aef16f769a88641d1d781e42d2ca80">eam.h</a>
+: <a class="el" href="eam_8c.html#a0e5a832cc8fed840b66c775c3a4c5ec5">eam.c</a>
+, <a class="el" href="eam_8h.html#a003d9d2c38d1865004b7c8d2f073a5fa">eam.h</a>
 </li>
 <li>energyToSwap()
 : <a class="el" href="eam_8c.html#a0e1a8f680274c658fc70be9f69211560">eam.c</a>
@@ -262,8 +264,8 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
 <li>new_parameters()
-: <a class="el" href="parameters_8c.html#abca825200b69747b9f371d40772d1c22">parameters.c</a>
-, <a class="el" href="parameters_8h.html#abca825200b69747b9f371d40772d1c22">parameters.h</a>
+: <a class="el" href="parameters_8c.html#a89cb6fd3db74441fd68f88dd5023e4be">parameters.c</a>
+, <a class="el" href="parameters_8h.html#a89cb6fd3db74441fd68f88dd5023e4be">parameters.h</a>
 </li>
 </ul>
 
@@ -277,11 +279,20 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
-<li>parameter
-: <a class="el" href="datatypes_8h.html#a14b5abcb27bf4977ee75aa28d8676c6c">datatypes.h</a>
+<li>PARAM_FILE_DEF_NAME
+: <a class="el" href="datatypes_8h.html#a7a126d20ea42b5b7faac25b147289931">datatypes.h</a>
 </li>
-<li>point3D
-: <a class="el" href="datatypes_8h.html#add8005f66db8594ce6ce106d8025d790">datatypes.h</a>
+<li>parameterDefaultFile()
+: <a class="el" href="parameters_8c.html#a4370cd24131bde11d4eb2a821eb6978a">parameters.c</a>
+, <a class="el" href="parameters_8h.html#a4370cd24131bde11d4eb2a821eb6978a">parameters.h</a>
+</li>
+<li>parameterReadFromFile()
+: <a class="el" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameters.c</a>
+, <a class="el" href="parameters_8h.html#a611b664bd3f19b2f0bbb84c40f716769">parameters.h</a>
+</li>
+<li>parameterWriteToFile()
+: <a class="el" href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e">parameters.c</a>
+, <a class="el" href="parameters_8h.html#a1f272b3d37153cd916635f70f72a85a7">parameters.h</a>
 </li>
 <li>point3D_addVectors()
 : <a class="el" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D.c</a>
@@ -319,16 +330,20 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6">point3D.c</a>
 , <a class="el" href="point3D_8h.html#af8471a31fab6c5fc61334b6b6c336957">point3D.h</a>
 </li>
-<li>point3D_point3DtoIndex()
-: <a class="el" href="point3D_8c.html#a4e924b793efe2ad4fdb9386a610db3d4">point3D.c</a>
-, <a class="el" href="point3D_8h.html#af785db6ac835c3e1a77f2dd49d4194c9">point3D.h</a>
+<li>point3D_point3DtoIndexFCC()
+: <a class="el" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D.c</a>
+, <a class="el" href="point3D_8h.html#a0cdf580f85f94e87d9c269dbc529f54a">point3D.h</a>
 </li>
 <li>point3D_subtractVectors()
 : <a class="el" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2">point3D.c</a>
 , <a class="el" href="point3D_8h.html#a9594abd399e2a320c0ab8c002e258f74">point3D.h</a>
 </li>
+<li>point3DmoveTransform()
+: <a class="el" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c">point3D.c</a>
+, <a class="el" href="point3D_8h.html#a9366e0b0ebac5e077eeae9101dac8d62">point3D.h</a>
+</li>
 <li>print_AtomicMatrix()
-: <a class="el" href="eam_8c.html#aca422b240ea9810be8ae6046d8d18578">eam.c</a>
+: <a class="el" href="eam_8c.html#a0f17ec1dc8b84b69a85a570e4ed39cbf">eam.c</a>
 , <a class="el" href="eam_8h.html#a662ed8378ad04d9a91c0d442a31b4219">eam.h</a>
 </li>
 <li>print_Neighbours()
@@ -354,9 +369,6 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">analysis.c</a>
 , <a class="el" href="analysis_8h.html#a1f7e73fc0f0dbcc5d3d597256bdf52a2">analysis.h</a>
 </li>
-<li>rdf
-: <a class="el" href="datatypes_8h.html#a6a9ff7b9fd522ba488df409349a54972">datatypes.h</a>
-</li>
 <li>rdf_radius_retrive()
 : <a class="el" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0">eam.c</a>
 , <a class="el" href="eam_8h.html#ac4e8b21c0b0eecf61fd537048ee4a893">eam.h</a>
@@ -369,9 +381,6 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>Sn_fcc
-: <a class="el" href="datatypes_8h.html#aa65c5af4a5aa76e460bf742409936f68">datatypes.h</a>
-</li>
 <li>Sn_fcc_readNeighbours_fromFile()
 : <a class="el" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3">eam.c</a>
 , <a class="el" href="eam_8h.html#afafb1f0900950b0f540295a7a4dc1542">eam.h</a>
@@ -431,6 +440,10 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="test_8c.html#ab77e6e8e894646db8fd98746af544ba1">test.c</a>
 , <a class="el" href="test_8h.html#ab77e6e8e894646db8fd98746af544ba1">test.h</a>
 </li>
+<li>test_parametersInputOutput()
+: <a class="el" href="test_8c.html#a4cc04226db74e2e8b1dc56eb9791b2bc">test.c</a>
+, <a class="el" href="test_8h.html#a4cc04226db74e2e8b1dc56eb9791b2bc">test.h</a>
+</li>
 <li>test_point3D()
 : <a class="el" href="test_8c.html#a18d9a74feb479a15d5f42aae8bc5802b">test.c</a>
 , <a class="el" href="test_8h.html#a18d9a74feb479a15d5f42aae8bc5802b">test.h</a>
@@ -456,8 +469,10 @@ $(document).ready(function(){initNavTree('globals.html','');});
 , <a class="el" href="test_8h.html#af86bade21ef5cb13f31d85dcf336a60a">test.h</a>
 </li>
 <li>test_point3D_point3DtoIndex()
-: <a class="el" href="test_8c.html#aabd1cd2f12a661db2ff7a6f81d8c6ae6">test.c</a>
-, <a class="el" href="test_8h.html#aabd1cd2f12a661db2ff7a6f81d8c6ae6">test.h</a>
+: <a class="el" href="test_8h.html#aabd1cd2f12a661db2ff7a6f81d8c6ae6">test.h</a>
+</li>
+<li>test_point3D_point3DtoIndexFCCFCC()
+: <a class="el" href="test_8c.html#a165798f31c9df931b4ba5a8c980145a2">test.c</a>
 </li>
 <li>test_randomMatrixGeneratorFCC()
 : <a class="el" href="test_8c.html#a1fc46bb9c57af50a40b7d5bce9f0f3b6">test.c</a>
@@ -488,7 +503,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Aug 30 2016 15:34:25 for DDP-12D110009 by
+    <li class="footer">Generated on Fri Sep 2 2016 20:56:17 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

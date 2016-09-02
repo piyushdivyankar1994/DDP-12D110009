@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('structneighbours__fcc.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,9 +104,6 @@ $(document).ready(function(){initNavTree('structneighbours__fcc.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structneighbours__fcc-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">neighbours_fcc Struct Reference</div>  </div>
 </div><!--header-->
@@ -114,159 +112,10 @@ $(document).ready(function(){initNavTree('structneighbours__fcc.html','');});
 <p>This structure holds an array of points that represent the relative miller indices of the neighbours atoms from a particular site.  
  <a href="structneighbours__fcc.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="datatypes_8h_source.html">datatypes.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for neighbours_fcc:</div>
-<div class="dyncontent">
-<div class="center"><img src="structneighbours__fcc__coll__graph.png" border="0" usemap="#neighbours__fcc_coll__map" alt="Collaboration graph"/></div>
-<map name="neighbours__fcc_coll__map" id="neighbours__fcc_coll__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:acd1bf5ddc6b9e8dc2d10048b81355e64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#acd1bf5ddc6b9e8dc2d10048b81355e64">s1n</a> [12]</td></tr>
-<tr class="memdesc:acd1bf5ddc6b9e8dc2d10048b81355e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for first nearest neighbours.  <a href="#acd1bf5ddc6b9e8dc2d10048b81355e64">More...</a><br/></td></tr>
-<tr class="separator:acd1bf5ddc6b9e8dc2d10048b81355e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6ac8711a528f1fa8cca0f0ca4133f66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#ae6ac8711a528f1fa8cca0f0ca4133f66">s2n</a> [6]</td></tr>
-<tr class="memdesc:ae6ac8711a528f1fa8cca0f0ca4133f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for second nearest neighbours.  <a href="#ae6ac8711a528f1fa8cca0f0ca4133f66">More...</a><br/></td></tr>
-<tr class="separator:ae6ac8711a528f1fa8cca0f0ca4133f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71c5c641d283d87c09fe02e6c6421185"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#a71c5c641d283d87c09fe02e6c6421185">s3n</a> [24]</td></tr>
-<tr class="memdesc:a71c5c641d283d87c09fe02e6c6421185"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for third nearest neighbours.  <a href="#a71c5c641d283d87c09fe02e6c6421185">More...</a><br/></td></tr>
-<tr class="separator:a71c5c641d283d87c09fe02e6c6421185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d392e6f97c7096b51a60a1307db3ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#a56d392e6f97c7096b51a60a1307db3ea">s4n</a> [12]</td></tr>
-<tr class="memdesc:a56d392e6f97c7096b51a60a1307db3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for fourth nearest neighbours.  <a href="#a56d392e6f97c7096b51a60a1307db3ea">More...</a><br/></td></tr>
-<tr class="separator:a56d392e6f97c7096b51a60a1307db3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cb13cfa68c977251f8455282f20ac41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#a5cb13cfa68c977251f8455282f20ac41">s5n</a> [24]</td></tr>
-<tr class="memdesc:a5cb13cfa68c977251f8455282f20ac41"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for fifth nearest neighbours.  <a href="#a5cb13cfa68c977251f8455282f20ac41">More...</a><br/></td></tr>
-<tr class="separator:a5cb13cfa68c977251f8455282f20ac41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cdfa41dacd7a8460948e08bcd279332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#a5cdfa41dacd7a8460948e08bcd279332">s6n</a> [8]</td></tr>
-<tr class="memdesc:a5cdfa41dacd7a8460948e08bcd279332"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for sixth nearest neighbours.  <a href="#a5cdfa41dacd7a8460948e08bcd279332">More...</a><br/></td></tr>
-<tr class="separator:a5cdfa41dacd7a8460948e08bcd279332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dec1d05f3905e6ab3a9d6d73709ef2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpoint3D.html">point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#a3dec1d05f3905e6ab3a9d6d73709ef2c">s7n</a> [48]</td></tr>
-<tr class="memdesc:a3dec1d05f3905e6ab3a9d6d73709ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of points for seventh nearest neighbours.  <a href="#a3dec1d05f3905e6ab3a9d6d73709ef2c">More...</a><br/></td></tr>
-<tr class="separator:a3dec1d05f3905e6ab3a9d6d73709ef2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed22a79722bce058c6e29632076a5db1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbours__fcc.html#aed22a79722bce058c6e29632076a5db1">indices</a> [7]</td></tr>
-<tr class="memdesc:aed22a79722bce058c6e29632076a5db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the numbers of first neareast, second neareast etc.  <a href="#aed22a79722bce058c6e29632076a5db1">More...</a><br/></td></tr>
-<tr class="separator:aed22a79722bce058c6e29632076a5db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+<p><code>#include &lt;<a class="el" href="datatypes_8h_source.html">/home/piyushdivyankar/Desktop/DDP-12D110009/include/datatypes.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This structure holds an array of points that represent the relative miller indices of the neighbours atoms from a particular site. </p>
-<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aed22a79722bce058c6e29632076a5db1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int neighbours_fcc::indices[7]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Contains the numbers of first neareast, second neareast etc. </p>
-
-</div>
-</div>
-<a class="anchor" id="acd1bf5ddc6b9e8dc2d10048b81355e64"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s1n[12]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for first nearest neighbours. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae6ac8711a528f1fa8cca0f0ca4133f66"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s2n[6]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for second nearest neighbours. </p>
-
-</div>
-</div>
-<a class="anchor" id="a71c5c641d283d87c09fe02e6c6421185"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s3n[24]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for third nearest neighbours. </p>
-
-</div>
-</div>
-<a class="anchor" id="a56d392e6f97c7096b51a60a1307db3ea"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s4n[12]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for fourth nearest neighbours. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5cb13cfa68c977251f8455282f20ac41"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s5n[24]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for fifth nearest neighbours. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5cdfa41dacd7a8460948e08bcd279332"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s6n[8]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for sixth nearest neighbours. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3dec1d05f3905e6ab3a9d6d73709ef2c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structpoint3D.html">point3D</a> neighbours_fcc::s7n[48]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of points for seventh nearest neighbours. </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="datatypes_8h_source.html">datatypes.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -275,7 +124,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structneighbours__fcc.html">neighbours_fcc</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 15:34:25 for DDP-12D110009 by
+    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

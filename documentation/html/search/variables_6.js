@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['max_5feden',['max_eDen',['../structbinaryEAMpotential.html#ae2678373c5567fd07063a226dc898822',1,'binaryEAMpotential']]],
-  ['maxradius',['maxRadius',['../structbinaryEAMpotential.html#a9761087d8055ea5472b2f1a4e29c40af',1,'binaryEAMpotential']]],
-  ['min_5feden',['min_eDen',['../structbinaryEAMpotential.html#aa69320dab719d8b2d7ed1a9143292125',1,'binaryEAMpotential']]],
-  ['minradius',['minRadius',['../structbinaryEAMpotential.html#ad74dcfb9d8b6d06389a8aa71557e1fc0',1,'binaryEAMpotential']]]
+  ['max_5feden',['max_eDen',['../structbinEAMpot.html#ab76bb93e121f7bbb8fadd2b9605fe1a0',1,'binEAMpot']]],
+  ['maxradius',['maxRadius',['../structbinEAMpot.html#a8aadf12c2736e216fb6178792eb3a78b',1,'binEAMpot']]],
+  ['min_5feden',['min_eDen',['../structbinEAMpot.html#a18df2a2b368946c51db3a4c2e93879c9',1,'binEAMpot']]],
+  ['minradius',['minRadius',['../structbinEAMpot.html#abb60999bf24bf4f681b90bae6ac0c9ef',1,'binEAMpot']]]
 ];

@@ -14,6 +14,7 @@ var test_8h =
     [ "test_getRandom", "test_8h.html#a1f3acad1457a9918c5e76d912d8e5e03", null ],
     [ "test_new_parameters", "test_8h.html#af16d1974cbed8008842f52a018d149a2", null ],
     [ "test_orderedPhaseCount", "test_8h.html#ab77e6e8e894646db8fd98746af544ba1", null ],
+    [ "test_parametersInputOutput", "test_8h.html#a4cc04226db74e2e8b1dc56eb9791b2bc", null ],
     [ "test_point3D", "test_8h.html#a18d9a74feb479a15d5f42aae8bc5802b", null ],
     [ "test_point3D_addVectors", "test_8h.html#a3ec2c9b6b3af4477a2cd2ad59d22bf6c", null ],
     [ "test_point3D_indexToPoint3D_fcc", "test_8h.html#acfcb10a9c79754b73d20f274a512ba5c", null ],

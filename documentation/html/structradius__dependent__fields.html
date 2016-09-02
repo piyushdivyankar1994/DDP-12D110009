@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('structradius__dependent__fields.html',
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,9 +104,6 @@ $(document).ready(function(){initNavTree('structradius__dependent__fields.html',
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structradius__dependent__fields-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">radius_dependent_fields Struct Reference</div>  </div>
 </div><!--header-->
@@ -114,136 +112,11 @@ $(document).ready(function(){initNavTree('structradius__dependent__fields.html',
 <p>This structure is meant to store EAM data of a single row of values that depend on radius for energy computation.  
  <a href="structradius__dependent__fields.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="datatypes_8h_source.html">datatypes.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a290f70b755078035312f1b2f7c9ea601"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#a290f70b755078035312f1b2f7c9ea601">index</a></td></tr>
-<tr class="memdesc:a290f70b755078035312f1b2f7c9ea601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the record that was picked from the table.  <a href="#a290f70b755078035312f1b2f7c9ea601">More...</a><br/></td></tr>
-<tr class="separator:a290f70b755078035312f1b2f7c9ea601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace0dee6c7c9746b68d9f2730bca2a13c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#ace0dee6c7c9746b68d9f2730bca2a13c">radius</a></td></tr>
-<tr class="memdesc:ace0dee6c7c9746b68d9f2730bca2a13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key value of the radius.  <a href="#ace0dee6c7c9746b68d9f2730bca2a13c">More...</a><br/></td></tr>
-<tr class="separator:ace0dee6c7c9746b68d9f2730bca2a13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5f4b65979cb6efcc0ef2cfe264e5a6f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#ae5f4b65979cb6efcc0ef2cfe264e5a6f">p11</a></td></tr>
-<tr class="memdesc:ae5f4b65979cb6efcc0ef2cfe264e5a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolated pairwise potential atom1.  <a href="#ae5f4b65979cb6efcc0ef2cfe264e5a6f">More...</a><br/></td></tr>
-<tr class="separator:ae5f4b65979cb6efcc0ef2cfe264e5a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d8194a82f75e69aa64a0c5dd3e3fa1c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#a5d8194a82f75e69aa64a0c5dd3e3fa1c">p12</a></td></tr>
-<tr class="memdesc:a5d8194a82f75e69aa64a0c5dd3e3fa1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolated pairwise potential atom1-atom2.  <a href="#a5d8194a82f75e69aa64a0c5dd3e3fa1c">More...</a><br/></td></tr>
-<tr class="separator:a5d8194a82f75e69aa64a0c5dd3e3fa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f52d9eedc417f2d58f61f552d4dbd88"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#a7f52d9eedc417f2d58f61f552d4dbd88">p22</a></td></tr>
-<tr class="memdesc:a7f52d9eedc417f2d58f61f552d4dbd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolated pairwise potential atom2.  <a href="#a7f52d9eedc417f2d58f61f552d4dbd88">More...</a><br/></td></tr>
-<tr class="separator:a7f52d9eedc417f2d58f61f552d4dbd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1117aef58aa7e7c41eead524c5bdaf11"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#a1117aef58aa7e7c41eead524c5bdaf11">eDen1</a></td></tr>
-<tr class="memdesc:a1117aef58aa7e7c41eead524c5bdaf11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolated charge density atom 1.  <a href="#a1117aef58aa7e7c41eead524c5bdaf11">More...</a><br/></td></tr>
-<tr class="separator:a1117aef58aa7e7c41eead524c5bdaf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af30621fec093c61220483e4031c0d46c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structradius__dependent__fields.html#af30621fec093c61220483e4031c0d46c">eDen2</a></td></tr>
-<tr class="memdesc:af30621fec093c61220483e4031c0d46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolated charge density atom 2.  <a href="#af30621fec093c61220483e4031c0d46c">More...</a><br/></td></tr>
-<tr class="separator:af30621fec093c61220483e4031c0d46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+<p><code>#include &lt;<a class="el" href="datatypes_8h_source.html">/home/piyushdivyankar/Desktop/DDP-12D110009/include/datatypes.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This structure is meant to store EAM data of a single row of values that depend on radius for energy computation. </p>
-<p>This structure is meant to store EAM data of a single row of values that depend on charge density for energy computation.</p>
-<dl class="section author"><dt>Author</dt><dd>Piyush Divyankar </dd></dl>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1117aef58aa7e7c41eead524c5bdaf11"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double radius_dependent_fields::eDen1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Linearly interpolated charge density atom 1. </p>
-
-</div>
-</div>
-<a class="anchor" id="af30621fec093c61220483e4031c0d46c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double radius_dependent_fields::eDen2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Linearly interpolated charge density atom 2. </p>
-
-</div>
-</div>
-<a class="anchor" id="a290f70b755078035312f1b2f7c9ea601"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int radius_dependent_fields::index</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Index of the record that was picked from the table. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae5f4b65979cb6efcc0ef2cfe264e5a6f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double radius_dependent_fields::p11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Linearly interpolated pairwise potential atom1. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5d8194a82f75e69aa64a0c5dd3e3fa1c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double radius_dependent_fields::p12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Linearly interpolated pairwise potential atom1-atom2. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7f52d9eedc417f2d58f61f552d4dbd88"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double radius_dependent_fields::p22</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Linearly interpolated pairwise potential atom2. </p>
-
-</div>
-</div>
-<a class="anchor" id="ace0dee6c7c9746b68d9f2730bca2a13c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double radius_dependent_fields::radius</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Key value of the radius. </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<p>This structure is meant to store EAM data of a single row of values that depend on charge density for energy computation. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="datatypes_8h_source.html">datatypes.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -252,7 +125,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structradius__dependent__fields.html">radius_dependent_fields</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 15:34:25 for DDP-12D110009 by
+    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

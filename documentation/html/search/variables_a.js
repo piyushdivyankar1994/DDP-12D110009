@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['s1n',['s1n',['../structneighbours__fcc.html#acd1bf5ddc6b9e8dc2d10048b81355e64',1,'neighbours_fcc']]],
-  ['s2n',['s2n',['../structneighbours__fcc.html#ae6ac8711a528f1fa8cca0f0ca4133f66',1,'neighbours_fcc']]],
-  ['s3n',['s3n',['../structneighbours__fcc.html#a71c5c641d283d87c09fe02e6c6421185',1,'neighbours_fcc']]],
-  ['s4n',['s4n',['../structneighbours__fcc.html#a56d392e6f97c7096b51a60a1307db3ea',1,'neighbours_fcc']]],
-  ['s5n',['s5n',['../structneighbours__fcc.html#a5cb13cfa68c977251f8455282f20ac41',1,'neighbours_fcc']]],
-  ['s6n',['s6n',['../structneighbours__fcc.html#a5cdfa41dacd7a8460948e08bcd279332',1,'neighbours_fcc']]],
-  ['s7n',['s7n',['../structneighbours__fcc.html#a3dec1d05f3905e6ab3a9d6d73709ef2c',1,'neighbours_fcc']]],
-  ['sn_5ffcc',['Sn_fcc',['../datatypes_8h.html#aa65c5af4a5aa76e460bf742409936f68',1,'datatypes.h']]]
+  ['s1n',['s1n',['../structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3',1,'Sn_fcc']]],
+  ['s2n',['s2n',['../structSn__fcc.html#a2c4c64b54ff9eb829fea86da90981dda',1,'Sn_fcc']]],
+  ['s3n',['s3n',['../structSn__fcc.html#aa16dc51e07af60361dfd0675d3b64e20',1,'Sn_fcc']]],
+  ['s4n',['s4n',['../structSn__fcc.html#ae7deaafa997e4ec24ad8c5573afd51e1',1,'Sn_fcc']]],
+  ['s5n',['s5n',['../structSn__fcc.html#a0d01fa58cbf021a682453c95a37660df',1,'Sn_fcc']]],
+  ['s6n',['s6n',['../structSn__fcc.html#ace599949b3cad10ce6690d8653948f4f',1,'Sn_fcc']]],
+  ['s7n',['s7n',['../structSn__fcc.html#a607eae304530366457a3f064e8074102',1,'Sn_fcc']]]
 ];
