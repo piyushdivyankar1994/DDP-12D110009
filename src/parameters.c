@@ -77,9 +77,9 @@ parameter * _defaultFCCparameter()
     parameter * new = (parameter *) malloc(sizeof(parameter));
 
     new->N_MCS = 100;
-    new->Nx    = 10;
-    new->Ny    = 10;
-    new->Nz    = 10;
+    new->Nx    = 20;
+    new->Ny    = 20;
+    new->Nz    = 20;
     new->atoms_per_site    = 4;
     new->lattice_parameter = 4.00;
     new->temperature       = 1000;

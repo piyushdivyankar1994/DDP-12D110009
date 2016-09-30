@@ -1,4 +1,5 @@
 var simulation_8c =
 [
-    [ "twoPhaseEquilibriaSimulation", "simulation_8c.html#aa450392abc833fc424014eda7fb3d178", null ]
+    [ "KB", "simulation_8c.html#a1841fd1a462d245d8c73dce55e2f45da", null ],
+    [ "cannonicalEnsemble", "simulation_8c.html#a01597100c74089fb38cb01afd74e5e9c", null ]
 ];

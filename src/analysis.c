@@ -99,12 +99,12 @@ int antiOrderedPhaseCount(int * a, parameter * p, Sn_fcc * fcc)
  * @param ouput_file_name output file name(written to /"output_file_name".crystal.fcc)
  * @param seed            [description]
  */
-void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned long int seed)
+void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned long int seed, double concentration)
 {
     const gsl_rng_type * T;
     gsl_rng * r;
 
-    strcat(ouput_file_name, ".crystal.fcc");
+    //strcat(ouput_file_name, ".crystal.fcc");
     FILE * fp = fopen(ouput_file_name, "w");
     gsl_rng_env_setup();
 
@@ -115,7 +115,7 @@ void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned lo
     {
         double u = gsl_rng_uniform(r);
         int a;
-        if (u > 0.5)
+        if (u > concentration)
         {
             a = 1;
         }
@@ -132,14 +132,15 @@ void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned lo
             i--;
         }
     }
-    fclose(fp);
     char str[1000];
     strcpy(str, ouput_file_name);
     strcat(str, ".random.gen.param");
     FILE * fr = fopen(str, "w");
+    printf("%d\n", totalAtomsInFile(fp));
     gsl_rng_fwrite(fr, r);
-    // gsl_rng_free(r);
-    // fclose(fr);
+    fclose(fp);
+    gsl_rng_free(r);
+    fclose(fr);
 }
 
 /**

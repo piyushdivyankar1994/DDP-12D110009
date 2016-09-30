@@ -35,6 +35,21 @@ double* energyInMatrix(int *, binEAMpot *, parameter *, Sn_fcc *);
 void printEnergyMap(double *, int, int);
 
 double energyToSwap(int, int *, binEAMpot *, parameter *, Sn_fcc *);
+double energyToSwap_fast(int index, int * a, parameter * p, Sn_fcc * ngbrs);
 
 double* deltaEnergyMatrix(int *, binEAMpot *, parameter *, Sn_fcc *);
+
+lookUpTable* createLookUpTable(binEAMpot *data, parameter *p, Sn_fcc *ngbrs);
+void printLookUpTable(lookUpTable *p);
+
+/** Temporary function no related to any code */
+double * energyInMatrix_ver2(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs, int noNgbrs);
+/** Temporary function no related to any code */
+double energyAtIndexFCC_ver2(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs, int noNgbrs);
+
+double energyAtIndexFCC_fast(int, int *, parameter *, Sn_fcc *);
+void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot);
+
+double avgConcentrationAtom1(ATOM *test, parameter *p);
+
 #endif /* ifndef _EAM_H */

@@ -11,6 +11,6 @@
 double analysis_totalEnergy(int *, binEAMpot *, parameter *, Sn_fcc *);
 int orderedPhaseCount(int *, parameter *, Sn_fcc *);
 int antiOrderedPhaseCount(int *, parameter *, Sn_fcc *);
-void randomMatrixGeneratorFCC(parameter *, char *, unsigned long int);
+void randomMatrixGeneratorFCC(parameter *, char *, unsigned long int, double);
 int totalAtomsInFile(FILE *);
 #endif

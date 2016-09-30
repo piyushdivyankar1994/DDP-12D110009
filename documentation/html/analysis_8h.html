@@ -119,14 +119,14 @@ Include dependency graph for analysis.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="analysis_8h__incl.png" border="0" usemap="#include_2analysis_8h" alt=""/></div>
 <map name="include_2analysis_8h" id="include_2analysis_8h">
-</map>
+<area shape="rect" id="node2" href="eam_8h.html" title="Function prototypes of EAM methods. " alt="" coords="204,80,261,107"/><area shape="rect" id="node3" href="datatypes_8h.html" title="This file contains all composite datatypes used in this Project. " alt="" coords="188,229,279,256"/><area shape="rect" id="node10" href="point3D_8h.html" title="Functions for point3D type miller indices. " alt="" coords="233,155,311,181"/><area shape="rect" id="node6" href="math__functions_8h.html" title="Function prototypes for general math functions. " alt="" coords="111,304,233,331"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="analysis_8h__dep__incl.png" border="0" usemap="#include_2analysis_8hdep" alt=""/></div>
 <map name="include_2analysis_8hdep" id="include_2analysis_8hdep">
-</map>
+<area shape="rect" id="node2" href="analysis_8c.html" title="src/analysis.c" alt="" coords="5,80,107,107"/><area shape="rect" id="node3" href="eam_8c.html" title="Source file for ean.h. " alt="" coords="132,80,211,107"/><area shape="rect" id="node4" href="simulation_8h.html" title="include/simulation.h" alt="" coords="237,80,373,107"/><area shape="rect" id="node6" href="test_8h.html" title="Function prototypes of EAM methods. " alt="" coords="398,80,497,107"/><area shape="rect" id="node5" href="simulation_8c.html" title="Source code for simulation.h. " alt="" coords="248,155,363,181"/><area shape="rect" id="node7" href="test_8c.html" title="Source file for test functions. " alt="" coords="409,155,485,181"/></map>
 </div>
 </div>
 <p><a href="analysis_8h_source.html">Go to the source code of this file.</a></p>
@@ -147,9 +147,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8baf9f8b8f049ab49e7bec082872412c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analysis_8h.html#a8baf9f8b8f049ab49e7bec082872412c">antiOrderedPhaseCount</a> (int *, <a class="el" href="structparameter.html">parameter</a> *, <a class="el" href="structSn__fcc.html">Sn_fcc</a> *)</td></tr>
 <tr class="memdesc:a8baf9f8b8f049ab49e7bec082872412c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts total number of anti-ordered phase sites in atomic matrix.  <a href="#a8baf9f8b8f049ab49e7bec082872412c">More...</a><br/></td></tr>
 <tr class="separator:a8baf9f8b8f049ab49e7bec082872412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7e73fc0f0dbcc5d3d597256bdf52a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analysis_8h.html#a1f7e73fc0f0dbcc5d3d597256bdf52a2">randomMatrixGeneratorFCC</a> (<a class="el" href="structparameter.html">parameter</a> *, char *, unsigned long int)</td></tr>
-<tr class="memdesc:a1f7e73fc0f0dbcc5d3d597256bdf52a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random atomic matrix.  <a href="#a1f7e73fc0f0dbcc5d3d597256bdf52a2">More...</a><br/></td></tr>
-<tr class="separator:a1f7e73fc0f0dbcc5d3d597256bdf52a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048e848d3197b4b08653697079b17472"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analysis_8h.html#a048e848d3197b4b08653697079b17472">randomMatrixGeneratorFCC</a> (<a class="el" href="structparameter.html">parameter</a> *, char *, unsigned long int, double)</td></tr>
+<tr class="memdesc:a048e848d3197b4b08653697079b17472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random atomic matrix.  <a href="#a048e848d3197b4b08653697079b17472">More...</a><br/></td></tr>
+<tr class="separator:a048e848d3197b4b08653697079b17472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0605e502e3c548e3971ebdf58ed495f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analysis_8h.html#a0605e502e3c548e3971ebdf58ed495f9">totalAtomsInFile</a> (FILE *)</td></tr>
 <tr class="memdesc:a0605e502e3c548e3971ebdf58ed495f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts total number of atoms in a file.  <a href="#a0605e502e3c548e3971ebdf58ed495f9">More...</a><br/></td></tr>
 <tr class="separator:a0605e502e3c548e3971ebdf58ed495f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,9 +230,27 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> ret_val;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates energy at a given array index in ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:455</div></div>
+<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates energy at a given array index in ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:457</div></div>
 <div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_cgraph.png" border="0" usemap="#analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_cgraph" alt=""/></div>
+<map name="analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_cgraph" id="analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d" title="Calculates energy at a given array index in ATOM array. " alt="" coords="198,203,333,229"/><area shape="rect" id="node3" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="381,43,573,69"/><area shape="rect" id="node6" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="407,93,547,120"/><area shape="rect" id="node7" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="415,144,539,171"/><area shape="rect" id="node10" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="390,195,565,237"/><area shape="rect" id="node11" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="416,261,539,288"/><area shape="rect" id="node13" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="382,312,573,339"/><area shape="rect" id="node14" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="394,363,561,405"/><area shape="rect" id="node4" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="653,5,758,32"/><area shape="rect" id="node5" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="626,56,785,83"/><area shape="rect" id="node8" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="622,132,789,159"/><area shape="rect" id="node9" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="638,183,773,209"/><area shape="rect" id="node12" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="643,316,767,343"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_icgraph.png" border="0" usemap="#analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_icgraph" alt=""/></div>
+<map name="analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_icgraph" id="analysis_8h_a59b95e48f8d28a5138369208ed1e29ba_icgraph">
+<area shape="rect" id="node2" href="test_8h.html#abc76150415c58380a31a3a046c428886" title="test_analysis_totalEnergy" alt="" coords="198,5,370,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a8baf9f8b8f049ab49e7bec082872412c"></a>
@@ -303,11 +321,29 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:47</div></div>
 <div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
-<div class="ttc" id="structSn__fcc_html_a24650f1fff9aec453f8a7b689f8323f3"><div class="ttname"><a href="structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3">Sn_fcc::s1n</a></div><div class="ttdeci">point3D s1n[12]</div><div class="ttdoc">List of points for first nearest neighbours. </div><div class="ttdef"><b>Definition:</b> datatypes.h:199</div></div>
+<div class="ttc" id="structSn__fcc_html_a24650f1fff9aec453f8a7b689f8323f3"><div class="ttname"><a href="structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3">Sn_fcc::s1n</a></div><div class="ttdeci">point3D s1n[12]</div><div class="ttdoc">List of points for first nearest neighbours. </div><div class="ttdef"><b>Definition:</b> datatypes.h:208</div></div>
 <div class="ttc" id="point3D_8c_html_a89582ec9b4e0596e24894d0039807a5e"><div class="ttname"><a href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a></div><div class="ttdeci">point3D * point3D_indexToPoint3D_fcc(int index, parameter *p)</div><div class="ttdoc">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ...</div><div class="ttdef"><b>Definition:</b> point3D.c:127</div></div>
 <div class="ttc" id="point3D_8c_html_aafba4d8a16708b18b2757300e988e4d8"><div class="ttname"><a href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a></div><div class="ttdeci">int point3D_point3DtoIndexFCC(point3D *a, parameter *p)</div><div class="ttdoc">Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed...</div><div class="ttdef"><b>Definition:</b> point3D.c:170</div></div>
 <div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_cgraph.png" border="0" usemap="#analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_cgraph" alt=""/></div>
+<map name="analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_cgraph" id="analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="216,31,408,57"/><area shape="rect" id="node5" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="242,81,382,108"/><area shape="rect" id="node6" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="217,132,407,159"/><area shape="rect" id="node3" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="483,5,589,32"/><area shape="rect" id="node4" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="457,56,615,83"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_icgraph.png" border="0" usemap="#analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_icgraph" alt=""/></div>
+<map name="analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_icgraph" id="analysis_8h_a8baf9f8b8f049ab49e7bec082872412c_icgraph">
+<area shape="rect" id="node2" href="test_8h.html#a63a13008741a089ce521e5693b34a3f5" title="test_antiOrderedPhaseCount" alt="" coords="217,5,407,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a3534092a51dd22a3acc573109467853c"></a>
@@ -378,14 +414,32 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:47</div></div>
 <div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
-<div class="ttc" id="structSn__fcc_html_a24650f1fff9aec453f8a7b689f8323f3"><div class="ttname"><a href="structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3">Sn_fcc::s1n</a></div><div class="ttdeci">point3D s1n[12]</div><div class="ttdoc">List of points for first nearest neighbours. </div><div class="ttdef"><b>Definition:</b> datatypes.h:199</div></div>
+<div class="ttc" id="structSn__fcc_html_a24650f1fff9aec453f8a7b689f8323f3"><div class="ttname"><a href="structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3">Sn_fcc::s1n</a></div><div class="ttdeci">point3D s1n[12]</div><div class="ttdoc">List of points for first nearest neighbours. </div><div class="ttdef"><b>Definition:</b> datatypes.h:208</div></div>
 <div class="ttc" id="point3D_8c_html_a89582ec9b4e0596e24894d0039807a5e"><div class="ttname"><a href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a></div><div class="ttdeci">point3D * point3D_indexToPoint3D_fcc(int index, parameter *p)</div><div class="ttdoc">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ...</div><div class="ttdef"><b>Definition:</b> point3D.c:127</div></div>
 <div class="ttc" id="point3D_8c_html_aafba4d8a16708b18b2757300e988e4d8"><div class="ttname"><a href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a></div><div class="ttdeci">int point3D_point3DtoIndexFCC(point3D *a, parameter *p)</div><div class="ttdoc">Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed...</div><div class="ttdef"><b>Definition:</b> point3D.c:170</div></div>
 <div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a3534092a51dd22a3acc573109467853c_cgraph.png" border="0" usemap="#analysis_8h_a3534092a51dd22a3acc573109467853c_cgraph" alt=""/></div>
+<map name="analysis_8h_a3534092a51dd22a3acc573109467853c_cgraph" id="analysis_8h_a3534092a51dd22a3acc573109467853c_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="192,31,384,57"/><area shape="rect" id="node5" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="218,81,358,108"/><area shape="rect" id="node6" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="193,132,383,159"/><area shape="rect" id="node3" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="459,5,565,32"/><area shape="rect" id="node4" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="433,56,591,83"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a3534092a51dd22a3acc573109467853c_icgraph.png" border="0" usemap="#analysis_8h_a3534092a51dd22a3acc573109467853c_icgraph" alt=""/></div>
+<map name="analysis_8h_a3534092a51dd22a3acc573109467853c_icgraph" id="analysis_8h_a3534092a51dd22a3acc573109467853c_icgraph">
+<area shape="rect" id="node2" href="test_8h.html#ab77e6e8e894646db8fd98746af544ba1" title="test_orderedPhaseCount" alt="" coords="193,5,359,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a1f7e73fc0f0dbcc5d3d597256bdf52a2"></a>
+<a class="anchor" id="a048e848d3197b4b08653697079b17472"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -405,7 +459,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned long int&#160;</td>
-          <td class="paramname"><em>seed</em>&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>concentration</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -428,7 +488,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> gsl_rng_type * T;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    gsl_rng * <a class="code" href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    strcat(ouput_file_name, <span class="stringliteral">&quot;.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//strcat(ouput_file_name, &quot;.crystal.fcc&quot;);</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    FILE * fp = fopen(ouput_file_name, <span class="stringliteral">&quot;w&quot;</span>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    gsl_rng_env_setup();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
@@ -439,7 +499,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">double</span> u = gsl_rng_uniform(r);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">int</span> a;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (u &gt; 0.5)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (u &gt; concentration)</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            a = 1;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
@@ -456,18 +516,38 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            i--;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    fclose(fp);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">char</span> str[1000];</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    strcpy(str, ouput_file_name);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    strcat(str, <span class="stringliteral">&quot;.random.gen.param&quot;</span>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    FILE * fr = fopen(str, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">char</span> str[1000];</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    strcpy(str, ouput_file_name);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    strcat(str, <span class="stringliteral">&quot;.random.gen.param&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    FILE * fr = fopen(str, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, <a class="code" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880">totalAtomsInFile</a>(fp));</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    gsl_rng_fwrite(fr, r);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// gsl_rng_free(r);</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// fclose(fr);</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    fclose(fp);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    gsl_rng_free(r);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    fclose(fr);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="ttc" id="analysis_8c_html_a168320aed5b057a1ae273e9d84b43880"><div class="ttname"><a href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880">totalAtomsInFile</a></div><div class="ttdeci">int totalAtomsInFile(FILE *fp)</div><div class="ttdoc">Counts total number of atoms in a file. </div><div class="ttdef"><b>Definition:</b> analysis.c:151</div></div>
 <div class="ttc" id="datatypes_8h_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdoc">TO implement random numbers. </div><div class="ttdef"><b>Definition:</b> datatypes.h:33</div></div>
 <div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a048e848d3197b4b08653697079b17472_cgraph.png" border="0" usemap="#analysis_8h_a048e848d3197b4b08653697079b17472_cgraph" alt=""/></div>
+<map name="analysis_8h_a048e848d3197b4b08653697079b17472_cgraph" id="analysis_8h_a048e848d3197b4b08653697079b17472_cgraph">
+<area shape="rect" id="node2" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="240,5,357,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a048e848d3197b4b08653697079b17472_icgraph.png" border="0" usemap="#analysis_8h_a048e848d3197b4b08653697079b17472_icgraph" alt=""/></div>
+<map name="analysis_8h_a048e848d3197b4b08653697079b17472_icgraph" id="analysis_8h_a048e848d3197b4b08653697079b17472_icgraph">
+<area shape="rect" id="node2" href="simulation_8h.html#a0f8096f717968af9ea6981da46c3e510" title="Simulates a cannoical ensemble. " alt="" coords="277,5,419,32"/><area shape="rect" id="node3" href="test_8h.html#a1fc46bb9c57af50a40b7d5bce9f0f3b6" title="test_randomMatrixGeneratorFCC" alt="" coords="241,56,455,83"/><area shape="rect" id="node4" href="test_8c.html#a52f817850cfac42ed4c761be627e47a5" title="Following function generates data and has been used to show that taking upto 4th nearest neighbours i..." alt="" coords="266,107,430,133"/><area shape="rect" id="node5" href="test_8h.html#a3e8eebf70e5db292162e0d2e5ef46178" title="test_energyAtIndexFCC_fast" alt="" coords="252,157,444,184"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a0605e502e3c548e3971ebdf58ed495f9"></a>
@@ -492,13 +572,22 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of atoms </dd></dl>
-<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    fseek(fp, 0L, SEEK_END);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> no_of_atoms = ftell(fp) / <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    fseek(fp, 0L, SEEK_SET);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> no_of_atoms;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    fseek(fp, 0L, SEEK_END);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">int</span> no_of_atoms = ftell(fp) / <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    fseek(fp, 0L, SEEK_SET);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> no_of_atoms;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analysis_8h_a0605e502e3c548e3971ebdf58ed495f9_icgraph.png" border="0" usemap="#analysis_8h_a0605e502e3c548e3971ebdf58ed495f9_icgraph" alt=""/></div>
+<map name="analysis_8h_a0605e502e3c548e3971ebdf58ed495f9_icgraph" id="analysis_8h_a0605e502e3c548e3971ebdf58ed495f9_icgraph">
+<area shape="rect" id="node2" href="analysis_8h.html#a048e848d3197b4b08653697079b17472" title="Generates a random atomic matrix. " alt="" coords="171,107,357,133"/><area shape="rect" id="node7" href="eam_8h.html#a488e2de683803d1ab1c0438f991d787b" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="195,284,333,311"/><area shape="rect" id="node3" href="simulation_8h.html#a0f8096f717968af9ea6981da46c3e510" title="Simulates a cannoical ensemble. " alt="" coords="442,56,585,83"/><area shape="rect" id="node4" href="test_8h.html#a1fc46bb9c57af50a40b7d5bce9f0f3b6" title="test_randomMatrixGeneratorFCC" alt="" coords="406,5,621,32"/><area shape="rect" id="node5" href="test_8c.html#a52f817850cfac42ed4c761be627e47a5" title="Following function generates data and has been used to show that taking upto 4th nearest neighbours i..." alt="" coords="431,107,595,133"/><area shape="rect" id="node6" href="test_8h.html#a3e8eebf70e5db292162e0d2e5ef46178" title="test_energyAtIndexFCC_fast" alt="" coords="417,157,609,184"/><area shape="rect" id="node8" href="test_8h.html#a2f525e5d77d201e69c902edf74757459" title="test_energyAtIndexFCC" alt="" coords="432,411,595,437"/><area shape="rect" id="node9" href="test_8h.html#a140639cdacca051923cf0501f75680d6" title="TODO find memory leak in this. " alt="" coords="445,461,582,488"/><area shape="rect" id="node10" href="test_8h.html#afb4fd32a14dcfc5ac9de72a7bfa98cb7" title="DONE:10 Memory leaks in this function. " alt="" coords="435,512,591,539"/><area shape="rect" id="node11" href="test_8h.html#a03563a213fbaf0e6c836d4bc1b946473" title="Tests chemicalPotentialAtIndex function. Takes in a matrix and calculates chemical potential at 100&#45;1..." alt="" coords="430,563,597,605"/><area shape="rect" id="node12" href="test_8h.html#abc76150415c58380a31a3a046c428886" title="test_analysis_totalEnergy" alt="" coords="427,208,599,235"/><area shape="rect" id="node13" href="test_8h.html#ab77e6e8e894646db8fd98746af544ba1" title="test_orderedPhaseCount" alt="" coords="430,259,597,285"/><area shape="rect" id="node14" href="test_8h.html#a63a13008741a089ce521e5693b34a3f5" title="test_antiOrderedPhaseCount" alt="" coords="418,309,609,336"/><area shape="rect" id="node15" href="test_8h.html#a4ffafc20326e83aefc5de9101c0d4940" title="test_readCrystalFileFCC" alt="" coords="430,360,597,387"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -507,7 +596,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="analysis_8h.html">analysis.h</a></li>
-    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 29 2016 16:21:05 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
