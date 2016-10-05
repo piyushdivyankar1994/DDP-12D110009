@@ -51,5 +51,6 @@ double energyAtIndexFCC_fast(int, int *, parameter *, Sn_fcc *);
 void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot);
 
 double avgConcentrationAtom1(ATOM *test, parameter *p);
+int atomsType1(ATOM *test, parameter *p);
 
 #endif /* ifndef _EAM_H */

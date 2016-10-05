@@ -13,4 +13,5 @@ int orderedPhaseCount(int *, parameter *, Sn_fcc *);
 int antiOrderedPhaseCount(int *, parameter *, Sn_fcc *);
 void randomMatrixGeneratorFCC(parameter *, char *, unsigned long int, double);
 int totalAtomsInFile(FILE *);
+double totalEnergyQuick(ATOM * a, parameter * p, Sn_fcc * ngbrs);
 #endif

@@ -136,7 +136,6 @@ void randomMatrixGeneratorFCC(parameter * p, char * ouput_file_name, unsigned lo
     strcpy(str, ouput_file_name);
     strcat(str, ".random.gen.param");
     FILE * fr = fopen(str, "w");
-    printf("%d\n", totalAtomsInFile(fp));
     gsl_rng_fwrite(fr, r);
     fclose(fp);
     gsl_rng_free(r);
@@ -154,4 +153,13 @@ int totalAtomsInFile(FILE * fp)
     int no_of_atoms = ftell(fp) / sizeof(int);
     fseek(fp, 0L, SEEK_SET);
     return no_of_atoms;
+}
+
+double totalEnergyQuick(ATOM * a, parameter * p, Sn_fcc * ngbrs)
+{
+    double ret_val = 0;
+    for (size_t i = 0; i < p->no_of_atoms; i++) {
+        ret_val += energyAtIndexFCC_fast(i, a, p, ngbrs);
+    }
+    return ret_val;
 }

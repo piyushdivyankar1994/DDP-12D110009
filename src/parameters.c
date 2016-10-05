@@ -126,7 +126,7 @@ parameter * createParameterFileFromInput()
     printf("\nEnter simulation Temperature");
     scanf("%le", &(new->temperature));
 
-    new->no_of_atoms = new->Nx * new->Ny * new->Nz * new->no_of_atoms;
+    new->no_of_atoms = new->Nx * new->Ny * new->Nz * new->atoms_per_site;
 
     new->nearestNeighbours[0] = 12;
     new->nearestNeighbours[1] = 6;

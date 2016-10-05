@@ -892,7 +892,12 @@ void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot)
         }
     }
 }
-
+/**
+ * Gives concentration of atom1 in a array
+ * @param  test input of atomic array
+ * @param  p    simulation parameter
+ * @return      fractional concentration of atom1
+ */
 double avgConcentrationAtom1(ATOM *test, parameter *p)
 {
     int count = 0;
@@ -901,4 +906,21 @@ double avgConcentrationAtom1(ATOM *test, parameter *p)
             count++;
     }
     return (double)count/(double)p->no_of_atoms;
+}
+
+/**
+ * Gives number of atom1 in a array
+ * @param  test input of atomic array
+ * @param  p    simulation parameter
+ * @return      fractional concentration of atom1
+ */
+
+int atomsType1(ATOM *test, parameter *p)
+{
+    int count = 0;
+    for (size_t i = 0; i < p->no_of_atoms; i++) {
+        if(test[i] == 0)
+            count++;
+    }
+    return count;
 }

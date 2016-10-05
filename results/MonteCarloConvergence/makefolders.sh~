@@ -1,0 +1,10 @@
+#!/bin/bash
+
+a = 'Concentration_'
+
+for ((i = 20; i< 100; i++))
+do 
+	b = "$a$i"
+	mkdir "$b"
+done
+

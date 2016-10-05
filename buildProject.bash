@@ -1,6 +1,6 @@
  #!
 
-if gcc -std=c99 -Wall -I./include main.c src/simulation.c src/chemicalPotential.c src/analysis.c src/eam.c src/parameters.c src/math_functions.c src/point3D.c src/test.c -o simulation1.out -lm -lgsl -lgslcblas -g -pg; then
+if gcc -std=c99 -Wall -I./include main.c src/simulation.c src/chemicalPotential.c src/analysis.c src/eam.c src/parameters.c src/math_functions.c src/point3D.c src/test.c -o test1.out -lm -lgsl -lgslcblas -g -pg; then
 
     echo "######################################################################"
     echo "Program compliled"
@@ -9,3 +9,14 @@ if gcc -std=c99 -Wall -I./include main.c src/simulation.c src/chemicalPotential.
     #echo "do you want to run gdb (y/n)"
 
 fi
+echo 'Program Running'
+echo "######################################################################"
+
+./test1.out > log.txt
+
+echo 'Plotting'
+echo "######################################################################"
+
+echo 'load "plotfile"' | gnuplot
+
+xdg-open plot.png
