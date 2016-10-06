@@ -7,5 +7,8 @@
 
 #ifndef _SIMULATION_H
 #define _SIMULATION_H 1
-void twoPhaseEquilibriaSimulation(unsigned long int);
+void cannonicalEnsemble(unsigned long int);
+void semiGrandCanonical(size_t seed_value);
+void latticeParameterSimulation(size_t seed_value);
+
 #endif

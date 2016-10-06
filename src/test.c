@@ -202,7 +202,7 @@ void test_energyInMatrix()
 
 }
 
-/// DONE Memory leaks in this function.
+/// DONE:10 Memory leaks in this function.
 /// Occured due to ::energyToSwap function now fixed
 void test_deltaEnergyMatrix()
 {
@@ -286,7 +286,7 @@ void test_randomMatrixGeneratorFCC()
     parameter * p = _defaultFCCparameter();
     char fileName[] = "input";
 
-    randomMatrixGeneratorFCC(p, fileName, 12434533);
+    randomMatrixGeneratorFCC(p, fileName, 12434533, 0.5);
 }
 
 void test_readCrystalFileFCC()
@@ -351,7 +351,7 @@ void test_parametersInputOutput()
     printf("Writing to file\n");
     parameterWriteToFile(new);
     parameter * check = NULL;
-    // /DONE:10 Segmentation fault
+    // /DONE:30 Segmentation fault
     check = parameterReadFromFile(new->fileName);
     if (check == NULL)
     {
@@ -368,4 +368,93 @@ void test_parametersInputOutput()
     parameterDefaultFile();
     new = parameterReadFromFile(PARAM_FILE_DEF_NAME);
     free(new);
+}
+
+void test_createLookUpTable() {
+    binEAMpot   *data     = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    Sn_fcc      *defFCC   = _defaultFCCNeighbours();
+    parameter   *simParam = parameterReadFromFile("parametersSim1.param");
+    simParam->lattice_parameter = 3.56;
+    lookUpTable *table    = createLookUpTable(data, simParam, defFCC);
+    printLookUpTable(table);
+}
+
+/**
+ * Following function generates data and has been used to show that taking upto
+ * 4th nearest neighbours is enough accuracy for calculation.
+ */
+void test_nearest_neighbours()
+{
+    binEAMpot   *data     = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    Sn_fcc      *defFCC   = _defaultFCCNeighbours();
+    parameter   *simParam = parameterReadFromFile("parametersSim1.param");
+    simParam->lattice_parameter = 3.56;
+
+
+    randomMatrixGeneratorFCC(simParam, "input", 1232342, 0.5);
+    ATOM *test_input = readCrystalFileFCC("input");
+    int a[] = { 12, 18, 42, 54, 78, 86, 134};
+    double* S7energy = energyInMatrix(test_input, data, simParam, defFCC);
+    for(size_t j = 0 ; j < 7; j++)
+    {
+        double* S4energy = energyInMatrix_ver2(test_input, data, simParam, defFCC, a[j]);
+
+        /** Taking statistics */
+        double totalE7 = 0;
+        double totalE4 = 0;
+        double absoulte_mean = 0;
+        double variance      = 0;
+        for (size_t i = 0; i < simParam->no_of_atoms; i++) {
+            absoulte_mean += (fabs(S7energy[i] - S4energy[i]) / fabs(S7energy[i]));
+            totalE4 += S4energy[i];
+            totalE7 += S7energy[i];
+        }
+        absoulte_mean /= 32000;
+        for (size_t i = 0; i < simParam->no_of_atoms; i++) {
+            variance += pow((absoulte_mean-(fabs(S7energy[i] - S4energy[i]) / fabs(S7energy[i]))),2);
+        }
+        variance /= 32000;
+        printf("%le, %le\n", absoulte_mean, sqrt(variance));
+    }
+    //printf("Total E4 = %le Total E7 = %le\n", totalE4, totalE7);
+    free(data);
+    free(defFCC);
+    free(simParam);
+}
+
+void test_buildInstantEnergyLookup() {
+    binEAMpot   *data     = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    Sn_fcc      *defFCC   = _defaultFCCNeighbours();
+    parameter   *simParam = parameterReadFromFile("parametersSim1.param");
+    simParam->lattice_parameter = 3.56;
+
+    lookUpTable *t = createLookUpTable(data, simParam, defFCC);
+    buildInstantEnergyLookup(t, data);
+    for (size_t i0 = 0; i0 < 2; i0++) {
+        for (size_t i1 = 0; i1 < 13; i1++) {
+            for (size_t i2 = 0; i2 < 7; i2++) {
+                for (size_t i3 = 0; i3 < 25; i3++) {
+                    printf("%le\n", energyTableInstantLookup[i0][i1][i2][i3]);
+                }
+            }
+        }
+    }
+}
+
+void test_energyAtIndexFCC_fast()
+{
+    binEAMpot   *data     = eam_data_read("./EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    Sn_fcc      *defFCC   = _defaultFCCNeighbours();
+    parameter   *simParam = parameterReadFromFile("parametersSim1.param");
+    simParam->lattice_parameter = 3.56;
+
+    lookUpTable *t = createLookUpTable(data, simParam, defFCC);
+    buildInstantEnergyLookup(t, data);
+
+    randomMatrixGeneratorFCC(simParam, "input", 1232342, 0.5);
+    ATOM *test_input = readCrystalFileFCC("input");
+
+    for (size_t i = 0; i < 32000; i++) {
+        printf("%le\n", energyAtIndexFCC_fast(i, test_input, simParam, defFCC));
+    }
 }

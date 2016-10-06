@@ -13,14 +13,14 @@
  */
 void print_parameters(parameter * a)
 {
-    printf("Size in x-direction           = %d\n", a->Nx);
-    printf("Size in y-direction           = %d\n", a->Ny);
-    printf("Size in z-direction           = %d\n", a->Nz);
-    printf("Lattice Parameter             = %le\n", a->lattice_parameter);
-    printf("No. of MonteCarlo Simulations = %d\n", a->N_MCS);
-    printf("Temperature                   = %le\n", a->temperature);
-    printf("Atoms per site                = %d\n", a->atoms_per_site);
-    printf("Totol No of atoms             = %d\n", a->no_of_atoms);
+    printf("# Size in x-direction           = %d\n", a->Nx);
+    printf("# Size in y-direction           = %d\n", a->Ny);
+    printf("# Size in z-direction           = %d\n", a->Nz);
+    printf("# Lattice Parameter             = %le\n", a->lattice_parameter);
+    printf("# No. of MonteCarlo Simulations = %d\n", a->N_MCS);
+    printf("# Temperature                   = %le\n", a->temperature);
+    printf("# Atoms per site                = %d\n", a->atoms_per_site);
+    printf("# Totol No of atoms             = %d\n", a->no_of_atoms);
 }
 
 /**
@@ -77,9 +77,9 @@ parameter * _defaultFCCparameter()
     parameter * new = (parameter *) malloc(sizeof(parameter));
 
     new->N_MCS = 100;
-    new->Nx    = 10;
-    new->Ny    = 10;
-    new->Nz    = 10;
+    new->Nx    = 20;
+    new->Ny    = 20;
+    new->Nz    = 20;
     new->atoms_per_site    = 4;
     new->lattice_parameter = 4.00;
     new->temperature       = 1000;
@@ -126,7 +126,7 @@ parameter * createParameterFileFromInput()
     printf("\nEnter simulation Temperature");
     scanf("%le", &(new->temperature));
 
-    new->no_of_atoms = new->Nx * new->Ny * new->Nz * new->no_of_atoms;
+    new->no_of_atoms = new->Nx * new->Ny * new->Nz * new->atoms_per_site;
 
     new->nearestNeighbours[0] = 12;
     new->nearestNeighbours[1] = 6;

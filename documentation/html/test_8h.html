@@ -124,14 +124,14 @@ Include dependency graph for test.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="test_8h__incl.png" border="0" usemap="#include_2test_8h" alt=""/></div>
 <map name="include_2test_8h" id="include_2test_8h">
-</map>
+<area shape="rect" id="node2" href="datatypes_8h.html" title="This file contains all composite datatypes used in this Project. " alt="" coords="188,304,279,331"/><area shape="rect" id="node9" href="parameters_8h.html" title="Contains functions that operate on parameter . " alt="" coords="141,155,240,181"/><area shape="rect" id="node10" href="point3D_8h.html" title="Functions for point3D type miller indices. " alt="" coords="235,229,313,256"/><area shape="rect" id="node11" href="eam_8h.html" title="Function prototypes of EAM methods. " alt="" coords="323,155,380,181"/><area shape="rect" id="node12" href="chemicalPotential_8h.html" title="Function prototypes for chemicalPotential calculation. " alt="" coords="365,80,500,107"/><area shape="rect" id="node13" href="analysis_8h.html" title="Function prototypes of analysis. " alt="" coords="526,80,607,107"/><area shape="rect" id="node5" href="math__functions_8h.html" title="Function prototypes for general math functions. " alt="" coords="111,379,233,405"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="test_8h__dep__incl.png" border="0" usemap="#include_2test_8hdep" alt=""/></div>
 <map name="include_2test_8hdep" id="include_2test_8hdep">
-</map>
+<area shape="rect" id="node2" href="test_8c.html" title="Source file for test functions. " alt="" coords="16,80,92,107"/></map>
 </div>
 </div>
 <p><a href="test_8h_source.html">Go to the source code of this file.</a></p>
@@ -166,9 +166,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af86bade21ef5cb13f31d85dcf336a60a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#af86bade21ef5cb13f31d85dcf336a60a">test_point3D_periodicBoundaryTransform</a> ()</td></tr>
 <tr class="separator:af86bade21ef5cb13f31d85dcf336a60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a140639cdacca051923cf0501f75680d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a140639cdacca051923cf0501f75680d6">test_energyInMatrix</a> ()</td></tr>
+<tr class="memdesc:a140639cdacca051923cf0501f75680d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO find memory leak in this.  <a href="#a140639cdacca051923cf0501f75680d6">More...</a><br/></td></tr>
 <tr class="separator:a140639cdacca051923cf0501f75680d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb4fd32a14dcfc5ac9de72a7bfa98cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#afb4fd32a14dcfc5ac9de72a7bfa98cb7">test_deltaEnergyMatrix</a> ()</td></tr>
-<tr class="memdesc:afb4fd32a14dcfc5ac9de72a7bfa98cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">DONE Memory leaks in this function.  <a href="#afb4fd32a14dcfc5ac9de72a7bfa98cb7">More...</a><br/></td></tr>
+<tr class="memdesc:afb4fd32a14dcfc5ac9de72a7bfa98cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">DONE:10 Memory leaks in this function.  <a href="#afb4fd32a14dcfc5ac9de72a7bfa98cb7">More...</a><br/></td></tr>
 <tr class="separator:afb4fd32a14dcfc5ac9de72a7bfa98cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03563a213fbaf0e6c836d4bc1b946473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a03563a213fbaf0e6c836d4bc1b946473">test_chemicalPotentialAtIndex</a> ()</td></tr>
 <tr class="memdesc:a03563a213fbaf0e6c836d4bc1b946473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests chemicalPotentialAtIndex function. Takes in a matrix and calculates chemical potential at 100-199 indicies.  <a href="#a03563a213fbaf0e6c836d4bc1b946473">More...</a><br/></td></tr>
@@ -194,6 +195,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4cc04226db74e2e8b1dc56eb9791b2bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a4cc04226db74e2e8b1dc56eb9791b2bc">test_parametersInputOutput</a> ()</td></tr>
 <tr class="memdesc:a4cc04226db74e2e8b1dc56eb9791b2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the functions <a class="el" href="parameters_8h.html#abcf8d4591625224623e8f1d617de139c" title="Creates a parameter structure from STDIN and saves it to a .parameter FILE. ">createParameterFileFromInput</a>, <a class="el" href="parameters_8h.html#a611b664bd3f19b2f0bbb84c40f716769">parameterReadFromFile</a>, <a class="el" href="parameters_8h.html#a1f272b3d37153cd916635f70f72a85a7" title="Takes a parameter object and writes it to a file. ">parameterWriteToFile</a>, and <a class="el" href="parameters_8h.html#a4370cd24131bde11d4eb2a821eb6978a" title="Creates default parameter file named defaultFCC.param in working directory. ">parameterDefaultFile</a>.  <a href="#a4cc04226db74e2e8b1dc56eb9791b2bc">More...</a><br/></td></tr>
 <tr class="separator:a4cc04226db74e2e8b1dc56eb9791b2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be98fe849f85663cf1e5e931bc48fc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a4be98fe849f85663cf1e5e931bc48fc2">test_createLookUpTable</a> ()</td></tr>
+<tr class="separator:a4be98fe849f85663cf1e5e931bc48fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b67d30285f56067a1e93e10396cfd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a38b67d30285f56067a1e93e10396cfd1">test_buildInstantEnergyLookup</a> ()</td></tr>
+<tr class="separator:a38b67d30285f56067a1e93e10396cfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8eebf70e5db292162e0d2e5ef46178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a3e8eebf70e5db292162e0d2e5ef46178">test_energyAtIndexFCC_fast</a> ()</td></tr>
+<tr class="separator:a3e8eebf70e5db292162e0d2e5ef46178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function prototypes of EAM methods. </p>
@@ -225,17 +232,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a>(a, data, p, <span class="keyword">new</span>));</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a>(a, data, p, <span class="keyword">new</span>));</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
@@ -244,6 +251,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="analysis_8c_html_a9d90301abd1bd278deb98e9460ca92d7"><div class="ttname"><a href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a></div><div class="ttdeci">double analysis_totalEnergy(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates total bond energy in a atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:14</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_abc76150415c58380a31a3a046c428886_cgraph.png" border="0" usemap="#test_8h_abc76150415c58380a31a3a046c428886_cgraph" alt=""/></div>
+<map name="test_8h_abc76150415c58380a31a3a046c428886_cgraph" id="test_8h_abc76150415c58380a31a3a046c428886_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="253,5,363,32"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="231,56,385,83"/><area shape="rect" id="node4" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="239,107,377,133"/><area shape="rect" id="node6" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="227,157,389,184"/><area shape="rect" id="node8" href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7" title="Calculates total bond energy in a atomic matrix. " alt="" coords="237,212,379,239"/><area shape="rect" id="node5" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="460,99,577,125"/><area shape="rect" id="node7" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="438,150,599,191"/><area shape="rect" id="node9" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d" title="Calculates energy at a given array index in ATOM array. " alt="" coords="451,216,586,243"/><area shape="rect" id="node10" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="648,56,840,83"/><area shape="rect" id="node13" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="674,107,814,133"/><area shape="rect" id="node14" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="682,157,806,184"/><area shape="rect" id="node17" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="657,209,831,250"/><area shape="rect" id="node18" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="683,275,805,301"/><area shape="rect" id="node20" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="649,325,839,352"/><area shape="rect" id="node21" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="661,377,827,418"/><area shape="rect" id="node11" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="919,19,1025,45"/><area shape="rect" id="node12" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="893,69,1051,96"/><area shape="rect" id="node15" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="889,145,1055,172"/><area shape="rect" id="node16" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="905,196,1039,223"/><area shape="rect" id="node19" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="910,329,1034,356"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a63a13008741a089ce521e5693b34a3f5"></a>
@@ -258,21 +274,30 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fcc = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">int</span> count = <a class="code" href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a">antiOrderedPhaseCount</a>(a, p, fcc);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    printf(<span class="stringliteral">&quot;Anti-Order Phase sites in given lattice = %d\n&quot;</span>, count);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fcc = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordtype">int</span> count = <a class="code" href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a">antiOrderedPhaseCount</a>(a, p, fcc);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    printf(<span class="stringliteral">&quot;Anti-Order Phase sites in given lattice = %d\n&quot;</span>, count);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
 <div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
 <div class="ttc" id="analysis_8c_html_a7bc2a0b59e25d2900fea1a9514c53f8a"><div class="ttname"><a href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a">antiOrderedPhaseCount</a></div><div class="ttdeci">int antiOrderedPhaseCount(int *a, parameter *p, Sn_fcc *fcc)</div><div class="ttdoc">Counts total number of anti-ordered phase sites in atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:68</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a63a13008741a089ce521e5693b34a3f5_cgraph.png" border="0" usemap="#test_8h_a63a13008741a089ce521e5693b34a3f5_cgraph" alt=""/></div>
+<map name="test_8h_a63a13008741a089ce521e5693b34a3f5_cgraph" id="test_8h_a63a13008741a089ce521e5693b34a3f5_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="249,5,404,32"/><area shape="rect" id="node3" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="245,56,408,83"/><area shape="rect" id="node5" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="257,107,396,133"/><area shape="rect" id="node7" href="analysis_8c.html#a7bc2a0b59e25d2900fea1a9514c53f8a" title="Counts total number of anti&#45;ordered phase sites in atomic matrix. " alt="" coords="246,183,407,209"/><area shape="rect" id="node4" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="471,41,633,82"/><area shape="rect" id="node6" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="493,107,611,133"/><area shape="rect" id="node8" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="456,157,648,184"/><area shape="rect" id="node11" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="482,208,622,235"/><area shape="rect" id="node12" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="457,259,647,285"/><area shape="rect" id="node9" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="723,132,829,159"/><area shape="rect" id="node10" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="697,183,855,209"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a976d65fab7bfcbbc8a39c31b9dae097c"></a>
@@ -298,6 +323,68 @@ Functions</h2></td></tr>
 <div class="ttc" id="eam_8c_html_ab29b05cb515f1f9ef33a1ca83ba1098f"><div class="ttname"><a href="eam_8c.html#ab29b05cb515f1f9ef33a1ca83ba1098f">atomicMatrixRead</a></div><div class="ttdeci">int * atomicMatrixRead(char *fileName, parameter *p)</div><div class="ttdoc">Reads a atomic matrix in plain text format. </div><div class="ttdef"><b>Definition:</b> eam.c:17</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a976d65fab7bfcbbc8a39c31b9dae097c_cgraph.png" border="0" usemap="#test_8h_a976d65fab7bfcbbc8a39c31b9dae097c_cgraph" alt=""/></div>
+<map name="test_8h_a976d65fab7bfcbbc8a39c31b9dae097c_cgraph" id="test_8h_a976d65fab7bfcbbc8a39c31b9dae097c_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="213,5,368,32"/><area shape="rect" id="node3" href="eam_8c.html#ab29b05cb515f1f9ef33a1ca83ba1098f" title="Reads a atomic matrix in plain text format. " alt="" coords="227,56,355,83"/><area shape="rect" id="node4" href="eam_8c.html#a0f17ec1dc8b84b69a85a570e4ed39cbf" title="Prints atomic matrix atoms to STDOUT in a range. " alt="" coords="225,107,356,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a38b67d30285f56067a1e93e10396cfd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_buildInstantEnergyLookup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                                     {</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a>   *data     = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a>      *defFCC   = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <a class="code" href="structparameter.html">parameter</a>   *simParam = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<span class="stringliteral">&quot;parametersSim1.param&quot;</span>);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    simParam-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> = 3.56;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <a class="code" href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a> *t = <a class="code" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a>(data, simParam, defFCC);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <a class="code" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a>(t, data);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i0 = 0; i0 &lt; 2; i0++) {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i1 = 0; i1 &lt; 13; i1++) {</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i2 = 0; i2 &lt; 7; i2++) {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i3 = 0; i3 &lt; 25; i3++) {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="datatypes_8h.html#a9165b20377e9a038d78b1df43bcadc7b">energyTableInstantLookup</a>[i0][i1][i2][i3]);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            }</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    }</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;}</div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
+<div class="ttc" id="structparameter_html_acc593a841daec15783baf96e5fea949e"><div class="ttname"><a href="structparameter.html#acc593a841daec15783baf96e5fea949e">parameter::lattice_parameter</a></div><div class="ttdeci">double lattice_parameter</div><div class="ttdoc">Size of a unit cell in the lattice. </div><div class="ttdef"><b>Definition:</b> datatypes.h:59</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
+<div class="ttc" id="eam_8c_html_aa51add008d5ac8a30d67afe62093b740"><div class="ttname"><a href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a></div><div class="ttdeci">void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot)</div><div class="ttdoc">Fills the global variable energyTableInstantLookup array with appropriate values. ...</div><div class="ttdef"><b>Definition:</b> eam.c:857</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:161</div></div>
+<div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
+<div class="ttc" id="eam_8c_html_ae5053d5cf652aaca83aaf022df34f601"><div class="ttname"><a href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a></div><div class="ttdeci">lookUpTable * createLookUpTable(binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for...</div><div class="ttdef"><b>Definition:</b> eam.c:819</div></div>
+<div class="ttc" id="datatypes_8h_html_a7666e262e62f778515e766ebace30264"><div class="ttname"><a href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a></div><div class="ttdeci">struct energyTableConscise lookUpTable</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="datatypes_8h_html_a9165b20377e9a038d78b1df43bcadc7b"><div class="ttname"><a href="datatypes_8h.html#a9165b20377e9a038d78b1df43bcadc7b">energyTableInstantLookup</a></div><div class="ttdeci">double energyTableInstantLookup[2][13][7][25]</div><div class="ttdoc">Energy Table for instant lookup during Monte-Carlo simulation. </div><div class="ttdef"><b>Definition:</b> datatypes.h:249</div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a38b67d30285f56067a1e93e10396cfd1_cgraph.png" border="0" usemap="#test_8h_a38b67d30285f56067a1e93e10396cfd1_cgraph" alt=""/></div>
+<map name="test_8h_a38b67d30285f56067a1e93e10396cfd1_cgraph" id="test_8h_a38b67d30285f56067a1e93e10396cfd1_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="287,5,398,32"/><area shape="rect" id="node3" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="261,56,424,83"/><area shape="rect" id="node5" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="261,107,424,133"/><area shape="rect" id="node7" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601" title="Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for..." alt="" coords="275,157,410,184"/><area shape="rect" id="node11" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740" title="Fills the global variable energyTableInstantLookup array with appropriate values. ..." alt="" coords="257,237,429,264"/><area shape="rect" id="node4" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="481,41,642,82"/><area shape="rect" id="node6" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="484,107,639,133"/><area shape="rect" id="node8" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="494,157,629,184"/><area shape="rect" id="node9" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="500,208,623,235"/><area shape="rect" id="node10" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="694,237,818,264"/><area shape="rect" id="node12" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="478,259,645,301"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a03563a213fbaf0e6c836d4bc1b946473"></a>
@@ -314,20 +401,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tests chemicalPotentialAtIndex function. Takes in a matrix and calculates chemical potential at 100-199 indicies. </p>
-<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 100; i &lt; 199; i++)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="chemicalPotential_8c.html#acc747dde1a0766b19ca31a5fb8f41b9a">chemicalPotentialAtIndex</a>(i, a, data, p, <span class="keyword">new</span>));</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 100; i &lt; 199; i++)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="chemicalPotential_8c.html#acc747dde1a0766b19ca31a5fb8f41b9a">chemicalPotentialAtIndex</a>(i, a, data, p, <span class="keyword">new</span>));</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
@@ -336,6 +423,57 @@ Functions</h2></td></tr>
 <div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a03563a213fbaf0e6c836d4bc1b946473_cgraph.png" border="0" usemap="#test_8h_a03563a213fbaf0e6c836d4bc1b946473_cgraph" alt=""/></div>
+<map name="test_8h_a03563a213fbaf0e6c836d4bc1b946473_cgraph" id="test_8h_a03563a213fbaf0e6c836d4bc1b946473_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="251,5,362,32"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="229,56,384,83"/><area shape="rect" id="node4" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="237,107,376,133"/><area shape="rect" id="node6" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="225,157,388,184"/><area shape="rect" id="node8" href="chemicalPotential_8c.html#acc747dde1a0766b19ca31a5fb8f41b9a" title="calculates chemical potential at a given index " alt="" coords="221,212,392,239"/><area shape="rect" id="node5" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="463,99,580,125"/><area shape="rect" id="node7" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="441,150,602,191"/><area shape="rect" id="node9" href="eam_8c.html#a0e1a8f680274c658fc70be9f69211560" title="Function to calculate the energy required to swap an atom at a given index. " alt="" coords="467,216,576,243"/><area shape="rect" id="node10" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="651,56,843,83"/><area shape="rect" id="node13" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="677,107,817,133"/><area shape="rect" id="node14" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="685,157,809,184"/><area shape="rect" id="node17" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="659,209,834,250"/><area shape="rect" id="node18" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="685,275,808,301"/><area shape="rect" id="node20" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="651,325,842,352"/><area shape="rect" id="node21" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="663,377,830,418"/><area shape="rect" id="node11" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="922,19,1027,45"/><area shape="rect" id="node12" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="895,69,1054,96"/><area shape="rect" id="node15" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="891,145,1058,172"/><area shape="rect" id="node16" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="907,196,1042,223"/><area shape="rect" id="node19" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="913,329,1037,356"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4be98fe849f85663cf1e5e931bc48fc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_createLookUpTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                              {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a>   *data     = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a>      *defFCC   = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="structparameter.html">parameter</a>   *simParam = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<span class="stringliteral">&quot;parametersSim1.param&quot;</span>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    simParam-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> = 3.56;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <a class="code" href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a> *table    = <a class="code" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a>(data, simParam, defFCC);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <a class="code" href="eam_8c.html#a45e2e493f4c394023f429ba2f6b15a72">printLookUpTable</a>(table);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a45e2e493f4c394023f429ba2f6b15a72"><div class="ttname"><a href="eam_8c.html#a45e2e493f4c394023f429ba2f6b15a72">printLookUpTable</a></div><div class="ttdeci">void printLookUpTable(lookUpTable *p)</div><div class="ttdef"><b>Definition:</b> eam.c:835</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
+<div class="ttc" id="structparameter_html_acc593a841daec15783baf96e5fea949e"><div class="ttname"><a href="structparameter.html#acc593a841daec15783baf96e5fea949e">parameter::lattice_parameter</a></div><div class="ttdeci">double lattice_parameter</div><div class="ttdoc">Size of a unit cell in the lattice. </div><div class="ttdef"><b>Definition:</b> datatypes.h:59</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:161</div></div>
+<div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
+<div class="ttc" id="eam_8c_html_ae5053d5cf652aaca83aaf022df34f601"><div class="ttname"><a href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a></div><div class="ttdeci">lookUpTable * createLookUpTable(binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for...</div><div class="ttdef"><b>Definition:</b> eam.c:819</div></div>
+<div class="ttc" id="datatypes_8h_html_a7666e262e62f778515e766ebace30264"><div class="ttname"><a href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a></div><div class="ttdeci">struct energyTableConscise lookUpTable</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a4be98fe849f85663cf1e5e931bc48fc2_cgraph.png" border="0" usemap="#test_8h_a4be98fe849f85663cf1e5e931bc48fc2_cgraph" alt=""/></div>
+<map name="test_8h_a4be98fe849f85663cf1e5e931bc48fc2_cgraph" id="test_8h_a4be98fe849f85663cf1e5e931bc48fc2_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="245,5,355,32"/><area shape="rect" id="node3" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="219,56,381,83"/><area shape="rect" id="node5" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="219,107,381,133"/><area shape="rect" id="node7" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601" title="Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for..." alt="" coords="233,157,367,184"/><area shape="rect" id="node11" href="eam_8c.html#a45e2e493f4c394023f429ba2f6b15a72" title="printLookUpTable" alt="" coords="238,208,362,235"/><area shape="rect" id="node4" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="430,41,591,82"/><area shape="rect" id="node6" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="433,107,588,133"/><area shape="rect" id="node8" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="443,157,578,184"/><area shape="rect" id="node9" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="449,208,572,235"/><area shape="rect" id="node10" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="641,208,765,235"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae1ba67f5bdceda100ecf46fd49cba8a8"></a>
@@ -378,7 +516,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="structeDen__df_html_a03024bea30f5341d52ecab619a73a156"><div class="ttname"><a href="structeDen__df.html#a03024bea30f5341d52ecab619a73a156">eDen_df::embed1</a></div><div class="ttdeci">double embed1</div><div class="ttdoc">Linearly interpolated embedding energy of atom 1 at key value. </div><div class="ttdef"><b>Definition:</b> datatypes.h:167</div></div>
 <div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
 <div class="ttc" id="eam_8c_html_af7c8b700c9a1373c741aa5dc56f47dc0"><div class="ttname"><a href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0">rdf_radius_retrive</a></div><div class="ttdeci">rdf * rdf_radius_retrive(binEAMpot *data, double radius)</div><div class="ttdoc">In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field...</div><div class="ttdef"><b>Definition:</b> eam.c:346</div></div>
-<div class="ttc" id="eam_8c_html_a404f821b50b0b3db287ac612f7e2de35"><div class="ttname"><a href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35">eDen_df_charge_density_retrive</a></div><div class="ttdeci">eDen_df * eDen_df_charge_density_retrive(binEAMpot *data, double eDen)</div><div class="ttdoc">In the EAM tables we have embedding energy that depends on charge density. </div><div class="ttdef"><b>Definition:</b> eam.c:407</div></div>
+<div class="ttc" id="eam_8c_html_a404f821b50b0b3db287ac612f7e2de35"><div class="ttname"><a href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35">eDen_df_charge_density_retrive</a></div><div class="ttdeci">eDen_df * eDen_df_charge_density_retrive(binEAMpot *data, double eDen)</div><div class="ttdoc">In the EAM tables we have embedding energy that depends on charge density. </div><div class="ttdef"><b>Definition:</b> eam.c:409</div></div>
 <div class="ttc" id="structeDen__df_html_aa0e0265d6e6bb2ef637925d21acc91c7"><div class="ttname"><a href="structeDen__df.html#aa0e0265d6e6bb2ef637925d21acc91c7">eDen_df::eDen</a></div><div class="ttdeci">double eDen</div><div class="ttdoc">Key value. </div><div class="ttdef"><b>Definition:</b> datatypes.h:165</div></div>
 <div class="ttc" id="structrdf_html_a4dfbfbc5b683cef19de5bf73402dfacf"><div class="ttname"><a href="structrdf.html#a4dfbfbc5b683cef19de5bf73402dfacf">rdf::index</a></div><div class="ttdeci">int index</div><div class="ttdoc">Index of the record that was picked from the table. </div><div class="ttdef"><b>Definition:</b> datatypes.h:138</div></div>
 <div class="ttc" id="structeDen__df_html"><div class="ttname"><a href="structeDen__df.html">eDen_df</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:160</div></div>
@@ -389,6 +527,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="structrdf_html_a26bcfa49c52ed3d573f4547f41614d29"><div class="ttname"><a href="structrdf.html#a26bcfa49c52ed3d573f4547f41614d29">rdf::p11</a></div><div class="ttdeci">double p11</div><div class="ttdoc">Linearly interpolated pairwise potential atom1. </div><div class="ttdef"><b>Definition:</b> datatypes.h:142</div></div>
 <div class="ttc" id="structrdf_html"><div class="ttname"><a href="structrdf.html">rdf</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:135</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_ae1ba67f5bdceda100ecf46fd49cba8a8_cgraph.png" border="0" usemap="#test_8h_ae1ba67f5bdceda100ecf46fd49cba8a8_cgraph" alt=""/></div>
+<map name="test_8h_ae1ba67f5bdceda100ecf46fd49cba8a8_cgraph" id="test_8h_ae1ba67f5bdceda100ecf46fd49cba8a8_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="205,5,315,32"/><area shape="rect" id="node3" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="199,56,321,83"/><area shape="rect" id="node5" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="177,107,343,149"/><area shape="rect" id="node4" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="393,85,517,112"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a08d504ea575ad3cb3c5f7210d5a7e3c2"></a>
@@ -412,6 +559,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a08d504ea575ad3cb3c5f7210d5a7e3c2_cgraph.png" border="0" usemap="#test_8h_a08d504ea575ad3cb3c5f7210d5a7e3c2_cgraph" alt=""/></div>
+<map name="test_8h_a08d504ea575ad3cb3c5f7210d5a7e3c2_cgraph" id="test_8h_a08d504ea575ad3cb3c5f7210d5a7e3c2_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="229,5,384,32"/><area shape="rect" id="node3" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6" title="Prints the parameter data to STDOUT. " alt="" coords="247,56,366,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="afb4fd32a14dcfc5ac9de72a7bfa98cb7"></a>
@@ -427,36 +583,45 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>DONE Memory leaks in this function. </p>
+<p>DONE:10 Memory leaks in this function. </p>
 <p>Occured due to <a class="el" href="eam_8h.html#a8e307779c39cd719232f4bf2f78d037c" title="Function to calculate the energy required to swap an atom at a given index. ">energyToSwap</a> function now fixed </p>
-<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// / Example:</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">double</span> * energyMap = <a class="code" href="eam_8c.html#ab099d8527b6e5d309fd7f1da3d50a15d">deltaEnergyMatrix</a>(a, data, p, <span class="keyword">new</span>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a>(energyMap, 100, 200);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    free(data);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    free(p);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    free(a);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    free(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    free(energyMap);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
-<div class="ttc" id="eam_8c_html_ab099d8527b6e5d309fd7f1da3d50a15d"><div class="ttname"><a href="eam_8c.html#ab099d8527b6e5d309fd7f1da3d50a15d">deltaEnergyMatrix</a></div><div class="ttdeci">double * deltaEnergyMatrix(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Computes and reports change in energy at every index of the ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:639</div></div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// / Example:</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">double</span> * energyMap = <a class="code" href="eam_8c.html#ab099d8527b6e5d309fd7f1da3d50a15d">deltaEnergyMatrix</a>(a, data, p, <span class="keyword">new</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a>(energyMap, 100, 200);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    free(data);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    free(p);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    free(a);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    free(energyMap);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_ab099d8527b6e5d309fd7f1da3d50a15d"><div class="ttname"><a href="eam_8c.html#ab099d8527b6e5d309fd7f1da3d50a15d">deltaEnergyMatrix</a></div><div class="ttdeci">double * deltaEnergyMatrix(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Computes and reports change in energy at every index of the ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:800</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
 <div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
 <div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
-<div class="ttc" id="eam_8c_html_aa33352d6c51a766dfec0d2d5e36c62a5"><div class="ttname"><a href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a></div><div class="ttdeci">void printEnergyMap(double *matrix, int init_index, int final_index)</div><div class="ttdoc">Prints a double array to STDOUT. </div><div class="ttdef"><b>Definition:</b> eam.c:545</div></div>
+<div class="ttc" id="eam_8c_html_aa33352d6c51a766dfec0d2d5e36c62a5"><div class="ttname"><a href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a></div><div class="ttdeci">void printEnergyMap(double *matrix, int init_index, int final_index)</div><div class="ttdoc">Prints a double array to STDOUT. </div><div class="ttdef"><b>Definition:</b> eam.c:662</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_afb4fd32a14dcfc5ac9de72a7bfa98cb7_cgraph.png" border="0" usemap="#test_8h_afb4fd32a14dcfc5ac9de72a7bfa98cb7_cgraph" alt=""/></div>
+<map name="test_8h_afb4fd32a14dcfc5ac9de72a7bfa98cb7_cgraph" id="test_8h_afb4fd32a14dcfc5ac9de72a7bfa98cb7_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="237,5,347,32"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="215,56,369,83"/><area shape="rect" id="node4" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="223,107,361,133"/><area shape="rect" id="node6" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="211,157,373,184"/><area shape="rect" id="node8" href="eam_8c.html#ab099d8527b6e5d309fd7f1da3d50a15d" title="Computes and reports change in energy at every index of the ATOM array. " alt="" coords="229,208,355,235"/><area shape="rect" id="node22" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5" title="Prints a double array to STDOUT. " alt="" coords="235,259,349,285"/><area shape="rect" id="node5" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="444,99,561,125"/><area shape="rect" id="node7" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="422,150,583,191"/><area shape="rect" id="node9" href="eam_8c.html#a0e1a8f680274c658fc70be9f69211560" title="Function to calculate the energy required to swap an atom at a given index. " alt="" coords="448,216,557,243"/><area shape="rect" id="node10" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="632,56,824,83"/><area shape="rect" id="node13" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="658,107,798,133"/><area shape="rect" id="node14" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="666,157,790,184"/><area shape="rect" id="node17" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="641,209,815,250"/><area shape="rect" id="node18" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="667,275,789,301"/><area shape="rect" id="node20" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="633,325,823,352"/><area shape="rect" id="node21" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="645,377,811,418"/><area shape="rect" id="node11" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="903,19,1009,45"/><area shape="rect" id="node12" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="877,69,1035,96"/><area shape="rect" id="node15" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="873,145,1039,172"/><area shape="rect" id="node16" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="889,196,1023,223"/><area shape="rect" id="node19" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="894,329,1018,356"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a92326011653a9dbb2d6bf48b1b26fdd3"></a>
@@ -487,6 +652,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="structbinEAMpot_html_a8839de9ecd5b8447fb516ceaa13c6077"><div class="ttname"><a href="structbinEAMpot.html#a8839de9ecd5b8447fb516ceaa13c6077">binEAMpot::atom1</a></div><div class="ttdeci">char atom1[2]</div><div class="ttdoc">Chemical symbol for atom 1 involved in simulation. </div><div class="ttdef"><b>Definition:</b> datatypes.h:86</div></div>
 <div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a92326011653a9dbb2d6bf48b1b26fdd3_cgraph.png" border="0" usemap="#test_8h_a92326011653a9dbb2d6bf48b1b26fdd3_cgraph" alt=""/></div>
+<map name="test_8h_a92326011653a9dbb2d6bf48b1b26fdd3_cgraph" id="test_8h_a92326011653a9dbb2d6bf48b1b26fdd3_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="195,5,306,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a2f525e5d77d201e69c902edf74757459"></a>
@@ -517,8 +691,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    free(a);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    free(<span class="keyword">new</span>);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
-<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates energy at a given array index in ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:455</div></div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates energy at a given array index in ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:457</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
@@ -526,6 +700,69 @@ Functions</h2></td></tr>
 <div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a2f525e5d77d201e69c902edf74757459_cgraph.png" border="0" usemap="#test_8h_a2f525e5d77d201e69c902edf74757459_cgraph" alt=""/></div>
+<map name="test_8h_a2f525e5d77d201e69c902edf74757459_cgraph" id="test_8h_a2f525e5d77d201e69c902edf74757459_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="242,5,353,32"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="220,56,375,83"/><area shape="rect" id="node4" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="228,107,367,133"/><area shape="rect" id="node6" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="216,157,379,184"/><area shape="rect" id="node8" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d" title="Calculates energy at a given array index in ATOM array. " alt="" coords="230,347,365,373"/><area shape="rect" id="node5" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="464,99,581,125"/><area shape="rect" id="node7" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="442,150,603,191"/><area shape="rect" id="node9" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="427,216,619,243"/><area shape="rect" id="node12" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="453,267,593,293"/><area shape="rect" id="node13" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="461,317,585,344"/><area shape="rect" id="node16" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="435,369,610,410"/><area shape="rect" id="node17" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="461,435,584,461"/><area shape="rect" id="node19" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="427,485,618,512"/><area shape="rect" id="node20" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="439,537,606,578"/><area shape="rect" id="node10" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="698,179,803,205"/><area shape="rect" id="node11" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="671,229,830,256"/><area shape="rect" id="node14" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="667,305,834,332"/><area shape="rect" id="node15" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="683,356,818,383"/><area shape="rect" id="node18" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="689,489,813,516"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e8eebf70e5db292162e0d2e5ef46178"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_energyAtIndexFCC_fast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;{</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a>   *data     = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a>      *defFCC   = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <a class="code" href="structparameter.html">parameter</a>   *simParam = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<span class="stringliteral">&quot;parametersSim1.param&quot;</span>);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    simParam-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> = 3.56;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <a class="code" href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a> *t = <a class="code" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a>(data, simParam, defFCC);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <a class="code" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a>(t, data);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <a class="code" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a>(simParam, <span class="stringliteral">&quot;input&quot;</span>, 1232342, 0.5);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <a class="code" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a> *test_input = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;input&quot;</span>);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 32000; i++) {</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        printf(<span class="stringliteral">&quot;%le\n&quot;</span>, <a class="code" href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a>(i, test_input, simParam, defFCC));</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a9d9720c5e916999006aa63912986815d"><div class="ttname"><a href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a></div><div class="ttdeci">double energyAtIndexFCC_fast(int index, int *a, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Looks up the energy for atom at a given array index in ATOM array, from energyTableInstantLookup[. </div><div class="ttdef"><b>Definition:</b> eam.c:591</div></div>
+<div class="ttc" id="datatypes_8h_html_aa490fdadd35ed054dbb2d1d3ab787ce1"><div class="ttname"><a href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a></div><div class="ttdeci">int ATOM</div><div class="ttdoc">Atoms are stored as integers in memory. </div><div class="ttdef"><b>Definition:</b> datatypes.h:235</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
+<div class="ttc" id="structparameter_html_acc593a841daec15783baf96e5fea949e"><div class="ttname"><a href="structparameter.html#acc593a841daec15783baf96e5fea949e">parameter::lattice_parameter</a></div><div class="ttdeci">double lattice_parameter</div><div class="ttdoc">Size of a unit cell in the lattice. </div><div class="ttdef"><b>Definition:</b> datatypes.h:59</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
+<div class="ttc" id="analysis_8c_html_aae1529c6458af3ed4626ff934aebce3d"><div class="ttname"><a href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed, double concentration)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
+<div class="ttc" id="eam_8c_html_aa51add008d5ac8a30d67afe62093b740"><div class="ttname"><a href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a></div><div class="ttdeci">void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot)</div><div class="ttdoc">Fills the global variable energyTableInstantLookup array with appropriate values. ...</div><div class="ttdef"><b>Definition:</b> eam.c:857</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:161</div></div>
+<div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
+<div class="ttc" id="eam_8c_html_ae5053d5cf652aaca83aaf022df34f601"><div class="ttname"><a href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a></div><div class="ttdeci">lookUpTable * createLookUpTable(binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for...</div><div class="ttdef"><b>Definition:</b> eam.c:819</div></div>
+<div class="ttc" id="datatypes_8h_html_a7666e262e62f778515e766ebace30264"><div class="ttname"><a href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a></div><div class="ttdeci">struct energyTableConscise lookUpTable</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a3e8eebf70e5db292162e0d2e5ef46178_cgraph.png" border="0" usemap="#test_8h_a3e8eebf70e5db292162e0d2e5ef46178_cgraph" alt=""/></div>
+<map name="test_8h_a3e8eebf70e5db292162e0d2e5ef46178_cgraph" id="test_8h_a3e8eebf70e5db292162e0d2e5ef46178_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="283,5,394,32"/><area shape="rect" id="node3" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="257,56,420,83"/><area shape="rect" id="node5" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="257,107,420,133"/><area shape="rect" id="node7" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601" title="Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for..." alt="" coords="271,157,406,184"/><area shape="rect" id="node11" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740" title="Fills the global variable energyTableInstantLookup array with appropriate values. ..." alt="" coords="253,208,425,235"/><area shape="rect" id="node13" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d" title="Generates a random atomic matrix. " alt="" coords="245,259,432,285"/><area shape="rect" id="node15" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="269,309,408,336"/><area shape="rect" id="node16" href="eam_8c.html#a9d9720c5e916999006aa63912986815d" title="Looks up the energy for atom at a given array index in ATOM array, from energyTableInstantLookup[. " alt="" coords="257,393,420,420"/><area shape="rect" id="node4" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="495,7,657,49"/><area shape="rect" id="node6" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="499,73,653,100"/><area shape="rect" id="node8" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="509,124,643,151"/><area shape="rect" id="node9" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="515,175,637,201"/><area shape="rect" id="node10" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="738,204,862,231"/><area shape="rect" id="node12" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="493,226,659,267"/><area shape="rect" id="node14" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="517,292,635,319"/><area shape="rect" id="node17" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="480,343,672,369"/><area shape="rect" id="node20" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="506,393,646,420"/><area shape="rect" id="node21" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="489,445,663,486"/><area shape="rect" id="node22" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="481,511,671,537"/><area shape="rect" id="node18" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="747,317,853,344"/><area shape="rect" id="node19" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="721,368,879,395"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a140639cdacca051923cf0501f75680d6"></a>
@@ -540,34 +777,45 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// / Example:</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">double</span> * energyMap = <a class="code" href="eam_8c.html#a0e5a832cc8fed840b66c775c3a4c5ec5">energyInMatrix</a>(a, data, p, <span class="keyword">new</span>);    </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a>(energyMap, 100, 200);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    free(p);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    free(a);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    free(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    free(energyMap);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+
+<p>TODO find memory leak in this. </p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * data = NULL;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    data = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;./EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// test_AtomicMatrixRead();</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * <span class="keyword">new</span> = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// / Example:</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">double</span> * energyMap = <a class="code" href="eam_8c.html#a0e5a832cc8fed840b66c775c3a4c5ec5">energyInMatrix</a>(a, data, p, <span class="keyword">new</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a>(energyMap, 100, 200);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    free(p);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    free(a);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    free(energyMap);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
-<div class="ttc" id="eam_8c_html_a0e5a832cc8fed840b66c775c3a4c5ec5"><div class="ttname"><a href="eam_8c.html#a0e5a832cc8fed840b66c775c3a4c5ec5">energyInMatrix</a></div><div class="ttdeci">double * energyInMatrix(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates bond energy of all atoms in a given ATOM array, and stores it in a double array...</div><div class="ttdef"><b>Definition:</b> eam.c:527</div></div>
+<div class="ttc" id="eam_8c_html_a0e5a832cc8fed840b66c775c3a4c5ec5"><div class="ttname"><a href="eam_8c.html#a0e5a832cc8fed840b66c775c3a4c5ec5">energyInMatrix</a></div><div class="ttdeci">double * energyInMatrix(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates bond energy of all atoms in a given ATOM array, and stores it in a double array...</div><div class="ttdef"><b>Definition:</b> eam.c:633</div></div>
 <div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
 <div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
-<div class="ttc" id="eam_8c_html_aa33352d6c51a766dfec0d2d5e36c62a5"><div class="ttname"><a href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a></div><div class="ttdeci">void printEnergyMap(double *matrix, int init_index, int final_index)</div><div class="ttdoc">Prints a double array to STDOUT. </div><div class="ttdef"><b>Definition:</b> eam.c:545</div></div>
+<div class="ttc" id="eam_8c_html_aa33352d6c51a766dfec0d2d5e36c62a5"><div class="ttname"><a href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5">printEnergyMap</a></div><div class="ttdeci">void printEnergyMap(double *matrix, int init_index, int final_index)</div><div class="ttdoc">Prints a double array to STDOUT. </div><div class="ttdef"><b>Definition:</b> eam.c:662</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a140639cdacca051923cf0501f75680d6_cgraph.png" border="0" usemap="#test_8h_a140639cdacca051923cf0501f75680d6_cgraph" alt=""/></div>
+<map name="test_8h_a140639cdacca051923cf0501f75680d6_cgraph" id="test_8h_a140639cdacca051923cf0501f75680d6_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="218,5,329,32"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="196,56,351,83"/><area shape="rect" id="node4" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="204,107,343,133"/><area shape="rect" id="node6" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="192,157,355,184"/><area shape="rect" id="node8" href="eam_8c.html#a0e5a832cc8fed840b66c775c3a4c5ec5" title="Calculates bond energy of all atoms in a given ATOM array, and stores it in a double array..." alt="" coords="219,208,327,235"/><area shape="rect" id="node22" href="eam_8c.html#aa33352d6c51a766dfec0d2d5e36c62a5" title="Prints a double array to STDOUT. " alt="" coords="217,259,330,285"/><area shape="rect" id="node5" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="425,99,543,125"/><area shape="rect" id="node7" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="403,150,565,191"/><area shape="rect" id="node9" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d" title="Calculates energy at a given array index in ATOM array. " alt="" coords="417,216,551,243"/><area shape="rect" id="node10" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="613,56,805,83"/><area shape="rect" id="node13" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="639,107,779,133"/><area shape="rect" id="node14" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="647,157,771,184"/><area shape="rect" id="node17" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="622,209,797,250"/><area shape="rect" id="node18" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="648,275,771,301"/><area shape="rect" id="node20" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="614,325,805,352"/><area shape="rect" id="node21" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="626,377,793,418"/><area shape="rect" id="node11" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="885,19,990,45"/><area shape="rect" id="node12" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="858,69,1017,96"/><area shape="rect" id="node15" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="854,145,1021,172"/><area shape="rect" id="node16" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="870,196,1005,223"/><area shape="rect" id="node19" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="875,329,999,356"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a1f3acad1457a9918c5e76d912d8e5e03"></a>
@@ -608,6 +856,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="parameters_8c_html_a89cb6fd3db74441fd68f88dd5023e4be"><div class="ttname"><a href="parameters_8c.html#a89cb6fd3db74441fd68f88dd5023e4be">new_parameters</a></div><div class="ttdeci">parameter * new_parameters(char *fileName)</div><div class="ttdoc">Reads a parameter from given file name. </div><div class="ttdef"><b>Definition:</b> parameters.c:31</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_af16d1974cbed8008842f52a018d149a2_cgraph.png" border="0" usemap="#test_8h_af16d1974cbed8008842f52a018d149a2_cgraph" alt=""/></div>
+<map name="test_8h_af16d1974cbed8008842f52a018d149a2_cgraph" id="test_8h_af16d1974cbed8008842f52a018d149a2_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a89cb6fd3db74441fd68f88dd5023e4be" title="Reads a parameter from given file name. " alt="" coords="201,5,319,32"/><area shape="rect" id="node3" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6" title="Prints the parameter data to STDOUT. " alt="" coords="201,56,319,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ab77e6e8e894646db8fd98746af544ba1"></a>
@@ -622,26 +879,35 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fcc = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">int</span> count = <a class="code" href="analysis_8c.html#a9facf710612a86411c629b08e6a41591">orderedPhaseCount</a>(a, p, fcc);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    printf(<span class="stringliteral">&quot;ekneiogne\n&quot;</span>);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    printf(<span class="stringliteral">&quot;Order Phase sites in given lattice = %d\n&quot;</span>, count);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    free(a);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    free(fcc);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    free(p);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">int</span> * a = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input.crystal.fcc&quot;</span>);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fcc = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">int</span> count = <a class="code" href="analysis_8c.html#a9facf710612a86411c629b08e6a41591">orderedPhaseCount</a>(a, p, fcc);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    printf(<span class="stringliteral">&quot;ekneiogne\n&quot;</span>);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    printf(<span class="stringliteral">&quot;Order Phase sites in given lattice = %d\n&quot;</span>, count);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    free(a);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    free(fcc);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    free(p);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
 <div class="ttc" id="analysis_8c_html_a9facf710612a86411c629b08e6a41591"><div class="ttname"><a href="analysis_8c.html#a9facf710612a86411c629b08e6a41591">orderedPhaseCount</a></div><div class="ttdeci">int orderedPhaseCount(int *a, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Counts total number of ordered phase sites in atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:33</div></div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
 <div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:198</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_ab77e6e8e894646db8fd98746af544ba1_cgraph.png" border="0" usemap="#test_8h_ab77e6e8e894646db8fd98746af544ba1_cgraph" alt=""/></div>
+<map name="test_8h_ab77e6e8e894646db8fd98746af544ba1_cgraph" id="test_8h_ab77e6e8e894646db8fd98746af544ba1_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="225,5,380,32"/><area shape="rect" id="node3" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="233,56,372,83"/><area shape="rect" id="node5" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="221,107,384,133"/><area shape="rect" id="node7" href="analysis_8c.html#a9facf710612a86411c629b08e6a41591" title="Counts total number of ordered phase sites in atomic matrix. " alt="" coords="234,191,371,217"/><area shape="rect" id="node4" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="469,48,587,75"/><area shape="rect" id="node6" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="447,99,609,141"/><area shape="rect" id="node8" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="432,165,624,192"/><area shape="rect" id="node11" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="458,216,598,243"/><area shape="rect" id="node12" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="433,267,623,293"/><area shape="rect" id="node9" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="699,140,805,167"/><area shape="rect" id="node10" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="673,191,831,217"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a4cc04226db74e2e8b1dc56eb9791b2bc"></a>
@@ -658,33 +924,33 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tests the functions <a class="el" href="parameters_8h.html#abcf8d4591625224623e8f1d617de139c" title="Creates a parameter structure from STDIN and saves it to a .parameter FILE. ">createParameterFileFromInput</a>, <a class="el" href="parameters_8h.html#a611b664bd3f19b2f0bbb84c40f716769">parameterReadFromFile</a>, <a class="el" href="parameters_8h.html#a1f272b3d37153cd916635f70f72a85a7" title="Takes a parameter object and writes it to a file. ">parameterWriteToFile</a>, and <a class="el" href="parameters_8h.html#a4370cd24131bde11d4eb2a821eb6978a" title="Creates default parameter file named defaultFCC.param in working directory. ">parameterDefaultFile</a>. </p>
-<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    printf(<span class="stringliteral">&quot;\nThis is TEST function test_parametersInputOutput() refer documentation for details\n&quot;</span>);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    printf(<span class="stringliteral">&quot;Begining TEST\n&quot;</span>);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    printf(<span class="stringliteral">&quot;This is a STDIN TEST please follow on screen Instructions\n&quot;</span>);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    printf(<span class="stringliteral">&quot;All ok\n&quot;</span>);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    printf(<span class="stringliteral">&quot;Writing to file\n&quot;</span>);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e">parameterWriteToFile</a>(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * check = NULL;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// /DONE:10 Segmentation fault</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    check = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(new-&gt;fileName);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">if</span> (check == NULL)</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    {</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        printf(<span class="stringliteral">&quot;flag\n&quot;</span>);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        printf(<span class="stringliteral">&quot;%s\n&quot;</span>, new-&gt;fileName);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(check);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    printf(<span class="stringliteral">&quot;If two exactly same streams of data appear then its fine\n&quot;</span>);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">remove</span>(<span class="keyword">new</span>-&gt;fileName);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    free(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    free(check);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="parameters_8c.html#a4370cd24131bde11d4eb2a821eb6978a">parameterDefaultFile</a>();</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<a class="code" href="datatypes_8h.html#a7a126d20ea42b5b7faac25b147289931">PARAM_FILE_DEF_NAME</a>);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    free(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    printf(<span class="stringliteral">&quot;\nThis is TEST function test_parametersInputOutput() refer documentation for details\n&quot;</span>);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    printf(<span class="stringliteral">&quot;Begining TEST\n&quot;</span>);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    printf(<span class="stringliteral">&quot;This is a STDIN TEST please follow on screen Instructions\n&quot;</span>);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    printf(<span class="stringliteral">&quot;All ok\n&quot;</span>);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    printf(<span class="stringliteral">&quot;Writing to file\n&quot;</span>);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <a class="code" href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e">parameterWriteToFile</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * check = NULL;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="comment">// /DONE:30 Segmentation fault</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    check = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(new-&gt;fileName);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">if</span> (check == NULL)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        printf(<span class="stringliteral">&quot;flag\n&quot;</span>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        printf(<span class="stringliteral">&quot;%s\n&quot;</span>, new-&gt;fileName);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(check);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    printf(<span class="stringliteral">&quot;If two exactly same streams of data appear then its fine\n&quot;</span>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">remove</span>(<span class="keyword">new</span>-&gt;fileName);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    free(check);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="parameters_8c.html#a4370cd24131bde11d4eb2a821eb6978a">parameterDefaultFile</a>();</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keyword">new</span> = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<a class="code" href="datatypes_8h.html#a7a126d20ea42b5b7faac25b147289931">PARAM_FILE_DEF_NAME</a>);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
 <div class="ttc" id="parameters_8c_html_aa5023a18b4a90fafacc032b8e575b7d6"><div class="ttname"><a href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a></div><div class="ttdeci">void print_parameters(parameter *a)</div><div class="ttdoc">Prints the parameter data to STDOUT. </div><div class="ttdef"><b>Definition:</b> parameters.c:14</div></div>
 <div class="ttc" id="parameters_8c_html_ac5ec1f32b34d943f214d32c03b200b8e"><div class="ttname"><a href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e">parameterWriteToFile</a></div><div class="ttdeci">void parameterWriteToFile(parameter *out)</div><div class="ttdoc">Takes a parameter object and writes it to a file. </div><div class="ttdef"><b>Definition:</b> parameters.c:206</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
@@ -693,6 +959,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="datatypes_8h_html_a7a126d20ea42b5b7faac25b147289931"><div class="ttname"><a href="datatypes_8h.html#a7a126d20ea42b5b7faac25b147289931">PARAM_FILE_DEF_NAME</a></div><div class="ttdeci">#define PARAM_FILE_DEF_NAME</div><div class="ttdoc">Default name for parameter file. </div><div class="ttdef"><b>Definition:</b> datatypes.h:37</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a4cc04226db74e2e8b1dc56eb9791b2bc_cgraph.png" border="0" usemap="#test_8h_a4cc04226db74e2e8b1dc56eb9791b2bc_cgraph" alt=""/></div>
+<map name="test_8h_a4cc04226db74e2e8b1dc56eb9791b2bc_cgraph" id="test_8h_a4cc04226db74e2e8b1dc56eb9791b2bc_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="448,82,603,109"/><area shape="rect" id="node3" href="parameters_8c.html#ac5ec1f32b34d943f214d32c03b200b8e" title="Takes a parameter object and writes it to a file. " alt="" coords="245,32,392,58"/><area shape="rect" id="node4" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="237,82,400,109"/><area shape="rect" id="node5" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6" title="Prints the parameter data to STDOUT. " alt="" coords="466,158,585,185"/><area shape="rect" id="node6" href="parameters_8c.html#a4370cd24131bde11d4eb2a821eb6978a" title="Creates default parameter file named defaultFCC.param in working directory. " alt="" coords="247,133,390,160"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a18d9a74feb479a15d5f42aae8bc5802b"></a>
@@ -751,6 +1026,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="point3D_8c_html_ac33e9a71f0809b3bf8ed70c1570da1e2"><div class="ttname"><a href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2">point3D_subtractVectors</a></div><div class="ttdeci">point3D * point3D_subtractVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Creates a new point3D object by subtacting first and second arguments. </div><div class="ttdef"><b>Definition:</b> point3D.c:81</div></div>
 <div class="ttc" id="point3D_8c_html_a950c9e52a5df4f947fe9c98ecf846e00"><div class="ttname"><a href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a></div><div class="ttdeci">point3D * point3D_origin()</div><div class="ttdoc">Creates new point3D type with (0, 0, 0) as input. </div><div class="ttdef"><b>Definition:</b> point3D.c:31</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a18d9a74feb479a15d5f42aae8bc5802b_cgraph.png" border="0" usemap="#test_8h_a18d9a74feb479a15d5f42aae8bc5802b_cgraph" alt=""/></div>
+<map name="test_8h_a18d9a74feb479a15d5f42aae8bc5802b_cgraph" id="test_8h_a18d9a74feb479a15d5f42aae8bc5802b_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="167,5,273,32"/><area shape="rect" id="node3" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673" title="Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. " alt="" coords="156,56,284,83"/><area shape="rect" id="node4" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95" title="Allocates the memory, and creates a new point3D type. " alt="" coords="156,107,284,133"/><area shape="rect" id="node5" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="150,157,290,184"/><area shape="rect" id="node6" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="339,233,506,260"/><area shape="rect" id="node7" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="355,296,490,323"/><area shape="rect" id="node8" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="158,259,282,285"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a3ec2c9b6b3af4477a2cd2ad59d22bf6c"></a>
@@ -765,27 +1049,36 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="comment">// / Incorrect usage</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 3, 2);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    new1 = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(new1, new2);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    free(new1);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    free(new2);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">// / Correct usage.</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    new1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    new2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 3, 2);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new3 = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(new1, new2);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    free(new1);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    free(new2);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    free(new3);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="comment">// / Incorrect usage</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 3, 2);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    new1 = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(new1, new2);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    free(new1);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    free(new2);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// / Correct usage.</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    new1 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 1, 1);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    new2 = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1, 3, 2);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * new3 = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(new1, new2);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    free(new1);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    free(new2);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    free(new3);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 <div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:47</div></div>
 <div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
 <div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:17</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a3ec2c9b6b3af4477a2cd2ad59d22bf6c_cgraph.png" border="0" usemap="#test_8h_a3ec2c9b6b3af4477a2cd2ad59d22bf6c_cgraph" alt=""/></div>
+<map name="test_8h_a3ec2c9b6b3af4477a2cd2ad59d22bf6c_cgraph" id="test_8h_a3ec2c9b6b3af4477a2cd2ad59d22bf6c_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95" title="Allocates the memory, and creates a new point3D type. " alt="" coords="231,5,359,32"/><area shape="rect" id="node3" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="225,56,365,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="acfcb10a9c79754b73d20f274a512ba5c"></a>
@@ -817,6 +1110,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_acfcb10a9c79754b73d20f274a512ba5c_cgraph.png" border="0" usemap="#test_8h_acfcb10a9c79754b73d20f274a512ba5c_cgraph" alt=""/></div>
+<map name="test_8h_acfcb10a9c79754b73d20f274a512ba5c_cgraph" id="test_8h_acfcb10a9c79754b73d20f274a512ba5c_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="259,5,413,32"/><area shape="rect" id="node3" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673" title="Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. " alt="" coords="272,56,400,83"/><area shape="rect" id="node4" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="240,107,432,133"/><area shape="rect" id="node5" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="507,81,613,108"/><area shape="rect" id="node6" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="481,132,639,159"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a0cfc06a030386d84acb8949415a62455"></a>
@@ -831,16 +1133,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1.5, 1.2, 1.4);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    free(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a>(1.5, 1.2, 1.4);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
 <div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
 <div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:94</div></div>
 <div class="ttc" id="point3D_8c_html_aa56da38ea1c272f894c56ae3f244be95"><div class="ttname"><a href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95">point3D_newPoint</a></div><div class="ttdeci">point3D * point3D_newPoint(float x, float y, float z)</div><div class="ttdoc">Allocates the memory, and creates a new point3D type. </div><div class="ttdef"><b>Definition:</b> point3D.c:17</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a0cfc06a030386d84acb8949415a62455_cgraph.png" border="0" usemap="#test_8h_a0cfc06a030386d84acb8949415a62455_cgraph" alt=""/></div>
+<map name="test_8h_a0cfc06a030386d84acb8949415a62455_cgraph" id="test_8h_a0cfc06a030386d84acb8949415a62455_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95" title="Allocates the memory, and creates a new point3D type. " alt="" coords="211,5,339,32"/><area shape="rect" id="node3" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673" title="Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. " alt="" coords="211,56,339,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a4acf445adf66e66c18d2493405548fc1"></a>
@@ -855,16 +1166,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a>();</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    free(<span class="keyword">new</span>);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="structpoint3D.html">point3D</a> * <span class="keyword">new</span> = <a class="code" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a>();</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    free(<span class="keyword">new</span>);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
 <div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
 <div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:94</div></div>
 <div class="ttc" id="point3D_8c_html_a950c9e52a5df4f947fe9c98ecf846e00"><div class="ttname"><a href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00">point3D_origin</a></div><div class="ttdeci">point3D * point3D_origin()</div><div class="ttdoc">Creates new point3D type with (0, 0, 0) as input. </div><div class="ttdef"><b>Definition:</b> point3D.c:31</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a4acf445adf66e66c18d2493405548fc1_cgraph.png" border="0" usemap="#test_8h_a4acf445adf66e66c18d2493405548fc1_cgraph" alt=""/></div>
+<map name="test_8h_a4acf445adf66e66c18d2493405548fc1_cgraph" id="test_8h_a4acf445adf66e66c18d2493405548fc1_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="201,5,306,32"/><area shape="rect" id="node3" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673" title="Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. " alt="" coords="189,56,317,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="af86bade21ef5cb13f31d85dcf336a60a"></a>
@@ -896,6 +1216,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 <div class="ttc" id="point3D_8c_html_a05e682c55af08bfcbd25b4887ff6e1f6"><div class="ttname"><a href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6">point3D_periodicBoundaryTransform</a></div><div class="ttdeci">void point3D_periodicBoundaryTransform(point3D *k, parameter *p)</div><div class="ttdoc">For a given parameter and point3D applies the periodic boundary transform such that it lies in the co...</div><div class="ttdef"><b>Definition:</b> point3D.c:204</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_af86bade21ef5cb13f31d85dcf336a60a_cgraph.png" border="0" usemap="#test_8h_af86bade21ef5cb13f31d85dcf336a60a_cgraph" alt=""/></div>
+<map name="test_8h_af86bade21ef5cb13f31d85dcf336a60a_cgraph" id="test_8h_af86bade21ef5cb13f31d85dcf336a60a_cgraph">
+<area shape="rect" id="node2" href="point3D_8c.html#aa56da38ea1c272f894c56ae3f244be95" title="Allocates the memory, and creates a new point3D type. " alt="" coords="280,5,408,32"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="267,56,421,83"/><area shape="rect" id="node4" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673" title="Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. " alt="" coords="280,107,408,133"/><area shape="rect" id="node5" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="257,158,431,199"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aabd1cd2f12a661db2ff7a6f81d8c6ae6"></a>
@@ -925,16 +1254,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;input&quot;</span>;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a>(p, fileName, 12434533);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
-<div class="ttc" id="analysis_8c_html_a1f6065e798779a8e6ecb1a778b9c0f68"><div class="ttname"><a href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * p = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;input&quot;</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a>(p, fileName, 12434533, 0.5);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="ttc" id="analysis_8c_html_aae1529c6458af3ed4626ff934aebce3d"><div class="ttname"><a href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed, double concentration)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
 <div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a1fc46bb9c57af50a40b7d5bce9f0f3b6_cgraph.png" border="0" usemap="#test_8h_a1fc46bb9c57af50a40b7d5bce9f0f3b6_cgraph" alt=""/></div>
+<map name="test_8h_a1fc46bb9c57af50a40b7d5bce9f0f3b6_cgraph" id="test_8h_a1fc46bb9c57af50a40b7d5bce9f0f3b6_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="285,5,440,32"/><area shape="rect" id="node3" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d" title="Generates a random atomic matrix. " alt="" coords="269,56,456,83"/><area shape="rect" id="node4" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="504,56,621,83"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a4ffafc20326e83aefc5de9101c0d4940"></a>
@@ -949,15 +1287,24 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;input.crystal.fcc&quot;</span>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordtype">int</span> * a_file = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(fileName);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="eam_8c.html#a0f17ec1dc8b84b69a85a570e4ed39cbf">print_AtomicMatrix</a>(a_file, 0, 15);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;input.crystal.fcc&quot;</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordtype">int</span> * a_file = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(fileName);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="eam_8c.html#a0f17ec1dc8b84b69a85a570e4ed39cbf">print_AtomicMatrix</a>(a_file, 0, 15);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
 <div class="ttc" id="eam_8c_html_a0f17ec1dc8b84b69a85a570e4ed39cbf"><div class="ttname"><a href="eam_8c.html#a0f17ec1dc8b84b69a85a570e4ed39cbf">print_AtomicMatrix</a></div><div class="ttdeci">void print_AtomicMatrix(ATOM *mat, int begin, int end)</div><div class="ttdoc">Prints atomic matrix atoms to STDOUT in a range. </div><div class="ttdef"><b>Definition:</b> eam.c:55</div></div>
 <div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a4ffafc20326e83aefc5de9101c0d4940_cgraph.png" border="0" usemap="#test_8h_a4ffafc20326e83aefc5de9101c0d4940_cgraph" alt=""/></div>
+<map name="test_8h_a4ffafc20326e83aefc5de9101c0d4940_cgraph" id="test_8h_a4ffafc20326e83aefc5de9101c0d4940_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="221,5,360,32"/><area shape="rect" id="node4" href="eam_8c.html#a0f17ec1dc8b84b69a85a570e4ed39cbf" title="Prints atomic matrix atoms to STDOUT in a range. " alt="" coords="225,56,356,83"/><area shape="rect" id="node3" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="408,5,525,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a7ff51f80eed96b5ecd363b7e19f6135d"></a>
@@ -984,10 +1331,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a>(&amp;(new-&gt;s1n[i]));</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:196</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
 <div class="ttc" id="eam_8c_html_ab793dd733f267dcb29bd5bee202c2aa3"><div class="ttname"><a href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3">Sn_fcc_readNeighbours_fromFile</a></div><div class="ttdeci">Sn_fcc * Sn_fcc_readNeighbours_fromFile(char *fileList)</div><div class="ttdoc">Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours...</div><div class="ttdef"><b>Definition:</b> eam.c:71</div></div>
 <div class="ttc" id="point3D_8c_html_a7f2767bd029809bb917530cf91cd6673"><div class="ttname"><a href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673">point3D_dispPoint</a></div><div class="ttdeci">void point3D_dispPoint(point3D *a)</div><div class="ttdoc">Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. </div><div class="ttdef"><b>Definition:</b> point3D.c:94</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test_8h_a7ff51f80eed96b5ecd363b7e19f6135d_cgraph.png" border="0" usemap="#test_8h_a7ff51f80eed96b5ecd363b7e19f6135d_cgraph" alt=""/></div>
+<map name="test_8h_a7ff51f80eed96b5ecd363b7e19f6135d_cgraph" id="test_8h_a7ff51f80eed96b5ecd363b7e19f6135d_cgraph">
+<area shape="rect" id="node2" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="246,5,407,46"/><area shape="rect" id="node3" href="point3D_8c.html#a7f2767bd029809bb917530cf91cd6673" title="Prints point3D data to STDOUT as &quot;(x, y, z)&quot;. " alt="" coords="263,71,391,97"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -996,7 +1352,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="test_8h.html">test.h</a></li>
-    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
+    <li class="footer">Generated on Thu Sep 29 2016 16:21:05 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

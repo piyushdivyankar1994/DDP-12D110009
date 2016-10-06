@@ -1,0 +1,7 @@
+Nx = 4;
+Ny = 4;
+Nz = 4;
+no_of_atoms = 64 * 4;
+N_MCS = 10;
+pressure = 1e5;
+temperature = 100;
