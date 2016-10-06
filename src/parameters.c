@@ -13,14 +13,14 @@
  */
 void print_parameters(parameter * a)
 {
-    printf("Size in x-direction           = %d\n", a->Nx);
-    printf("Size in y-direction           = %d\n", a->Ny);
-    printf("Size in z-direction           = %d\n", a->Nz);
-    printf("Lattice Parameter             = %le\n", a->lattice_parameter);
-    printf("No. of MonteCarlo Simulations = %d\n", a->N_MCS);
-    printf("Temperature                   = %le\n", a->temperature);
-    printf("Atoms per site                = %d\n", a->atoms_per_site);
-    printf("Totol No of atoms             = %d\n", a->no_of_atoms);
+    printf("# Size in x-direction           = %d\n", a->Nx);
+    printf("# Size in y-direction           = %d\n", a->Ny);
+    printf("# Size in z-direction           = %d\n", a->Nz);
+    printf("# Lattice Parameter             = %le\n", a->lattice_parameter);
+    printf("# No. of MonteCarlo Simulations = %d\n", a->N_MCS);
+    printf("# Temperature                   = %le\n", a->temperature);
+    printf("# Atoms per site                = %d\n", a->atoms_per_site);
+    printf("# Totol No of atoms             = %d\n", a->no_of_atoms);
 }
 
 /**

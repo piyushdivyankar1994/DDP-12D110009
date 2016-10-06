@@ -1,7 +1,7 @@
 set term png
-set output "plot.png"
+set output "lattice_parameter_convergence.png"
 set xlabel "MC time"
-set ylabel "Energy(eV)"
+set ylabel "Lattice Parameter(A)"
 set format x ""
 plot "log.txt"
 set term x11

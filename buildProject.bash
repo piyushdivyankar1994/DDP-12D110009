@@ -19,4 +19,5 @@ echo "######################################################################"
 
 echo 'load "plotfile"' | gnuplot
 
-xdg-open plot.png
+xdg-open lattice_parameter_convergence.png
+cat log.txt

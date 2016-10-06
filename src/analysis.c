@@ -155,6 +155,13 @@ int totalAtomsInFile(FILE * fp)
     return no_of_atoms;
 }
 
+/**
+ * Calculates total energy using energy look up table
+ * @param  a     Atomic matrix
+ * @param  p     Simulation parameters
+ * @param  ngbrs List of neighbours
+ * @return       total bond energy of the lattice
+ */
 double totalEnergyQuick(ATOM * a, parameter * p, Sn_fcc * ngbrs)
 {
     double ret_val = 0;

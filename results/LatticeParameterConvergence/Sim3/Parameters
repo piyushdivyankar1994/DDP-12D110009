@@ -1,0 +1,12 @@
+Nx = 4;
+Ny = 4;
+Nz = 4;
+no_of_atoms = 64 * 4;
+N_MCS = 10;
+pressure = 1e5;
+temperature = 300;
+step_size = 0.03
+Inital Lattice parameter = 2.5
+Mean = 3.499404
+Std_deviation = 0.008426
+

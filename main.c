@@ -37,8 +37,8 @@ int main(int argc, char const * argv[])
     //test_buildInstantEnergyLookup();
     //test_energyAtIndexFCC_fast();
     long long int seed_value = 0;
-    cannonicalEnsemble(seed_value);
+    //cannonicalEnsemble(seed_value);
 
-    //latticeParameterSimulation(32123414);
+    latticeParameterSimulation(seed_value);
     return 0;
 }
