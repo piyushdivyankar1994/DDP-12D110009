@@ -5,5 +5,6 @@ var searchData=
   ['p22',['p22',['../structrdf.html#a373a0f2dbbfea74223018d9abb38adaa',1,'rdf']]],
   ['pair_5fatom1_5fatom1',['pair_atom1_atom1',['../structbinEAMpot.html#ad095873b1da2be0a54efffab3aa5b1d5',1,'binEAMpot']]],
   ['pair_5fatom1_5fatom2',['pair_atom1_atom2',['../structbinEAMpot.html#ae87ef3f67ed5611c38c9b5fbbccb8f82',1,'binEAMpot']]],
-  ['pair_5fatom2_5fatom2',['pair_atom2_atom2',['../structbinEAMpot.html#a8bc61e8287f339fe9c4c1c17ecbe082f',1,'binEAMpot']]]
+  ['pair_5fatom2_5fatom2',['pair_atom2_atom2',['../structbinEAMpot.html#a8bc61e8287f339fe9c4c1c17ecbe082f',1,'binEAMpot']]],
+  ['pairwisepotential_5fsn',['pairwisePotential_Sn',['../structenergyTableConscise.html#ac563c0b9c355c690f653eeac5f9f7a6d',1,'energyTableConscise']]]
 ];

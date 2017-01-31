@@ -113,15 +113,22 @@ $(document).ready(function(){initNavTree('simulation_8h_source.html','');});
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="analysis_8h.html">analysis.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parameters_8h.html">parameters.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="math__functions_8h.html">math_functions.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef _SIMULATION_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="simulation_8h.html#ad14b4028b3160d2790b71add8c6889fd">    9</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _SIMULATION_H 1</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="simulation_8h.html#a234fa8a381e0057e365317f77d43bdd5">twoPhaseEquilibriaSimulation</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chemicalPotential_8h.html">chemicalPotential.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _SIMULATION_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="simulation_8h.html#ad14b4028b3160d2790b71add8c6889fd">   10</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _SIMULATION_H 1</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="simulation_8h.html#a0f8096f717968af9ea6981da46c3e510">cannonicalEnsemble</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="simulation_8h.html#a16dcf9c5c8d14c865cd55a8c7aa257cc">semiGrandCanonical</a>(<span class="keywordtype">size_t</span> seed_value);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="simulation_8h.html#a00fbed2a83624456071ef0b47efaadd4">latticeParameterSimulation</a>(<span class="keywordtype">size_t</span> seed_value);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="simulation_8h_html_a00fbed2a83624456071ef0b47efaadd4"><div class="ttname"><a href="simulation_8h.html#a00fbed2a83624456071ef0b47efaadd4">latticeParameterSimulation</a></div><div class="ttdeci">void latticeParameterSimulation(size_t seed_value)</div><div class="ttdoc">Function lattice parameter simulations. </div><div class="ttdef"><b>Definition:</b> simulation.c:191</div></div>
+<div class="ttc" id="chemicalPotential_8h_html"><div class="ttname"><a href="chemicalPotential_8h.html">chemicalPotential.h</a></div><div class="ttdoc">Function prototypes for chemicalPotential calculation. </div></div>
 <div class="ttc" id="point3D_8h_html"><div class="ttname"><a href="point3D_8h.html">point3D.h</a></div><div class="ttdoc">Functions for point3D type miller indices. </div></div>
 <div class="ttc" id="datatypes_8h_html"><div class="ttname"><a href="datatypes_8h.html">datatypes.h</a></div><div class="ttdoc">This file contains all composite datatypes used in this Project. </div></div>
-<div class="ttc" id="simulation_8h_html_a234fa8a381e0057e365317f77d43bdd5"><div class="ttname"><a href="simulation_8h.html#a234fa8a381e0057e365317f77d43bdd5">twoPhaseEquilibriaSimulation</a></div><div class="ttdeci">void twoPhaseEquilibriaSimulation(unsigned long int)</div><div class="ttdef"><b>Definition:</b> simulation.c:10</div></div>
 <div class="ttc" id="analysis_8h_html"><div class="ttname"><a href="analysis_8h.html">analysis.h</a></div><div class="ttdoc">Function prototypes of analysis. </div></div>
+<div class="ttc" id="simulation_8h_html_a16dcf9c5c8d14c865cd55a8c7aa257cc"><div class="ttname"><a href="simulation_8h.html#a16dcf9c5c8d14c865cd55a8c7aa257cc">semiGrandCanonical</a></div><div class="ttdeci">void semiGrandCanonical(size_t seed_value)</div><div class="ttdef"><b>Definition:</b> simulation.c:91</div></div>
+<div class="ttc" id="simulation_8h_html_a0f8096f717968af9ea6981da46c3e510"><div class="ttname"><a href="simulation_8h.html#a0f8096f717968af9ea6981da46c3e510">cannonicalEnsemble</a></div><div class="ttdeci">void cannonicalEnsemble(unsigned long int)</div><div class="ttdoc">Simulates a cannoical ensemble. </div><div class="ttdef"><b>Definition:</b> simulation.c:20</div></div>
 <div class="ttc" id="math__functions_8h_html"><div class="ttname"><a href="math__functions_8h.html">math_functions.h</a></div><div class="ttdoc">Function prototypes for general math functions. </div></div>
 <div class="ttc" id="eam_8h_html"><div class="ttname"><a href="eam_8h.html">eam.h</a></div><div class="ttdoc">Function prototypes of EAM methods. </div></div>
 <div class="ttc" id="parameters_8h_html"><div class="ttname"><a href="parameters_8h.html">parameters.h</a></div><div class="ttdoc">Contains functions that operate on parameter . </div></div>
@@ -131,7 +138,7 @@ $(document).ready(function(){initNavTree('simulation_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="simulation_8h.html">simulation.h</a></li>
-    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
+    <li class="footer">Generated on Mon Jan 16 2017 12:18:57 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,0 +1,18 @@
+set autoscale
+set term png
+set output "lattice_parameter_moving_average.png"
+set xlabel "MC time"
+set ylabel "Lattice Parameter(A)"
+unset logscale y
+set yrange [1:4]
+set format x ""
+plot "log.txt" using 2 with points
+set output "variance.png"
+set ylabel "variance"
+set logscale y
+unset logscale x
+plot "log.txt" using 3 with points
+set output "StdDev.png"
+set ylabel "Standard Deviation"
+plot "log.txt" using sqrt($3) with points
+set term x11

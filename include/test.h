@@ -39,4 +39,14 @@ void test_point3D_newPoint();
 void test_point3D_addVectors();
 
 void test_parametersInputOutput();
+
+void test_createLookUpTable();
+void test_buildInstantEnergyLookup();
+
+void test_energyAtIndexFCC_fast();
+void test_point3D_neighbourIndexTable();
+
+void test_concentrationFunctions();
+void test_displayInstantEnergyLookUpTable();
+
 #endif /* ifndef _TEST_H */

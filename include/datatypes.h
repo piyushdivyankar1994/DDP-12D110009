@@ -69,7 +69,7 @@ struct parameter
     int nearestNeighbours[7];
     /** Stores the FILE name that the object is parsed from unset from default*/
     /** TODO:0 make so that it is '\0' by default */
-    /** DONE:20 change functions of parsing this type to reflect this addition */
+    /** DONE:40 change functions of parsing this type to reflect this addition */
     char fileName[50];
 } typedef parameter;
 /**
@@ -187,6 +187,15 @@ struct point3D
 } typedef point3D;
 
 /**
+ * Structure to store values that are calculated repeatedly.
+ */
+struct energyTableConscise {
+    /** stores 7 values of rdf. Shall be used for storing pairwise energies upto
+        7th nearest  */
+    rdf      pairwisePotential_Sn[7];
+}typedef lookUpTable;
+
+/**
  * This structure holds an array of points that represent the relative miller
  * indices of the neighbours atoms from a particular site.
  * \struct neighbours_fcc
@@ -210,7 +219,7 @@ struct neighbours_fcc
     /** List of points for seventh nearest neighbours */
     point3D s7n[48];
     /** Contains the numbers of first neareast, second neareast etc. */
-    int indices[7];
+    int indices[8];
 } typedef Sn_fcc;
 
 /** \note Not really sure why I did this. Could be useful in some ways */
@@ -224,5 +233,20 @@ enum Boolean
  * \brief Atoms are stored as integers in memory. So, just to avoid confusion.
  */
 typedef int ATOM;
+
+/**
+ * Energy Table for instant lookup during Monte-Carlo simulation.
+ * @details During Monte-Carlo simulation energyAtIndexFCC computes energy every
+ *          time. Due to this there is inefficiency. This table is used to hold
+ *          all possible configurations that can occur in a binary Al-Ni system
+ *          and the energies in that configuration. Keep in mind that it is
+ *          structured as [S0][S1][S2][S3]
+ *          - S0 : No of Ni atoms at qurried site {0,1}
+ *          - S1 : No of Ni atoms at among first nearest {0,1, ... , 12}
+ *          - S1 : No of Ni atoms at among second nearest {0,1, ... , 6}
+ *          - S1 : No of Ni atoms at among third nearest {0,1, ... , 24}
+ */
+double energyTableInstantLookup [2][13][7][25];
+
 
 #endif /* ifndef _DATATYPES_H */

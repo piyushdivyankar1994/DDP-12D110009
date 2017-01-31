@@ -254,3 +254,39 @@ float point3D_distAtoB(point3D * A, point3D * B)
     free(new);
     return __retVal;
 }
+
+/**
+ * @breif Creates a index table that maps each index on the atomic lattice to its
+ * neighbouring indices.
+ * @details The atom at (0, 0, 0) in space is stored at index 0 of the ATOM array.
+ * The neighbours of this are at (0.5, 0.5, 0) etc. These are stored in a
+ * particular fashion and need to be transform from global coordinate system to
+ * array index using the function point3D_point3DtoIndexFCC(..). This function is
+ * costly and repetetive, i.e it does many repeat calculations.
+ * @param  p     parameters of Simulation
+ * @param  ngbrs coordinates of neighbouring fcc
+ * @param  n     upto which nearest neighbours we want to compute
+ * @return       pointer to a 2D array in form [siteNo][nearest_neighbour_no].
+ *               the site number is which site we are looking at for neighbours,
+ *               and nearest neighbours number is 0-11 for first nearest, 12-17
+ *               for second nearest and so on.
+ */
+int* point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n)
+{
+    int k = ngbrs->indices[n+1];
+    int *ret_val = malloc(p->no_of_atoms * sizeof(int) * k);
+
+    for(int i = 0; i < p->no_of_atoms; i++) {
+        point3D * current = point3D_indexToPoint3D_fcc(i, p);
+        for(int j = 0; j < k; j++) {
+            point3D *nextNgbr = point3D_addVectors(current, &(ngbrs->s1n[j]));
+            point3D_periodicBoundaryTransform(nextNgbr, p);
+            int ngbrIndex = point3D_point3DtoIndexFCC(nextNgbr, p);
+            ret_val[i*k + j] = ngbrIndex;
+            free(nextNgbr);
+        }
+        free(current);
+    }
+
+    return ret_val;
+}

@@ -1,0 +1,7 @@
+set term png
+set output "plot.png"
+set xlabel "MC time"
+set ylabel "Energy(eV)"
+set format x ""
+plot "log.txt" title "Energy VS MC Steps"
+set term x11

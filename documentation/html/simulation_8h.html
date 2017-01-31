@@ -116,19 +116,20 @@ $(document).ready(function(){initNavTree('simulation_8h.html','');});
 <code>#include &quot;<a class="el" href="analysis_8h_source.html">analysis.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="parameters_8h_source.html">parameters.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="math__functions_8h_source.html">math_functions.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="chemicalPotential_8h_source.html">chemicalPotential.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for simulation.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="simulation_8h__incl.png" border="0" usemap="#include_2simulation_8h" alt=""/></div>
 <map name="include_2simulation_8h" id="include_2simulation_8h">
-</map>
+<area shape="rect" id="node2" href="datatypes_8h.html" title="This file contains all composite datatypes used in this Project. " alt="" coords="327,304,417,331"/><area shape="rect" id="node5" href="math__functions_8h.html" title="Function prototypes for general math functions. " alt="" coords="480,379,603,405"/><area shape="rect" id="node9" href="eam_8h.html" title="Function prototypes of EAM methods. " alt="" coords="324,155,381,181"/><area shape="rect" id="node10" href="point3D_8h.html" title="Functions for point3D type miller indices. " alt="" coords="255,229,333,256"/><area shape="rect" id="node11" href="analysis_8h.html" title="Function prototypes of analysis. " alt="" coords="179,80,260,107"/><area shape="rect" id="node12" href="parameters_8h.html" title="Contains functions that operate on parameter . " alt="" coords="5,155,104,181"/><area shape="rect" id="node13" href="chemicalPotential_8h.html" title="Function prototypes for chemicalPotential calculation. " alt="" coords="285,80,420,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="simulation_8h__dep__incl.png" border="0" usemap="#include_2simulation_8hdep" alt=""/></div>
 <map name="include_2simulation_8hdep" id="include_2simulation_8hdep">
-</map>
+<area shape="rect" id="node2" href="simulation_8c.html" title="Source code for simulation.h. " alt="" coords="16,80,131,107"/></map>
 </div>
 </div>
 <p><a href="simulation_8h_source.html">Go to the source code of this file.</a></p>
@@ -140,8 +141,14 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a234fa8a381e0057e365317f77d43bdd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a234fa8a381e0057e365317f77d43bdd5">twoPhaseEquilibriaSimulation</a> (unsigned long int)</td></tr>
-<tr class="separator:a234fa8a381e0057e365317f77d43bdd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f8096f717968af9ea6981da46c3e510"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a0f8096f717968af9ea6981da46c3e510">cannonicalEnsemble</a> (unsigned long int)</td></tr>
+<tr class="memdesc:a0f8096f717968af9ea6981da46c3e510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates a cannoical ensemble.  <a href="#a0f8096f717968af9ea6981da46c3e510">More...</a><br/></td></tr>
+<tr class="separator:a0f8096f717968af9ea6981da46c3e510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16dcf9c5c8d14c865cd55a8c7aa257cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a16dcf9c5c8d14c865cd55a8c7aa257cc">semiGrandCanonical</a> (size_t seed_value)</td></tr>
+<tr class="separator:a16dcf9c5c8d14c865cd55a8c7aa257cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00fbed2a83624456071ef0b47efaadd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simulation_8h.html#a00fbed2a83624456071ef0b47efaadd4">latticeParameterSimulation</a> (size_t seed_value)</td></tr>
+<tr class="memdesc:a00fbed2a83624456071ef0b47efaadd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function lattice parameter simulations.  <a href="#a00fbed2a83624456071ef0b47efaadd4">More...</a><br/></td></tr>
+<tr class="separator:a00fbed2a83624456071ef0b47efaadd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ad14b4028b3160d2790b71add8c6889fd"></a>
@@ -157,33 +164,422 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a234fa8a381e0057e365317f77d43bdd5"></a>
+<a class="anchor" id="a0f8096f717968af9ea6981da46c3e510"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void twoPhaseEquilibriaSimulation </td>
+          <td class="memname">void cannonicalEnsemble </td>
           <td>(</td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>int</em></td><td>)</td>
+          <td class="paramtype">unsigned long int&#160;</td>
+          <td class="paramname"><em>seed_value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * AlNi_fcc = <a class="code" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * potential = NULL;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    potential = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a>(AlNi_fcc, <span class="stringliteral">&quot;test&quot;</span>, seed_value + 213);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="ttc" id="analysis_8c_html_a1f6065e798779a8e6ecb1a778b9c0f68"><div class="ttname"><a href="analysis_8c.html#a1f6065e798779a8e6ecb1a778b9c0f68">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
-<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:211</div></div>
-<div class="ttc" id="parameters_8c_html_a6aa8c7c4be07ab82707a1b09ac808554"><div class="ttname"><a href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554">_defaultFCCparameter</a></div><div class="ttdeci">parameter * _defaultFCCparameter()</div><div class="ttdoc">Creates a parameter with default values as follows truct as follows. </div><div class="ttdef"><b>Definition:</b> parameters.c:75</div></div>
+
+<p>Simulates a cannoical ensemble. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed_value</td><td>Random seed value for simulation </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * AlNi_fcc = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<span class="stringliteral">&quot;parametersSim1.param&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * potential = NULL;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    potential = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fccNeighbours = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a> * t = <a class="code" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a>(potential, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a>(t, potential);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a> = 10;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> steps = AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> = 3.56;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> concentration = .2;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> gsl_rng_type * T;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    gsl_rng * <a class="code" href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    T = gsl_rng_default;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    r = gsl_rng_alloc(T);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    gsl_rng_set(r, seed_value);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    gsl_rng_env_setup();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a>(AlNi_fcc, <span class="stringliteral">&quot;inputCrystalFiles/input&quot;</span>, rand(), concentration);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a> * inputMatrix = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> swap_count = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; steps; i++)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">double</span> u    = gsl_rng_uniform(r);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">int</span> index   = u * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        u = gsl_rng_uniform(r);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">double</span> e1 = <a class="code" href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a>(index, inputMatrix, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        inputMatrix[index] = 1 - inputMatrix[index];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> r = rand() % 12;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="structpoint3D.html">point3D</a> * current = <a class="code" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a>(index, AlNi_fcc);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="structpoint3D.html">point3D</a> * ngbr = <a class="code" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a>(current, &amp;(fccNeighbours-&gt;<a class="code" href="structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3">s1n</a>[r]));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6">point3D_periodicBoundaryTransform</a>(ngbr, AlNi_fcc);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">int</span> ngbrIndex = <a class="code" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a>(ngbr, AlNi_fcc);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        inputMatrix[ngbrIndex] = 1 - inputMatrix[ngbrIndex];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">double</span> e2 = <a class="code" href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a>(index, inputMatrix, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">double</span> p = exp(-(e2 - e1) / (<a class="code" href="simulation_8c.html#a1841fd1a462d245d8c73dce55e2f45da">KB</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a>));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (p &gt; 1 || p &gt; u)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// Accept the swap</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            swap_count++;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            inputMatrix[index] = 1 - inputMatrix[index];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            inputMatrix[ngbrIndex] = 1 - inputMatrix[ngbrIndex];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        free(current);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        free(ngbr);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (i % (AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a> / 100) == 0)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            printf(<span class="stringliteral">&quot;%zu\t%le\n&quot;</span>, i, <a class="code" href="analysis_8c.html#ab7c5c14fa635452a81d18842dc8cdc0e">totalEnergyQuick</a>(inputMatrix, AlNi_fcc, fccNeighbours));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// /    printf(&quot;%f %f\n&quot;, concentration, (float)swap_count/(float)steps);</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    free(inputMatrix);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    free(fccNeighbours);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    free(potential);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    free(AlNi_fcc);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    gsl_rng_free(r);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a9d9720c5e916999006aa63912986815d"><div class="ttname"><a href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a></div><div class="ttdeci">double energyAtIndexFCC_fast(int index, int *a, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Looks up the energy for atom at a given array index in ATOM array, from energyTableInstantLookup[. </div><div class="ttdef"><b>Definition:</b> eam.c:600</div></div>
+<div class="ttc" id="datatypes_8h_html_aa490fdadd35ed054dbb2d1d3ab787ce1"><div class="ttname"><a href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a></div><div class="ttdeci">int ATOM</div><div class="ttdoc">Atoms are stored as integers in memory. </div><div class="ttdef"><b>Definition:</b> datatypes.h:235</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
+<div class="ttc" id="structparameter_html_acc593a841daec15783baf96e5fea949e"><div class="ttname"><a href="structparameter.html#acc593a841daec15783baf96e5fea949e">parameter::lattice_parameter</a></div><div class="ttdeci">double lattice_parameter</div><div class="ttdoc">Size of a unit cell in the lattice. </div><div class="ttdef"><b>Definition:</b> datatypes.h:59</div></div>
+<div class="ttc" id="structparameter_html_ae5009eb895f3267027f6a5c4bda3ffc4"><div class="ttname"><a href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">parameter::temperature</a></div><div class="ttdeci">double temperature</div><div class="ttdoc">temperature of material at time of simulation </div><div class="ttdef"><b>Definition:</b> datatypes.h:63</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:220</div></div>
+<div class="ttc" id="analysis_8c_html_aae1529c6458af3ed4626ff934aebce3d"><div class="ttname"><a href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed, double concentration)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
+<div class="ttc" id="point3D_8c_html_a15710ccd068d987118e0cd629294b3ca"><div class="ttname"><a href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca">point3D_addVectors</a></div><div class="ttdeci">point3D * point3D_addVectors(point3D *v1, point3D *v2)</div><div class="ttdoc">Adds two point3D types and creates a new point3D type to store the result. </div><div class="ttdef"><b>Definition:</b> point3D.c:47</div></div>
+<div class="ttc" id="structparameter_html_a4b09c598c9556211a013cced50700d52"><div class="ttname"><a href="structparameter.html#a4b09c598c9556211a013cced50700d52">parameter::N_MCS</a></div><div class="ttdeci">int N_MCS</div><div class="ttdoc">Total number of Monte-Carlo simulations per atom. </div><div class="ttdef"><b>Definition:</b> datatypes.h:61</div></div>
+<div class="ttc" id="structpoint3D_html"><div class="ttname"><a href="structpoint3D.html">point3D</a></div><div class="ttdoc">This structure is used to represent 3D millier indices of points in real space of the crystal lattice...</div><div class="ttdef"><b>Definition:</b> datatypes.h:179</div></div>
+<div class="ttc" id="structSn__fcc_html_a24650f1fff9aec453f8a7b689f8323f3"><div class="ttname"><a href="structSn__fcc.html#a24650f1fff9aec453f8a7b689f8323f3">Sn_fcc::s1n</a></div><div class="ttdeci">point3D s1n[12]</div><div class="ttdoc">List of points for first nearest neighbours. </div><div class="ttdef"><b>Definition:</b> datatypes.h:208</div></div>
+<div class="ttc" id="eam_8c_html_aa51add008d5ac8a30d67afe62093b740"><div class="ttname"><a href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a></div><div class="ttdeci">void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot)</div><div class="ttdoc">Fills the global variable energyTableInstantLookup array with appropriate values. ...</div><div class="ttdef"><b>Definition:</b> eam.c:866</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:161</div></div>
+<div class="ttc" id="point3D_8c_html_a89582ec9b4e0596e24894d0039807a5e"><div class="ttname"><a href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e">point3D_indexToPoint3D_fcc</a></div><div class="ttdeci">point3D * point3D_indexToPoint3D_fcc(int index, parameter *p)</div><div class="ttdoc">Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ...</div><div class="ttdef"><b>Definition:</b> point3D.c:127</div></div>
+<div class="ttc" id="point3D_8c_html_aafba4d8a16708b18b2757300e988e4d8"><div class="ttname"><a href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8">point3D_point3DtoIndexFCC</a></div><div class="ttdeci">int point3D_point3DtoIndexFCC(point3D *a, parameter *p)</div><div class="ttdoc">Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed...</div><div class="ttdef"><b>Definition:</b> point3D.c:170</div></div>
 <div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:207</div></div>
+<div class="ttc" id="datatypes_8h_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdoc">TO implement random numbers. </div><div class="ttdef"><b>Definition:</b> datatypes.h:33</div></div>
+<div class="ttc" id="eam_8c_html_ae5053d5cf652aaca83aaf022df34f601"><div class="ttname"><a href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a></div><div class="ttdeci">lookUpTable * createLookUpTable(binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for...</div><div class="ttdef"><b>Definition:</b> eam.c:828</div></div>
+<div class="ttc" id="datatypes_8h_html_a7666e262e62f778515e766ebace30264"><div class="ttname"><a href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a></div><div class="ttdeci">struct energyTableConscise lookUpTable</div></div>
+<div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
+<div class="ttc" id="analysis_8c_html_ab7c5c14fa635452a81d18842dc8cdc0e"><div class="ttname"><a href="analysis_8c.html#ab7c5c14fa635452a81d18842dc8cdc0e">totalEnergyQuick</a></div><div class="ttdeci">double totalEnergyQuick(ATOM *a, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates total energy using energy look up table. </div><div class="ttdef"><b>Definition:</b> analysis.c:165</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="simulation_8c_html_a1841fd1a462d245d8c73dce55e2f45da"><div class="ttname"><a href="simulation_8c.html#a1841fd1a462d245d8c73dce55e2f45da">KB</a></div><div class="ttdeci">#define KB</div><div class="ttdoc">Boltzmann contant in eV/K. </div><div class="ttdef"><b>Definition:</b> simulation.c:11</div></div>
+<div class="ttc" id="point3D_8c_html_a05e682c55af08bfcbd25b4887ff6e1f6"><div class="ttname"><a href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6">point3D_periodicBoundaryTransform</a></div><div class="ttdeci">void point3D_periodicBoundaryTransform(point3D *k, parameter *p)</div><div class="ttdoc">For a given parameter and point3D applies the periodic boundary transform such that it lies in the co...</div><div class="ttdef"><b>Definition:</b> point3D.c:204</div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="simulation_8h_a0f8096f717968af9ea6981da46c3e510_cgraph.png" border="0" usemap="#simulation_8h_a0f8096f717968af9ea6981da46c3e510_cgraph" alt=""/></div>
+<map name="simulation_8h_a0f8096f717968af9ea6981da46c3e510_cgraph" id="simulation_8h_a0f8096f717968af9ea6981da46c3e510_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="209,5,372,32"/><area shape="rect" id="node4" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="235,56,346,83"/><area shape="rect" id="node5" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="209,107,372,133"/><area shape="rect" id="node7" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601" title="Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for..." alt="" coords="223,208,358,235"/><area shape="rect" id="node11" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740" title="Fills the global variable energyTableInstantLookup array with appropriate values. ..." alt="" coords="205,157,377,184"/><area shape="rect" id="node13" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d" title="Generates a random atomic matrix. " alt="" coords="197,259,384,285"/><area shape="rect" id="node14" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="221,309,360,336"/><area shape="rect" id="node16" href="eam_8c.html#a9d9720c5e916999006aa63912986815d" title="Looks up the energy for atom at a given array index in ATOM array, from energyTableInstantLookup[. " alt="" coords="435,477,597,504"/><area shape="rect" id="node17" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="648,385,840,412"/><area shape="rect" id="node20" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="674,444,814,471"/><area shape="rect" id="node21" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="657,510,831,551"/><area shape="rect" id="node22" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="649,605,839,632"/><area shape="rect" id="node23" href="analysis_8c.html#ab7c5c14fa635452a81d18842dc8cdc0e" title="Calculates total energy using energy look up table. " alt="" coords="229,512,352,539"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="439,5,593,32"/><area shape="rect" id="node6" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="435,77,597,118"/><area shape="rect" id="node8" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="449,208,583,235"/><area shape="rect" id="node9" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="455,259,577,285"/><area shape="rect" id="node10" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="682,204,806,231"/><area shape="rect" id="node12" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="433,142,599,183"/><area shape="rect" id="node15" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="457,309,575,336"/><area shape="rect" id="node18" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="915,360,1021,387"/><area shape="rect" id="node19" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="889,411,1047,437"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a00fbed2a83624456071ef0b47efaadd4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void latticeParameterSimulation </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>seed_value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function lattice parameter simulations. </p>
+<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * AlNi_fcc = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<span class="stringliteral">&quot;defaultFCC.param&quot;</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * potential = NULL;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    potential = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fccNeighbours = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a> = 4;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a> = 4;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">Nz</a> = 4;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a> = AlNi_fcc-&gt;<a class="code" href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">Nx</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">Ny</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">Nz</a> * 4;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a> = 100;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a> = 100;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> = 2.0;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a>(AlNi_fcc, <span class="stringliteral">&quot;inputCrystalFiles/lattice&quot;</span>, 1729, 1);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a> * inputMatrix = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/lattice&quot;</span>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">// Random number generator initialization</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">const</span> gsl_rng_type * T;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    gsl_rng * <a class="code" href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    T = gsl_rng_default;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    r = gsl_rng_alloc(T);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    gsl_rng_set(r, seed_value);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    gsl_rng_env_setup();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// ----------------------------------------</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">double</span> stepSize = 0.03;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a> = 100;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">double</span> pressure = 1e5;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">double</span> eOld = <a class="code" href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a>(inputMatrix, potential, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">double</span> avgLP = 0;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">int</span> steps = AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">double</span> * latticeP = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(AlNi_fcc);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; steps; i++)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">double</span> u = gsl_rng_uniform(r);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordtype">double</span> da = (2 * u - 1) * stepSize;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> -= da;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">double</span> eNew = AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a> * <a class="code" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a>(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordtype">double</span> enthalpy = eNew - eOld - <a class="code" href="simulation_8c.html#a1841fd1a462d245d8c73dce55e2f45da">KB</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a> * 3 * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a> *          \</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            log(1 + 3 * fabs(da) / AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a>) +    \</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            pressure * 3 * AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> * -da * 6.241e-12;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordtype">double</span> p = exp(enthalpy / (-<a class="code" href="simulation_8c.html#a1841fd1a462d245d8c73dce55e2f45da">KB</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a>));</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> ((u &lt; p &amp;&amp; p &lt; 1) || p &gt; 1)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="comment">// Accepted</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            count++;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a> += da;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        eOld = eNew;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        avgLP += AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        latticeP[i % AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a>] = AlNi_fcc-&gt;<a class="code" href="structparameter.html#acc593a841daec15783baf96e5fea949e">lattice_parameter</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordtype">double</span> var = gsl_stats_variance(latticeP, 1, AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a>);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">if</span> (i % AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a> == 0 &amp;&amp; i &gt; 0)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            printf(<span class="stringliteral">&quot;%d\t%f\t%f\t%f\n&quot;</span>, i / AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>, gsl_stats_mean(latticeP, 1, AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a>), var, sqrt(var));</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">       pressure = 1e5;</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">       double eOld = AlNi_fcc-&gt;no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">       double avgLP = 0;</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">       for(int i= 0; i &lt; 1000; i += 10) {</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">        int steps = AlNi_fcc-&gt;N_MCS * AlNi_fcc-&gt;no_of_atoms;</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">        AlNi_fcc-&gt;lattice_parameter = 2.5;</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">        AlNi_fcc-&gt;N_MCS += 50;</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">        for (int i = 0; i &lt; steps; i++)</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">            double u = gsl_rng_uniform(r);</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">            double da = (2 * u - 1) * stepSize;</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">            AlNi_fcc-&gt;lattice_parameter -= da;</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">            double eNew = AlNi_fcc-&gt;no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">            double enthalpy = eNew - eOld - KB * AlNi_fcc-&gt;temperature * 3 * AlNi_fcc-&gt;no_of_atoms *          \</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">                                log(1 + 3 * fabs(da) / AlNi_fcc-&gt;lattice_parameter) +    \</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">                                pressure * 3 * AlNi_fcc-&gt;lattice_parameter * AlNi_fcc-&gt;lattice_parameter * -da * 6.241e-12;</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">            double p = exp(enthalpy / (-KB * AlNi_fcc-&gt;temperature));</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">            if ((u &lt; p &amp;&amp; p &lt; 1) || p &gt; 1) {</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">                //Accepted</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">                count++;</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">            else {</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">                AlNi_fcc-&gt;lattice_parameter += da;</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">            eOld = eNew;</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">            avgLP += AlNi_fcc-&gt;lattice_parameter;</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">            if (i % AlNi_fcc-&gt;no_of_atoms == 0 ) {</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">                latticeP[i / AlNi_fcc-&gt;no_of_atoms] = AlNi_fcc-&gt;lattice_parameter;</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">        printf(&quot;%d\t%f\t%f\n&quot;, AlNi_fcc-&gt;N_MCS, mean, sqrt(variance));</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">       }*/</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
+<div class="ttc" id="parameters_8c_html_aa5023a18b4a90fafacc032b8e575b7d6"><div class="ttname"><a href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a></div><div class="ttdeci">void print_parameters(parameter *a)</div><div class="ttdoc">Prints the parameter data to STDOUT. </div><div class="ttdef"><b>Definition:</b> parameters.c:14</div></div>
+<div class="ttc" id="datatypes_8h_html_aa490fdadd35ed054dbb2d1d3ab787ce1"><div class="ttname"><a href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a></div><div class="ttdeci">int ATOM</div><div class="ttdoc">Atoms are stored as integers in memory. </div><div class="ttdef"><b>Definition:</b> datatypes.h:235</div></div>
+<div class="ttc" id="eam_8c_html_a5eb167b21560baf1881fa5baa989287d"><div class="ttname"><a href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d">energyAtIndexFCC</a></div><div class="ttdeci">double energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates energy at a given array index in ATOM array. </div><div class="ttdef"><b>Definition:</b> eam.c:466</div></div>
+<div class="ttc" id="structparameter_html_a181d717c99b207fd606ee29ed40a1d7e"><div class="ttname"><a href="structparameter.html#a181d717c99b207fd606ee29ed40a1d7e">parameter::Nx</a></div><div class="ttdeci">int Nx</div><div class="ttdoc">Size of lattice in x direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:53</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
+<div class="ttc" id="structparameter_html_acc593a841daec15783baf96e5fea949e"><div class="ttname"><a href="structparameter.html#acc593a841daec15783baf96e5fea949e">parameter::lattice_parameter</a></div><div class="ttdeci">double lattice_parameter</div><div class="ttdoc">Size of a unit cell in the lattice. </div><div class="ttdef"><b>Definition:</b> datatypes.h:59</div></div>
+<div class="ttc" id="structparameter_html_ae5009eb895f3267027f6a5c4bda3ffc4"><div class="ttname"><a href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">parameter::temperature</a></div><div class="ttdeci">double temperature</div><div class="ttdoc">temperature of material at time of simulation </div><div class="ttdef"><b>Definition:</b> datatypes.h:63</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:220</div></div>
+<div class="ttc" id="analysis_8c_html_aae1529c6458af3ed4626ff934aebce3d"><div class="ttname"><a href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed, double concentration)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
+<div class="ttc" id="structparameter_html_a4b09c598c9556211a013cced50700d52"><div class="ttname"><a href="structparameter.html#a4b09c598c9556211a013cced50700d52">parameter::N_MCS</a></div><div class="ttdeci">int N_MCS</div><div class="ttdoc">Total number of Monte-Carlo simulations per atom. </div><div class="ttdef"><b>Definition:</b> datatypes.h:61</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:161</div></div>
+<div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:207</div></div>
+<div class="ttc" id="datatypes_8h_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdoc">TO implement random numbers. </div><div class="ttdef"><b>Definition:</b> datatypes.h:33</div></div>
+<div class="ttc" id="analysis_8c_html_a9d90301abd1bd278deb98e9460ca92d7"><div class="ttname"><a href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7">analysis_totalEnergy</a></div><div class="ttdeci">double analysis_totalEnergy(int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Calculates total bond energy in a atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:14</div></div>
+<div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
+<div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
+<div class="ttc" id="simulation_8c_html_a1841fd1a462d245d8c73dce55e2f45da"><div class="ttname"><a href="simulation_8c.html#a1841fd1a462d245d8c73dce55e2f45da">KB</a></div><div class="ttdeci">#define KB</div><div class="ttdoc">Boltzmann contant in eV/K. </div><div class="ttdef"><b>Definition:</b> simulation.c:11</div></div>
+<div class="ttc" id="structparameter_html_af86cee62b97d8c952f5feeb88b0eb435"><div class="ttname"><a href="structparameter.html#af86cee62b97d8c952f5feeb88b0eb435">parameter::Nz</a></div><div class="ttdeci">int Nz</div><div class="ttdoc">Size of lattice in z direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:57</div></div>
+<div class="ttc" id="structparameter_html_ad8f2321f94970f75731a6aca6181e3a7"><div class="ttname"><a href="structparameter.html#ad8f2321f94970f75731a6aca6181e3a7">parameter::Ny</a></div><div class="ttdeci">int Ny</div><div class="ttdoc">Size of lattice in y direction. </div><div class="ttdef"><b>Definition:</b> datatypes.h:55</div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="simulation_8h_a00fbed2a83624456071ef0b47efaadd4_cgraph.png" border="0" usemap="#simulation_8h_a00fbed2a83624456071ef0b47efaadd4_cgraph" alt=""/></div>
+<map name="simulation_8h_a00fbed2a83624456071ef0b47efaadd4_cgraph" id="simulation_8h_a00fbed2a83624456071ef0b47efaadd4_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="244,5,407,32"/><area shape="rect" id="node4" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="270,56,381,83"/><area shape="rect" id="node5" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="244,107,407,133"/><area shape="rect" id="node7" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d" title="Generates a random atomic matrix. " alt="" coords="232,157,419,184"/><area shape="rect" id="node8" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="256,208,395,235"/><area shape="rect" id="node10" href="analysis_8c.html#a9d90301abd1bd278deb98e9460ca92d7" title="Calculates total bond energy in a atomic matrix. " alt="" coords="254,309,397,336"/><area shape="rect" id="node24" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6" title="Prints the parameter data to STDOUT. " alt="" coords="266,360,385,387"/><area shape="rect" id="node25" href="eam_8c.html#a5eb167b21560baf1881fa5baa989287d" title="Calculates energy at a given array index in ATOM array. " alt="" coords="483,259,618,285"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="473,5,628,32"/><area shape="rect" id="node6" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="470,99,631,141"/><area shape="rect" id="node9" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="492,208,609,235"/><area shape="rect" id="node11" href="eam_8c.html#a874fc44db0bde4a0744c889103034f47" title="Temporary function no related to any code. " alt="" coords="467,309,634,336"/><area shape="rect" id="node12" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="683,167,875,193"/><area shape="rect" id="node15" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="709,116,849,143"/><area shape="rect" id="node16" href="point3D_8c.html#a852787a9191c43ec1bf7f02a4953cfdb" title="[point3D_distAtoB description] " alt="" coords="717,284,841,311"/><area shape="rect" id="node19" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="691,218,866,259"/><area shape="rect" id="node20" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="717,335,840,361"/><area shape="rect" id="node22" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="683,385,874,412"/><area shape="rect" id="node23" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="695,437,862,478"/><area shape="rect" id="node13" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="954,192,1059,219"/><area shape="rect" id="node14" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="927,141,1086,168"/><area shape="rect" id="node17" href="point3D_8c.html#ac33e9a71f0809b3bf8ed70c1570da1e2" title="Creates a new point3D object by subtacting first and second arguments. " alt="" coords="923,315,1090,341"/><area shape="rect" id="node18" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="939,264,1074,291"/><area shape="rect" id="node21" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="945,395,1069,421"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a16dcf9c5c8d14c865cd55a8c7aa257cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semiGrandCanonical </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>seed_value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wave Number </p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Loading Resources</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="structparameter.html">parameter</a> * AlNi_fcc = <a class="code" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a>(<span class="stringliteral">&quot;parametersSim1.param&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="structbinEAMpot.html">binEAMpot</a> * potential = NULL;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    potential = <a class="code" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a>(<span class="stringliteral">&quot;EAM_Ni_Al/file_list.txt&quot;</span>, <span class="stringliteral">&quot;Al&quot;</span>, <span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="structSn__fcc.html">Sn_fcc</a> * fccNeighbours = <a class="code" href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a> * t = <a class="code" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a>(potential, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a>(t, potential);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a> = 100;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> steps = AlNi_fcc-&gt;<a class="code" href="structparameter.html#a4b09c598c9556211a013cced50700d52">N_MCS</a> * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a>(AlNi_fcc);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    printf(<span class="stringliteral">&quot;#--------------------------------------------------------------\n&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Random number generator initialization</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">const</span> gsl_rng_type * T;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    gsl_rng * <a class="code" href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    T = gsl_rng_default;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    r = gsl_rng_alloc(T);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    gsl_rng_set(r, seed_value);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    gsl_rng_env_setup();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// ----------------------------------------</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">double</span> concentration = 0.5;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a>(AlNi_fcc, <span class="stringliteral">&quot;inputCrystalFiles/input&quot;</span>, rand(), concentration);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a> * inputMatrix = <a class="code" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a>(<span class="stringliteral">&quot;inputCrystalFiles/input&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// int N1 = atomsType1(inputMatrix, AlNi_fcc);</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// Simulation constants</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">double</span> k = 0.2;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">double</span> mu_0 = 0.2;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">double</span> a = mu_0 + 2 * <a class="code" href="simulation_8c.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a> * k * AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a> * (double) AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">double</span> b = 5 * k * AlNi_fcc-&gt;<a class="code" href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">temperature</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">double</span> * chemPot = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>; i++)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        chemPot[i] = 0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">int</span> * ngbrTable = <a class="code" href="point3D_8c.html#a37b278b3af28b6e836f2a7898681838e">point3D_neighbourIndexTable</a>(AlNi_fcc, fccNeighbours, 42);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">double</span> * concTable = <a class="code" href="chemicalPotential_8c.html#a90e23accb40420c0c0eb5e04f47b2f2d">createConcentrationTable</a>(inputMatrix, AlNi_fcc, ngbrTable, 42);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; steps; i++)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">/* Step1: Selecting a random index */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">double</span> u    = gsl_rng_uniform(r);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">int</span> index   = u * AlNi_fcc-&gt;<a class="code" href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">no_of_atoms</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="comment">/* 1a. calculating energy  */</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">double</span> e1 = <a class="code" href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a>(index, inputMatrix, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">/* Step2: Flipping its spin */</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        inputMatrix[index] = 1 - inputMatrix[index];</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">/* 2a. energy after switch */</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">double</span> e2 = <a class="code" href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a>(index, inputMatrix, AlNi_fcc, fccNeighbours);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">double</span> p = e2 - e1;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">/* We look at change in atoms of type 1 */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">/*if (inputMatrix[index] == 1)</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">            p = p - (a + b * (84 * concTable[index] + 1));</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">        else</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">            p = p - (a + b * (84 * concTable[index] - 1));</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment">// p = exp(-p / (KB * AlNi_fcc-&gt;temperature));</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        printf(<span class="stringliteral">&quot;%le\n&quot;</span>, p);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        u = gsl_rng_uniform(r);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span>(u &gt; 0.5)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        inputMatrix[index] = 1 - inputMatrix[index];</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">        if (p &gt; 1 || p &gt; u)</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">            if (inputMatrix[index] == 1)</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">            {</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">                updateConcentrationTable(concTable, ngbrTable, index, 42, 1);</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">            else</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">            {</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">                updateConcentrationTable(concTable, ngbrTable, index, 42, 0);</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">        else</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">            inputMatrix[index] = 1 - inputMatrix[index];</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="ttc" id="eam_8c_html_a9d9720c5e916999006aa63912986815d"><div class="ttname"><a href="eam_8c.html#a9d9720c5e916999006aa63912986815d">energyAtIndexFCC_fast</a></div><div class="ttdeci">double energyAtIndexFCC_fast(int index, int *a, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Looks up the energy for atom at a given array index in ATOM array, from energyTableInstantLookup[. </div><div class="ttdef"><b>Definition:</b> eam.c:600</div></div>
+<div class="ttc" id="parameters_8c_html_aa5023a18b4a90fafacc032b8e575b7d6"><div class="ttname"><a href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6">print_parameters</a></div><div class="ttdeci">void print_parameters(parameter *a)</div><div class="ttdoc">Prints the parameter data to STDOUT. </div><div class="ttdef"><b>Definition:</b> parameters.c:14</div></div>
+<div class="ttc" id="datatypes_8h_html_aa490fdadd35ed054dbb2d1d3ab787ce1"><div class="ttname"><a href="datatypes_8h.html#aa490fdadd35ed054dbb2d1d3ab787ce1">ATOM</a></div><div class="ttdeci">int ATOM</div><div class="ttdoc">Atoms are stored as integers in memory. </div><div class="ttdef"><b>Definition:</b> datatypes.h:235</div></div>
+<div class="ttc" id="structSn__fcc_html"><div class="ttname"><a href="structSn__fcc.html">Sn_fcc</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:205</div></div>
+<div class="ttc" id="structparameter_html_ae5009eb895f3267027f6a5c4bda3ffc4"><div class="ttname"><a href="structparameter.html#ae5009eb895f3267027f6a5c4bda3ffc4">parameter::temperature</a></div><div class="ttdeci">double temperature</div><div class="ttdoc">temperature of material at time of simulation </div><div class="ttdef"><b>Definition:</b> datatypes.h:63</div></div>
+<div class="ttc" id="eam_8c_html_ac18bee851a7bbfa04744bed8a585a58e"><div class="ttname"><a href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e">eam_data_read</a></div><div class="ttdeci">binEAMpot * eam_data_read(char *fileName, char atom1[2], char atom2[2])</div><div class="ttdoc">Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. </div><div class="ttdef"><b>Definition:</b> eam.c:220</div></div>
+<div class="ttc" id="analysis_8c_html_aae1529c6458af3ed4626ff934aebce3d"><div class="ttname"><a href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d">randomMatrixGeneratorFCC</a></div><div class="ttdeci">void randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed, double concentration)</div><div class="ttdoc">Generates a random atomic matrix. </div><div class="ttdef"><b>Definition:</b> analysis.c:102</div></div>
+<div class="ttc" id="eam_8c_html_a774c64911253353d4a44e4a90dad65b1"><div class="ttname"><a href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1">readCrystalFileFCC</a></div><div class="ttdeci">int * readCrystalFileFCC(char *fileName)</div><div class="ttdoc">Reads a atomic matrix that was saved using .crystal.fcc format. </div><div class="ttdef"><b>Definition:</b> eam.c:39</div></div>
+<div class="ttc" id="structparameter_html_a4b09c598c9556211a013cced50700d52"><div class="ttname"><a href="structparameter.html#a4b09c598c9556211a013cced50700d52">parameter::N_MCS</a></div><div class="ttdeci">int N_MCS</div><div class="ttdoc">Total number of Monte-Carlo simulations per atom. </div><div class="ttdef"><b>Definition:</b> datatypes.h:61</div></div>
+<div class="ttc" id="point3D_8c_html_a37b278b3af28b6e836f2a7898681838e"><div class="ttname"><a href="point3D_8c.html#a37b278b3af28b6e836f2a7898681838e">point3D_neighbourIndexTable</a></div><div class="ttdeci">int * point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n)</div><div class="ttdoc">Creates a index table that maps each index on the atomic lattice to its neighbouring indices...</div><div class="ttdef"><b>Definition:</b> point3D.c:274</div></div>
+<div class="ttc" id="chemicalPotential_8c_html_a90e23accb40420c0c0eb5e04f47b2f2d"><div class="ttname"><a href="chemicalPotential_8c.html#a90e23accb40420c0c0eb5e04f47b2f2d">createConcentrationTable</a></div><div class="ttdeci">double * createConcentrationTable(ATOM *atomicMatrix, parameter *p, int *ngbrTable, int n)</div><div class="ttdef"><b>Definition:</b> chemicalPotential.c:94</div></div>
+<div class="ttc" id="eam_8c_html_aa51add008d5ac8a30d67afe62093b740"><div class="ttname"><a href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740">buildInstantEnergyLookup</a></div><div class="ttdeci">void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot)</div><div class="ttdoc">Fills the global variable energyTableInstantLookup array with appropriate values. ...</div><div class="ttdef"><b>Definition:</b> eam.c:866</div></div>
+<div class="ttc" id="parameters_8c_html_a4093118e8de04e4b414303c1a2c1c6f4"><div class="ttname"><a href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4">parameterReadFromFile</a></div><div class="ttdeci">parameter * parameterReadFromFile(char fileName[50])</div><div class="ttdoc">Reads input from a file that is created by createParameterFileFromInput(...) </div><div class="ttdef"><b>Definition:</b> parameters.c:161</div></div>
+<div class="ttc" id="structbinEAMpot_html"><div class="ttname"><a href="structbinEAMpot.html">binEAMpot</a></div><div class="ttdef"><b>Definition:</b> datatypes.h:83</div></div>
+<div class="ttc" id="eam_8c_html_a8e708176265f8ae87dec653cded502db"><div class="ttname"><a href="eam_8c.html#a8e708176265f8ae87dec653cded502db">_defaultFCCNeighbours</a></div><div class="ttdeci">Sn_fcc * _defaultFCCNeighbours()</div><div class="ttdoc">Sets neighbours to default as FCC crystal. </div><div class="ttdef"><b>Definition:</b> eam.c:207</div></div>
+<div class="ttc" id="datatypes_8h_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdoc">TO implement random numbers. </div><div class="ttdef"><b>Definition:</b> datatypes.h:33</div></div>
+<div class="ttc" id="simulation_8c_html_a0877420f3d7b1f47b871d2ccb47168d8"><div class="ttname"><a href="simulation_8c.html#a0877420f3d7b1f47b871d2ccb47168d8">R</a></div><div class="ttdeci">const double R</div><div class="ttdoc">Reservoir parameter. </div><div class="ttdef"><b>Definition:</b> simulation.c:14</div></div>
+<div class="ttc" id="eam_8c_html_ae5053d5cf652aaca83aaf022df34f601"><div class="ttname"><a href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601">createLookUpTable</a></div><div class="ttdeci">lookUpTable * createLookUpTable(binEAMpot *data, parameter *p, Sn_fcc *ngbrs)</div><div class="ttdoc">Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for...</div><div class="ttdef"><b>Definition:</b> eam.c:828</div></div>
+<div class="ttc" id="datatypes_8h_html_a7666e262e62f778515e766ebace30264"><div class="ttname"><a href="datatypes_8h.html#a7666e262e62f778515e766ebace30264">lookUpTable</a></div><div class="ttdeci">struct energyTableConscise lookUpTable</div></div>
+<div class="ttc" id="structparameter_html_a86aba2ea814d8f766c282d9399bee877"><div class="ttname"><a href="structparameter.html#a86aba2ea814d8f766c282d9399bee877">parameter::no_of_atoms</a></div><div class="ttdeci">int no_of_atoms</div><div class="ttdoc">Total number of atoms in the simulation matrix. </div><div class="ttdef"><b>Definition:</b> datatypes.h:51</div></div>
 <div class="ttc" id="structparameter_html"><div class="ttname"><a href="structparameter.html">parameter</a></div><div class="ttdoc">This structure contains list of parameters that define the system. </div><div class="ttdef"><b>Definition:</b> datatypes.h:48</div></div>
 </div><!-- fragment -->
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="simulation_8h_a16dcf9c5c8d14c865cd55a8c7aa257cc_cgraph.png" border="0" usemap="#simulation_8h_a16dcf9c5c8d14c865cd55a8c7aa257cc_cgraph" alt=""/></div>
+<map name="simulation_8h_a16dcf9c5c8d14c865cd55a8c7aa257cc_cgraph" id="simulation_8h_a16dcf9c5c8d14c865cd55a8c7aa257cc_cgraph">
+<area shape="rect" id="node2" href="parameters_8c.html#a4093118e8de04e4b414303c1a2c1c6f4" title="Reads input from a file that is created by createParameterFileFromInput(...) " alt="" coords="213,5,376,32"/><area shape="rect" id="node4" href="eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e" title="Reads EAM data from a fixed file EAM_Ni_Al/file_list.txt. " alt="" coords="239,56,350,83"/><area shape="rect" id="node5" href="eam_8c.html#a8e708176265f8ae87dec653cded502db" title="Sets neighbours to default as FCC crystal. " alt="" coords="213,107,376,133"/><area shape="rect" id="node7" href="eam_8c.html#ae5053d5cf652aaca83aaf022df34f601" title="Creates a lookUpTable for the energy from EAM data so that no extra look up operations are needed for..." alt="" coords="227,208,362,235"/><area shape="rect" id="node11" href="eam_8c.html#aa51add008d5ac8a30d67afe62093b740" title="Fills the global variable energyTableInstantLookup array with appropriate values. ..." alt="" coords="209,157,381,184"/><area shape="rect" id="node13" href="parameters_8c.html#aa5023a18b4a90fafacc032b8e575b7d6" title="Prints the parameter data to STDOUT. " alt="" coords="235,259,354,285"/><area shape="rect" id="node14" href="analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d" title="Generates a random atomic matrix. " alt="" coords="201,309,388,336"/><area shape="rect" id="node15" href="eam_8c.html#a774c64911253353d4a44e4a90dad65b1" title="Reads a atomic matrix that was saved using .crystal.fcc format. " alt="" coords="225,360,364,387"/><area shape="rect" id="node17" href="point3D_8c.html#a37b278b3af28b6e836f2a7898681838e" title="Creates a index table that maps each index on the atomic lattice to its neighbouring indices..." alt="" coords="197,465,392,492"/><area shape="rect" id="node24" href="chemicalPotential_8c.html#a90e23accb40420c0c0eb5e04f47b2f2d" title="createConcentrationTable" alt="" coords="209,545,380,572"/><area shape="rect" id="node26" href="eam_8c.html#a9d9720c5e916999006aa63912986815d" title="Looks up the energy for atom at a given array index in ATOM array, from energyTableInstantLookup[. " alt="" coords="213,415,376,441"/><area shape="rect" id="node3" href="parameters_8c.html#a6aa8c7c4be07ab82707a1b09ac808554" title="Creates a parameter with default values as follows truct as follows. " alt="" coords="459,5,613,32"/><area shape="rect" id="node6" href="eam_8c.html#ab793dd733f267dcb29bd5bee202c2aa3" title="Reads neighbours_fcc from a file that contains list of files that conatin list of neighbours..." alt="" coords="455,74,617,115"/><area shape="rect" id="node8" href="point3D_8c.html#a1c1603d2a6013b7d181acdfc7043ee61" title="Returns distance of point3D from origin in UC. " alt="" coords="469,205,603,232"/><area shape="rect" id="node9" href="eam_8c.html#af7c8b700c9a1373c741aa5dc56f47dc0" title="In the EAM tables we have radius values common in 5 quantities as mentioned in radius_dependent_field..." alt="" coords="475,256,597,283"/><area shape="rect" id="node10" href="math__functions_8c.html#af058ccd95beced46c1abbdc5f5f18191" title="Interpolates linearly value between &#160;and . " alt="" coords="698,201,822,228"/><area shape="rect" id="node12" href="eam_8c.html#a404f821b50b0b3db287ac612f7e2de35" title="In the EAM tables we have embedding energy that depends on charge density. " alt="" coords="453,139,619,181"/><area shape="rect" id="node16" href="analysis_8c.html#a168320aed5b057a1ae273e9d84b43880" title="Counts total number of atoms in a file. " alt="" coords="477,307,595,333"/><area shape="rect" id="node18" href="point3D_8c.html#a89582ec9b4e0596e24894d0039807a5e" title="Converts a given array index in the range of Atomic crystal matrix and parameters consistent with it ..." alt="" coords="440,525,632,552"/><area shape="rect" id="node21" href="point3D_8c.html#a15710ccd068d987118e0cd629294b3ca" title="Adds two point3D types and creates a new point3D type to store the result. " alt="" coords="466,357,606,384"/><area shape="rect" id="node22" href="point3D_8c.html#a05e682c55af08bfcbd25b4887ff6e1f6" title="For a given parameter and point3D applies the periodic boundary transform such that it lies in the co..." alt="" coords="449,409,623,450"/><area shape="rect" id="node23" href="point3D_8c.html#aafba4d8a16708b18b2757300e988e4d8" title="Convertes a point3D data to a index in range of ATOM with respect to parameter that is passed..." alt="" coords="441,475,631,501"/><area shape="rect" id="node19" href="point3D_8c.html#a950c9e52a5df4f947fe9c98ecf846e00" title="Creates new point3D type with (0, 0, 0) as input. " alt="" coords="707,551,813,577"/><area shape="rect" id="node20" href="point3D_8c.html#ab53daa0db01aef59c9b12f819213025c" title="Moves point3D by amount (+dx,+dy,+dz) " alt="" coords="681,500,839,527"/><area shape="rect" id="node25" href="chemicalPotential_8c.html#a11dd40ebabb638f4d415a4a4ee336c59" title="concentrationAtIndex" alt="" coords="463,576,609,603"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -192,7 +588,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="simulation_8h.html">simulation.h</a></li>
-    <li class="footer">Generated on Fri Sep 2 2016 20:56:15 for DDP-12D110009 by
+    <li class="footer">Generated on Mon Jan 16 2017 12:18:57 for DDP-12D110009 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

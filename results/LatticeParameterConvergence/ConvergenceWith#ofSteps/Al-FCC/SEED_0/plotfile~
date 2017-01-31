@@ -1,0 +1,13 @@
+set term png
+set output "lattice_parameter_moving_average.png"
+set xlabel "MC time"
+set ylabel "Lattice Parameter(A)"
+set format x ""
+plot "log.txt" using 1 with points
+set output "variance.png"
+set ylabel "variance"
+set logscale y
+unset logscale x
+plot "log.txt" using 3 with points
+set output "StdDev.png"
+set term x11

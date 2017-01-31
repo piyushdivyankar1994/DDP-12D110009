@@ -3,7 +3,7 @@
    \brief Source file for ean.h
    \author Piyush Divyankar
    \date 01/09/2016
-*/
+ */
 
 #include "eam.h"
 #include "analysis.h"
@@ -30,7 +30,7 @@ int * atomicMatrixRead(char * fileName, parameter * p)
     return mat;
 }
 
-// DONE:0 following function is alternate for atomicMatrixRead(...)
+// DONE:20 following function is alternate for atomicMatrixRead(...)
 /**
  * Reads a atomic matrix that was saved using .crystal.fcc format
  * @param  fileName Name of th file
@@ -80,6 +80,7 @@ Sn_fcc * Sn_fcc_readNeighbours_fromFile(char * fileList)
     new->indices[4] = 24;
     new->indices[5] = 8;
     new->indices[6] = 48;
+    new->indices[7] = 0;
     fp = fopen(fileList, "r");
     if (fp == NULL)
     {
@@ -148,6 +149,14 @@ Sn_fcc * Sn_fcc_readNeighbours_fromFile(char * fileList)
             }
         }
     }
+    new->indices[0] = 0;
+    new->indices[1] = 12;
+    new->indices[2] = 18;
+    new->indices[3] = 42;
+    new->indices[4] = 54;
+    new->indices[5] = 78;
+    new->indices[6] = 86;
+    new->indices[7] = 134;
     return new;
 }
 
@@ -208,12 +217,12 @@ Sn_fcc * _defaultFCCNeighbours()
  * @param atom1    IUPAC symbol for atom 1.
  * @param atom2    IUPAC symbol for atom 2.
  */
-binEAMpot* eam_data_read(char * fileName, char atom1[2], char atom2[2])
+binEAMpot * eam_data_read(char * fileName, char atom1[2], char atom2[2])
 {
     FILE * fp_init, * fp1;
 
     fp_init = fopen(fileName, "r");
-    binEAMpot *eam_data = (binEAMpot *) malloc(sizeof(binEAMpot));
+    binEAMpot * eam_data = (binEAMpot *) malloc(sizeof(binEAMpot));
     // double* eam_data;
     // (*eam_dat)->atom1 = (char*)malloc(sizeof(atom1)+1);
     // (*eam_dat)->atom2 = (char*)malloc(sizeof(atom2)+1);
@@ -345,9 +354,12 @@ binEAMpot* eam_data_read(char * fileName, char atom1[2], char atom2[2])
  */
 rdf * rdf_radius_retrive(binEAMpot * data, double radius)
 {
+
+    rdf * new = (rdf *) malloc(sizeof(rdf));
+
+    new->radius = radius;
     if (radius > data->maxRadius)
     {
-        rdf * new = (rdf *) malloc(sizeof(rdf));
         new->p11   = 0;
         new->p12   = 0;
         new->p22   = 0;
@@ -358,7 +370,6 @@ rdf * rdf_radius_retrive(binEAMpot * data, double radius)
 
     else if (radius < data->minRadius)
     {
-        rdf * new = (rdf *) malloc(sizeof(rdf));
         new->p11   = linear_interpolator(data->radius[0], data->pair_atom1_atom1[0], data->radius[1], data->pair_atom1_atom1[1], radius);
         new->p12   = linear_interpolator(data->radius[0], data->pair_atom1_atom2[0], data->radius[1], data->pair_atom1_atom2[1], radius);
         new->p22   = linear_interpolator(data->radius[0], data->pair_atom2_atom2[0], data->radius[1], data->pair_atom2_atom2[1], radius);
@@ -368,7 +379,7 @@ rdf * rdf_radius_retrive(binEAMpot * data, double radius)
 
 
     int j = (int) ((radius - data->minRadius) * 5000) / (data->maxRadius - data->minRadius);
-    rdf * new = (rdf *) malloc(sizeof(rdf));
+
 
     if (j < 0)
     {
@@ -472,12 +483,12 @@ double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_
         {
             if (a[ngbrIndex] == 0)
             {
-                energy          = energy + r_data->p11;
+                energy          = energy + 0.5 * r_data->p11;
                 chargeDen       = chargeDen + r_data->eDen1;
             }
             else
             {
-                energy          = energy + r_data->p22;
+                energy          = energy + 0.5 * r_data->p22;
                 chargeDen       = chargeDen + r_data->eDen2;
             }
         }
@@ -485,12 +496,72 @@ double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_
         {
             if (a[ngbrIndex] == 0)
             {
-                energy          = energy + r_data->p12;
+                energy          = energy + 0.5 * r_data->p12;
                 chargeDen       = chargeDen + r_data->eDen1;
             }
             else
             {
-                energy          = energy + r_data->p12;
+                energy          = energy + 0.5 * r_data->p12;
+                chargeDen       = chargeDen + r_data->eDen2;
+            }
+        }
+        free(r_data);
+        free(k);
+    }
+
+    eDen_df * embeddingEnergy = eDen_df_charge_density_retrive(data, chargeDen);
+
+    if (a[index] == 0)
+    {
+        energy = energy + embeddingEnergy->embed1;
+    }
+    else
+    {
+        energy = energy + embeddingEnergy->embed2;
+    }
+    free(embeddingEnergy);
+    free(current);
+    return energy;
+}
+
+double energyAtIndexFCC_ver2(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs, int noNgbrs)
+{
+    point3D * current = point3D_indexToPoint3D_fcc(index, p);
+    double energy = 0;
+    double chargeDen = 0;
+
+    for (int i = 0; i < noNgbrs; i++)
+    {
+        point3D * k = point3D_addVectors(current, &(ngbrs->s1n[i]));
+        double r = point3D_distAtoB(k, current);
+        r = r * p->lattice_parameter;
+        point3D_periodicBoundaryTransform(k, p);
+        rdf * r_data = rdf_radius_retrive(data, r);
+        int ngbrIndex = point3D_point3DtoIndexFCC(k, p);
+
+        if (a[ngbrIndex] == a[index])
+        {
+            if (a[ngbrIndex] == 0)
+            {
+                energy          = energy + 0.5 * r_data->p11;
+                chargeDen       = chargeDen + r_data->eDen1;
+            }
+            else
+            {
+                energy          = energy + 0.5 * r_data->p22;
+                chargeDen       = chargeDen + r_data->eDen2;
+            }
+        }
+        else
+        {
+            if (a[ngbrIndex] == 0)
+            {
+                energy          = energy + 0.5 * r_data->p12;
+                chargeDen       = chargeDen + r_data->eDen1;
+            }
+            else
+            {
+                energy          = energy + 0.5 * r_data->p12;
                 chargeDen       = chargeDen + r_data->eDen2;
             }
         }
@@ -514,6 +585,50 @@ double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_
 }
 
 /**
+ * Looks up the energy for atom at a given array index in ATOM array, from
+ * energyTableInstantLookup[.][.][.][.]
+ * @param  index evaluated at this index.
+ * @param  a     Atomic matrix
+ * @param  data  EAM potential data.
+ * @param  p     parameters
+ * @param  ngbrs List of neighbours.
+ * @return       value of energy
+ * @note         This function has been tested in ::test_energyAtIndexFCC_fast.
+ *               Refer it for usage information.
+ */
+
+double energyAtIndexFCC_fast(int index, int * a, parameter * p, Sn_fcc * ngbrs)
+{
+    point3D * current = point3D_indexToPoint3D_fcc(index, p);
+    int Ni[3] = {0};
+    for (size_t n = 0; n < 3; n++)
+    {
+        for (int i = ngbrs->indices[n]; i < ngbrs->indices[n+1]; i++)
+        {
+            point3D * k = point3D_addVectors(current, &(ngbrs->s1n[i]));
+
+            point3D_periodicBoundaryTransform(k, p);
+            int ngbrIndex = point3D_point3DtoIndexFCC(k, p);
+            if (a[ngbrIndex] == 1)
+            {
+                Ni[n]++;
+            }
+            free(k);
+        }
+    }
+    if (a[index] == 0)
+    {
+        return energyTableInstantLookup[0][Ni[0]][Ni[1]][Ni[2]];
+    }
+    else
+    {
+        return energyTableInstantLookup[1][Ni[0]][Ni[1]][Ni[2]];
+    }
+}
+
+
+
+/**
  * Calculates bond energy of all atoms in a given ATOM array, and stores it in a
  * double array, at corresponding index with that of ATOM array.
  * @param  a     Atomic matrix
@@ -524,13 +639,24 @@ double energyAtIndexFCC(int index, int * a, binEAMpot * data, parameter * p, Sn_
  * @note         This function has been tested in ::test_energyAtIndexFCC. Refer it
  *               for usage information.
  */
-double* energyInMatrix(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
+double * energyInMatrix(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
-    double *energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
+    double * energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
 
     for (int i = 0; i < p->no_of_atoms; i++)
     {
         (energyMatrix)[i] = energyAtIndexFCC(i, a, data, p, ngbrs);
+    }
+    return energyMatrix;
+}
+
+double * energyInMatrix_ver2(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs, int noNgbrs)
+{
+    double * energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
+
+    for (int i = 0; i < p->no_of_atoms; i++)
+    {
+        (energyMatrix)[i] = energyAtIndexFCC_ver2(i, a, data, p, ngbrs, noNgbrs);
     }
     return energyMatrix;
 }
@@ -582,14 +708,14 @@ double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc 
         {
             if (a[ngbrIndex] == 0)
             {
-                energy1                 = energy1 + r_data->p11;
-                energy2                 = energy2 + r_data->p12;
+                energy1                 = energy1 + 0.5 * r_data->p11;
+                energy2                 = energy2 + 0.5 * r_data->p12;
                 chargeDen       = chargeDen + r_data->eDen1;
             }
             else
             {
-                energy1                 = energy1 + r_data->p22;
-                energy2                 = energy2 + r_data->p12;
+                energy1                 = energy1 + 0.5 * r_data->p22;
+                energy2                 = energy2 + 0.5 * r_data->p12;
                 chargeDen       = chargeDen + r_data->eDen2;
             }
         }
@@ -597,14 +723,14 @@ double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc 
         {
             if (a[ngbrIndex] == 0)
             {
-                energy1                 = energy1 + r_data->p12;
-                energy2                 = energy2 + r_data->p22;
+                energy1                 = energy1 + 0.5 * r_data->p12;
+                energy2                 = energy2 + 0.5 * r_data->p22;
                 chargeDen       = chargeDen + r_data->eDen1;
             }
             else
             {
-                energy1                 = energy1 + r_data->p12;
-                energy2                 = energy2 + r_data->p11;
+                energy1                 = energy1 + 0.5 * r_data->p12;
+                energy2                 = energy2 + 0.5 * r_data->p11;
                 chargeDen       = chargeDen + r_data->eDen2;
             }
         }
@@ -628,6 +754,50 @@ double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc 
     free(current);
     return energy2 - energy1;
 }
+
+/**
+ * Function to calculate the energy required to swap an atom at a given index.
+ * If say that the atom was initally atom1 then on swapping it would be atom2.
+ *
+ * @param  index index of ATOM array
+ * @param  a     ATOM array
+ * @param  data  EAM potential
+ * @param  p     parameters of the system
+ * @param  ngbrs list of neighbour atoms.
+ * @return       change in energy when atom at the given index is swapped
+ */
+double energyToSwap_fast(int index, int * a, parameter * p, Sn_fcc * ngbrs)
+{
+    point3D * current = point3D_indexToPoint3D_fcc(index, p);
+    int Ni[3] = {0};
+    for (size_t n = 0; n < 3; n++)
+    {
+        for (int i = 0; i < ngbrs->indices[n]; i++)
+        {
+            point3D * k = point3D_addVectors(current, &(ngbrs->s1n[i]));
+
+            point3D_periodicBoundaryTransform(k, p);
+            int ngbrIndex = point3D_point3DtoIndexFCC(k, p);
+            if (a[ngbrIndex] == 1)
+            {
+                Ni[n]++;
+            }
+            free(k);
+        }
+    }
+    if (a[index] == 0)
+    {
+        return energyTableInstantLookup[1][Ni[0]][Ni[1]][Ni[2]] - \
+                energyTableInstantLookup[0][Ni[0]][Ni[1]][Ni[2]];
+    }
+    else
+    {
+        return energyTableInstantLookup[0][Ni[0]][Ni[1]][Ni[2]] - \
+                energyTableInstantLookup[1][Ni[0]][Ni[1]][Ni[2]];
+    }
+}
+
+
 /**
  * Computes and reports change in energy at every index of the ATOM array
  * @param a            ATOM array
@@ -636,13 +806,130 @@ double energyToSwap(int index, int * a, binEAMpot * data, parameter * p, Sn_fcc 
  * @param ngbrs        neighbours list
  * @return             pointer to created change in energy matrix
  */
-double* deltaEnergyMatrix(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
+double * deltaEnergyMatrix(int * a, binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
 {
-    double *energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
+    double * energyMatrix = (double *) malloc(sizeof(double) * p->no_of_atoms);
 
     for (int i = 0; i < p->no_of_atoms; i++)
     {
         (energyMatrix)[i] = energyToSwap(i, a, data, p, ngbrs);
     }
     return energyMatrix;
+}
+
+/**
+ * Creates a lookUpTable for the energy from EAM data so that no extra look up
+ * operations are needed for radius fields.
+ * @param  data  EAM potential table
+ * @param  p     simulation parameters
+ * @param  ngbrs FCC nearest neighbours upto 7th
+ * @return       pointer to newly created lookup table
+ */
+lookUpTable * createLookUpTable(binEAMpot * data, parameter * p, Sn_fcc * ngbrs)
+{
+    int a[] = { 0, 12, 18, 42, 54, 78, 86, };
+    lookUpTable * new = malloc(sizeof(lookUpTable));
+
+    for (size_t i = 0; i < 7; i++)
+    {
+        rdf * temp1;
+        double radius = p->lattice_parameter * point3D_magnitude(&(ngbrs->s1n[a[i]]));
+        temp1 = rdf_radius_retrive(data, radius);
+        new->pairwisePotential_Sn[i] = *(temp1);
+        free(temp1);
+    }
+    return new;
+}
+
+void printLookUpTable(lookUpTable * p)
+{
+    printf("Radius\t\t\tPairwise Potential\t\t\tElectron Denisty\n");
+    printf("\t\t  Al-Al \t  Al-Ni \t  Ni-Ni \t  Al  \t\t Ni\n");
+    printf("-----------------------------------------------------------------------------------------\n");
+    for (size_t i = 0; i < 7; i++)
+    {
+        printf("%f\t%f\t%f\t%f\t%f\t%f\n", p->pairwisePotential_Sn[i].radius   \
+               , p->pairwisePotential_Sn[i].p11      \
+               , p->pairwisePotential_Sn[i].p12      \
+               , p->pairwisePotential_Sn[i].p22      \
+               , p->pairwisePotential_Sn[i].eDen1    \
+               , p->pairwisePotential_Sn[i].eDen2);
+    }
+}
+/**
+ * Fills the global variable energyTableInstantLookup array with appropriate values
+ * @warning This function depends on lookUpTable so it must be not be NULL
+ * @param data lookUpTable to read potentials from
+ * @param pot  EAM potential data to compute embedding energy.
+ * @callgraph
+ */
+void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot)
+{
+    int i0 = 1;
+    for (size_t i1 = 0; i1 < 13; i1++) {
+        for (size_t i2 = 0; i2 < 7; i2++) {
+            for (size_t i3 = 0; i3 < 25; i3++) {
+                energyTableInstantLookup[i0][i1][i2][i3] = i1 * data->pairwisePotential_Sn[0].p22 + \
+                                                    (12 - i1) * data->pairwisePotential_Sn[0].p12 + \
+                                                           i2 * data->pairwisePotential_Sn[1].p22 + \
+                                                     (6 - i2) * data->pairwisePotential_Sn[1].p12 + \
+                                                           i3 * data->pairwisePotential_Sn[2].p22 + \
+                                                    (24 - i3) * data->pairwisePotential_Sn[2].p12;
+                double temp = i1 * data->pairwisePotential_Sn[0].eDen2 + (12 - i1) * data->pairwisePotential_Sn[0].eDen1 + \
+                       i2 * data->pairwisePotential_Sn[1].eDen2 + (6 - i2) * data->pairwisePotential_Sn[1].eDen1 + \
+                       i3 * data->pairwisePotential_Sn[2].eDen2 + (12 - i3) * data->pairwisePotential_Sn[2].eDen1;
+                eDen_df *embeddingE = eDen_df_charge_density_retrive(pot, temp);
+                energyTableInstantLookup[i0][i1][i2][i3] += embeddingE->embed2;
+            }
+        }
+    }
+    i0 = 0;
+    for (size_t i1 = 0; i1 < 13; i1++) {
+        for (size_t i2 = 0; i2 < 7; i2++) {
+            for (size_t i3 = 0; i3 < 25; i3++) {
+                energyTableInstantLookup[i0][i1][i2][i3] = i1 * data->pairwisePotential_Sn[0].p12 + \
+                                                    (12 - i1) * data->pairwisePotential_Sn[0].p11 + \
+                                                           i2 * data->pairwisePotential_Sn[1].p12 + \
+                                                     (6 - i2) * data->pairwisePotential_Sn[1].p11 + \
+                                                           i3 * data->pairwisePotential_Sn[2].p12 + \
+                                                    (24 - i3) * data->pairwisePotential_Sn[2].p11;
+                double temp = i1 * data->pairwisePotential_Sn[0].eDen2 + (12 - i1) * data->pairwisePotential_Sn[0].eDen1 + \
+                       i2 * data->pairwisePotential_Sn[1].eDen2 + (6 - i2) * data->pairwisePotential_Sn[1].eDen1 + \
+                       i3 * data->pairwisePotential_Sn[2].eDen2 + (12 - i3) * data->pairwisePotential_Sn[2].eDen1;
+                eDen_df *embeddingE = eDen_df_charge_density_retrive(pot, temp);
+                energyTableInstantLookup[i0][i1][i2][i3] += embeddingE->embed1; }
+        }
+    }
+}
+/**
+ * Gives concentration of atom1 in a array
+ * @param  test input of atomic array
+ * @param  p    simulation parameter
+ * @return      fractional concentration of atom1
+ */
+double avgConcentrationAtom1(ATOM *test, parameter *p)
+{
+    int count = 0;
+    for (size_t i = 0; i < p->no_of_atoms; i++) {
+        if(test[i] == 0)
+            count++;
+    }
+    return (double)count/(double)p->no_of_atoms;
+}
+
+/**
+ * Gives number of atom1 in a array
+ * @param  test input of atomic array
+ * @param  p    simulation parameter
+ * @return      fractional concentration of atom1
+ */
+
+int atomsType1(ATOM *test, parameter *p)
+{
+    int count = 0;
+    for (size_t i = 0; i < p->no_of_atoms; i++) {
+        if(test[i] == 0)
+            count++;
+    }
+    return count;
 }

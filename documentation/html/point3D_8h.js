@@ -7,6 +7,7 @@ var point3D_8h =
     [ "point3D_indexToPoint3D_fcc", "point3D_8h.html#a3fa7647277ce9ded74848cdd16e7e705", null ],
     [ "point3D_isEqual", "point3D_8h.html#af58cad7d8f516e8cd149f2e370a1c338", null ],
     [ "point3D_magnitude", "point3D_8h.html#abbc4441b5676633bba613b03d7042b45", null ],
+    [ "point3D_neighbourIndexTable", "point3D_8h.html#a37b278b3af28b6e836f2a7898681838e", null ],
     [ "point3D_newPoint", "point3D_8h.html#a8d1e5618a2852cd656470fb8a08302b8", null ],
     [ "point3D_origin", "point3D_8h.html#a950c9e52a5df4f947fe9c98ecf846e00", null ],
     [ "point3D_periodicBoundaryTransform", "point3D_8h.html#af8471a31fab6c5fc61334b6b6c336957", null ],

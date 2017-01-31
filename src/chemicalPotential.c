@@ -71,3 +71,50 @@ double chemicalPotentialAtIndex(int index, int * a, binEAMpot * data, parameter 
         return chemPot;
     }
 }
+
+
+double concentrationAtIndex(ATOM * atomicMatrix, int * ngbrTable, int index, int n)
+{
+    double count = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (atomicMatrix[ngbrTable[index * n + i]] == 0)
+        {
+            count++;
+        }
+    }
+    if (atomicMatrix[index] == 0)
+    {
+        count++;
+    }
+    return count / (double) n;
+}
+
+double * createConcentrationTable(ATOM * atomicMatrix, parameter * p, int * ngbrTable, int n)
+{
+    double * ret_val = malloc(sizeof(double) * p->no_of_atoms);
+
+    for (int i = 0; i < p->no_of_atoms; i++)
+    {
+        ret_val[i] = concentrationAtIndex(atomicMatrix, ngbrTable, i, n);
+    }
+    return ret_val;
+}
+
+void printConcentrationTable(double * table, int initial_index, int final_index)
+{
+    for (int i = initial_index; i < final_index + 1; i++)
+    {
+        printf("%0.4f\n", table[i]);
+    }
+}
+
+void updateConcentrationTable(double * table, int * ngbrIndex, int index, int n, int change)
+{
+    double dC = (change == 1 ? (-1/(double)(n+1)) : (1/(double)(n+1)));
+    for(int i = 0; i < n; i++) {
+        table[ngbrIndex[index * n + i]] += dC;
+    }
+    table[index] += dC;
+}

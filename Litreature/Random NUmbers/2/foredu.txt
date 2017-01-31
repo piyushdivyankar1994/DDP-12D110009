@@ -1,0 +1,16 @@
+@article{journals/corr/abs-1005-4117,
+  added-at = {2014-04-03T10:30:06.000+0200},
+  author = {Katzgraber, Helmut G.},
+  biburl = {http://www.bibsonomy.org/bibtex/212683a531db9a6be81058d1bcafc7e27/foredu},
+  ee = {http://arxiv.org/abs/1005.4117},
+  interhash = {b42e0533dc0edee121090fd206236942},
+  intrahash = {12683a531db9a6be81058d1bcafc7e27},
+  journal = {CoRR},
+  keywords = {random},
+  timestamp = {2014-04-03T10:30:06.000+0200},
+  title = {Random Numbers in Scientific Computing: An Introduction},
+  url = {http://dblp.uni-trier.de/db/journals/corr/corr1005.html#abs-1005-4117},
+  volume = {abs/1005.4117},
+  year = 2010
+}
+
