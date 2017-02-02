@@ -292,3 +292,67 @@ void latticeParameterSimulation(size_t seed_value)
 
 
 }
+
+void semiGrandCanonical_concentration_study(size_t seed_value)
+{
+    // Loading Resources
+    parameter * AlNi_fcc = parameterReadFromFile("parametersSim1.param");
+    binEAMpot * potential = NULL;
+
+    potential = eam_data_read("EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    Sn_fcc * fccNeighbours = _defaultFCCNeighbours();
+
+    AlNi_fcc->lattice_parameter = 3.65;
+    lookUpTable * t = createLookUpTable(potential, AlNi_fcc, fccNeighbours);
+    buildInstantEnergyLookup(t, potential);
+
+    AlNi_fcc->N_MCS = 10;
+    long long int steps = AlNi_fcc->N_MCS * AlNi_fcc->no_of_atoms;
+    print_parameters(AlNi_fcc);
+    printf("#--------------------------------------------------------------\n");
+    // Random number generator initialization
+    const gsl_rng_type * T;
+    gsl_rng * r;
+    T = gsl_rng_default;
+    r = gsl_rng_alloc(T);
+    gsl_rng_set(r, seed_value);
+    gsl_rng_env_setup();
+    // ----------------------------------------
+
+    double concentration = 0.04 ;
+    AlNi_fcc->temperature = 500;
+
+    randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/input", rand(), concentration);
+    ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
+
+    int N1 = atomsType1(inputMatrix, AlNi_fcc);
+    float dc = 1.0/3.2e4;
+    printf("## %d, %le\n", N1, dc);
+
+    int index;
+    double e1, e2, ttl, p, mu = 0.01;
+    while(mu < 2e5) {
+    double chemE = mu * dc;
+
+    for (size_t i = 0; i < steps; i++) {
+      double u = gsl_rng_uniform(r);
+      index = u * AlNi_fcc->no_of_atoms;
+      e1 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);
+      inputMatrix[index] = 1 - inputMatrix[index];
+      e2 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);
+      if(inputMatrix[index] == 1) ttl = (e2 - e1) + chemE;
+      else ttl = (e2 - e1) - chemE;
+      ttl = exp(-(ttl)/(KB * AlNi_fcc->temperature));
+      if( ttl < 1) {
+        p = gsl_rng_uniform(r);
+        if(p > ttl) {inputMatrix[index] = 1 - inputMatrix[index];}
+      }
+      //printf("%le\n", ttl);
+    }
+    N1 = atomsType1(inputMatrix, AlNi_fcc);
+    printf("%f, %f\n", mu, (float)N1/(float)AlNi_fcc->no_of_atoms);
+    mu = mu + 2.5e3;
+  }
+
+    double mu_0 = 0.2;
+}

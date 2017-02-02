@@ -11,5 +11,6 @@
 void cannonicalEnsemble(unsigned long int);
 void semiGrandCanonical(size_t seed_value);
 void latticeParameterSimulation(size_t seed_value);
+void semiGrandCanonical_concentration_study(size_t seed_value);
 
 #endif

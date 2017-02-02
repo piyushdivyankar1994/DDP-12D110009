@@ -43,7 +43,7 @@ int main(int argc, char const * argv[])
     // test_point3D_neighbourIndexTable();
     //
     // test_concentrationFunctions();
-    semiGrandCanonical(1233);
+    semiGrandCanonical_concentration_study(1233);
     // test_displayInstantEnergyLookUpTable();
     return 0;
 }

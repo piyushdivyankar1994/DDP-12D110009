@@ -242,7 +242,7 @@ binEAMpot * eam_data_read(char * fileName, char atom1[2], char atom2[2])
     int j;
     if (fp1 == NULL)
     {
-        printf("flag Unable to open %s\n", str);
+        printf("flag Unable to open 1 %s\n", str);
     }
 
     for (j = 0; j < 5000; j++)

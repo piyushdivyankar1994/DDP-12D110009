@@ -21,3 +21,6 @@ echo "######################################################################"
 #echo 'load "plotfile"' | gnuplot
 
 #xdg-open lattice_parameter_convergence.png
+
+
+echo -ne '\007'
