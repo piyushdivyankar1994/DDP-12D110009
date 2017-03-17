@@ -320,7 +320,7 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
     // ----------------------------------------
 
     double concentration = 0.04 ;
-    AlNi_fcc->temperature = 500;
+    AlNi_fcc->temperature = 1385;
 
     randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/input", rand(), concentration);
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
@@ -330,8 +330,8 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
     printf("## %d, %le\n", N1, dc);
 
     int index;
-    double e1, e2, ttl, p, mu = 0.01;
-    while(mu < 2e5) {
+    double e1, e2, ttl, p, mu = -1e5;
+    while(mu < 4.5e4) {
     double chemE = mu * dc;
 
     for (size_t i = 0; i < steps; i++) {
@@ -340,8 +340,8 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
       e1 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);
       inputMatrix[index] = 1 - inputMatrix[index];
       e2 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);
-      if(inputMatrix[index] == 1) ttl = (e2 - e1) + chemE;
-      else ttl = (e2 - e1) - chemE;
+      if(inputMatrix[index] == 1) ttl = (e2 - e1) - chemE;
+      else ttl = (e2 - e1) + chemE;
       ttl = exp(-(ttl)/(KB * AlNi_fcc->temperature));
       if( ttl < 1) {
         p = gsl_rng_uniform(r);
@@ -350,8 +350,9 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
       //printf("%le\n", ttl);
     }
     N1 = atomsType1(inputMatrix, AlNi_fcc);
-    printf("%f, %f\n", mu, (float)N1/(float)AlNi_fcc->no_of_atoms);
-    mu = mu + 2.5e3;
+    printf("%f, %f\n", mu/32000.0, (float)N1/(float)AlNi_fcc->no_of_atoms);
+    if(mu > 0) mu = mu + 1.25e3;
+    else mu += 3e3;
   }
 
     double mu_0 = 0.2;
