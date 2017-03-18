@@ -333,7 +333,7 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
     double e1, e2, ttl, p, mu = -1e5;
     while(mu < 4.5e4) {
     double chemE = mu * dc;
-
+    ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
     for (size_t i = 0; i < steps; i++) {
       double u = gsl_rng_uniform(r);
       index = u * AlNi_fcc->no_of_atoms;

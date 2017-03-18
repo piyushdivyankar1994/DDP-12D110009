@@ -1,0 +1,7 @@
+set term png
+set output "concentation_mu.png"
+set xlabel "mu"
+set ylabel "conc"
+
+plot "log.txt"
+set term x11
