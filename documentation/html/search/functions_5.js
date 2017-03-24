@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['eam_5fdata_5fread',['eam_data_read',['../eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e',1,'eam_data_read(char *fileName, char atom1[2], char atom2[2]):&#160;eam.c'],['../eam_8h.html#a4b23b39d371fecb8cfe4f2958e5c78b9',1,'eam_data_read(char *, char[], char[]):&#160;eam.h']]],
+  ['eam_5fdata_5fread',['eam_data_read',['../eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e',1,'eam_data_read(char *fileName, char atom1[2], char atom2[2]):&#160;eam.c'],['../eam_8h.html#a24617e7322bbc82dda47c134387b5d3c',1,'eam_data_read(char *, char [], char []):&#160;eam.h']]],
   ['eden_5fdf_5fcharge_5fdensity_5fretrive',['eDen_df_charge_density_retrive',['../eam_8c.html#a404f821b50b0b3db287ac612f7e2de35',1,'eDen_df_charge_density_retrive(binEAMpot *data, double eDen):&#160;eam.c'],['../eam_8h.html#ab04c5777fd32c3ded714b13a6b483b0d',1,'eDen_df_charge_density_retrive(binEAMpot *, double):&#160;eam.c']]],
   ['energyatindexfcc',['energyAtIndexFCC',['../eam_8c.html#a5eb167b21560baf1881fa5baa989287d',1,'energyAtIndexFCC(int index, int *a, binEAMpot *data, parameter *p, Sn_fcc *ngbrs):&#160;eam.c'],['../eam_8h.html#ae1502e45900f2519199a591d8c66819b',1,'energyAtIndexFCC(int, int *, binEAMpot *, parameter *, Sn_fcc *):&#160;eam.c']]],
   ['energyatindexfcc_5ffast',['energyAtIndexFCC_fast',['../eam_8c.html#a9d9720c5e916999006aa63912986815d',1,'energyAtIndexFCC_fast(int index, int *a, parameter *p, Sn_fcc *ngbrs):&#160;eam.c'],['../eam_8h.html#abc924b774d1952d658cf707ba2fd7a9f',1,'energyAtIndexFCC_fast(int, int *, parameter *, Sn_fcc *):&#160;eam.c']]],

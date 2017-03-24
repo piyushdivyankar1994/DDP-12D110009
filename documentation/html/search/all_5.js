@@ -2,7 +2,7 @@ var searchData=
 [
   ['eam_2ec',['eam.c',['../eam_8c.html',1,'']]],
   ['eam_2eh',['eam.h',['../eam_8h.html',1,'']]],
-  ['eam_5fdata_5fread',['eam_data_read',['../eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e',1,'eam_data_read(char *fileName, char atom1[2], char atom2[2]):&#160;eam.c'],['../eam_8h.html#a4b23b39d371fecb8cfe4f2958e5c78b9',1,'eam_data_read(char *, char[], char[]):&#160;eam.h']]],
+  ['eam_5fdata_5fread',['eam_data_read',['../eam_8c.html#ac18bee851a7bbfa04744bed8a585a58e',1,'eam_data_read(char *fileName, char atom1[2], char atom2[2]):&#160;eam.c'],['../eam_8h.html#a24617e7322bbc82dda47c134387b5d3c',1,'eam_data_read(char *, char [], char []):&#160;eam.h']]],
   ['eden',['eDen',['../structeDen__df.html#aa0e0265d6e6bb2ef637925d21acc91c7',1,'eDen_df']]],
   ['eden1',['eDen1',['../structrdf.html#a71831fb327c1f45dbbf4d873fa87857f',1,'rdf']]],
   ['eden2',['eDen2',['../structrdf.html#a373832ff8722aeb07831d6c1d58ccbb1',1,'rdf']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r',['R',['../simulation_8c.html#a0877420f3d7b1f47b871d2ccb47168d8',1,'R():&#160;simulation.c'],['../datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316',1,'r():&#160;datatypes.h']]],
+  ['r',['r',['../datatypes_8h.html#a53b3e4bb1bd287d2150b9c128e15a316',1,'r():&#160;datatypes.h'],['../simulation_8c.html#a0877420f3d7b1f47b871d2ccb47168d8',1,'R():&#160;simulation.c']]],
   ['radius',['radius',['../structbinEAMpot.html#aad4582a092a2a3538135c03a6c0380e2',1,'binEAMpot::radius()'],['../structrdf.html#aca50170b5e655f204ba2d34154dd71fe',1,'rdf::radius()']]],
   ['radius_5fdependent_5ffields',['radius_dependent_fields',['../structradius__dependent__fields.html',1,'']]],
   ['randommatrixgeneratorfcc',['randomMatrixGeneratorFCC',['../analysis_8c.html#aae1529c6458af3ed4626ff934aebce3d',1,'randomMatrixGeneratorFCC(parameter *p, char *ouput_file_name, unsigned long int seed, double concentration):&#160;analysis.c'],['../analysis_8h.html#a048e848d3197b4b08653697079b17472',1,'randomMatrixGeneratorFCC(parameter *, char *, unsigned long int, double):&#160;analysis.c']]],

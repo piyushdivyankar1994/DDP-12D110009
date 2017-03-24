@@ -7,7 +7,7 @@ var eam_8h =
     [ "buildInstantEnergyLookup", "eam_8h.html#aa51add008d5ac8a30d67afe62093b740", null ],
     [ "createLookUpTable", "eam_8h.html#ae5053d5cf652aaca83aaf022df34f601", null ],
     [ "deltaEnergyMatrix", "eam_8h.html#aa854bfe4512002f61c0b2fc0cbd14abf", null ],
-    [ "eam_data_read", "eam_8h.html#a4b23b39d371fecb8cfe4f2958e5c78b9", null ],
+    [ "eam_data_read", "eam_8h.html#a24617e7322bbc82dda47c134387b5d3c", null ],
     [ "eDen_df_charge_density_retrive", "eam_8h.html#ab04c5777fd32c3ded714b13a6b483b0d", null ],
     [ "energyAtIndexFCC", "eam_8h.html#ae1502e45900f2519199a591d8c66819b", null ],
     [ "energyAtIndexFCC_fast", "eam_8h.html#abc924b774d1952d658cf707ba2fd7a9f", null ],
