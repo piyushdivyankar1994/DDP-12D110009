@@ -24,5 +24,7 @@ void point3DmoveTransform(point3D *, float, float, float);
 
 int* point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n);
 
+Motiff* Motiff_alloc(int no_of_points);
+
 void __free3(point3D *, point3D *, point3D *);
 #endif

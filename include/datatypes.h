@@ -249,4 +249,9 @@ typedef int ATOM;
 double energyTableInstantLookup [2][13][7][25];
 
 
+struct Motiff {
+    int no_of_points;
+    point3D basis[];
+}typedef Motiff;
+
 #endif /* ifndef _DATATYPES_H */

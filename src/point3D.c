@@ -290,3 +290,7 @@ int* point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n)
 
     return ret_val;
 }
+
+Motiff* Motiff_alloc(int no_of_points) {
+    return malloc(sizeof(Motiff) + no_of_points * sizeof(point3D));
+}

@@ -538,3 +538,10 @@ void test_displayInstantEnergyLookUpTable()
     }
     return;
 }
+
+void test_Motiff_alloc(){
+    int n = 4;
+    Motiff * new = Motiff_alloc(n);
+    new->no_of_points = 4;
+    free(new);
+}

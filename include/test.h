@@ -49,4 +49,6 @@ void test_point3D_neighbourIndexTable();
 void test_concentrationFunctions();
 void test_displayInstantEnergyLookUpTable();
 
+void test_Motiff_alloc();
+
 #endif /* ifndef _TEST_H */
