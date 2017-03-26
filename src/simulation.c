@@ -9,7 +9,7 @@
 #include "constants.h"
 #include "gsl/gsl_statistics.h"
 /** Boltzmann contant in eV/K */
-#define KB 8.61e-5
+#define KB 8.617e-5
 
 /** Reservoir parameter */
 const double R = 0;
@@ -319,29 +319,39 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
     gsl_rng_env_setup();
     // ----------------------------------------
 
-    double concentration = 0.04 ;
-    AlNi_fcc->temperature = 1385;
+    double concentration = 0.04 ;   /// save plots for 0.5
+    AlNi_fcc->temperature = 5;
 
     randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/input", rand(), concentration);
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
 
-    int N1 = atomsType1(inputMatrix, AlNi_fcc);
-    float dc = 1.0/3.2e4;
+    int N1 = atomsType1(inputMatrix, AlNi_fcc);     // number of of Al in the matrix
+    float dc = 1.0/3.2e4;                           // change in concentration at each step this is absolute value
     printf("## %d, %le\n", N1, dc);
 
     int index;
-    double e1, e2, ttl, p, mu = -1e5;
+    double e1, e2, ttl, p;
+    double mu = -1e5;                 // this is mostly no of atoms times the chemical potential
     while(mu < 4.5e4) {
-    double chemE = mu * dc;
+    double chemE = mu * dc;           // chemical driving force
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
     for (size_t i = 0; i < steps; i++) {
       double u = gsl_rng_uniform(r);
-      index = u * AlNi_fcc->no_of_atoms;
-      e1 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);
-      inputMatrix[index] = 1 - inputMatrix[index];
-      e2 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);
+      index = u * AlNi_fcc->no_of_atoms;      // selecting random latice site
+      e1 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours); // energy before flipping
+      inputMatrix[index] = 1 - inputMatrix[index];          // flipping the spin at site
+      e2 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);  // energy after flipping
+
+
+      /**
+       * If current state is 1 i.e after flipping atom became nickel we write
+       * total hamiltonian as follows. Here we subtract chemical driving force.
+       */
       if(inputMatrix[index] == 1) ttl = (e2 - e1) - chemE;
+
+
       else ttl = (e2 - e1) + chemE;
+
       ttl = exp(-(ttl)/(KB * AlNi_fcc->temperature));
       if( ttl < 1) {
         p = gsl_rng_uniform(r);
@@ -356,4 +366,34 @@ void semiGrandCanonical_concentration_study(size_t seed_value)
   }
 
     double mu_0 = 0.2;
+}
+
+void pairwiseConstants() {
+  parameter * AlNi_fcc = parameterReadFromFile("parametersSim1.param");
+  binEAMpot * potential = NULL;
+
+  potential = eam_data_read("EAM_Ni_Al/file_list.txt", "Al", "Ni");
+  Sn_fcc * fccNeighbours = _defaultFCCNeighbours();
+
+  AlNi_fcc->lattice_parameter = 3.65;
+  double r = AlNi_fcc->lattice_parameter / sqrt(2.0);
+  int k = binary_search(potential->radius, 0, 4999, r);
+  printf("## Row position in Table:\t\t%d\n", k);
+  printf("## E-Al-Al 1st nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom1_atom1[k], potential->radius[k+1],
+                 potential->pair_atom1_atom1[k+1], r));
+  printf("## E-Ni-Al 1st nearest:\t\t%f\n", linear_interpolator(potential->radius[k], potential->pair_atom1_atom2[k], potential->radius[k+1], potential->pair_atom1_atom2[k+1], r));
+  printf("## E-Ni-Ni 1st nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom2_atom2[k], potential->radius[k+1],
+                 potential->pair_atom2_atom2[k+1], r));
+  r *= sqrt(2.0);
+  k = binary_search(potential->radius, 0, 4999, r);
+  printf("## Row position in Table:\t\t%d\n", k);
+  printf("## E-Al-Al 2nd nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom1_atom1[k], potential->radius[k+1],
+                 potential->pair_atom1_atom1[k+1], r));
+  printf("## E-Ni-Al 2nd nearest:\t\t%f\n", linear_interpolator(potential->radius[k], potential->pair_atom1_atom2[k], potential->radius[k+1], potential->pair_atom1_atom2[k+1], r));
+  printf("## E-Ni-Ni 2nd nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom2_atom2[k], potential->radius[k+1],
+                 potential->pair_atom2_atom2[k+1], r));
 }
