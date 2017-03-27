@@ -397,3 +397,120 @@ void pairwiseConstants() {
                  potential->pair_atom2_atom2[k], potential->radius[k+1],
                  potential->pair_atom2_atom2[k+1], r));
 }
+
+
+void semiGrandCanonical_concentration_study_ljp(size_t seed_value)
+{
+    // Loading Resources
+    parameter * AlNi_fcc = parameterReadFromFile("parametersSim1.param");
+    binEAMpot * potential = NULL;
+
+    potential = eam_data_read("EAM_Ni_Al/file_list.txt", "Al", "Ni");
+    Sn_fcc * fccNeighbours = _defaultFCCNeighbours();
+
+    AlNi_fcc->lattice_parameter = 3.65;
+    lookUpTable * t = createLookUpTable(potential, AlNi_fcc, fccNeighbours);
+    buildInstantEnergyLookup(t, potential);
+
+    AlNi_fcc->N_MCS = 10;
+    long long int steps = AlNi_fcc->N_MCS * AlNi_fcc->no_of_atoms;
+    print_parameters(AlNi_fcc);
+    printf("#--------------------------------------------------------------\n");
+    // Random number generator initialization
+    const gsl_rng_type * T;
+    gsl_rng * r;
+    T = gsl_rng_default;
+    r = gsl_rng_alloc(T);
+    gsl_rng_set(r, seed_value);
+    gsl_rng_env_setup();
+    // ----------------------------------------
+
+    double concentration = 0.1 ;   /// save plots for 0.5
+
+    //NOTE: *****************************************
+    AlNi_fcc->temperature = 5;//******************
+
+    randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/input", rand(), concentration);
+    ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
+    // printf("## initial concentration = %f\n", (float)atomsType1(inputMatrix, AlNi_fcc)/(float)AlNi_fcc->no_of_atoms);
+    const int N1 = atomsType1(inputMatrix, AlNi_fcc);     // number of of Al in the matrix
+    float dc = 1.0/3.2e4;                           // change in concentration at each step this is absolute value
+    // printf("## atoms of aluminum =%d\n", N1);
+
+    int index;
+    double e1, e2, ttl, p;
+    double mu = -1e5;                 // this is mostly no of atoms times the chemical potential
+
+    /** This is a quick access table the lists neighbours for all the sites in lattice */
+    int * ngbrTable = point3D_neighbourIndexTable(AlNi_fcc, fccNeighbours, 2);
+
+    /** Following are some constants specific to purely electrosatic type potentials */
+    double E11_1 = -10;
+    double E22_1 = -10;
+    double E12_1 = -9.7;
+    double E11_2 = -2;
+    double E22_2 = -2;
+    double E12_2 = -2;
+    double ljp_temperature = 0.8617 / KB;
+    int flag = 0;
+    int Accepted = 0;
+
+    while(concentration < 1) {
+      Accepted = 0;
+      randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/input", rand(), concentration);
+      ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
+      for (size_t i = 0; i < steps; i++) {
+        double u;
+        while(1) {
+          u = gsl_rng_uniform(r);
+          index = u * AlNi_fcc->no_of_atoms;      // selecting random latice site
+          if(inputMatrix[index] == flag) {
+            break;
+          }
+        }
+
+        /*
+        e1 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours); // energy before flipping
+        inputMatrix[index] = 1 - inputMatrix[index];          // flipping the spin at site
+        e2 = energyAtIndexFCC_fast(index, inputMatrix, AlNi_fcc, fccNeighbours);  // energy after flipping
+        */
+        int s1=0, s2 =0;
+        for(int j = 0; j < 18; j++){
+          if(j < 12 && inputMatrix[ngbrTable[index*18+j]] == 0) s1++;
+          else if(inputMatrix[ngbrTable[index*18+j]] == 0) s2++;
+        }
+
+        if(inputMatrix[index]==0){
+          e1 = s1 * E11_1 + (12-s1) * E12_1 + s2 * E11_2 + (6-s2) * E12_2;
+          e2 = s1 * E12_1 + (12-s1) * E22_1 + s2 * E12_2 + (6-s2) * E22_2;
+        }
+        else {
+          e1 = s1 * E12_1 + (12-s1) * E22_1 + s2 * E12_2 + (6-s2) * E22_2;
+          e2 = s1 * E11_1 + (12-s1) * E12_1 + s2 * E11_2 + (6-s2) * E12_2;
+        }
+
+
+
+        ttl = exp(-(e2-e1)/(KB * ljp_temperature));
+
+        if( ttl < 1) {
+          p = gsl_rng_uniform(r);
+          if(ttl < p) {
+            /** Here it means switch happened */
+            inputMatrix[index] = 1 - inputMatrix[index];
+            flag = 1 - flag;
+            Accepted++;
+          }
+          /** if switch doesn't happen it means inputMatrix[index] remains same and flag remains same */
+        }
+        else {
+          /** Here it means switch happened */
+          inputMatrix[index] = 1 - inputMatrix[index];
+          flag = 1 - flag;
+          Accepted++;
+        }
+      }
+      printf("%f %f\n", concentration, (float)Accepted/3200.0);
+      concentration += 0.1;
+    }
+}

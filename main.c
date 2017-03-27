@@ -45,6 +45,7 @@ int main(int argc, char const * argv[])
     // test_concentrationFunctions();
     // semiGrandCanonical_concentration_study(1233);
     // test_displayInstantEnergyLookUpTable();
-    pairwiseConstants();
+    //pairwiseConstants();
+    semiGrandCanonical_concentration_study_ljp(1313);
     return 0;
 }
