@@ -1,0 +1,8 @@
+## Row position in Table:		1494
+## E-Al-Al 1st nearest:		0.150126
+## E-Ni-Al 1st nearest:		-0.234117
+## E-Ni-Ni 1st nearest:		-0.234491
+## Row position in Table:		2505
+## E-Al-Al 2nd nearest:		-0.038325
+## E-Ni-Al 2nd nearest:		-0.070669
+## E-Ni-Ni 2nd nearest:		-0.058625

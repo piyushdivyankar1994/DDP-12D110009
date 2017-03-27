@@ -1,0 +1,60 @@
+Here I have extracted the pairwise energy values according to the EAM table that i am using.
+The energy calculation has a second term of embedding energy which depends on the neighbourhood of the site we are looking at.
+So this isn't complete value of energy, and the real value may vastly differ from the calculated value here.
+
+##  We take E-Al-Al(1st nearest as the normalization value)
+
+E-Al-Al(1st nearest) -> U
+E-Ni-Al(1st nearest) -> -1.56 U
+E-Ni-Ni(1st nearest) -> -1.56 U
+
+E-Al-Al(2nd nearest) -> -0.255 U
+E-Ni-Al(2nd nearest) -> -0.471 U
+E-Ni-Ni(2nd nearest) -> -0.390 U
+
+
+## Temperature :
+
+1000 K = 0.5739 U / KB
+
+
+## Code used
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+void pairwiseConstants() {
+  parameter * AlNi_fcc = parameterReadFromFile("parametersSim1.param");
+  binEAMpot * potential = NULL;
+
+  potential = eam_data_read("EAM_Ni_Al/file_list.txt", "Al", "Ni");
+  Sn_fcc * fccNeighbours = _defaultFCCNeighbours();
+
+  AlNi_fcc->lattice_parameter = 3.65;
+
+  
+  double r = AlNi_fcc->lattice_parameter / sqrt(2.0);
+  int k = binary_search(potential->radius, 0, 4999, r);
+  printf("## Row position in Table:\t\t%d\n", k);
+  printf("## E-Al-Al 1st nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom1_atom1[k], potential->radius[k+1],
+                 potential->pair_atom1_atom1[k+1], r));
+  printf("## E-Ni-Al 1st nearest:\t\t%f\n", linear_interpolator(potential->radius[k], potential->pair_atom1_atom2[k], potential->radius[k+1], potential->pair_atom1_atom2[k+1], r));
+  printf("## E-Ni-Ni 1st nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom2_atom2[k], potential->radius[k+1],
+                 potential->pair_atom2_atom2[k+1], r));
+
+
+  r *= sqrt(2.0);
+  k = binary_search(potential->radius, 0, 4999, r);
+  printf("## Row position in Table:\t\t%d\n", k);
+  printf("## E-Al-Al 2nd nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom1_atom1[k], potential->radius[k+1],
+                 potential->pair_atom1_atom1[k+1], r));
+  printf("## E-Ni-Al 2nd nearest:\t\t%f\n", linear_interpolator(potential->radius[k], potential->pair_atom1_atom2[k], potential->radius[k+1], potential->pair_atom1_atom2[k+1], r));
+  printf("## E-Ni-Ni 2nd nearest:\t\t%f\n", linear_interpolator(potential->radius[k],
+                 potential->pair_atom2_atom2[k], potential->radius[k+1],
+                 potential->pair_atom2_atom2[k+1], r));
+}
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
