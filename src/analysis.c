@@ -32,7 +32,6 @@ double analysis_totalEnergy(int * a, binEAMpot * data, parameter * p, Sn_fcc * n
  */
 int orderedPhaseCount(int * a, parameter * p, Sn_fcc * ngbrs)
 {
-    printf("oregnioegn\n");
     int count = 0;
     int j;
     for (size_t i = 0; i < p->no_of_atoms; i++)
@@ -54,7 +53,6 @@ int orderedPhaseCount(int * a, parameter * p, Sn_fcc * ngbrs)
         }
         free(new);
     }
-    printf("oregnioegn\n");
     return count;
 }
 
