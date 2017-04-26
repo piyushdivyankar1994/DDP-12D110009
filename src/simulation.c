@@ -136,7 +136,7 @@ void semiGrandCanonical(size_t seed_value)
         chemPot[i] = 0;
     }
     printf("## a = %0.3f\n ## b = %0.3f\n", a, b);
-    int * ngbrTable = point3D_neighbourIndexTable(AlNi_fcc, fccNeighbours, THIRD);
+    int * ngbrTable = point3D_neighbourIndexTable_FCC(AlNi_fcc, fccNeighbours, THIRD);
     double * concTable = createConcentrationTable(inputMatrix, AlNi_fcc, ngbrTable, THIRD_NEAREST_FCC);
     for (size_t i = 0; i < steps; i++)
     {
@@ -442,7 +442,7 @@ void semiGrandCanonical_concentration_study_ljp(size_t seed_value)
     double mu = -1e5;                 // this is mostly no of atoms times the chemical potential
 
     /** This is a quick access table the lists neighbours for all the sites in lattice */
-    int * ngbrTable = point3D_neighbourIndexTable(AlNi_fcc, fccNeighbours, 2);
+    int * ngbrTable = point3D_neighbourIndexTable_FCC(AlNi_fcc, fccNeighbours, 2);
 
     /** Following are some constants specific to purely electrosatic type potentials */
     double E11_1 = -10;
@@ -557,7 +557,7 @@ void ljp_cannonical_order_disorder_transformations(size_t seed_value) {
   double mu = -1e5;                 // this is mostly no of atoms times the chemical potential
 
   /** This is a quick access table the lists neighbours for all the sites in lattice */
-  int * ngbrTable = point3D_neighbourIndexTable(AlNi_fcc, fccNeighbours, 2);
+  int * ngbrTable = point3D_neighbourIndexTable_FCC(AlNi_fcc, fccNeighbours, 2);
 
   /** Following are some constants specific to purely electrosatic type potentials */
   double E11_1 = -10;
@@ -629,4 +629,82 @@ void ljp_cannonical_order_disorder_transformations(size_t seed_value) {
     printf("%f, %d \n", ljp_temperature * KB ,orderedPhaseCount(inputMatrix, AlNi_fcc, fccNeighbours));
     ljp_temperature += 0.1/KB;
   }
+}
+
+void bccCannonicalBenchmark() {
+    // Loading Resources
+    parameter * pBcc = _defaultBCCparameter();
+
+    Sn_bcc * bccNgbrs = readBCCfromFile( "/home/piyush/Desktop/DDP-12D110009/neighbours/bcc/bccNeighbours.txt");
+
+    pBcc->N_MCS = 25;
+    long long int steps = pBcc->N_MCS * pBcc->no_of_atoms;
+    print_parameters(pBcc);
+    printf("#--------------------------------------------------------------\n");
+    // Random number generator initialization
+    const gsl_rng_type * T;
+    gsl_rng * r;
+    T = gsl_rng_default;
+    r = gsl_rng_alloc(T);
+    gsl_rng_set(r, 465653);
+    gsl_rng_env_setup();
+    // ----------------------------------------
+
+    randomMatrixGeneratorFCC(pBcc, "inputCrystalFiles/input", rand(), 0.1   );
+    ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
+
+    double E11_1 = -10;
+    double E22_1 = -10;
+    double E12_1 = -9.7;
+    double E11_2 = -2;
+    double E22_2 = -2;
+    double E12_2 = -2;
+    double de;
+    printf("## E11_1 = %f\t\n", E11_1);
+    printf("## E12_1 = %f\t\n", E12_1);
+    printf("## E22_1 = %f\t\n", E22_1);
+    printf("## E11_2 = %f\t\n", E11_2);
+    printf("## E12_2 = %f\t\n", E12_2);
+    printf("## E22_2 = %f\t\n", E22_2);
+    double ljp_temp = 1;
+    int * ngbrTable = point3D_neighbourIndexTable_BCC(pBcc, bccNgbrs);
+    int Accepted1 = 0;
+    int Accepted2 = 0;
+    for (size_t i = 0; i < steps; i++)
+    {
+        /* Step1: Selecting a random index */
+        double u    = gsl_rng_uniform(r);
+        int index   = u * pBcc->no_of_atoms;
+        int  a1 = 0, b1 = 0, a2 = 0, b2 = 0;
+        for(int j = 0; j < 8; j++) {
+            if(inputMatrix[ngbrTable[index*14 + j]] == 0) a1++;
+            else b1++;
+        }
+        for(int j = 8; j < 14; j++) {
+            if(inputMatrix[ngbrTable[index*14 + j]] == 0) a2++;
+            else b2++;
+        }
+        de = a1*(E11_1 - E12_1) + b1*(E12_1 - E22_1) + a2*(E11_2 - E12_2) \
+                + b2*(E12_2 - E22_2);
+        if(inputMatrix[index] == 1) {
+            de = -de;
+        }
+        double ar = exp(-   de/(ljp_temp));
+
+        if( ar < 1) {
+          double p = gsl_rng_uniform(r);
+          if(ar < p) {
+            /** Here it means switch happened */
+            inputMatrix[index] = 1 - inputMatrix[index];
+            Accepted1++;
+          }
+          /** if switch doesn't happen it means inputMatrix[index] remains same and flag remains same */
+        }
+        else {
+          /** Here it means switch happened */
+          inputMatrix[index] = 1 - inputMatrix[index];
+          Accepted2++;
+      }
+    }
+    printf("## Acceptance rate at 0.5 ==%f,%f\n", ((float)Accepted1/(float)steps)*100, ((float)Accepted2/(float)steps)*100 );
 }

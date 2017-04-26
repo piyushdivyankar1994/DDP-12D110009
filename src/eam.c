@@ -933,3 +933,19 @@ int atomsType1(ATOM *test, parameter *p)
     }
     return count;
 }
+
+Sn_bcc * readBCCfromFile(char * fileName) {
+    FILE *fp = fopen(fileName, "r");
+    Sn_bcc * new = malloc(sizeof(Sn_bcc));
+    float x, y, z;
+    for (size_t i = 0; i < 14; i++) {
+      fscanf(fp, "%f", &x);
+      fscanf(fp, "%f", &y);
+      fscanf(fp, "%f", &z);
+      new->s1n[i].x = x;
+      new->s1n[i].y = y;
+      new->s1n[i].z = z;
+      
+    }
+    return new;
+}

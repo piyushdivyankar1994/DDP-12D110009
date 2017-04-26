@@ -53,4 +53,7 @@ void buildInstantEnergyLookup(lookUpTable *data, binEAMpot *pot);
 double avgConcentrationAtom1(ATOM *test, parameter *p);
 int atomsType1(ATOM *test, parameter *p);
 
+Sn_bcc * readBCCfromFile(char * fileName);
+
+
 #endif /* ifndef _EAM_H */

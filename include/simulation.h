@@ -15,4 +15,5 @@ void semiGrandCanonical_concentration_study(size_t seed_value);
 void pairwiseConstants();
 
 void ljp_cannonical_order_disorder_transformations();
+void bccCannonicalBenchmark();
 #endif

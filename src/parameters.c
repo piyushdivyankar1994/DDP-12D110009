@@ -95,6 +95,30 @@ parameter * _defaultFCCparameter()
     return new;
 }
 
+parameter * _defaultBCCparameter()
+{
+    parameter * new = (parameter *) malloc(sizeof(parameter));
+
+    new->N_MCS = 100;
+    new->Nx    = 20;
+    new->Ny    = 20;
+    new->Nz    = 20;
+    new->atoms_per_site    = 2;
+    new->lattice_parameter = 4.00;
+    new->temperature       = 1000;
+    new->nearestNeighbours[0] = 8;
+    new->nearestNeighbours[1] = 6;
+    new->nearestNeighbours[2] = 24;
+    new->nearestNeighbours[3] = 12;
+    new->nearestNeighbours[4] = 24;
+    new->nearestNeighbours[5] = 8;
+    new->nearestNeighbours[6] = 48;
+    new->no_of_atoms          = new->Nx * new->Ny * new->Nz * new->atoms_per_site;
+    strcpy(new->fileName, "defaultBCC.param");
+    return new;
+}
+
+
 /**
  * Creates a ::parameter structure from STDIN and saves it to a .parameter FILE
  * @return pointer to new parameter obejct.

@@ -222,12 +222,7 @@ struct neighbours_fcc
     int indices[8];
 } typedef Sn_fcc;
 
-/** \note Not really sure why I did this. Could be useful in some ways */
-enum Boolean
-{
-    true,
-    false
-} typedef Boolean;
+
 /**
  * \typedef ATOM
  * \brief Atoms are stored as integers in memory. So, just to avoid confusion.
@@ -248,5 +243,8 @@ typedef int ATOM;
  */
 double energyTableInstantLookup [2][13][7][25];
 
-
+struct neighbours_bcc
+{
+    point3D s1n[14];
+} typedef Sn_bcc;
 #endif /* ifndef _DATATYPES_H */

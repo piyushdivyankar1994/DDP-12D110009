@@ -1,27 +1,16 @@
 # Size in x-direction           = 20
 # Size in y-direction           = 20
 # Size in z-direction           = 20
-# Lattice Parameter             = 3.650000e+00
-# No. of MonteCarlo Simulations = 10
+# Lattice Parameter             = 4.000000e+00
+# No. of MonteCarlo Simulations = 25
 # Temperature                   = 1.000000e+03
-# Atoms per site                = 4
-# Totol No of atoms             = 32000
+# Atoms per site                = 2
+# Totol No of atoms             = 16000
 #--------------------------------------------------------------
-7944
-0.100000, 166 
-7888
-0.200000, 170 
-7888
-0.300000, 156 
-7888
-0.400000, 174 
-7888
-0.500000, 176 
-7888
-0.600000, 156 
-7888
-0.700000, 161 
-7888
-0.800000, 166 
-7888
-0.900000, 169 
+## E11_1 = -10.000000	
+## E12_1 = -9.700000	
+## E22_1 = -10.000000	
+## E11_2 = -2.000000	
+## E12_2 = -2.000000	
+## E22_2 = -2.000000	
+## Acceptance rate at 0.5 ==25.155249,56.236752

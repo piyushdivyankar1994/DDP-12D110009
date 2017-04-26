@@ -46,6 +46,13 @@ int main(int argc, char const * argv[])
     // semiGrandCanonical_concentration_study(1233);
     // test_displayInstantEnergyLookUpTable();
     //pairwiseConstants();
-    semiGrandCanonical_concentration_study_ljp(1313);
+    // semiGrandCanonical_concentration_study_ljp(1313);
+    //ljp_cannonical_order_disorder_transformations(48165532194);
+
+
+    //test_point3D_periodicBoundaryTransform();
+    //test_point3D_indexToPoint3D_bcc();
+    //test_negihbourReading_transformations();
+    bccCannonicalBenchmark();
     return 0;
 }

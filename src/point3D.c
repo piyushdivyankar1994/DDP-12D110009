@@ -157,6 +157,18 @@ point3D * point3D_indexToPoint3D_fcc(int index, parameter * p)
     }
 }
 
+point3D * point3D_indexToPoint3D_bcc(int index, parameter *p) {
+  point3D* returnPoint = point3D_origin();
+  int k = index % 2;
+  returnPoint->x = (float) ((index / p->atoms_per_site) % p->Nx);
+  returnPoint->y = (float) ((index / (p->atoms_per_site * p->Nx)) % p->Ny);
+  returnPoint->z = (float) ((index / (p->atoms_per_site * p->Nx * p->Ny)) % p->Nz);
+
+  if(k == 1) {
+    point3DmoveTransform(returnPoint, 0.5, 0.5, 0.5);
+  }
+  return returnPoint;
+}
 /**
  * Convertes a ::point3D data to a index in range of ::ATOM with respect to
  * ::parameter that is passed.
@@ -194,6 +206,22 @@ int point3D_point3DtoIndexFCC(point3D * a, parameter * p)
     return pos;
 }
 
+int point3D_point3DtoIndexBCC(point3D * a, parameter *p)
+{
+    float fx = a->x - floor(a->x);
+    float fy = a->y - floor(a->y);
+    float fz = a->z - floor(a->z);
+
+    int pos = ((int) floor(a->x) + p->Nx * (int) floor(a->y) + p->Nx * p->Ny * floor(a->z)) * 2;
+
+    if (fx == 0 && fy == 0 && fz == 0)
+    {
+        return pos;
+    }
+    else {
+        return pos+1;
+    }
+}
 /**
  * For a given ::parameter and ::point3D applies the periodic boundary transform
  * such that it lies in the confined space of (\a Nx, \a Ny, \a Nz) as defined
@@ -271,7 +299,7 @@ float point3D_distAtoB(point3D * A, point3D * B)
  *               and nearest neighbours number is 0-11 for first nearest, 12-17
  *               for second nearest and so on.
  */
-int* point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n)
+int* point3D_neighbourIndexTable_FCC(parameter *p, Sn_fcc *ngbrs, int n)
 {
     int k = ngbrs->indices[n+1];
     int *ret_val = malloc(p->no_of_atoms * sizeof(int) * k);
@@ -289,4 +317,20 @@ int* point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n)
     }
 
     return ret_val;
+}
+
+int* point3D_neighbourIndexTable_BCC(parameter *p, Sn_bcc *ngbrs) {
+    int * a = malloc(sizeof(int)*(p->no_of_atoms)*14);
+
+    for(int i = 0; i < p->no_of_atoms; i++) {
+        point3D * c = point3D_indexToPoint3D_bcc(i, p);
+        for(int j = 0; j < 14; j++) {
+            point3D * na = point3D_addVectors(c, &(ngbrs->s1n[j]));
+            point3D_periodicBoundaryTransform(na, p);
+            a[j + i * 14] = point3D_point3DtoIndexBCC(na, p);
+            free(na);
+        }
+        free(c);
+    }
+    return a;
 }

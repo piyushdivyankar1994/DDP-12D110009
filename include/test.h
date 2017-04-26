@@ -49,4 +49,6 @@ void test_point3D_neighbourIndexTable();
 void test_concentrationFunctions();
 void test_displayInstantEnergyLookUpTable();
 
+  void test_point3D_indexToPoint3D_bcc();
+  void test_negihbourReading_transformations();
 #endif /* ifndef _TEST_H */

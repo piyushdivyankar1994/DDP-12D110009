@@ -22,7 +22,11 @@ float point3D_magnitude(point3D *);
 float point3D_distAtoB(point3D *, point3D *);
 void point3DmoveTransform(point3D *, float, float, float);
 
-int* point3D_neighbourIndexTable(parameter *p, Sn_fcc *ngbrs, int n);
+int* point3D_neighbourIndexTable_FCC(parameter *p, Sn_fcc *ngbrs, int n);
+int* point3D_neighbourIndexTable_BCC(parameter *p, Sn_bcc *ngbrs);
 
 void __free3(point3D *, point3D *, point3D *);
+
+point3D * point3D_indexToPoint3D_bcc(int index, parameter * param);
+int point3D_point3DtoIndexBCC(point3D * a, parameter * p);
 #endif

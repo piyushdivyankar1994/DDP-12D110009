@@ -31,6 +31,7 @@ parameter * new_parameters(char * fileName);
 parameter * createParameterFileFromInput();
 void parameterWriteToFile(parameter *);
 parameter * _defaultFCCparameter();
+parameter * _defaultBCCparameter();
 parameter * parameterReadFromFile(char * fileName);
 void parameterDefaultFile();
 #endif

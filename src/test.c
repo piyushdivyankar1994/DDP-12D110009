@@ -472,11 +472,11 @@ void test_energyAtIndexFCC_fast()
     }
 }
 
-void test_point3D_neighbourIndexTable()
+void test_point3D_neighbourIndexTableFCC()
 {
     Sn_fcc * defFCC   = _defaultFCCNeighbours();
     parameter * simParam = parameterReadFromFile("parametersSim1.param");
-    int * ngbrTable = point3D_neighbourIndexTable(simParam, defFCC, 3);
+    int * ngbrTable = point3D_neighbourIndexTable_FCC(simParam, defFCC, 3);
 
     for (int i = 0; i < simParam->no_of_atoms; i++)
     {
@@ -493,7 +493,7 @@ void test_concentrationFunctions()
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
     Sn_fcc * defFCC   = _defaultFCCNeighbours();
     parameter * simParam = parameterReadFromFile("parametersSim1.param");
-    int * ngbrTable = point3D_neighbourIndexTable(simParam, defFCC, 3);
+    int * ngbrTable = point3D_neighbourIndexTable_FCC(simParam, defFCC, 3);
     for(int i = 0; i < simParam->no_of_atoms; i += 100) {
         printf("%0.3f\n", concentrationAtIndex(inputMatrix, ngbrTable , i, 42));
        }
@@ -537,4 +537,56 @@ void test_displayInstantEnergyLookUpTable()
         }
     }
     return;
+}
+
+void test_point3D_indexToPoint3D_bcc() {
+  parameter * pBCC = _defaultFCCparameter();
+  pBCC->atoms_per_site = 2;
+  pBCC->no_of_atoms = 2 * pBCC->Nx * pBCC->Ny * pBCC->Nz;
+
+  printf("Generating 10 random numbers from 0 to 3999 and displaying corresponding points\n");
+  for (int i = 0; i < 19; i++)
+  {
+      int index = rand() % pBCC->no_of_atoms;
+      point3D * a = point3D_indexToPoint3D_bcc(index, pBCC);
+      int k = point3D_point3DtoIndexBCC(a, pBCC);
+      printf("%d\t=\t, [%d] ", index, k);
+      point3D_dispPoint(a);
+      free(a);
+      //point3D_dispPoint(point3D_indexToPoint3D_bcc(i, pBCC));
+  }
+}
+
+void test_negihbourReading_transformations() {
+    parameter * pBCC = _defaultFCCparameter();
+    pBCC->atoms_per_site = 2;
+    pBCC->no_of_atoms = 2 * pBCC->Nx * pBCC->Ny * pBCC->Nz;
+    print_parameters(pBCC);
+    Sn_bcc * ngbrUC = readBCCfromFile( "/home/piyush/Desktop/DDP-12D110009/neighbours/bcc/bccNeighbours.txt");
+    point3D * a = point3D_origin();
+    /*for(int i = 0; i < 14; i++)
+    {
+        point3D * na = point3D_addVectors(a, &ngbrUC->s1n[i]);
+        //point3D_dispPoint(na);
+        //point3D_dispPoint(&(ngbrUC->s1n[i]));
+        point3D_periodicBoundaryTransform(na, pBCC);
+        int k = point3D_point3DtoIndexBCC(na, pBCC);
+        printf("## [%d]\t=\t\n", k);
+        point3D_dispPoint(na);
+        free(na);
+    }*/
+
+    int * ngbrTable = point3D_neighbourIndexTable_BCC(pBCC,ngbrUC);
+    for(int i = 0; i < 100; i++) {
+        printf("[%d]\t-> ", i);
+        for(int j = 0; j < 14; j++) {
+            printf("[%d], ", ngbrTable[i*14+j]);
+        }
+        printf("\n");
+    }
+    free(a);
+    free(ngbrTable);
+    free(pBCC);
+    free(ngbrUC);
+    
 }
