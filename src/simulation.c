@@ -637,7 +637,7 @@ void bccCannonicalBenchmark() {
 
     Sn_bcc * bccNgbrs = readBCCfromFile( "/home/piyush/Desktop/DDP-12D110009/neighbours/bcc/bccNeighbours.txt");
 
-    pBcc->N_MCS = 25;
+    pBcc->N_MCS = 2000;
     long long int steps = pBcc->N_MCS * pBcc->no_of_atoms;
     print_parameters(pBcc);
     printf("#--------------------------------------------------------------\n");
@@ -650,7 +650,7 @@ void bccCannonicalBenchmark() {
     gsl_rng_env_setup();
     // ----------------------------------------
 
-    randomMatrixGeneratorFCC(pBcc, "inputCrystalFiles/input", rand(), 0.1   );
+    randomMatrixGeneratorFCC(pBcc, "inputCrystalFiles/input", rand(), 0.5   );
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
 
     double E11_1 = -10;
@@ -659,52 +659,161 @@ void bccCannonicalBenchmark() {
     double E11_2 = -2;
     double E22_2 = -2;
     double E12_2 = -2;
-    double de;
+    double de1, de2;
     printf("## E11_1 = %f\t\n", E11_1);
     printf("## E12_1 = %f\t\n", E12_1);
     printf("## E22_1 = %f\t\n", E22_1);
     printf("## E11_2 = %f\t\n", E11_2);
     printf("## E12_2 = %f\t\n", E12_2);
     printf("## E22_2 = %f\t\n", E22_2);
-    double ljp_temp = 1;
+    double ljp_temp = 0.817;
     int * ngbrTable = point3D_neighbourIndexTable_BCC(pBcc, bccNgbrs);
     int Accepted1 = 0;
     int Accepted2 = 0;
+    double u;
+    int index1, index2;
+    //int flag = 0;
+    double  a1 = 0, b1 = 0, a2 = 0, b2 = 0;
+    printf("## concentration = %f\n", concentrationOfAtom1(inputMatrix, pBcc->no_of_atoms));
     for (size_t i = 0; i < steps; i++)
     {
         /* Step1: Selecting a random index */
-        double u    = gsl_rng_uniform(r);
-        int index   = u * pBcc->no_of_atoms;
-        int  a1 = 0, b1 = 0, a2 = 0, b2 = 0;
+        index1 = gsl_rng_uniform(r) * pBcc->no_of_atoms;
+        while(1) {
+            u = gsl_rng_uniform(r);
+            index2 = u * pBcc->no_of_atoms;      // selecting random latice site
+            if(inputMatrix[index1] != inputMatrix[index2]) break;   //with opposite spin
+          }
+
+        a1 = 0;
+        b1 = 0;
+        a2 = 0;
+        b2 = 0;
         for(int j = 0; j < 8; j++) {
-            if(inputMatrix[ngbrTable[index*14 + j]] == 0) a1++;
-            else b1++;
+            if(inputMatrix[ngbrTable[index1*14 + j]] == 0) a1++;
+            if(inputMatrix[ngbrTable[index2*14 + j]] == 0) b1++;
         }
         for(int j = 8; j < 14; j++) {
-            if(inputMatrix[ngbrTable[index*14 + j]] == 0) a2++;
-            else b2++;
+            if(inputMatrix[ngbrTable[index1*14 + j]] == 0) a2++;
+            if(inputMatrix[ngbrTable[index1*14 + j]] == 0) b2++;
         }
-        de = a1*(E11_1 - E12_1) + b1*(E12_1 - E22_1) + a2*(E11_2 - E12_2) \
-                + b2*(E12_2 - E22_2);
-        if(inputMatrix[index] == 1) {
-            de = -de;
+        de1 = (a1*(E12_1 - E11_1) + (8-a1)*(E22_1 - E12_1) + a2*(E12_2 - E11_2) \
+                + (6-a2)*(E22_2 - E12_2))*0.5;
+        de2 = (b1*(E11_1 - E12_1) + (8-b1)*(E12_1 - E22_1) + b2*(E11_2 - E12_2) \
+                + (6-b2)*(E12_2 - E22_2))*0.5;
+
+        if(inputMatrix[index1] == 1) {
+            de1 = -de1;
+            de2 = -de2;
         }
-        double ar = exp(-   de/(ljp_temp));
+        double ar = exp(-(de1+de2)/(ljp_temp));
 
         if( ar < 1) {
           double p = gsl_rng_uniform(r);
           if(ar < p) {
             /** Here it means switch happened */
-            inputMatrix[index] = 1 - inputMatrix[index];
-            Accepted1++;
+            inputMatrix[index1] = 1 - inputMatrix[index1];
+            inputMatrix[index2] = 1 - inputMatrix[index2];
+            if(i/pBcc->no_of_atoms > 1000)Accepted1++;
           }
           /** if switch doesn't happen it means inputMatrix[index] remains same and flag remains same */
         }
         else {
           /** Here it means switch happened */
-          inputMatrix[index] = 1 - inputMatrix[index];
-          Accepted2++;
+          inputMatrix[index1] = 1 - inputMatrix[index1];
+          inputMatrix[index2] = 1 - inputMatrix[index2];
+          if(i/pBcc->no_of_atoms > 1000)Accepted2++;
       }
     }
-    printf("## Acceptance rate at 0.5 ==%f,%f\n", ((float)Accepted1/(float)steps)*100, ((float)Accepted2/(float)steps)*100 );
+    printf("## Acceptance rate at 0.5 ==%f,%f\n", ((float)Accepted1/(float)steps)*200, ((float)Accepted2/(float)steps)*200 );
+    printf("## concentration = %f\n", concentrationOfAtom1(inputMatrix, pBcc->no_of_atoms));
+}
+
+void bcc_SGCannonicalBenchmark() {
+    // Loading Resources
+    parameter * pBcc = _defaultBCCparameter();
+
+    Sn_bcc * bccNgbrs = readBCCfromFile( "/home/piyush/Desktop/DDP-12D110009/neighbours/bcc/bccNeighbours.txt");
+
+    pBcc->N_MCS = 20000;
+    long long int steps = pBcc->N_MCS * pBcc->no_of_atoms;
+    print_parameters(pBcc);
+    printf("#--------------------------------------------------------------\n");
+    // Random number generator initialization
+    const gsl_rng_type * T;
+    gsl_rng * r;
+    T = gsl_rng_default;
+    r = gsl_rng_alloc(T);
+    gsl_rng_set(r, 10000);
+    gsl_rng_env_setup();
+    // ----------------------------------------
+
+
+    double E11_1 = -10;
+    double E22_1 = -10;
+    double E12_1 = -9.7;
+    double E11_2 = -2;
+    double E22_2 = -2;
+    double E12_2 = -2;
+    double de1, de2;
+    printf("## E11_1 = %f\t\n", E11_1);
+    printf("## E12_1 = %f\t\n", E12_1);
+    printf("## E22_1 = %f\t\n", E22_1);
+    printf("## E11_2 = %f\t\n", E11_2);
+    printf("## E12_2 = %f\t\n", E12_2);
+    printf("## E22_2 = %f\t\n", E22_2);
+    double ljp_temp = 0.817;
+    int * ngbrTable = point3D_neighbourIndexTable_BCC(pBcc, bccNgbrs);
+    int Accepted1 = 0;
+    int Accepted2 = 0;
+    double u;
+    int index1, index2;
+    //int flag = 0;
+    double  a1 = 0, b1 = 0, a2 = 0, b2 = 0;
+    double dmu = -0.8;
+    printf("## dmu, Accepted, cAl");
+    while(dmu < 0.9) {
+        Accepted2 = 0;
+        Accepted1 = 0;
+        randomMatrixGeneratorFCC(pBcc, "inputCrystalFiles/input", rand(), 0.5   );
+        ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/input");
+        for (size_t i = 0; i < steps; i++)
+        {
+            /* Step1: Selecting a random index */
+            index1 = gsl_rng_uniform(r) * pBcc->no_of_atoms;
+
+            a1 = 0;
+            a2 = 0;
+            for(int j = 0; j < 8; j++) {
+                if(inputMatrix[ngbrTable[index1*14 + j]] == 0) a1++;
+            }
+            for(int j = 8; j < 14; j++) {
+                if(inputMatrix[ngbrTable[index1*14 + j]] == 0) a2++;
+            }
+            de1 = (a1*(E12_1 - E11_1) + (8-a1)*(E22_1 - E12_1) + a2*(E12_2 - E11_2) \
+                    + (6-a2)*(E22_2 - E12_2))*0.5 + dmu;
+
+            if(inputMatrix[index1] == 1) {
+                de1 = -de1;
+            }
+            double ar = exp(-(de1)/(ljp_temp));
+
+            if( ar < 1) {
+              double p = gsl_rng_uniform(r);
+              if(ar < p) {
+                /** Here it means switch happened */
+                inputMatrix[index1] = 1 - inputMatrix[index1];
+                Accepted1++;
+              }
+              /** if switch doesn't happen it means inputMatrix[index] remains same and flag remains same */
+            }
+            else {
+              /** Here it means switch happened */
+              inputMatrix[index1] = 1 - inputMatrix[index1];
+              Accepted2++;
+          }
+        }
+        printf("%f, %f, %f\n", dmu, ((float)(Accepted1+Accepted2)/(float)steps)*100, concentrationOfAtom1(inputMatrix, pBcc->no_of_atoms));
+        dmu += 0.1;
+    }
 }

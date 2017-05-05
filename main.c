@@ -53,6 +53,7 @@ int main(int argc, char const * argv[])
     //test_point3D_periodicBoundaryTransform();
     //test_point3D_indexToPoint3D_bcc();
     //test_negihbourReading_transformations();
-    bccCannonicalBenchmark();
+    //bccCannonicalBenchmark();
+    bcc_SGCannonicalBenchmark();
     return 0;
 }

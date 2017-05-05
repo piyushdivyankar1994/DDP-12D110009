@@ -25,7 +25,7 @@ float concentrationOfAtom1(int * a, int no_of_atoms)
             count++;
         }
     }
-    return (float) (count / no_of_atoms);
+    return (float)count / (float)no_of_atoms;
 }
 
 /*!

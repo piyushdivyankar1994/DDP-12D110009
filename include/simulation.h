@@ -16,4 +16,5 @@ void pairwiseConstants();
 
 void ljp_cannonical_order_disorder_transformations();
 void bccCannonicalBenchmark();
+void bcc_SGCannonicalBenchmark();
 #endif
