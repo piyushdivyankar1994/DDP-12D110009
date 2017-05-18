@@ -1,0 +1,6 @@
+I this folder are the simulation results from NPT simulation of aluminium FCC lattice. 
+
+s4 means that system size is 4 in x,y, and z directions. Same goes for other files. This is at a temperature of 100K.
+
+it can be seen that the values are stablising around 4.05 Angstrom
+

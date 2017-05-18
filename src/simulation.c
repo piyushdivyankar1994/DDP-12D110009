@@ -202,9 +202,10 @@ void latticeParameterSimulation(size_t seed_value)
     AlNi_fcc->no_of_atoms = AlNi_fcc->Nx * AlNi_fcc->Ny * AlNi_fcc->Nz * 4;
     AlNi_fcc->N_MCS = 100;
     AlNi_fcc->temperature = 100;
-    AlNi_fcc->lattice_parameter = 2.0;
+    AlNi_fcc->lattice_parameter = 3.0;
+    double n = AlNi_fcc->Nx;
 
-    randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/lattice", 1729, 1);
+    randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/lattice", 1729, 0);
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/lattice");
     // Random number generator initialization
     const gsl_rng_type * T;
@@ -214,46 +215,59 @@ void latticeParameterSimulation(size_t seed_value)
     gsl_rng_set(r, seed_value);
     gsl_rng_env_setup();
     // ----------------------------------------
-    double stepSize = 0.03;
+    double stepSize = 0.00025;
     int count = 0;
     AlNi_fcc->temperature = 100;
-    double pressure = 1e5;
-    double eOld = analysis_totalEnergy(inputMatrix, potential, AlNi_fcc, fccNeighbours);
+    double pressure = 101325;
+    double eOld = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
     double avgLP = 0;
     int steps = AlNi_fcc->N_MCS * AlNi_fcc->no_of_atoms;
     double * latticeP = malloc(sizeof(double) * AlNi_fcc->no_of_atoms);
     print_parameters(AlNi_fcc);
+    double eNew;
 
+    /*
+    for(int i = 0; i < 100; i++) {
+        AlNi_fcc->lattice_parameter += stepSize;
+        eNew = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
+        printf("%f\t%f\t%f\t%f\n", AlNi_fcc->lattice_parameter, eNew-eOld, eNew, eOld);
+        eOld = eNew;
+    }*/
+
+
+
+    printf("#####################################################\n");
+    printf("# MCS\t\ta\tvar_a\t\tstdDev_a\n" );
+    printf("#####################################################\n");
     for (int i = 0; i < steps; i++)
     {
         double u = gsl_rng_uniform(r);
         double da = (2 * u - 1) * stepSize;
-        AlNi_fcc->lattice_parameter -= da;
+        AlNi_fcc->lattice_parameter += da;
         double eNew = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
-        double enthalpy = eNew - eOld - KB * AlNi_fcc->temperature * 3 * AlNi_fcc->no_of_atoms *          \
-            log(1 + 3 * fabs(da) / AlNi_fcc->lattice_parameter) +    \
-            pressure * 3 * AlNi_fcc->lattice_parameter * AlNi_fcc->lattice_parameter * -da * 6.241e-12;
+        double a = AlNi_fcc->lattice_parameter;
+        double enthalpy = eNew - eOld + n*n*n*(pressure*3*a*a*da*6.242e-12 - 12 * KB * AlNi_fcc->temperature * log(1 + da/a));
+        double p = exp(enthalpy / (-KB * AlNi_fcc->temperature)) > 1? 1 : exp(enthalpy / (-KB * AlNi_fcc->temperature));
 
-        double p = exp(enthalpy / (-KB * AlNi_fcc->temperature));
-
-        if ((u < p && p < 1) || p > 1)
+        u = gsl_rng_uniform(r);
+        if (u < p)
         {
-            // Accepted
             count++;
         }
-        else
-        {
-            AlNi_fcc->lattice_parameter += da;
+        else{
+            AlNi_fcc->lattice_parameter -= da;
         }
+        //printf("%f\t%f\t%f\t%f\t%f\t\n", enthalpy, p, u, a, eNew-eOld);
         eOld = eNew;
         avgLP += AlNi_fcc->lattice_parameter;
         latticeP[i % AlNi_fcc->N_MCS] = AlNi_fcc->lattice_parameter;
-        double var = gsl_stats_variance(latticeP, 1, AlNi_fcc->N_MCS);
         if (i % AlNi_fcc->no_of_atoms == 0 && i > 0)
         {
+            double var = gsl_stats_variance(latticeP, 1, AlNi_fcc->N_MCS);
             printf("%d\t%f\t%f\t%f\n", i / AlNi_fcc->no_of_atoms, gsl_stats_mean(latticeP, 1, AlNi_fcc->N_MCS), var, sqrt(var));
         }
     }
+    printf("## Acceptance rate:%f\n", (float)count/(float)steps);
     /*
        pressure = 1e5;
        double eOld = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
@@ -747,7 +761,6 @@ void bcc_SGCannonicalBenchmark() {
     gsl_rng_set(r, 10000);
     gsl_rng_env_setup();
     // ----------------------------------------
-
 
     double E11_1 = -10;
     double E22_1 = -10;

@@ -36,10 +36,10 @@ int main(int argc, char const * argv[])
     //est_createLookUpTable();
     //test_buildInstantEnergyLookup();
     //test_energyAtIndexFCC_fast();
-    //long long int seed_value = 102234;
+    long long int seed_value = 102234;
     //cannonicalEnsemble(seed_value);
 
-    // latticeParameterSimulation(seed_value);
+    latticeParameterSimulation(seed_value);
     // test_point3D_neighbourIndexTable();
     //
     // test_concentrationFunctions();
@@ -54,6 +54,6 @@ int main(int argc, char const * argv[])
     //test_point3D_indexToPoint3D_bcc();
     //test_negihbourReading_transformations();
     //bccCannonicalBenchmark();
-    bcc_SGCannonicalBenchmark();
+    //bcc_SGCannonicalBenchmark();
     return 0;
 }
