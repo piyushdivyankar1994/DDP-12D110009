@@ -588,5 +588,5 @@ void test_negihbourReading_transformations() {
     free(ngbrTable);
     free(pBCC);
     free(ngbrUC);
-    
+
 }

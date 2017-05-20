@@ -1,11 +1,18 @@
 #include "test.h"
 #include "simulation.h"
-// / DOING:0 Two phase equlibria simulation.
-// / FUTURE_CHANGES:30 Think of a simulationData type of struct.
-// / FIXME:30 Analysis code for two phase equilibria.
-// / FUTURE_CHANGES:40 chemicalPotentialAtIndex(...) is incorrectly evaluated correct it
-// / TODO:10 Place error messages at places where file names need to be passed among functions.
-// / DONE:0 documentation
+
+
+void thermalExpansion() {
+    double temp = 20;
+    while( temp < 501) {
+        latticeParameterSimulation(rand(), temp);
+        temp += 20;
+    }
+}
+
+
+
+
 int main(int argc, char const * argv[])
 {
     // /test_point3D();
@@ -39,7 +46,7 @@ int main(int argc, char const * argv[])
     long long int seed_value = 102234;
     //cannonicalEnsemble(seed_value);
 
-    latticeParameterSimulation(seed_value);
+    // latticeParameterSimulation(seed_value, 100);
     // test_point3D_neighbourIndexTable();
     //
     // test_concentrationFunctions();
@@ -55,5 +62,6 @@ int main(int argc, char const * argv[])
     //test_negihbourReading_transformations();
     //bccCannonicalBenchmark();
     //bcc_SGCannonicalBenchmark();
+    thermalExpansion();
     return 0;
 }

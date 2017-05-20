@@ -189,7 +189,7 @@ void semiGrandCanonical(size_t seed_value)
 /**
  * Function lattice parameter simulations.
  */
-void latticeParameterSimulation(size_t seed_value)
+void latticeParameterSimulation(size_t seed_value, double temp)
 {
     parameter * AlNi_fcc = parameterReadFromFile("defaultFCC.param");
     binEAMpot * potential = NULL;
@@ -201,10 +201,10 @@ void latticeParameterSimulation(size_t seed_value)
     AlNi_fcc->Nz = 4;
     AlNi_fcc->no_of_atoms = AlNi_fcc->Nx * AlNi_fcc->Ny * AlNi_fcc->Nz * 4;
     AlNi_fcc->N_MCS = 100;
-    AlNi_fcc->temperature = 100;
+    AlNi_fcc->temperature = temp;
     AlNi_fcc->lattice_parameter = 3.0;
-    double n = AlNi_fcc->Nx;
-
+    double * lc = malloc(sizeof(double) * AlNi_fcc->N_MCS);
+    double * lc_std = malloc(sizeof(double) * AlNi_fcc->N_MCS);
     randomMatrixGeneratorFCC(AlNi_fcc, "inputCrystalFiles/lattice", 1729, 0);
     ATOM * inputMatrix = readCrystalFileFCC("inputCrystalFiles/lattice");
     // Random number generator initialization
@@ -223,22 +223,15 @@ void latticeParameterSimulation(size_t seed_value)
     double avgLP = 0;
     int steps = AlNi_fcc->N_MCS * AlNi_fcc->no_of_atoms;
     double * latticeP = malloc(sizeof(double) * AlNi_fcc->no_of_atoms);
-    print_parameters(AlNi_fcc);
+    //print_parameters(AlNi_fcc);
     double eNew;
+    int n = AlNi_fcc->Nx;
 
-    /*
-    for(int i = 0; i < 100; i++) {
-        AlNi_fcc->lattice_parameter += stepSize;
-        eNew = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
-        printf("%f\t%f\t%f\t%f\n", AlNi_fcc->lattice_parameter, eNew-eOld, eNew, eOld);
-        eOld = eNew;
-    }*/
-
-
-
+/*
     printf("#####################################################\n");
     printf("# MCS\t\ta\tvar_a\t\tstdDev_a\n" );
     printf("#####################################################\n");
+*/
     for (int i = 0; i < steps; i++)
     {
         double u = gsl_rng_uniform(r);
@@ -263,48 +256,18 @@ void latticeParameterSimulation(size_t seed_value)
         latticeP[i % AlNi_fcc->N_MCS] = AlNi_fcc->lattice_parameter;
         if (i % AlNi_fcc->no_of_atoms == 0 && i > 0)
         {
-            double var = gsl_stats_variance(latticeP, 1, AlNi_fcc->N_MCS);
-            printf("%d\t%f\t%f\t%f\n", i / AlNi_fcc->no_of_atoms, gsl_stats_mean(latticeP, 1, AlNi_fcc->N_MCS), var, sqrt(var));
+            lc[i / AlNi_fcc->no_of_atoms] = gsl_stats_mean(latticeP, 1, AlNi_fcc->N_MCS);
+            lc_std[i / AlNi_fcc->no_of_atoms] = sqrt(gsl_stats_variance(latticeP, 1, AlNi_fcc->N_MCS));
+            //printf("%d\t%f\t%f\t%f\n", i / AlNi_fcc->no_of_atoms, lc[i / AlNi_fcc->no_of_atoms], pow(lc_std[i / AlNi_fcc->no_of_atoms],2.0), lc_std[i / AlNi_fcc->no_of_atoms]);
         }
     }
-    printf("## Acceptance rate:%f\n", (float)count/(float)steps);
-    /*
-       pressure = 1e5;
-       double eOld = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
-       double avgLP = 0;
-       for(int i= 0; i < 1000; i += 10) {
-        int steps = AlNi_fcc->N_MCS * AlNi_fcc->no_of_atoms;
-        AlNi_fcc->lattice_parameter = 2.5;
-        AlNi_fcc->N_MCS += 50;
-        for (int i = 0; i < steps; i++)
-        {
-            double u = gsl_rng_uniform(r);
-            double da = (2 * u - 1) * stepSize;
-            AlNi_fcc->lattice_parameter -= da;
-            double eNew = AlNi_fcc->no_of_atoms * energyAtIndexFCC(0, inputMatrix, potential, AlNi_fcc, fccNeighbours);
-            double enthalpy = eNew - eOld - KB * AlNi_fcc->temperature * 3 * AlNi_fcc->no_of_atoms *          \
-                                log(1 + 3 * fabs(da) / AlNi_fcc->lattice_parameter) +    \
-                                pressure * 3 * AlNi_fcc->lattice_parameter * AlNi_fcc->lattice_parameter * -da * 6.241e-12;
-
-            double p = exp(enthalpy / (-KB * AlNi_fcc->temperature));
-
-            if ((u < p && p < 1) || p > 1) {
-                //Accepted
-                count++;
-            }
-            else {
-                AlNi_fcc->lattice_parameter += da;
-            }
-            eOld = eNew;
-            avgLP += AlNi_fcc->lattice_parameter;
-            if (i % AlNi_fcc->no_of_atoms == 0 ) {
-                latticeP[i / AlNi_fcc->no_of_atoms] = AlNi_fcc->lattice_parameter;
-            }
-        }
-        printf("%d\t%f\t%f\n", AlNi_fcc->N_MCS, mean, sqrt(variance));
-       }*/
-
-
+    //printf("## Acceptance rate:%f\n", (float)count/(float)steps);
+    double a[2] = {0};
+    for(int i = 40; i <100; i++) {
+        a[0] += lc[i];
+    }
+    a[0] = a[0]/(60.0);
+    printf("%f\t%f\n", a[0] , temp);
 }
 
 void semiGrandCanonical_concentration_study(size_t seed_value)
